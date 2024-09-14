@@ -55,7 +55,6 @@ spec:
                 name: {{ .APP_NAME }}-configmap
                 {{ end }}
           env:
-            # because some internal services have self signed certs
             - name: TZ
               value: Europe/London
             - name: NODE_TLS_REJECT_UNAUTHORIZED
@@ -68,6 +67,11 @@ spec:
               {{ else }}
               value: redis
               {{ end }}
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: session-secret
+                  key: session-secret
             - name: NOTIFY_KEY
               valueFrom:
                 secretKeyRef:
@@ -75,57 +79,6 @@ spec:
                   key: notify-key
             - name: USE_MOCKS
               value: "false"
-            - name: AWS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: file-vault
-                  #encryption_key is randomly generated password used to encrypt the params that are returned by file-vault
-                  key: encryption_key
-            - name: AWS_EXPIRY_TIME
-              value: "120" # 2 minutes in seconds
-            - name: RETURN_ORIGINAL_SIGNED_URL
-              value: "no"
-            - name: ALLOW_GENERATE_LINK_ROUTE
-              value: "yes"
-            - name: KEYCLOAK_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-client
-                  key: secret
-            - name: KEYCLOAK_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-client
-                  key: id
-            - name: KEYCLOAK_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-user
-                  key: username
-            - name: KEYCLOAK_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-user
-                  key: password
-            - name: SESSION_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: session-secret
-                  key: session-secret
-            - name: FILE_VAULT_URL
-            {{ if eq .KUBE_NAMESPACE .PROD_ENV }}
-              value: https://fv-{{ .APP_NAME }}.sas.homeoffice.gov.uk/file
-            {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-              value: https://fv-{{ .APP_NAME }}.stg.sas.homeoffice.gov.uk/file
-            {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-              value: https://fv-{{ .APP_NAME }}.uat.sas-notprod.homeoffice.gov.uk/file
-            {{ else if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-              value: https://fv-{{ .DRONE_SOURCE_BRANCH }}.branch.sas-notprod.homeoffice.gov.uk/file
-            {{ end }}
-            {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-            - name: DEBUG
-              value: "*"
-            {{ end }}
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
@@ -142,11 +95,11 @@ spec:
           {{ end }}
           resources:
             requests:
-              memory: 30Mi
-              cpu: 30m
+              cpu: "20m"
+              memory: "100Mi"
             limits:
-              memory: 512Mi
-              cpu: 600m
+              cpu: "100m"
+              memory: "200Mi"
           volumeMounts:
             - mountPath: /public
               name: public
@@ -159,8 +112,8 @@ spec:
               memory: 10Mi
               cpu: 10m
             limits:
+              cpu: 250m
               memory: 256Mi
-              cpu: 300m
           env:
 {{ file .NGINX_SETTINGS | indent 12 }}
           ports:
