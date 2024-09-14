@@ -9,18 +9,16 @@ metadata:
   {{ end }}
 {{ file .INGRESS_EXTERNAL_ANNOTATIONS | indent 2 }}
 spec:
-  {{ if or (eq .KUBE_NAMESPACE .BRANCH_ENV) (eq .KUBE_NAMESPACE .UAT_ENV) }}
   ingressClassName: nginx-external
-  {{ end }}
   tls:
     - hosts:
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-        - {{ .DRONE_BUILD_NUMBER }}.branch.sas-notprod.homeoffice.gov.uk
-        - {{.APP_NAME}}-{{ .DRONE_SOURCE_BRANCH }}.branch.sas-notprod.homeoffice.gov.uk
+        - {{ .DRONE_BUILD_NUMBER }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+        - rod-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-        - {{.APP_NAME}}.uat.sas-notprod.homeoffice.gov.uk
+        - rod.uat.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-        - {{.APP_NAME}}.stg.sas.homeoffice.gov.uk
+        - rod.stg.sas.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
         - {{ .PRODUCTION_URL }}
       {{ end }}
@@ -31,12 +29,12 @@ spec:
       {{ end }}
   rules:
     {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-    - host: {{.APP_NAME}}-{{ .DRONE_SOURCE_BRANCH }}.branch.sas-notprod.homeoffice.gov.uk
+    - host: rod-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-    - host: {{.APP_NAME}}.uat.sas-notprod.homeoffice.gov.uk
+    - host: rod.uat.sas-notprod.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-    - host: {{.APP_NAME}}.stg.sas.homeoffice.gov.uk
-    {{ else }}
+    - host: rod.stg.sas.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
     - host: {{ .PRODUCTION_URL }}
     {{ end }}
       http:

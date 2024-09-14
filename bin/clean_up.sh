@@ -13,14 +13,14 @@ $kubectl delete --all ing
 
 for each in $($kubectl get netpol -o jsonpath="{.items[*].metadata.name}");
 do
-  if [[ ! " ${IGNORE_NETPOL[@]} " =~ " ${each} " ]]; then
+    if [[ ! " ${IGNORE_NETPOL[@]} " =~ " ${each} " ]]; then
     $kubectl delete netpol "$each"
-  fi
+    fi
 done
 
 for each in $($kubectl get configmap -o jsonpath="{.items[*].metadata.name}");
 do
-  if [[ ! " ${IGNORE_CONFIGMAP[@]} " =~ " ${each} " ]]; then
+    if [[ ! " ${IGNORE_CONFIGMAP[@]} " =~ " ${each} " ]]; then
     $kubectl delete configmap "$each"
-  fi
+    fi
 done

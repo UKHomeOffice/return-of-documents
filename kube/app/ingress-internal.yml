@@ -9,15 +9,15 @@ metadata:
   {{ end }}
 {{ file .INGRESS_INTERNAL_ANNOTATIONS | indent 2 }}
 spec:
-  ingressClassName: nginx-internal
   tls:
     - hosts:
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-        - {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}.internal.branch.sas-notprod.homeoffice.gov.uk
+        - {{ .DRONE_BUILD_NUMBER }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+        - rod-{{ .DRONE_SOURCE_BRANCH }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-        - {{ .APP_NAME }}.internal.uat.sas-notprod.homeoffice.gov.uk
+        - rod.internal.uat.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-        - {{ .APP_NAME }}.internal.stg.sas.homeoffice.gov.uk
+        - rod.internal.stg.sas.homeoffice.gov.uk
       {{ end }}
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
       secretName: branch-tls-internal
@@ -26,12 +26,11 @@ spec:
       {{ end }}
   rules:
     {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-    - host: {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}.internal.branch.sas-notprod.homeoffice.gov.uk
-    {{ end }}
-    {{ if eq .KUBE_NAMESPACE .UAT_ENV }}
+    - host: rod-{{ .DRONE_SOURCE_BRANCH }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
     - host: {{ .APP_NAME }}.internal.uat.sas-notprod.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-    - host: {{ .APP_NAME }}.internal.stg.sas.homeoffice.gov.uk
+    - host: rod.internal.stg.sas.homeoffice.gov.uk
     {{ end }}
       http:
         paths:
