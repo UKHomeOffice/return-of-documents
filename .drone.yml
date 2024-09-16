@@ -8,7 +8,7 @@ environment:
   STG_ENV: sas-rod-stg
   UAT_ENV: sas-rod-uat
   BRANCH_ENV: sas-rod-branch
-  # PRODUCTION_URL: example.com
+  PRODUCTION_URL: cancel-application-and-return-documents.homeoffice.gov.uk
   IMAGE_URL: 340268328991.dkr.ecr.eu-west-2.amazonaws.com
   IMAGE_REPO: sas/rod
   GIT_REPO: UKHomeOffice/rod
