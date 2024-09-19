@@ -1,0 +1,17 @@
+{
+  "appName": "Return Of Documents",
+  "theme": "govUK",
+  "behaviours": [
+    "hof/components/clear-session"
+  ],
+  "translations": "./apps/rod/translations",
+  "routes": [
+    "./apps/rod",
+    "./apps/cancel-request",
+    "./apps/report-documents-not-received"
+  ],
+  "session": {
+    "name": "rod.hof.sid"
+  },
+  "getAccessibility": true
+}
