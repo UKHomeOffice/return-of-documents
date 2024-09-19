@@ -1,0 +1,84 @@
+{
+    "name": {
+        "label": "Return Of Documents"
+    },
+    "who-is-completing": {
+        "legend": "Who is completing this form?",
+        "options":{
+            "applicant": {
+                "label": "Main applicant"
+            },
+            "who-is-rep": {
+                "label": "Skeleton"
+            },
+            "sponsor":{
+                "label": "Skeleton"
+            },
+            "guardian" :{
+                "label": "Skeleton"
+            }
+        }
+    },
+    "is-cancel-application": {
+        "label": "Any documents that were sent with the application will be returned",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "is-passport-return-address": {
+        "label": "Should the documents be returned to this address",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "is-requesting-passport-to-travel": {
+        "label": "Are you requesting the return of the main applicant's passport for travel",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "application-type": {
+        "legend": "What is the application for?",
+        "options":{
+            "visa": {
+                "label": "Skeleton"
+            },
+            "british-citizen": {
+                "label": "Skeleton"
+            },
+            "further-leave":{
+                "label": "Skeleton"
+            },
+            "not-time-limit" :{
+                "label": "Skeleton"
+            },
+            "eu-settlement-scheme":{
+                "label": "Skeleton"
+            },
+            "settlement" :{
+                "label": "Skeleton"
+            },
+            "limited-leave-replacement-brp" :{
+                "label": "Skeleton"
+            }
+        }
+    }
+
+
+   
+}

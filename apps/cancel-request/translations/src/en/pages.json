@@ -1,0 +1,18 @@
+{
+  "start": {
+    "header": "Cancel a request to return your documents [Skeleton]"
+  },
+  "confirm": {
+    "header": "Check your answers [Skeleton]",
+    "sections": {
+      "name": {
+        "header": "Cancel Request [Skeleton]"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "label [Skeleton]"
+      }
+    }
+  }
+}
