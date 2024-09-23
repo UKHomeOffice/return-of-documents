@@ -2,6 +2,7 @@
 
 require('hof/frontend/themes/gov-uk/client-js');
 const govuk = require('govuk-frontend');
+
 const accessibleAutocomplete = require('accessible-autocomplete');
 
 document.addEventListener('DOMContentLoaded', () => {
