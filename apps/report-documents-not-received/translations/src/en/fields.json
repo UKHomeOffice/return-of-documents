@@ -1,5 +1,28 @@
 {
-    "name": {
-        "label": "Report That you have not [Skeleton]"
+    "dnr-application-type": {
+        "legend": "What is the application for?",
+        "options":{
+            "dnr-visa": {
+                "label": "Skeleton"
+            },
+            "dnr-british-citizen": {
+                "label": "Skeleton"
+            },
+            "dnr-further-leave":{
+                "label": "Skeleton"
+            },
+            "dnr-not-time-limit" :{
+                "label": "Skeleton"
+            },
+            "dnr-eu-settlement-scheme":{
+                "label": "Skeleton"
+            },
+            "dnr-settlement" :{
+                "label": "Skeleton"
+            },
+            "dnr-limited-leave-replacement-brp" :{
+                "label": "Skeleton"
+            }
+        }
     }
 }
