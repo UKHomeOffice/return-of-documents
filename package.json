@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "Return Of Documnents (ROD)",
   "engines": {
-    "node": ">=18.12.0"
+    "node": "^20.0.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -24,10 +24,8 @@
     "bytes": "^3.1.2",
     "dotenv": "^16.3.1",
     "eslint-config-hof": "^1.3.1",
-    "hof": "~20.5.0",
-    "jquery": "^3.7.1",
+    "hof": "~21.1.1",
     "lodash": "^4.17.21",
-    "moment": "^2.30.1",
     "notifications-node-client": "^8.0.0",
     "node-cron": "^3.0.3"
   },
