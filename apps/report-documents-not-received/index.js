@@ -9,7 +9,7 @@ module.exports = {
       fields: ['name'],
       next: '/confirm'
     },
-    
+
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),

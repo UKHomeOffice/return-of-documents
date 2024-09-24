@@ -60,7 +60,7 @@ module.exports = {
   'reason-for-application': {
     mixin: 'radio-group',
     options: ['visa', 'british-citizenship', 'leave-to-remain',
-  'ntl-or-brp', 'european-settlement-scheme', 'settlement', 'toc-or-brp'],
+      'ntl-or-brp', 'european-settlement-scheme', 'settlement', 'toc-or-brp'],
 
     validate: 'required',
     legend: {
@@ -70,7 +70,7 @@ module.exports = {
   'visa-type': {
     mixin: 'radio-group',
     options: ['british-overseas-national', 'exceptional-talent',
-  'skilled-worker', 'study', 'temporary-work', 'turkish-national', 'different-type'],
+      'skilled-worker', 'study', 'temporary-work', 'turkish-national', 'different-type'],
 
     validate: 'required',
     legend: {
@@ -91,21 +91,21 @@ module.exports = {
     validate: 'required',
     legend: {
       className: 'bold'
-    },
+    }
   },
   'contact-email': {
     mixin: 'input-text',
     validate: 'required',
     legend: {
       className: 'bold'
-    },
+    }
   },
   'contact-telephone-number': {
     mixin: 'input-text',
     validate: 'required',
     legend: {
       className: 'bold'
-    },
-  },
+    }
+  }
 
 };

@@ -5,8 +5,8 @@ const govuk = require('govuk-frontend');
 
 const accessibleAutocomplete = require('accessible-autocomplete');
 
-document.addEventListener('DOMContentLoaded', () => { 
-  document.querySelectorAll('.typeahead').forEach(function applyTypeahead(){
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.typeahead').forEach(function applyTypeahead() {
     accessibleAutocomplete.enhanceSelectElement({
       defaultValue: '',
       selectElement: this
