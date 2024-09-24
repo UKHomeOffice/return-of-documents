@@ -1,7 +1,12 @@
 'use strict';
 
 module.exports = {
-  start: [
-    'name'
-  ]
+  'return-of-documents': {
+    steps: [
+      {
+        step: '/who-completing',
+        field: 'who-is-completing'
+      }
+    ]
+  }
 };

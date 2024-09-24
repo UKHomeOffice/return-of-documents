@@ -3,15 +3,15 @@
     "header": "Cancel an application and get your documents back"
   },
   "confirm": {
-    "header": "Check your answers [Skeleton]",
+    "header": "Check your answers",
     "sections": {
-      "name": {
-        "header": "Return Of Document [Skeleton]"
+      "return-of-documents": {
+        "header": " "
       }
     },
     "fields": {
-      "name": {
-        "label": "label [Skeleton]"
+      "who-is-completing": {
+        "label": "Person completing form"
       }
     }
   }

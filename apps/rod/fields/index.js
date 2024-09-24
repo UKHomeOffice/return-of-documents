@@ -17,7 +17,7 @@ module.exports = {
     options: ['yes', 'no'],
     validate: 'required'
   },
-  'is-passport-return-address':{
+  'is-passport-return-address': {
     mixin: 'radio-group',
     options: ['yes', 'no'],
     validate: 'required'
@@ -29,7 +29,13 @@ module.exports = {
   },
   'application-type': {
     mixin: 'radio-group',
-    options: ['visa', 'british-citizen', 'further-leave', 'not-time-limit','eu-settlement-scheme', 'settlement', 'limited-leave-replacement-brp'],
+    options: ['visa',
+      'british-citizen',
+      'further-leave',
+      'not-time-limit',
+      'eu-settlement-scheme',
+      'settlement',
+      'limited-leave-replacement-brp'],
     validate: 'required',
     legend: {
       className: 'bold'
