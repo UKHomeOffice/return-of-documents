@@ -1,1 +1,12 @@
-{}
+{
+    "cnc-main-applicant-full-name": {
+        "required": "Enter the main applicant's full name",
+        "maxlength": "Applicant's full name must be 3 and 250 characters",
+        "": "Applicant's full name must be 3 and 250 characters"
+    },
+    "cnc-main-applicant-dob": {
+    },
+    "cnc-main-applicant-nationality": {
+        "required": "Please selet a country"
+    }
+}

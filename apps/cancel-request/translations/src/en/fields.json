@@ -1,5 +1,14 @@
 {
-    "name": {
-        "label": "Cancel Request"
+    "cnc-main-applicant-full-name": {
+        "label": "Full name"
+    },
+    "cnc-main-applicant-dob": {
+        "label": "Date of birth"
+    },
+    "cnc-main-applicant-nationality": {
+        "label": "Nationality",
+        "options": {
+            "none_selected": "Select a country"
     }
+        }
 }

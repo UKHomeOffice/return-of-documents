@@ -1,39 +1,46 @@
 'use strict';
+const dateComponent = require('hof').components.date;
+const countries = require('hof').utils.countries();
 
 module.exports = {
   name: {
     mixin: 'input-text'
   },
-  'main-applicant-full-name': {
+  'cnc-main-applicant-full-name': {
     mixin: 'input-text',
-    validate: 'required',
+    validate: ['required', { type: 'maxlength', arguments: 250 }, { type: 'minlength', arguments: 3 }],
     legend: {
       className: 'bold'
     }
   },
-  'main-applicant-dob': {
-    mixin: 'input-text',
-    validate: 'required',
+  'cnc-main-applicant-dob': dateComponent('cnc-main-applicant-dob', {
+    mixin: 'input-date',
     legend: {
       className: 'bold'
-    }
-  },
-  'main-applicant-nationality': {
+    },
+    validate: ['required']
+  }),
+  'cnc-main-applicant-nationality': {
     mixin: 'select',
     validate: 'required',
     legend: {
       className: 'bold'
-    }
+    },
+    options: [{
+      value: '',
+      label: 'fields.cnc-main-applicant-nationality.options.none_selected'
+    }].concat(countries),
+    labelClassName: 'bold'
   },
-  'who-is-completing': {
+  'cnc-who-is-completing': {
     mixin: 'radio-group',
-    options: ['applicant', 'who-is-rep', 'sponsor', 'guardian'],
+    options: ['applicant', 'legal-rep', 'sponsor', 'guardian'],
     validate: 'required',
     legend: {
       className: 'bold'
     }
   },
-  'who-is-representing': {
+  'cnc-who-is-representing': {
     mixin: 'radio-group',
     options: ['applicant', 'document-holder'],
     validate: 'required',
@@ -41,7 +48,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'sponsor-type': {
+  'cnc-sponsor-type': {
     mixin: 'radio-group',
     options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
     validate: 'required',
@@ -49,7 +56,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'dependant-or-guardian': {
+  'cnc-dependant-or-guardian': {
     mixin: 'radio-group',
     options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
     validate: 'required',
@@ -57,7 +64,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'reason-for-application': {
+  'cnc-reason-for-application': {
     mixin: 'radio-group',
     options: ['visa', 'british-citizenship', 'leave-to-remain',
       'ntl-or-brp', 'european-settlement-scheme', 'settlement', 'toc-or-brp'],
@@ -67,7 +74,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'visa-type': {
+  'cnc-visa-type': {
     mixin: 'radio-group',
     options: ['british-overseas-national', 'exceptional-talent',
       'skilled-worker', 'study', 'temporary-work', 'turkish-national', 'different-type'],
@@ -77,7 +84,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'further-leave': {
+  'cnc-further-leave': {
     mixin: 'radio-group',
     options: ['fp', 'm', 'ir', 'hro'],
     validate: 'required',
@@ -85,7 +92,7 @@ module.exports = {
       className: 'bold'
     }
   },
-  'reference-number': {
+  'cnc-reference-number': {
     mixin: 'radio-group',
     options: ['record-number', 'case-id', 'ho-ref-number', 'payment-ref-number', 'courier-ref-number'],
     validate: 'required',
@@ -93,14 +100,14 @@ module.exports = {
       className: 'bold'
     }
   },
-  'contact-email': {
+  'cnc-contact-email': {
     mixin: 'input-text',
     validate: 'required',
     legend: {
       className: 'bold'
     }
   },
-  'contact-telephone-number': {
+  'cnc-contact-telephone-number': {
     mixin: 'input-text',
     validate: 'required',
     legend: {
