@@ -29,8 +29,13 @@ module.exports = {
   },
   'application-type': {
     mixin: 'radio-group',
-    options: ['visa', 'british-citizen', 'further-leave', 'not-time-limit',
-      'eu-settlement-scheme', 'settlement', 'limited-leave-replacement-brp'],
+    options: ['visa',
+      'british-citizen',
+      'further-leave',
+      'not-time-limit',
+      'eu-settlement-scheme',
+      'settlement',
+      'limited-leave-replacement-brp'],
     validate: 'required',
     legend: {
       className: 'bold'

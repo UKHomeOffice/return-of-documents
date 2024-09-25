@@ -72,7 +72,7 @@ module.exports = {
           continueOnEdit: false
         },
         {
-          target: '/about-application', // logic-required
+          target: '/about-application', // logic required
           continueOnEdit: true,
           condition: {
             field: 'application-type',
@@ -123,10 +123,10 @@ module.exports = {
       fields: ['application-type'],
       next: '/visa-type'
     },
-    '/visa-type': { // logic required
+    '/visa-type': {  // logic required
       next: '/about-application'
     },
-    '/further-leave': { // logic required
+    '/further-leave': { // //logic required
       next: '/about-application'
     },
     '/about-application': { // Should hold a logic before access to this page
