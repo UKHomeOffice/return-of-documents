@@ -1,18 +1,10 @@
 {
-  "start": {
+  "documents-not-received-start": {
     "header": "Report that you have not received you [Skeleton]"
   },
-  "confirm": {
+  "documents-not-received-confirm": {
     "header": "Check your answers [Skeleton]",
-    "sections": {
-      "name": {
-        "header": "Return Of Document [Skeleton]"
-      }
-    },
-    "fields": {
-      "name": {
-        "label": "label [Skeleton]"
-      }
-    }
+    "sections": {},
+    "fields": {}
   }
 }
