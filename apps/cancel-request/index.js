@@ -6,8 +6,7 @@ module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
   steps: {
-    '/cancel-request': {
-      fields: ['name'],
+    '/cancel-request-start': {
       next: '/cancel-request-main-applicant'
     },
     '/cancel-request-main-applicant': {

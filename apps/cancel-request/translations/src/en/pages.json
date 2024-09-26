@@ -1,6 +1,7 @@
 {
-  "start": {
-    "header": "Cancel a request to return your documents [Skeleton]"
+  "cancel-request-start": {
+    "header": "Cancel a request to return your documents",
+    "title": "Cancel a request of documents request"
   },
   "confirm": {
     "header": "Check your answers [Skeleton]",
