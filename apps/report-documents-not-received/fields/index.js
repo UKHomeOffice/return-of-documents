@@ -1,5 +1,8 @@
 'use strict';
 
+const countries = require('hof').utils.countries();
+const dateComponent = require('hof').components.date;
+
 module.exports = {
   'dnr-application-type': {
     mixin: 'radio-group',
@@ -14,5 +17,31 @@ module.exports = {
     legend: {
       className: 'bold'
     }
+  },
+  'dnr-full-name': {
+    validate: [
+      'required',
+      { type: 'minlength', arguments: [3] },
+      { type: 'maxlength', arguments: [250] },
+      'notUrl'
+    ]
+  },
+  'dnr-dob': dateComponent('dnr-dob', {
+    mixin: 'input-date',
+    // additional validation rules added in custom-validation.js
+    validate: [
+      'date',
+      { type: 'before', arguments: ['0', 'days'] },
+      { type: 'after', arguments: ['120', 'years'] }
+    ]
+  }),
+  'dnr-nationality': {
+    mixin: 'select',
+    className: ['typeahead'],
+    options: [{
+      value: '',
+      label: 'fields.dnr-nationality.options.null'
+    }].concat(countries),
+    validate: 'required'
   }
 };

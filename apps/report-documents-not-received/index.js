@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const customValidation = require('./behaviours/custom-validation.js');
 
 module.exports = {
   name: 'report-documents-not-received',
@@ -10,6 +11,8 @@ module.exports = {
       next: '/documents-not-received-main-applicant'
     },
     '/documents-not-received-main-applicant': {
+      behaviours: [customValidation],
+      fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
       next: '/documents-not-received-application'
     },
     '/documents-not-received-application': {

@@ -24,5 +24,20 @@
                 "label": "Skeleton"
             }
         }
+    },
+    "dnr-full-name": {
+      "label": "Full name",
+      "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+    },
+    "dnr-dob": {
+      "label": "Date of birth",
+      "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+    },
+    "dnr-nationality": {
+      "label": "Nationality",
+      "options": {
+        "null": "Select a country"
+      },
+      "hint": "This must match what is on the main applicant’s immigration document"
     }
 }
