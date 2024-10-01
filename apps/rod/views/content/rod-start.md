@@ -1,0 +1,13 @@
+## Before you start
+
+You will need:
+
+- details of documents(holder's name nationality and date of birth)
+
+- a reference number from the application (payment reference, courier number, case ID or Home Office refernece number)
+
+- the date the application was submitted
+
+- the main applicant's details
+
+If yo do not do anything for 20 minutes, your answers will not be saved. Your answer are only saved when you submit the form.

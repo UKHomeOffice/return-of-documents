@@ -6,7 +6,6 @@ module.exports = {
   name: 'rod',
   steps: {
     '/start': {
-      fields: ['name-skeleton'],
       next: '/who-completing'
     },
     '/who-completing': {
