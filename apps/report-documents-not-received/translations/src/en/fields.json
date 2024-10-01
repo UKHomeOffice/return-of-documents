@@ -36,7 +36,7 @@
     "dnr-nationality": {
       "label": "Country of nationality",
       "options": {
-        "null": "Select a country"
+        "none_selected": "Select a country"
       },
       "hint": "This must match what is on the main applicant’s immigration document"
     }
