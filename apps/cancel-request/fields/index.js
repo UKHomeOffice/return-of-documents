@@ -8,9 +8,9 @@ module.exports = {
   },
   'cnc-main-applicant-full-name': {
     mixin: 'input-text',
-    validate: ['required', { type: 'maxlength', arguments: 250 }, { type: 'minlength', arguments: 3 }],
+    validate: ['required', { type: 'maxlength', arguments: 250 }, { type: 'minlength', arguments: 3 }, 'notUrl'],
     legend: {
-      className: 'bold'
+      className: ['govuk-input', 'govuk-!-width-two-thirds']
     }
   },
   'cnc-main-applicant-dob': dateComponent('cnc-main-applicant-dob', {
@@ -18,19 +18,21 @@ module.exports = {
     legend: {
       className: 'bold'
     },
-    validate: ['required']
+    validate: ['required', 'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days']}]
   }),
   'cnc-main-applicant-nationality': {
     mixin: 'select',
-    validate: 'required',
+    validate: ['required', 'notUrl'],
     legend: {
-      className: 'bold'
+      className: ['typeahead', 'govuk-input govuk-!-width-three-quarters']
     },
     options: [{
       value: '',
       label: 'fields.cnc-main-applicant-nationality.options.none_selected'
     }].concat(countries),
-    labelClassName: 'bold'
+    className: ['typeahead', 'govuk-input govuk-!-width-three-quarters']
   },
   'cnc-who-is-completing': {
     mixin: 'radio-group',
