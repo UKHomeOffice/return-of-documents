@@ -28,8 +28,8 @@ module.exports = {
   },
   'dnr-dob': dateComponent('dnr-dob', {
     mixin: 'input-date',
-    // additional validation rules added in custom-validation.js
     validate: [
+      'required',
       'date',
       { type: 'before', arguments: ['0', 'days'] },
       { type: 'after', arguments: ['120', 'years'] }

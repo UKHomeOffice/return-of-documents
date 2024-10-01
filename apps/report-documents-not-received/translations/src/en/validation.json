@@ -8,11 +8,8 @@
   "dnr-dob": {
     "required": "Enter the applicant's date of birth",
     "before": "Main applicant's date of birth must be in the past",
-    "after": "TBC: Enter a real date of birth",
-    "date": "Enter a real date of birth",
-    "dnrDobDay": "Enter a day of birth",
-    "dnrDobMonth": "Enter a month of birth",
-    "dnrDobYear": "Enter a year of birth"
+    "after": "Enter a real date of birth",
+    "date": "Enter a real date of birth"
   },
   "dnr-nationality": {
     "required": "Select the main applicant's country of nationality"
