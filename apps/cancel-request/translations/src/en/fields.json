@@ -11,7 +11,7 @@
       "none_selected": "Select a country"
     }
   },
-  "cnc-visa-type": {
+  "cnc-application-visa-type": {
     "legend": "What type of visa is the application for?",
     "options": {
       "british-national": {

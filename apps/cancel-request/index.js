@@ -82,7 +82,7 @@ module.exports = {
       next: '/cancellation-received'
     },
     '/cancel-request-visa-type': {
-      fields: ['cnc-visa-type'],
+      fields: ['cnc-application-visa-type'],
       next: '/cancel-request-reference-number'
     },
     '/confirm': {

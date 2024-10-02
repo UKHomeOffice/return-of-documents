@@ -114,19 +114,19 @@ module.exports = {
       className: 'bold'
     }
   },
-  "cnc-visa-type": {
-    mixin: "radio-group",
+  'cnc-application-visa-type': {
+    mixin: 'radio-group',
     isPageHeading: true,
     options: [
-      "british-national",
-      "exceptional-talent",
-      "skilled-worker",
-      "study",
-      "temporary-worker",
-      "turkish-national",
-      "different-type"
+      'british-national',
+      'exceptional-talent',
+      'skilled-worker',
+      'study',
+      'temporary-worker',
+      'turkish-national',
+      'different-type'
     ],
-    validate: "required"
+    validate: 'required'
   }
 
 };
