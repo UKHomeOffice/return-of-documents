@@ -2,12 +2,12 @@
 
 You will need:
 
-- details of documents(holder's name nationality and date of birth)
+- details of the documents (holder’s name, nationality and date of birth)
 
-- a reference number from the application (payment reference, courier number, case ID or Home Office refernece number)
+- a reference number from the application (payment reference, courier number, case ID or Home Office reference number)
 
 - the date the application was submitted
 
-- the main applicant's details
+- the main applicant’s details
 
-If yo do not do anything for 20 minutes, your answers will not be saved. Your answer are only saved when you submit the form.
+If you do not do anything for 20 minutes, your answers will not be saved. Your answers are only saved when you submit the form.

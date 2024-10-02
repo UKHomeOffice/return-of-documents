@@ -6,7 +6,6 @@ module.exports = {
   name: 'rod',
   steps: {
     '/start': {
-      next: '/who-completing'
     },
     '/who-completing': {
       forks: [
