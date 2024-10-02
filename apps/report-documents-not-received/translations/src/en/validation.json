@@ -1,8 +1,8 @@
 {
   "dnr-full-name": {
     "required": "Enter the main applicant's full name",
-    "minlength": "Applicant's full name must be 3 and 250 characters",
-    "maxlength": "Applicant's full name must be 3 and 250 characters",
+    "minlength": "Applicant's full name must be between 3 and 250 characters",
+    "maxlength": "Applicant's full name must be between 3 and 250 characters",
     "notUrl": "Your answer must not contain URLs or links"
   },
   "dnr-dob": {
