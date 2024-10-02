@@ -8,7 +8,7 @@
         "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
     },
     "cnc-main-applicant-nationality": {
-        "label": "Nationality",
+        "label": "Country of nationality",
         "hint": "This must match what is on the main applicant’s immigration document",
         "options": {
             "none_selected": "Select a country"
