@@ -81,6 +81,10 @@ module.exports = {
     '/cancel-request-confirm': {
       next: '/cancellation-received'
     },
+    '/cancel-request-visa-type': {
+      fields: ['cnc-visa-type'],
+      next: '/cancel-request-reference-number'
+    },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),

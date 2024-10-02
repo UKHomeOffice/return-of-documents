@@ -200,3 +200,9 @@ pre.looped-records {
   border-bottom-width: 4px;
   text-decoration: none;
 }
+#cnc-visa-type-group {
+  .govuk-radios__item .govuk-hint {
+    margin-top: 0rem;
+    padding-left: 0px;
+  }
+}
