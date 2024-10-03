@@ -2,6 +2,9 @@
   "start": {
     "header": "Cancel a request to return your documents [Skeleton]"
   },
+  "cancel-request-main-applicant": {
+    "header": "Main applicant’s details"
+  },
   "confirm": {
     "header": "Check your answers [Skeleton]",
     "sections": {

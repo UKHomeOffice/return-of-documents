@@ -6,10 +6,10 @@ const govuk = require('govuk-frontend');
 const accessibleAutocomplete = require('accessible-autocomplete');
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.typeahead').forEach(function applyTypeahead() {
+  document.querySelectorAll('.typeahead').forEach(function applyTypeahead(element) {
     accessibleAutocomplete.enhanceSelectElement({
       defaultValue: '',
-      selectElement: this
+      selectElement: element
     });
   });
 });
