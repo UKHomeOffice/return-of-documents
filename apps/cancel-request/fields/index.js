@@ -76,19 +76,19 @@ module.exports = {
     mixin: 'input-text',
     validate: 'required'
   },
-   'cnc-application-visa-type': {
-      mixin: 'radio-group',
-      isPageHeading: true,
-      options: [
-        'british-national',
-        'exceptional-talent',
-        'skilled-worker',
-        'study',
-        'temporary-worker',
-        'turkish-national',
-        'different-type'
-      ],
-      validate: 'required'
-    }
+  'cnc-application-visa-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: [
+      'british-national',
+      'exceptional-talent',
+      'skilled-worker',
+      'study',
+      'temporary-worker',
+      'turkish-national',
+      'different-type'
+    ],
+    validate: 'required'
+  }
 
 };
