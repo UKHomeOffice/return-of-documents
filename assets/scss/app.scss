@@ -1,5 +1,13 @@
 @import "hof/frontend/themes/gov-uk/styles/govuk";
 
+p {
+  @extend .govuk-body;
+}
+
+h2 {
+  @extend .govuk-heading-m;
+}
+
 ul {
   @extend .govuk-list--bullet;
 }
@@ -199,6 +207,10 @@ pre.looped-records {
   border-bottom-color: black;
   border-bottom-width: 4px;
   text-decoration: none;
+}
+
+.govuk-grid-column-one-third.related-services-menu {
+  margin-top: 80px;
 }
 
 .govuk-radios__item .govuk-hint {

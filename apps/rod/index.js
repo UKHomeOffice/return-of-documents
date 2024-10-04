@@ -1,13 +1,13 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 
 module.exports = {
   name: 'rod',
   steps: {
     '/start': {
-      fields: ['name-skeleton'],
-      next: '/who-completing'
+      behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
       forks: [
