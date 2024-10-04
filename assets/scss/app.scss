@@ -1,5 +1,13 @@
 @import "hof/frontend/themes/gov-uk/styles/govuk";
 
+p {
+  @extend .govuk-body;
+}
+
+h2 {
+  @extend .govuk-heading-m;
+}
+
 ul {
   @extend .govuk-list--bullet;
 }
@@ -199,4 +207,9 @@ pre.looped-records {
   border-bottom-color: black;
   border-bottom-width: 4px;
   text-decoration: none;
+}
+
+.govuk-section-break.govuk-section-break--m.govuk-section-break--visible.related-services-menu {
+  margin-top: 0;
+  margin-bottom: 15;
 }
