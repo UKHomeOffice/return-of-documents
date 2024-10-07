@@ -16,7 +16,7 @@
         },
     "cnc-who-is-completing": {
         "legend": "Who completed the original form?",
-        "hint": "This form must be completed by the same person who made the original request or their authorised legal repesentative",
+        "hint": "This form must be completed by the same person who made the original request or their authorised legal representative",
         "options": {
             "applicant": {
               "label": "The main applicant"
