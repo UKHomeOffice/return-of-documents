@@ -1,0 +1,19 @@
+{{<partials-page}}
+{{$pageTitle}}
+{{#t}}pages.request-further-leave.title{{/t}} &ndash; GOV.UK
+{{/pageTitle}}
+  {{$page-content}}
+  <h1 class="govuk-heading-l">{{#t}}pages.request-further-leave.title{{/t}}</h1>
+  <p class="govuk-body">
+    {{#t}}pages.request-further-leave.p1{{/t}}
+  </p>
+  <p class="govuk-body">
+    <a href="/tbc">{{#t}}pages.request-further-leave.link-read-more{{/t}}</a> {{#t}}pages.request-further-leave.p2{{/t}}
+  </p>
+  <p class="govuk-body">
+    {{#t}}pages.request-further-leave.p3{{/t}}
+  </p>
+  {{#renderField}}cnc-further-leave-to-remain{{/renderField}}
+  {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
