@@ -14,7 +14,10 @@
     "cnc-main-applicant-nationality": {
         "required": "Select the main applicant's country of nationality"
     },
-    "cnc-further-leave-to-remain": {
-        "required": "Select which type of further leave you applied for"
-    }
+    "cnc-who-is-completing": {
+        "required": "Select who completed the original form"
+    },
+  "cnc-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
+  }
 }
