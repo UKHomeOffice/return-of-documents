@@ -1,1 +1,5 @@
-{}
+{
+  "dnr-application-type": {
+    "required": "Select what the application was for"
+  }
+}

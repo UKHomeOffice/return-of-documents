@@ -2,6 +2,7 @@
 
 module.exports = {
   'dnr-application-type': {
+    isPageHeading: true,
     mixin: 'radio-group',
     options: ['dnr-visa',
       'dnr-british-citizen',
@@ -10,9 +11,6 @@ module.exports = {
       'dnr-eu-settlement-scheme',
       'dnr-settlement',
       'dnr-limited-leave-replacement-brp'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   }
 };
