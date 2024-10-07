@@ -15,12 +15,13 @@ module.exports = {
       next: '/cancel-request-who-completed-form'
     },
     '/cancel-request-who-completed-form': {
+      fields: ['cnc-who-is-completing'],
       forks: [
         {
           target: '/cancel-request-who-representing',
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-legal-rep'
+            value: 'legal-rep'
           },
           continueOnEdit: false
         },
@@ -29,7 +30,7 @@ module.exports = {
           continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-sponsor'
+            value: 'sponsor'
           }
         },
         {
@@ -37,7 +38,7 @@ module.exports = {
           continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-guardian'
+            value: 'guardian'
           }
         }
       ],

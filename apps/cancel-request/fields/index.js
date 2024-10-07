@@ -27,6 +27,7 @@ module.exports = {
   },
   'cnc-who-is-completing': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['applicant', 'legal-rep', 'sponsor', 'guardian'],
     validate: 'required'
   },

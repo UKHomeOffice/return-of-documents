@@ -14,6 +14,9 @@
     "cnc-main-applicant-nationality": {
         "required": "Select the main applicant's country of nationality"
     },
+    "cnc-who-is-completing": {
+        "required": "Select who completed the original form"
+    },
   "cnc-application-visa-type": {
     "required": "Select what type of visa the application was for"
   }
