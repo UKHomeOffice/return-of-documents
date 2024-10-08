@@ -45,6 +45,7 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-who-representing': {
+      fields: ['cnc-who-is-representing'],
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {
