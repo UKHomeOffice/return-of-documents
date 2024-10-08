@@ -11,7 +11,11 @@ module.exports = {
       next: '/cancel-request-main-applicant'
     },
     '/cancel-request-main-applicant': {
-      fields: ['cnc-main-applicant-full-name', 'cnc-main-applicant-dob', 'cnc-main-applicant-nationality'],
+      fields: [
+        'cnc-main-applicant-full-name',
+        'cnc-main-applicant-dob',
+        'cnc-main-applicant-nationality'
+      ],
       next: '/cancel-request-who-completed-form'
     },
     '/cancel-request-who-completed-form': {
@@ -86,10 +90,10 @@ module.exports = {
       fields: ['cnc-application-visa-type'],
       next: '/cancel-request-reference-number'
     },
-        '/request-further-leave': {
-          fields: ['cnc-further-leave-to-remain'],
-          next: '/cancel-request-reference-number'
-        },
+    '/request-further-leave': {
+      fields: ['cnc-further-leave-to-remain'],
+      next: '/cancel-request-reference-number'
+    },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),
