@@ -1,11 +1,11 @@
 
 You will also need one of these reference numbers:
 
-- the record number you received when you submitted the original form (for example. ROD123456789)
+- the record number you received when you submitted the original form (for example, ROD123456789)
 
 - the case ID from the main application
 
-- the Home Office reference number found on offical documents
+- the Home Office reference number found on official documents
 
 - the payment reference number
 
