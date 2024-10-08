@@ -1,23 +1,26 @@
 {
-    "cnc-main-applicant-full-name": {
-        "required": "Enter the main applicant's full name",
-        "maxlength": "Applicant's full name must between be 3 and 250 characters",
-        "minlength": "Applicant's full name must be between 3 and 250 characters",
-        "notUrl": "Your answer must not contain URLs or links"
-    },
-    "cnc-main-applicant-dob": {
-        "required": "Enter the applicant's date of birth",
-        "before": "Main applicant's date of birth must be in the past",
-        "after": "Enter a real date of birth",
-        "date": "Enter a real date of birth"
-    },
-    "cnc-main-applicant-nationality": {
-        "required": "Select the main applicant's country of nationality"
-    },
-    "cnc-who-is-completing": {
-        "required": "Select who completed the original form"
-    },
+  "cnc-main-applicant-full-name": {
+    "required": "Enter the main applicant's full name",
+    "maxlength": "Applicant's full name must between be 3 and 250 characters",
+    "minlength": "Applicant's full name must be between 3 and 250 characters",
+    "notUrl": "Your answer must not contain URLs or links"
+  },
+  "cnc-main-applicant-dob": {
+    "required": "Enter the applicant's date of birth",
+    "before": "Main applicant's date of birth must be in the past",
+    "after": "Enter a real date of birth",
+    "date": "Enter a real date of birth"
+  },
+  "cnc-main-applicant-nationality": {
+    "required": "Select the main applicant's country of nationality"
+  },
+  "cnc-who-is-completing": {
+    "required": "Select who completed the original form"
+  },
   "cnc-application-visa-type": {
     "required": "Select what type of visa the application was for"
+  },
+  "cnc-reference-number": {
+    "required": "You must provide a reference number. Select one you can provide"
   }
 }

@@ -11,7 +11,11 @@ module.exports = {
       next: '/cancel-request-main-applicant'
     },
     '/cancel-request-main-applicant': {
-      fields: ['cnc-main-applicant-full-name', 'cnc-main-applicant-dob', 'cnc-main-applicant-nationality'],
+      fields: [
+        'cnc-main-applicant-full-name',
+        'cnc-main-applicant-dob',
+        'cnc-main-applicant-nationality'
+      ],
       next: '/cancel-request-who-completed-form'
     },
     '/cancel-request-who-completed-form': {
@@ -74,6 +78,7 @@ module.exports = {
       next: '/cancel-request-reference-number'
     },
     '/cancel-request-reference-number': {
+      fields: ['cnc-reference-number'],
       next: '/cancel-request-contact-details'
     },
     '/cancel-request-contact-details': {

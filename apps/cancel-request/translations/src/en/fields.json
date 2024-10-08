@@ -1,39 +1,39 @@
 {
-    "cnc-main-applicant-full-name": {
-        "label": "Full name",
-        "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
-    },
-    "cnc-main-applicant-dob": {
-        "legend": "Date of birth",
-        "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
-    },
-    "cnc-main-applicant-nationality": {
-        "label": "Country of nationality",
-        "hint": "This must match what is on the main applicant’s immigration document",
-        "options": {
-            "none_selected": "Select a country"
+  "cnc-main-applicant-full-name": {
+    "label": "Full name",
+    "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+  },
+  "cnc-main-applicant-dob": {
+    "legend": "Date of birth",
+    "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+  },
+  "cnc-main-applicant-nationality": {
+    "label": "Country of nationality",
+    "hint": "This must match what is on the main applicant’s immigration document",
+    "options": {
+      "none_selected": "Select a country"
     }
-        },
-    "cnc-who-is-completing": {
-        "legend": "Who completed the original form?",
-        "hint": "This form must be completed by the same person who made the original request or their authorised legal representative",
-        "options": {
-            "applicant": {
-              "label": "The main applicant"
-            },
-            "legal-rep": {
-              "label": "A legal representative",
-              "hint": "This includes legal representatives of main applicants, document holders and sponsors"
-            },
-            "sponsor": {
-              "label": "A sponsor",
-              "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
-            },
-            "guardian": {
-              "label": "A dependant or guardian of a dependant"
-            }
-          }
-        },
+  },
+  "cnc-who-is-completing": {
+    "legend": "Who completed the original form?",
+    "hint": "This form must be completed by the same person who made the original request or their authorised legal representative",
+    "options": {
+      "applicant": {
+        "label": "The main applicant"
+      },
+      "legal-rep": {
+        "label": "A legal representative",
+        "hint": "This includes legal representatives of main applicants, document holders and sponsors"
+      },
+      "sponsor": {
+        "label": "A sponsor",
+        "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
+      },
+      "guardian": {
+        "label": "A dependant or guardian of a dependant"
+      }
+    }
+  },
   "cnc-application-visa-type": {
     "legend": "What type of visa is the application for?",
     "options": {
@@ -64,5 +64,45 @@
         "label": "A different type of visa"
       }
     }
-  }
+  },
+  "cnc-reference-number": {
+    "legend": "Which reference number can you provide?",
+    "options": {
+      "record-number": {
+        "label": "Record number",
+        "hint": "This is in the confirmation email you received when you submitted. For example, ROD123456789"
+      },
+      "case-id": {
+        "label": "Case ID",
+        "hint": "The main applicant received this number when they applied. For example, 12345678"
+      },
+      "ho-reference-number": {
+        "label": "Home Office reference number",
+        "hint": "This is on official documents, such as letters about your immigration status or biometric residence permit cards. For example, A1234567"
+      },
+      "payment-reference-number": {
+        "label": "Payment reference number",
+        "hint": "This is on the letter the Home Office sent to the main applicant confirming they received an application"
+      },
+      "courier-reference-number": {
+        "label": "Courier reference number",
+        "hint": "This includes Royal Mail reference numbers"
+      }
     }
+  },
+  "enter-record-number": {
+    "label": "Enter the record number"
+  },
+  "enter-case-id": {
+    "label": "Enter the case id"
+  },
+  "enter-ho-reference-number": {
+    "label": "Enter home office reference number"
+  },
+  "enter-payment-reference-number": {
+    "label": "Enter payment reference number"
+  },
+  "enter-courier-reference-number": {
+    "label": "Enter courier reference number"
+  }
+}
