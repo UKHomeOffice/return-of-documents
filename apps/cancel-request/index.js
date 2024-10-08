@@ -82,10 +82,14 @@ module.exports = {
     '/cancel-request-confirm': {
       next: '/cancellation-received'
     },
-    '/request-further-leave': {
-      fields: ['cnc-further-leave-to-remain'],
+    '/cancel-request-visa-type': {
+      fields: ['cnc-application-visa-type'],
       next: '/cancel-request-reference-number'
     },
+        '/request-further-leave': {
+          fields: ['cnc-further-leave-to-remain'],
+          next: '/cancel-request-reference-number'
+        },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),

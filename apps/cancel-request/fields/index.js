@@ -77,18 +77,32 @@ module.exports = {
     mixin: 'input-text',
     validate: 'required'
   },
-  'cnc-further-leave-to-remain': {
+  'cnc-application-visa-type': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: [
-      'flr-fp',
-      'flr-m',
-      'flr-ir',
-      'flr-hro'
+      'british-national',
+      'exceptional-talent',
+      'skilled-worker',
+      'study',
+      'temporary-worker',
+      'turkish-national',
+      'different-type'
     ],
-    validate: 'required',
-    legend: {
-      className: 'govuk-label--m'
+    validate: 'required'
+  },
+    'cnc-further-leave-to-remain': {
+      mixin: 'radio-group',
+      options: [
+        'flr-fp',
+        'flr-m',
+        'flr-ir',
+        'flr-hro'
+      ],
+      validate: 'required',
+      legend: {
+        className: 'govuk-label--m'
+      }
     }
-  }
 
 };
