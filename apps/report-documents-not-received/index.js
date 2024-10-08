@@ -10,6 +10,7 @@ module.exports = {
       next: '/documents-not-received-main-applicant'
     },
     '/documents-not-received-main-applicant': {
+      fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
       next: '/documents-not-received-application'
     },
     '/documents-not-received-application': {
