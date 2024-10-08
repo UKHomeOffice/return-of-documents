@@ -4,6 +4,10 @@ p {
   @extend .govuk-body;
 }
 
+h2 {
+  @extend .govuk-heading-m;
+}
+
 ul {
   @extend .govuk-list--bullet;
 }
@@ -208,4 +212,12 @@ pre.looped-records {
 .govuk-section-break.govuk-section-break--m.govuk-section-break--visible.related-services-menu {
   margin-top: 0;
   margin-bottom: 15;
+}
+
+.govuk-grid-column-one-third.related-services-menu {
+  margin-top: 80px;
+}
+.govuk-radios__item .govuk-hint {
+  margin-top: 0rem;
+  padding-left: 0px;
 }

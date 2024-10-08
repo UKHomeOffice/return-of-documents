@@ -8,111 +8,74 @@ module.exports = {
   },
   'cnc-main-applicant-full-name': {
     mixin: 'input-text',
-    validate: ['required', { type: 'maxlength', arguments: 250 }, { type: 'minlength', arguments: 3 }],
-    legend: {
-      className: 'bold'
-    }
+    validate: ['required', { type: 'maxlength', arguments: 250 }, { type: 'minlength', arguments: 3 }, 'notUrl']
   },
   'cnc-main-applicant-dob': dateComponent('cnc-main-applicant-dob', {
     mixin: 'input-date',
-    legend: {
-      className: 'bold'
-    },
-    validate: ['required']
+    validate: ['required', 'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days']}]
   }),
   'cnc-main-applicant-nationality': {
     mixin: 'select',
     validate: 'required',
-    legend: {
-      className: 'bold'
-    },
     options: [{
       value: '',
       label: 'fields.cnc-main-applicant-nationality.options.none_selected'
     }].concat(countries),
-    labelClassName: 'bold'
+    className: 'typeahead'
   },
   'cnc-who-is-completing': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['applicant', 'legal-rep', 'sponsor', 'guardian'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-who-is-representing': {
     mixin: 'radio-group',
     options: ['applicant', 'document-holder'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-sponsor-type': {
     mixin: 'radio-group',
     options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-dependant-or-guardian': {
     mixin: 'radio-group',
     options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-reason-for-application': {
     mixin: 'radio-group',
     options: ['visa', 'british-citizenship', 'leave-to-remain',
       'ntl-or-brp', 'european-settlement-scheme', 'settlement', 'toc-or-brp'],
-
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-visa-type': {
     mixin: 'radio-group',
     options: ['british-overseas-national', 'exceptional-talent',
       'skilled-worker', 'study', 'temporary-work', 'turkish-national', 'different-type'],
 
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-further-leave': {
     mixin: 'radio-group',
     options: ['fp', 'm', 'ir', 'hro'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-reference-number': {
     mixin: 'radio-group',
     options: ['record-number', 'case-id', 'ho-ref-number', 'payment-ref-number', 'courier-ref-number'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-contact-email': {
     mixin: 'input-text',
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'cnc-contact-telephone-number': {
     mixin: 'input-text',
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   }
 
 };

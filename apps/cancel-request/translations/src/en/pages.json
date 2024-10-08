@@ -3,6 +3,9 @@
     "header": "Cancel a request to return your documents",
     "title": "Cancel a request of documents request"
   },
+  "cancel-request-main-applicant": {
+    "header": "Main applicant’s details"
+  },
   "confirm": {
     "header": "Check your answers [Skeleton]",
     "sections": {

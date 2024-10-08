@@ -1,14 +1,37 @@
 {
     "cnc-main-applicant-full-name": {
-        "label": "Full name"
+        "label": "Full name",
+        "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
     },
     "cnc-main-applicant-dob": {
-        "label": "Date of birth"
+        "legend": "Date of birth",
+        "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
     },
     "cnc-main-applicant-nationality": {
-        "label": "Nationality",
+        "label": "Country of nationality",
+        "hint": "This must match what is on the main applicant’s immigration document",
         "options": {
             "none_selected": "Select a country"
     }
+        },
+    "cnc-who-is-completing": {
+        "legend": "Who completed the original form?",
+        "hint": "This form must be completed by the same person who made the original request or their authorised legal representative",
+        "options": {
+            "applicant": {
+              "label": "The main applicant"
+            },
+            "legal-rep": {
+              "label": "A legal representative",
+              "hint": "This includes legal representatives of main applicants, document holders and sponsors"
+            },
+            "sponsor": {
+              "label": "A sponsor",
+              "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
+            },
+            "guardian": {
+              "label": "A dependant or guardian of a dependant"
+            }
+          }
         }
-}
+    }
