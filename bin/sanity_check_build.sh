@@ -1,10 +1,14 @@
 #!/bin/sh
 set -e
 
-export STATUS=$(drone build info $GIT_REPO $DRONE_BUILD_PARENT --format {{.Status}})
-export BRANCH=$(drone build info $GIT_REPO $DRONE_BUILD_PARENT --format {{.Target}})
-export EVENT=$(drone build info $GIT_REPO $DRONE_BUILD_PARENT --format {{.Event}})
-export REFS=$(drone build info $GIT_REPO $DRONE_BUILD_PARENT --format {{.Ref}})
+get_build_info() {
+  drone build info $GIT_REPO $DRONE_BUILD_PARENT --format $1 || { echo "Failed to fetch build info"; exit 1; }
+}
+
+export STATUS=$(get_build_info {{.Status}})
+export BRANCH=$(get_build_info {{.Target}})
+export EVENT=$(get_build_info {{.Event}})
+export REFS=$(get_build_info {{.Ref}})
 
 if [[ "$STATUS" != "success" ]]; then
   echo "Build number $DRONE_BUILD_PARENT failed due to unsuccessful status."
