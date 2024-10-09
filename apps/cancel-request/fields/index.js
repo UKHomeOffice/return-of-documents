@@ -91,7 +91,9 @@ module.exports = {
   },
   'cnc-reference-number': {
     mixin: 'radio-group',
+    labelClassName: 'govuk-label--s',
     isPageHeading: true,
+    validate: ['required'],
     options: [
       {
         value: 'record-number',
@@ -118,8 +120,54 @@ module.exports = {
         toggle: 'enter-courier-reference-number',
         child: 'input-text'
       }
-    ],
-    validate: 'required'
+    ]
+  },
+
+  'enter-record-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'record-number'
+    },
+    labelClassName: 'govuk-label--s',
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', 'notUrl']
+
+  },
+  'enter-case-id': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'case-id'
+    },
+    labelClassName: 'govuk-label--s',
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', 'notUrl']
+  },
+  'enter-ho-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'ho-reference-number'
+    },
+    labelClassName: 'govuk-label--s',
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', 'notUrl']
+  },
+  'enter-payment-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'payment-reference-number'
+    },
+    labelClassName: 'govuk-label--s',
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', 'notUrl']
+  },
+  'enter-courier-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'courier-reference-number'
+    },
+    labelClassName: 'govuk-label--s',
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', 'notUrl']
   },
   'cnc-contact-email': {
     mixin: 'input-text',
@@ -142,40 +190,5 @@ module.exports = {
       'different-type'
     ],
     validate: 'required'
-  },
-  'enter-record-number': {
-    validate: ['required', 'notUrl'],
-    dependent: {
-      field: 'cnc-reference-number',
-      value: 'record-number'
-    }
-  },
-  'enter-case-id': {
-    validate: ['required', 'notUrl'],
-    dependent: {
-      field: 'cnc-reference-number',
-      value: 'case-id'
-    }
-  },
-  'enter-ho-reference-number': {
-    validate: ['required', 'notUrl'],
-    dependent: {
-      field: 'cnc-reference-number',
-      value: 'ho-reference-number'
-    }
-  },
-  'enter-payment-reference-number': {
-    validate: ['required', 'notUrl'],
-    dependent: {
-      field: 'cnc-reference-number',
-      value: 'payment-reference-number'
-    }
-  },
-  'enter-courier-reference-number': {
-    validate: ['required', 'notUrl'],
-    dependent: {
-      field: 'cnc-reference-number',
-      value: 'courier-reference-number'
-    }
   }
 };
