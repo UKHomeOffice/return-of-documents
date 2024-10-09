@@ -14,8 +14,7 @@ module.exports = {
       'dnr-eu-settlement-scheme',
       'dnr-settlement',
       'dnr-limited-leave-replacement-brp'],
-    validate: 'required',
-
+    validate: 'required'
   },
   'dnr-full-name': {
     validate: [
