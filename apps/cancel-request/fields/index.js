@@ -129,7 +129,8 @@ module.exports = {
       value: 'record-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 12 }, { type: 'minlength', arguments: 9 }]
+    validate: ['required', { type: 'maxlength', arguments: 12 }, { type: 'minlength', arguments: 9 }],
+    attributes: [{ prefix: 'ROD' }]
   },
   'enter-case-id': {
     dependent: {
