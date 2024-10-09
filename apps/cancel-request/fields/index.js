@@ -184,5 +184,13 @@ module.exports = {
       'different-type'
     ],
     validate: 'required'
+  },
+  'cnc-further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
+    validate: 'required',
+    legend: {
+      className: 'govuk-label--m'
+    }
   }
 };

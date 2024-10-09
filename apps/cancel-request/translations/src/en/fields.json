@@ -78,6 +78,23 @@
       }
     }
   },
+  "cnc-further-leave-to-remain": {
+    "legend": "Which type of further leave did you apply for?",
+    "options": {
+      "flr-fp": {
+        "label": "FLR (FP)"
+      },
+      "flr-m": {
+        "label": "FLR (M)"
+      },
+      "flr-ir": {
+        "label": "FLR (IR)"
+      },
+      "flr-hro": {
+        "label": "FLR (HRO)"
+      }
+    }
+  },
   "cnc-reference-number": {
     "legend": "Which reference number can you provide?",
     "options": {

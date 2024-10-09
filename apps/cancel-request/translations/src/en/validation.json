@@ -23,6 +23,9 @@
   "cnc-who-is-representing": {
       "required": "Select who you are legally representing"
   },
+  "cnc-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
+  },
   "cnc-reference-number": {
     "required": "You must provide a reference number. Select one you can provide"
   },
