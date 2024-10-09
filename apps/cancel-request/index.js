@@ -51,6 +51,7 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {
+      fields: ['cnc-sponsor-type'],
       next: '/cancel-request-application'
     },
     '/cancel-request-dependant-or-guardian': {
