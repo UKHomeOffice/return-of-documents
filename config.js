@@ -2,8 +2,13 @@
 const env = process.env.NODE_ENV || 'production';
 
 module.exports = {
+  dateLocales: 'en-GB',
+  dateFormat: {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  },
   env: env,
-  dataDirectory: './data',
   govukNotify: {
   },
   survey: {
