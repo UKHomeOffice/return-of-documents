@@ -76,6 +76,20 @@ module.exports = {
   'cnc-contact-telephone-number': {
     mixin: 'input-text',
     validate: 'required'
+  },
+  'cnc-application-visa-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: [
+      'british-national',
+      'exceptional-talent',
+      'skilled-worker',
+      'study',
+      'temporary-worker',
+      'turkish-national',
+      'different-type'
+    ],
+    validate: 'required'
   }
 
 };

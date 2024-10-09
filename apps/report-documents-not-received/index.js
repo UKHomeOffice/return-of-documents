@@ -9,6 +9,7 @@ module.exports = {
     '/documents-not-received-start': {
     },
     '/documents-not-received-main-applicant': {
+      fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
       next: '/documents-not-received-application'
     },
     '/documents-not-received-application': {

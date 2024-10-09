@@ -6,9 +6,7 @@ module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
   steps: {
-    '/cancel-request': {
-      fields: ['name'],
-      next: '/cancel-request-main-applicant'
+    '/cancel-request-start': {
     },
     '/cancel-request-main-applicant': {
       fields: ['cnc-main-applicant-full-name', 'cnc-main-applicant-dob', 'cnc-main-applicant-nationality'],
@@ -81,6 +79,10 @@ module.exports = {
     },
     '/cancel-request-confirm': {
       next: '/cancellation-received'
+    },
+    '/cancel-request-visa-type': {
+      fields: ['cnc-application-visa-type'],
+      next: '/cancel-request-reference-number'
     },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],

@@ -6,5 +6,8 @@
     "header": "Check your answers [Skeleton]",
     "sections": {},
     "fields": {}
+  },
+  "documents-not-received-main-applicant": {
+    "header": "Main applicant’s details"
   }
 }
