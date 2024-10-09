@@ -6,9 +6,7 @@ module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
   steps: {
-    '/cancel-request': {
-      fields: ['name'],
-      next: '/cancel-request-main-applicant'
+    '/cancel-request-start': {
     },
     '/cancel-request-main-applicant': {
       fields: [
@@ -49,6 +47,7 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-who-representing': {
+      fields: ['cnc-who-is-representing'],
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {

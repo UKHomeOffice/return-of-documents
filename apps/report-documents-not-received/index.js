@@ -7,9 +7,9 @@ module.exports = {
   confirmStep: '/documents-not-received-confirm',
   steps: {
     '/documents-not-received-start': {
-      next: '/documents-not-received-main-applicant'
     },
     '/documents-not-received-main-applicant': {
+      fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
       next: '/documents-not-received-application'
     },
     '/documents-not-received-application': {

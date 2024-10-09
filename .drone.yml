@@ -11,7 +11,7 @@ environment:
   PRODUCTION_URL: www.cancel-application-and-return-documents.homeoffice.gov.uk
   IMAGE_URL: 340268328991.dkr.ecr.eu-west-2.amazonaws.com
   IMAGE_REPO: sas/rod
-  GIT_REPO: UKHomeOffice/rod
+  GIT_REPO: UKHomeOffice/return-of-documents
   HOF_CONFIG: hof-services-config/Return_Of_Documents
   NON_PROD_AVAILABILITY: Sun-Sat 06:00-24:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
@@ -193,7 +193,7 @@ steps:
           - master
           - feature/*
       event: pull_request
-  
+
   - name: setup_branch
     pull: if-not-exists
     image: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
