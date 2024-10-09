@@ -27,11 +27,13 @@ module.exports = {
   },
   'cnc-who-is-completing': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['applicant', 'legal-rep', 'sponsor', 'guardian'],
     validate: 'required'
   },
   'cnc-who-is-representing': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['applicant', 'document-holder'],
     validate: 'required'
   },
@@ -74,6 +76,20 @@ module.exports = {
   },
   'cnc-contact-telephone-number': {
     mixin: 'input-text',
+    validate: 'required'
+  },
+  'cnc-application-visa-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: [
+      'british-national',
+      'exceptional-talent',
+      'skilled-worker',
+      'study',
+      'temporary-worker',
+      'turkish-national',
+      'different-type'
+    ],
     validate: 'required'
   }
 

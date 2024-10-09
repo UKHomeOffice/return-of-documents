@@ -1,10 +1,13 @@
 {
   "documents-not-received-start": {
-    "header": "Report that you have not received you [Skeleton]"
+    "header": "Report that you have not received your documents"
   },
   "documents-not-received-confirm": {
     "header": "Check your answers [Skeleton]",
     "sections": {},
     "fields": {}
+  },
+  "documents-not-received-main-applicant": {
+    "header": "Main applicant’s details"
   }
 }

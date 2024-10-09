@@ -6,21 +6,20 @@ module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
   steps: {
-    '/cancel-request': {
-      fields: ['name'],
-      next: '/cancel-request-main-applicant'
+    '/cancel-request-start': {
     },
     '/cancel-request-main-applicant': {
       fields: ['cnc-main-applicant-full-name', 'cnc-main-applicant-dob', 'cnc-main-applicant-nationality'],
       next: '/cancel-request-who-completed-form'
     },
     '/cancel-request-who-completed-form': {
+      fields: ['cnc-who-is-completing'],
       forks: [
         {
           target: '/cancel-request-who-representing',
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-legal-rep'
+            value: 'legal-rep'
           },
           continueOnEdit: false
         },
@@ -29,7 +28,7 @@ module.exports = {
           continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-sponsor'
+            value: 'sponsor'
           }
         },
         {
@@ -37,13 +36,14 @@ module.exports = {
           continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
-            value: 'cnc-guardian'
+            value: 'guardian'
           }
         }
       ],
       next: '/cancel-request-application'
     },
     '/cancel-request-who-representing': {
+      fields: ['cnc-who-is-representing'],
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {
@@ -80,6 +80,10 @@ module.exports = {
     },
     '/cancel-request-confirm': {
       next: '/cancellation-received'
+    },
+    '/cancel-request-visa-type': {
+      fields: ['cnc-application-visa-type'],
+      next: '/cancel-request-reference-number'
     },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],

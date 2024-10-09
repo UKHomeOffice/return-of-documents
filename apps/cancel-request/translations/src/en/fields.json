@@ -13,5 +13,70 @@
         "options": {
             "none_selected": "Select a country"
     }
+        },
+    "cnc-who-is-completing": {
+        "legend": "Who completed the original form?",
+        "hint": "This form must be completed by the same person who made the original request or their authorised legal representative",
+        "options": {
+            "applicant": {
+              "label": "The main applicant"
+            },
+            "legal-rep": {
+              "label": "A legal representative",
+              "hint": "This includes legal representatives of main applicants, document holders and sponsors"
+            },
+            "sponsor": {
+              "label": "A sponsor",
+              "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
+            },
+            "guardian": {
+              "label": "A dependant or guardian of a dependant"
+            }
+          }
+        },
+    "cnc-who-is-representing": {
+      "legend": "Who are you legally representing?",
+      "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
+      "options": {
+        "applicant": {
+          "label": "The main applicant"
+        },
+        "document-holder": {
+          "label": "A document holder"
         }
+      }
+    },
+
+    "cnc-application-visa-type": {
+     "legend": "What type of visa is the application for?",
+      "options": {
+      "british-national": {
+        "label": "British national (overseas) visa"
+      },
+      "exceptional-talent": {
+        "label": "Exceptional talent visa",
+        "hint": "Also called tier 1 in the points-based system"
+      },
+      "skilled-worker": {
+        "label": "Skilled worker visa",
+        "hint": "Also called tier 2 in the points-based system"
+      },
+      "study": {
+        "label": "Study visa",
+        "hint": "Also called tier 4 in the points-based system"
+      },
+      "temporary-worker": {
+        "label": "Temporary work visa",
+        "hint": "Also called tier 5 in the points-based system"
+      },
+      "turkish-national": {
+        "label": "Turkish national visa",
+        "hint": "Includes Turkish businessperson and Turkish worker visas"
+      },
+      "different-type": {
+        "label": "A different type of visa"
+      }
+    }
+  }
 }
+
