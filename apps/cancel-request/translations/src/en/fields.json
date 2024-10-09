@@ -34,9 +34,22 @@
             }
           }
         },
-  "cnc-application-visa-type": {
-    "legend": "What type of visa is the application for?",
-    "options": {
+    "cnc-who-is-representing": {
+      "legend": "Who are you legally representing?",
+      "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
+      "options": {
+        "applicant": {
+          "label": "The main applicant"
+        },
+        "document-holder": {
+          "label": "A document holder"
+        }
+      }
+    },
+
+    "cnc-application-visa-type": {
+     "legend": "What type of visa is the application for?",
+      "options": {
       "british-national": {
         "label": "British national (overseas) visa"
       },
@@ -65,4 +78,5 @@
       }
     }
   }
-    }
+}
+
