@@ -104,18 +104,18 @@
     }
   },
   "enter-record-number": {
-    "label": "Enter the record number"
+    "label": "Enter a record number"
   },
   "enter-case-id": {
-    "label": "Enter the case id"
+    "label": "Enter the case ID"
   },
   "enter-ho-reference-number": {
-    "label": "Enter home office reference number"
+    "label": "Enter the Home Office reference number"
   },
   "enter-payment-reference-number": {
-    "label": "Enter payment reference number"
+    "label": "Enter a payment reference number"
   },
   "enter-courier-reference-number": {
-    "label": "Enter courier reference number"
+    "label": "Enter a courier reference number"
   }
     }

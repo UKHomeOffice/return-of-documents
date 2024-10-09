@@ -6,8 +6,7 @@ module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
   steps: {
-    '/cancel-request-start': {
-    },
+    '/cancel-request-start': {},
     '/cancel-request-main-applicant': {
       fields: [
         'cnc-main-applicant-full-name',
@@ -77,7 +76,14 @@ module.exports = {
       next: '/cancel-request-reference-number'
     },
     '/cancel-request-reference-number': {
-      fields: ['cnc-reference-number'],
+      fields: [
+        'cnc-reference-number',
+        'enter-record-number',
+        'enter-case-id',
+        'enter-ho-reference-number',
+        'enter-payment-reference-number',
+        'enter-courier-reference-number'
+      ],
       next: '/cancel-request-contact-details'
     },
     '/cancel-request-contact-details': {

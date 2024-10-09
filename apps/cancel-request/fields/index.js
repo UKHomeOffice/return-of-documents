@@ -128,46 +128,40 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'record-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', 'notUrl']
-
+    validate: ['required', { type: 'maxlength', arguments: 12 }, { type: 'minlength', arguments: 9 }]
   },
   'enter-case-id': {
     dependent: {
       field: 'cnc-reference-number',
       value: 'case-id'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', 'notUrl']
+    validate: ['required', { type: 'maxlength', arguments: 8 }, { type: 'minlength', arguments: 8 }, 'numeric']
   },
   'enter-ho-reference-number': {
     dependent: {
       field: 'cnc-reference-number',
       value: 'ho-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', 'notUrl']
+    validate: ['required', { type: 'maxlength', arguments: 8 }, { type: 'minlength', arguments: 8 }, 'alphanum']
   },
   'enter-payment-reference-number': {
     dependent: {
       field: 'cnc-reference-number',
       value: 'payment-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', 'notUrl']
+    validate: ['required', { type: 'maxlength', arguments: 100 }]
   },
   'enter-courier-reference-number': {
     dependent: {
       field: 'cnc-reference-number',
       value: 'courier-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', 'notUrl']
+    validate: ['required', { type: 'maxlength', arguments: 100 }]
   },
   'cnc-contact-email': {
     mixin: 'input-text',
