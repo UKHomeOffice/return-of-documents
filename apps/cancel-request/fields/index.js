@@ -43,6 +43,7 @@ module.exports = {
   },
   'cnc-who-is-representing': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['applicant', 'document-holder'],
     validate: 'required'
   },
