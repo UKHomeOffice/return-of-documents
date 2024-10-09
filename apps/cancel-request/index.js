@@ -90,7 +90,7 @@ module.exports = {
       fields: ['cnc-application-visa-type'],
       next: '/cancel-request-reference-number'
     },
-    '/request-further-leave': {
+    '/cancel-request-further-leave': {
       fields: ['cnc-further-leave-to-remain'],
       next: '/cancel-request-reference-number'
     },
