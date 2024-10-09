@@ -77,6 +77,23 @@
         "label": "A different type of visa"
       }
     }
+  },
+  "cnc-further-leave-to-remain": {
+    "legend": "Which type of further leave did you apply for?",
+    "options": {
+      "flr-fp": {
+        "label": "FLR (FP)"
+      },
+      "flr-m": {
+        "label": "FLR (M)"
+      },
+      "flr-ir": {
+        "label": "FLR (IR)"
+      },
+      "flr-hro": {
+        "label": "FLR (HRO)"
+      }
+    }
   }
 }
 
