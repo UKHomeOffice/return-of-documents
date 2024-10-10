@@ -2,6 +2,9 @@
   "start": {
     "header": "Cancel an application and get your documents back"
   },
+  "request-received": {
+    "confirmed": "Request received"
+  },
   "confirm": {
     "header": "Check your answers",
     "sections": {
