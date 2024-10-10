@@ -6,6 +6,9 @@
   "cancel-request-main-applicant": {
     "header": "Main applicant’s details"
   },
+  "cancellation-received": {
+    "confirmed": "Cancellation request received"
+  },
   "confirm": {
     "header": "Check your answers [Skeleton]",
     "sections": {
