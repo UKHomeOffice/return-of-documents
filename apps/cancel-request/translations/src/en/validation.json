@@ -26,6 +26,9 @@
   "cnc-further-leave-to-remain": {
     "required": "Select which type of further leave you applied for"
   },
+  "cnc-sponsor-type": {
+    "required": "Select what type of sponsor you are"
+  },
   "cnc-reference-number": {
     "required": "You must provide a reference number. Select one you can provide"
   },
