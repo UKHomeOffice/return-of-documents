@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       step: '/application',
-      field: 'application-type',
+      field: 'application-type'
     },
     {
       step: '/about-application',
