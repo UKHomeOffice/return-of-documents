@@ -2,6 +2,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 
+function hoRefNum(value) {
+  return value.match(/^[A-Z]\d+$/i);
+}
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -130,7 +134,12 @@ module.exports = {
       value: 'record-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 12 }, { type: 'minlength', arguments: 9 }],
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 12 },
+      { type: 'minlength', arguments: 9 },
+      'alphanum'
+    ],
     attributes: [{ prefix: 'ROD' }]
   },
   'enter-case-id': {
@@ -139,7 +148,12 @@ module.exports = {
       value: 'case-id'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 8 }, { type: 'minlength', arguments: 8 }, 'numeric']
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 8 },
+      { type: 'minlength', arguments: 8 },
+      'numeric'
+    ]
   },
   'enter-ho-reference-number': {
     dependent: {
@@ -147,7 +161,13 @@ module.exports = {
       value: 'ho-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 8 }, { type: 'minlength', arguments: 8 }, 'alphanum']
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 8 },
+      { type: 'minlength', arguments: 8 },
+      'alphanum',
+      hoRefNum
+    ]
   },
   'enter-payment-reference-number': {
     dependent: {
