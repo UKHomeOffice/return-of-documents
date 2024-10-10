@@ -6,6 +6,10 @@ function hoRefNum(value) {
   return value.match(/^[A-Z]\d+$/i);
 }
 
+function recordNum(value) {
+  return value.match(/^(ROD\d{9}|\d{9})$/);
+}
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -127,7 +131,6 @@ module.exports = {
       }
     ]
   },
-
   'enter-record-number': {
     dependent: {
       field: 'cnc-reference-number',
@@ -138,7 +141,8 @@ module.exports = {
       'required',
       { type: 'maxlength', arguments: 12 },
       { type: 'minlength', arguments: 9 },
-      'alphanum'
+      'alphanum',
+      recordNum
     ],
     attributes: [{ prefix: 'ROD' }]
   },

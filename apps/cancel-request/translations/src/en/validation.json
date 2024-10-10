@@ -36,7 +36,8 @@
     "required": "Enter a record number",
     "minlength": "Record number must be between 9 and 12 characters",
     "maxlength": "Record number must be between 9 and 12 characters",
-    "alphanum": "Enter a real record number. For example, ROD123456789"
+    "alphanum": "Enter a real record number. For example, ROD123456789",
+    "recordNum": "Enter a real record number. For example, ROD123456789"
   },
   "enter-case-id":{
     "required": "Enter the case ID",
