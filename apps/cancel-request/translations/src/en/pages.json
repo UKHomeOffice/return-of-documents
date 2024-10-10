@@ -1,7 +1,6 @@
 {
   "cancel-request-start": {
-    "header": "Cancel a request to return your documents",
-    "title": "Cancel a request of documents request"
+    "header": "Cancel a request to return your documents"
   },
   "cancel-request-main-applicant": {
     "header": "Main applicant’s details"
