@@ -13,5 +13,8 @@
   },
   "dnr-nationality": {
     "required": "Select the main applicant's country of nationality"
+  },
+  "dnr-visa-type": {
+    "required": "Select what type of visa the application was for"
   }
 }

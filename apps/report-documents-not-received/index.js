@@ -75,6 +75,7 @@ module.exports = {
       next: '/documents-not-received-visa-type'
     },
     '/documents-not-received-visa-type': {
+      fields: ['dnr-visa-type'],
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-further-leave': {
