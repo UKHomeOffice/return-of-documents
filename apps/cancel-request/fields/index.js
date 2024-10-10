@@ -49,6 +49,7 @@ module.exports = {
   },
   'cnc-sponsor-type': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
     validate: 'required'
   },
