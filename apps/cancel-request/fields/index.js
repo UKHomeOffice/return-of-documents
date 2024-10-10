@@ -55,7 +55,8 @@ module.exports = {
   },
   'cnc-dependant-or-guardian': {
     mixin: 'radio-group',
-    options: ['british-sponsor', 'settle-sponsor', 'eea-sponsor'],
+    isPageHeading: true,
+    options: ['dependant-over-18', 'parent-guardian-under-18'],
     validate: 'required'
   },
   'cnc-reason-for-application': {
