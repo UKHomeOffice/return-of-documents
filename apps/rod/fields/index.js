@@ -40,6 +40,6 @@ module.exports = {
       'settlement',
       'limited-leave-replacement-brp'
     ],
-    validate: 'required',
+    validate: 'required'
   }
 };

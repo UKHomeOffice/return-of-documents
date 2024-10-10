@@ -10,7 +10,11 @@ module.exports = {
     },
     '/cancel-request-main-applicant': {
       backLink: 'cancel-request-start',
-      fields: ['cnc-main-applicant-full-name', 'cnc-main-applicant-dob', 'cnc-main-applicant-nationality'],
+      fields: [
+        'cnc-main-applicant-full-name',
+        'cnc-main-applicant-dob',
+        'cnc-main-applicant-nationality'
+      ],
       next: '/cancel-request-who-completed-form'
     },
     '/cancel-request-who-completed-form': {
@@ -48,6 +52,7 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {
+      fields: ['cnc-sponsor-type'],
       next: '/cancel-request-application'
     },
     '/cancel-request-dependant-or-guardian': {
@@ -84,6 +89,10 @@ module.exports = {
     },
     '/cancel-request-visa-type': {
       fields: ['cnc-application-visa-type'],
+      next: '/cancel-request-reference-number'
+    },
+    '/cancel-request-further-leave': {
+      fields: ['cnc-further-leave-to-remain'],
       next: '/cancel-request-reference-number'
     },
     '/confirm': {

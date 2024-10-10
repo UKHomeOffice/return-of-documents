@@ -21,5 +21,12 @@
         "label": "label [Skeleton]"
       }
     }
+  },
+  "cancel-request-further-leave":{
+    "header": "Further leave to remain (permission to stay)",
+    "p1": "There are different categories of further leave to remain (also called permission to stay), depending on your circumstances.",
+    "link-read-more": "Read more about the types of further leave",
+    "p2": "to check which one you applied for.",
+    "p3": "You will have used an online form called 'FLR' to apply. You will have applied from inside the UK."
   }
 }
