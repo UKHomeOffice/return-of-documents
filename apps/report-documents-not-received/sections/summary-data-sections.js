@@ -1,7 +1,22 @@
 'use strict';
 
+const config = require('../../../config');
+const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
+
 module.exports = {
-  start: [
-    'name'
+  sectionHeader: [
+    {
+      step: '/documents-not-received-main-applicant',
+      field: 'dnr-full-name'
+    },
+    {
+      step: '/documents-not-received-main-applicant',
+      field: 'dnr-dob',
+      parse: d => d && dateFormater.format(new Date(d))
+    },
+    {
+      step: '/documents-not-received-main-applicant',
+      field: 'dnr-nationality'
+    }
   ]
 };

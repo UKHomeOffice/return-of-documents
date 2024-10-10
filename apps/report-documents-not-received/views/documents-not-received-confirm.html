@@ -1,0 +1,13 @@
+{{<partials-page}}
+  {{$page-content}}
+    
+    <div class="table-details">
+      {{#rows}}
+        {{> partials-summary-table}}
+      {{/rows}}
+    </div>
+
+
+    {{#input-submit}}confirm-submission{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
