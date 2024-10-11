@@ -7,7 +7,7 @@ function hoRefNum(value) {
 }
 
 function recordNum(value) {
-  return value.match(/^(ROD\d{9}|\d{9})$/);
+  return value.match(/^(ROD\d{9}|\d{9})$/i);
 }
 
 module.exports = {
@@ -191,7 +191,7 @@ module.exports = {
       value: 'courier-reference-number'
     },
     labelClassName: 'govuk-label--s',
-    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }]
   },
   'cnc-contact-email': {
