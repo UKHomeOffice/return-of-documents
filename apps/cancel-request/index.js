@@ -54,6 +54,7 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-dependant-or-guardian': {
+      fields: ['cnc-dependant-or-guardian'],
       next: '/cancel-request-application'
     },
     '/cancel-request-application': {

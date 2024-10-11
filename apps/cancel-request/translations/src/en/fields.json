@@ -113,6 +113,19 @@
       }
     }
   },
+  "cnc-dependant-or-guardian": {
+    "legend": "Are you a dependant or a guardian of a dependant?",
+    "options": {
+      "dependant-over-18":{
+        "label": "A dependant aged 18 or over",
+        "hint": "You are an adult named as a dependant on the application"
+      },
+      "parent-guardian-under-18": {
+        "label": "A parent or guardian of a dependant who is under 18",
+        "hint": "You are acting on behalf of a child named as a dependant on the application"
+      }
+    }
+  },
   "cnc-reference-number": {
     "legend": "Which reference number can you provide?",
     "options": {

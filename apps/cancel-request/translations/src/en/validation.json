@@ -17,18 +17,21 @@
     "cnc-who-is-completing": {
         "required": "Select who completed the original form"
     },
-  "cnc-application-visa-type": {
-    "required": "Select what type of visa the application was for"
-  },
-  "cnc-who-is-representing": {
-      "required": "Select who you are legally representing"
-  },
-  "cnc-further-leave-to-remain": {
-    "required": "Select which type of further leave you applied for"
-  },
-  "cnc-sponsor-type": {
-    "required": "Select what type of sponsor you are"
-  },
+    "cnc-application-visa-type": {
+        "required": "Select what type of visa the application was for"
+    },
+    "cnc-who-is-representing": {
+        "required": "Select who you are legally representing"
+    },
+    "cnc-further-leave-to-remain": {
+        "required": "Select which type of further leave you applied for"
+    },
+    "cnc-sponsor-type": {
+        "required": "Select what type of sponsor you are"
+    },
+    "cnc-dependant-or-guardian": {
+        "required": "Select whether you are a dependant or a guardian of a dependant"
+    },
   "cnc-reference-number": {
     "required": "You must provide a reference number. Select one you can provide"
   },
