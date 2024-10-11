@@ -1,1 +1,11 @@
-{}
+{
+    "who-is-completing": {
+        "required": "Select who is completing this form"
+    },
+    "who-is-representing": {
+        "required": "Select who you are legally representing"
+    },
+    "sponsor-type": {
+        "required": "Select what type of sponsor you are"
+    }
+}
