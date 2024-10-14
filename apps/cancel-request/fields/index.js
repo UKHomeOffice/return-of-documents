@@ -137,7 +137,6 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'record-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
@@ -153,7 +152,6 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'case-id'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
@@ -167,7 +165,6 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'ho-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
@@ -182,7 +179,6 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'payment-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: ['required', { type: 'maxlength', arguments: 100 }]
   },
@@ -191,7 +187,6 @@ module.exports = {
       field: 'cnc-reference-number',
       value: 'courier-reference-number'
     },
-    labelClassName: 'govuk-label--s',
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }]
   },
