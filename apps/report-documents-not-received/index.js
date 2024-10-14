@@ -9,6 +9,7 @@ module.exports = {
     '/documents-not-received-start': {
     },
     '/documents-not-received-main-applicant': {
+      backLink: 'documents-not-received-start',
       fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
       next: '/documents-not-received-application'
     },
@@ -89,11 +90,10 @@ module.exports = {
     '/documents-not-received-confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),
-      next: '/report-confirmation'
+      next: '/report-submitted'
     },
-    '/report-confirmation': {
+    '/report-submitted': {
       backLink: false,
-      template: 'confirmation',
       clearSession: true
     }
   }
