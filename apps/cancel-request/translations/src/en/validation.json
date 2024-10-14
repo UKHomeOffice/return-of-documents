@@ -43,13 +43,13 @@
     "recordNum": "Enter a real record number. For example, ROD123456789"
   },
   "enter-case-id":{
-    "required": "Enter the case ID",
+    "required": "Enter a case ID",
     "minlength": "Case ID must be at least 8 numbers",
     "maxlength": "Case ID cannot be more than 8 numbers",
     "numeric": "Case ID can only include numbers"
   },
   "enter-ho-reference-number":{
-    "required": "Enter the Home Office reference number",
+    "required": "Enter a Home Office reference number",
     "minlength": "Home Office reference must be at least 8 characters",
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
     "alphanum": "Home Office reference number must only include letters and numbers",
