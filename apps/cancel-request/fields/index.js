@@ -131,5 +131,23 @@ module.exports = {
     legend: {
       className: 'govuk-label--m'
     }
+  },
+  'cnc-email': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 6 },
+      { type: 'maxlength', arguments: 256 },
+      'email'
+    ]
+  },
+  'cnc-telephone': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      'internationalPhoneNumber'
+    ]
   }
 };

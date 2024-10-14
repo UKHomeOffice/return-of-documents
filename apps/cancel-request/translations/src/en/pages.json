@@ -25,5 +25,8 @@
     "link-read-more": "Read more about the types of further leave",
     "p2": "to check which one you applied for.",
     "p3": "You will have used an online form called 'FLR' to apply. You will have applied from inside the UK."
+  },
+  "cancel-request-contact-details":{
+    "header": "Contact details"
   }
 }

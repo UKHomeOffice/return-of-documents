@@ -31,5 +31,17 @@
     },
     "cnc-dependant-or-guardian": {
         "required": "Select whether you are a dependant or a guardian of a dependant"
+    },
+    "cnc-email":{
+        "required": "Enter an email address for the licence holder",
+        "minlength": "Enter a real email address",
+        "maxlength": "Enter a real email address",
+        "email": "Enter a real email address"
+    },
+    "cnc-telephone":{
+        "required": "Enter a contact telephone number",
+        "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+        "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+        "internationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192"
     }
 }

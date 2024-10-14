@@ -125,6 +125,14 @@
         "hint": "You are acting on behalf of a child named as a dependant on the application"
       }
     }
+  },
+  "cnc-email":{
+    "label": "Email address",
+    "hint": "This is where the Home Office will contact you about your request to cancel documents being returned"
+  },
+  "cnc-telephone":{
+    "label": "Contact telephone number",
+    "hint": "For international numbers, include the country code"
   }
 }
 
