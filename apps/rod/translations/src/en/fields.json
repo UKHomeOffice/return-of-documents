@@ -6,16 +6,18 @@
         "legend": "Who is completing this form?",
         "options":{
             "applicant": {
-                "label": "Main applicant"
+                "label": "The main applicant"
             },
             "who-is-rep": {
-                "label": "Skeleton"
+                "label": "A legal representative",
+                "hint": "This includes legal representatives of main applicants, document holders and sponsors"
             },
             "sponsor":{
-                "label": "Skeleton"
+                "label": "A sponsor",
+                "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
             },
             "guardian" :{
-                "label": "Skeleton"
+                "label": "A dependant or guardian of a dependant"
             }
         }
     },

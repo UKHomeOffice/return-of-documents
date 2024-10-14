@@ -10,14 +10,15 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      fields: ['who-is-completing'],
+      backLink: 'start',
       forks: [
         {
           target: '/application',
           condition: {
             field: 'who-is-completing',
             value: 'main-applicant'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/who-representing',
@@ -44,7 +45,6 @@ module.exports = {
           }
         }
       ],
-      fields: ['who-is-completing'],
       next: '/application'
     },
     '/who-representing': {
@@ -62,6 +62,7 @@ module.exports = {
       next: '/application'
     },
     '/application': {
+      fields: ['application-type'],
       forks: [
         {
           target: '/visa-type',
@@ -72,56 +73,15 @@ module.exports = {
           continueOnEdit: false
         },
         {
-          target: '/about-application', // logic required
-          continueOnEdit: true,
-          condition: {
-            field: 'application-type',
-            value: 'british-citizen'
-          }
-        },
-        {
           target: '/further-leave',
           continueOnEdit: true,
           condition: {
             field: 'application-type',
             value: 'further-leave'
           }
-        },
-        {
-          target: '/about-application', // logic required
-          continueOnEdit: true,
-          condition: {
-            field: 'application-type',
-            value: 'not-time-limit'
-          }
-        },
-        {
-          target: '/about-application', // logic required
-          continueOnEdit: true,
-          condition: {
-            field: 'application-type',
-            value: 'eu-settlement-scheme'
-          }
-        },
-        {
-          target: '/about-application', // logic required
-          continueOnEdit: true,
-          condition: {
-            field: 'application-type',
-            value: 'settlement'
-          }
-        },
-        {
-          target: '/about-application', // logic required
-          continueOnEdit: true,
-          condition: {
-            field: 'application-type',
-            value: 'limited-leave-replacement-brp'
-          }
         }
       ],
-      fields: ['application-type'],
-      next: '/visa-type'
+      next: '/about-application'
     },
     '/visa-type': {  // logic required
       next: '/about-application'
@@ -130,6 +90,7 @@ module.exports = {
       next: '/about-application'
     },
     '/about-application': { // Should hold a logic before access to this page
+      fields: ['is-cancel-application'],
       forks: [
         {
           target: '/cancelling-application',
@@ -138,18 +99,9 @@ module.exports = {
             value: 'yes'
           },
           continueOnEdit: false
-        },
-        {
-          target: '/main-applicant-passport',
-          condition: {
-            field: 'is-cancel-application',
-            value: 'no'
-          },
-          continueOnEdit: false
         }
       ],
-      fields: ['is-cancel-application'],
-      next: '/cancelling-application'
+      next: '/main-applicant-passport'
     },
     '/cancelling-application': { // Should hold a logic before access to this page
       next: '/reference-number'
@@ -190,6 +142,10 @@ module.exports = {
       next: '/your-documents'
     },
     '/your-documents': {
+
+      next: '/main-applicant'
+    },
+    '/main-applicant': {
 
       next: '/main-applicant-postcode'
     },
@@ -235,10 +191,6 @@ module.exports = {
 
       next: '/contact-details'
     },
-    '/enter-delivery-address': {
-
-      next: '/contact-details'
-    },
     '/contact-details': {
 
       next: '/extra-notes'
@@ -253,9 +205,9 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
-      next: '/confirmation'
+      next: '/request-received'
     },
-    '/confirmation': {
+    '/request-received': {
       clearSession: true
     }
   }

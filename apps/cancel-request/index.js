@@ -9,6 +9,7 @@ module.exports = {
     '/cancel-request-start': {
     },
     '/cancel-request-main-applicant': {
+      backLink: 'cancel-request-start',
       fields: [
         'cnc-main-applicant-full-name',
         'cnc-main-applicant-dob',
@@ -98,9 +99,9 @@ module.exports = {
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),
-      next: '/confirmation'
+      next: '/cancellation-received'
     },
-    '/confirmation': {
+    '/cancellation-received': {
       clearSession: true
     }
   }
