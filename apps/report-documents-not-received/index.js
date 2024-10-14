@@ -79,6 +79,7 @@ module.exports = {
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-further-leave': {
+      fields: ['dnr-further-leave-to-remain'],
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-reference-number': {

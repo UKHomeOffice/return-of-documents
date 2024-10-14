@@ -43,5 +43,13 @@ module.exports = {
       label: 'fields.dnr-nationality.options.none_selected'
     }].concat(countries),
     validate: 'required'
+  },
+  'dnr-further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
+    validate: 'required',
+    legend: {
+      className: 'govuk-label--m'
+    }
   }
 };

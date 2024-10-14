@@ -1,0 +1,15 @@
+{{<partials-page}}
+  {{$page-content}}
+  <p class="govuk-body">
+    {{#t}}pages.documents-not-received-further-leave.p1{{/t}}
+  </p>
+  <p class="govuk-body">
+    <a href="https://visas-immigration.service.gov.uk/product/family-routes">{{#t}}pages.documents-not-received-further-leave.link-read-more{{/t}}</a> {{#t}}pages.documents-not-received-further-leave.p2{{/t}}
+  </p>
+  <p class="govuk-body">
+    {{#t}}pages.documents-not-received-further-leave.p3{{/t}}
+  </p>
+  {{#renderField}}dnr-further-leave-to-remain{{/renderField}}
+  {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
