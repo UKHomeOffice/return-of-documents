@@ -7,7 +7,7 @@ function hoRefNum(value) {
 }
 
 function recordNum(value) {
-  return value.match(/^(ROD\d{9}|\d{9})$/i);
+  return value.match(/^(R[O0]D\d{9}|\d{9})$/i);
 }
 
 module.exports = {
