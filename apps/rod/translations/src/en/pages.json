@@ -2,19 +2,22 @@
   "start": {
     "header": "Cancel an application and get your documents back"
   },
+  "sectionHeader": {
+    "header": "Check your answers"
+  },
   "request-received": {
     "confirmed": "Request received"
   },
   "confirm": {
-    "header": "Check your answers",
-    "sections": {
-      "return-of-documents": {
-        "header": " "
-      }
-    },
     "fields": {
       "who-is-completing": {
         "label": "Person completing form"
+      },
+      "is-cancel-application": {
+        "label": "Cancelling application?"
+      },
+      "is-requesting-passport-to-travel": {
+        "label": "Main applicant’s passport for travel?"
       }
     }
   }
