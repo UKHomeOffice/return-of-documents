@@ -1,7 +1,5 @@
 {
   "header": "Report documents not received",
   "phase": "beta",
-  "confirmation": {
-    "message": "Report submitted"
-  }
+  "serviceName": "Report documents not received"
 }
