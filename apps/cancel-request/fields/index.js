@@ -1,6 +1,16 @@
 'use strict';
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+function validInternationalPhoneNumber(value) {
+  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
+  const isValidPhoneNumber = validators.regex(
+    phoneNumberWithoutSpace,
+    /^\(?\+?[\d()-]{8,16}$/
+  );
+  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
+}
 
 module.exports = {
   name: {
@@ -147,7 +157,7 @@ module.exports = {
       'required',
       { type: 'minlength', arguments: 8 },
       { type: 'maxlength', arguments: 16 },
-      'internationalPhoneNumber'
+      validInternationalPhoneNumber
     ]
   }
 };
