@@ -5,6 +5,7 @@ const SummaryPageBehaviour = require('hof').components.summary;
 module.exports = {
   name: 'cancel-request',
   baseUrl: '/',
+  confirmStep: '/cancel-request-confirm',
   steps: {
     '/cancel-request-start': {},
     '/cancel-request-main-applicant': {
@@ -93,7 +94,12 @@ module.exports = {
       next: '/cancel-request-confirm'
     },
     '/cancel-request-confirm': {
+      behaviours: [SummaryPageBehaviour],
+      sections: require('./sections/summary-data-sections'),
       next: '/cancellation-received'
+    },
+    '/cancellation-received': {
+      clearSession: true
     },
     '/cancel-request-visa-type': {
       fields: ['cnc-application-visa-type'],
@@ -102,14 +108,6 @@ module.exports = {
     '/cancel-request-further-leave': {
       fields: ['cnc-further-leave-to-remain'],
       next: '/cancel-request-reference-number'
-    },
-    '/confirm': {
-      behaviours: [SummaryPageBehaviour],
-      sections: require('./sections/summary-data-sections'),
-      next: '/cancellation-received'
-    },
-    '/cancellation-received': {
-      clearSession: true
     }
   }
 };
