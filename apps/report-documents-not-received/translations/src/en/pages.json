@@ -5,12 +5,23 @@
   "report-submitted": {
     "confirmed": "Report submitted"
   },
-  "documents-not-received-confirm": {
-    "header": "Check your answers [Skeleton]",
-    "sections": {},
-    "fields": {}
-  },
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
+  },
+  "sectionHeader": {
+    "header": "Check your answers"
+  },
+  "confirm": {
+    "fields": {
+      "dnr-full-name": {
+        "label": "Main applicant’s full name"
+      },
+      "dnr-dob": {
+        "label": "Main applicant’s date of birth"
+      },
+      "dnr-nationality": {
+        "label": "Main applicant’s nationality"
+      }
+    }
   }
 }
