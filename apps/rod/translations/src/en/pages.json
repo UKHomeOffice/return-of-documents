@@ -5,6 +5,9 @@
   "sectionHeader": {
     "header": "Check your answers"
   },
+  "request-received": {
+    "confirmed": "Request received"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {

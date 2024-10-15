@@ -2,6 +2,9 @@
   "documents-not-received-start": {
     "header": "Report that you have not received your documents"
   },
+  "report-submitted": {
+    "confirmed": "Report submitted"
+  },
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
   },

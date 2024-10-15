@@ -10,6 +10,7 @@ module.exports = {
     '/cancel-request-start': {
     },
     '/cancel-request-main-applicant': {
+      backLink: 'cancel-request-start',
       fields: [
         'cnc-main-applicant-full-name',
         'cnc-main-applicant-dob',
@@ -52,9 +53,11 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-sponsor-type': {
+      fields: ['cnc-sponsor-type'],
       next: '/cancel-request-application'
     },
     '/cancel-request-dependant-or-guardian': {
+      fields: ['cnc-dependant-or-guardian'],
       next: '/cancel-request-application'
     },
     '/cancel-request-application': {
@@ -87,6 +90,9 @@ module.exports = {
       behaviours: [SummaryPageBehaviour],
       sections: require('./sections/summary-data-sections'),
       next: '/cancellation-received'
+    },
+    '/cancellation-received': {
+      clearSession: true
     },
     '/cancel-request-visa-type': {
       fields: ['cnc-application-visa-type'],
