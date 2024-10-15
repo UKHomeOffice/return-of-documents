@@ -48,7 +48,7 @@ module.exports = {
       next: '/application'
     },
     '/who-representing': {
-
+      fields: ['who-is-representing'],
       next: '/legal-representation'
     },
     '/legal-representation': {
@@ -56,6 +56,7 @@ module.exports = {
       next: '/application'
     },
     '/sponsor-type': {
+      fields: ['sponsor-type'],
       next: '/application'
     },
     '/dependant-or-guardian': {

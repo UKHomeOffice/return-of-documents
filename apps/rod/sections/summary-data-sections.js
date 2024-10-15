@@ -7,6 +7,14 @@ module.exports = {
       field: 'who-is-completing'
     },
     {
+      step: '/who-representing',
+      field: 'who-is-representing'
+    },
+    {
+      step: '/sponsor-type',
+      field: 'sponsor-type'
+    },
+    {
       step: '/application',
       field: 'application-type'
     },

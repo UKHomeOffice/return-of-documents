@@ -13,6 +13,12 @@
       "who-is-completing": {
         "label": "Person completing form"
       },
+      "who-is-representing": {
+        "label": "Legally representing"
+      },
+      "sponsor-type": {
+        "label": "Sponsor type"
+      },
       "is-cancel-application": {
         "label": "Cancelling application?"
       },
