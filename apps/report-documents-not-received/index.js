@@ -14,68 +14,27 @@ module.exports = {
       next: '/documents-not-received-application'
     },
     '/documents-not-received-application': {
+      fields: ['dnr-application-type'],
       forks: [
         {
           target: '/documents-not-received-visa-type',
           condition: {
             field: 'dnr-application-type',
             value: 'dnr-visa'
-          },
-          continueOnEdit: false
-        },
-        {
-          target: '/documents-not-received-reference-number',
-          continueOnEdit: true,
-          condition: {
-            field: 'dnr-application-type',
-            value: 'dnr-british-citizen'
           }
         },
         {
           target: '/documents-not-received-further-leave',
-          continueOnEdit: true,
           condition: {
             field: 'dnr-application-type',
             value: 'dnr-further-leave'
           }
-        },
-        {
-          target: '/documents-not-received-reference-number',
-          continueOnEdit: true,
-          condition: {
-            field: 'dnr-application-type',
-            value: 'dnr-not-time-limit'
-          }
-        },
-        {
-          target: '/documents-not-received-reference-number',
-          continueOnEdit: true,
-          condition: {
-            field: 'dnr-application-type',
-            value: 'dnr-eu-settlement-scheme'
-          }
-        },
-        {
-          target: '/documents-not-received-reference-number',
-          continueOnEdit: true,
-          condition: {
-            field: 'dnr-application-type',
-            value: 'dnr-settlement'
-          }
-        },
-        {
-          target: '/documents-not-received-reference-number',
-          continueOnEdit: true,
-          condition: {
-            field: 'dnr-application-type',
-            value: 'dnr-limited-leave-replacement-brp'
-          }
         }
       ],
-      fields: ['dnr-application-type'],
-      next: '/documents-not-received-visa-type'
+      next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-visa-type': {
+      fields: ['dnr-visa-type'],
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-further-leave': {

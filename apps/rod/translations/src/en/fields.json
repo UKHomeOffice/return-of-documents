@@ -21,6 +21,36 @@
             }
         }
     },
+    "who-is-representing": {
+        "legend": "Who are you legally representing?",
+        "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
+        "options":{
+            "main-applicant": {
+                "label": "The main applicant"
+            },
+            "document-holder": {
+                "label": "A document holder"
+            }
+        }
+    },
+    "sponsor-type": {
+        "legend": "What type of sponsor are you?",
+        "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
+        "options":{
+            "british-sponsor": {
+                "label": "A British sponsor",
+                "hint": "You have British citizenship"
+            },
+            "settled-sponsor": {
+                "label": "A settled sponsor",
+                "hint": "You have settlement (also called indefinite leave to remain)"
+            },
+            "eea-sponsor": {
+                "label": "An EEA citizen sponsor",
+                "hint": "You are a citizen of an EU country, Switzerland, Norway, Iceland or Lichtenstein"
+            }
+        }
+    },
     "is-cancel-application": {
         "label": "Any documents that were sent with the application will be returned",
         "options":{
