@@ -2,29 +2,33 @@
   "dnr-application-type": {
     "legend": "What is the application for?",
     "options":{
-      "dnr-visa": {
-        "label": "Skeleton"
-      },
-      "dnr-british-citizen": {
-        "label": "Skeleton"
-      },
-      "dnr-further-leave":{
-        "label": "Skeleton"
-      },
-      "dnr-not-time-limit" :{
-        "label": "Skeleton"
-      },
-      "dnr-eu-settlement-scheme":{
-        "label": "Skeleton"
-      },
-      "dnr-settlement" :{
-        "label": "Skeleton"
-      },
-      "dnr-limited-leave-replacement-brp" :{
-        "label": "Skeleton"
+      "dnr-visa":{
+          "label": "A visa",
+          "hint": "Includes British National (Overseas) visas"
+        },
+        "dnr-british-citizen":{
+          "label": "British citizenship",
+          "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
+        },
+        "dnr-further-leave":{
+          "label": "Further leave to remain",
+          "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
+        },
+        "dnr-not-time-limit":{
+          "label": "No time limit or replacement settlement biometric residence permit"
+        },
+        "dnr-eu-settlement-scheme":{
+          "label": "Settled or pre-settled status under the European Union Settlement Scheme"
+        },
+        "dnr-settlement":{
+          "label": "Settlement",
+          "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
+        },
+        "dnr-limited-leave-replacement-brp":{
+          "label": "Transfer of conditions or limited leave replacement biometric residence permit"
+        }
       }
-    }
-  },
+    },
   "dnr-full-name": {
     "label": "Full name",
     "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
