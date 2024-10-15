@@ -15,7 +15,7 @@ module.exports = {
     {
       step: '/cancel-request-main-applicant',
       field: 'cnc-main-applicant-dob',
-      parse: (d) => d && dateFormater.format(new Date(d))
+      parse: d => d && dateFormater.format(new Date(d))
     },
     {
       step: '/cancel-request-main-applicant',
