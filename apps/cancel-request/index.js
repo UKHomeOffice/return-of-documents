@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'cancel-request',
@@ -80,6 +81,7 @@ module.exports = {
       next: '/cancel-request-reference-number'
     },
     '/cancel-request-reference-number': {
+      behaviours: [customValidation],
       fields: [
         'cnc-reference-number',
         'enter-record-number',

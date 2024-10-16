@@ -39,7 +39,6 @@
     "required": "Enter a record number",
     "minlength": "Record number must be between 9 and 12 characters",
     "maxlength": "Record number must be between 9 and 12 characters",
-    "alphanum": "Enter a real record number. For example, ROD123456789",
     "recordNum": "Enter a real record number. For example, ROD123456789"
   },
   "enter-case-id":{
@@ -52,7 +51,6 @@
     "required": "Enter a Home Office reference number",
     "minlength": "Home Office reference must be at least 8 characters",
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
-    "alphanum": "Home Office reference number must only include letters and numbers",
     "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers"
   },
   "enter-payment-reference-number":{

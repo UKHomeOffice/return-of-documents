@@ -2,14 +2,6 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 
-function hoRefNum(value) {
-  return value.match(/^[A-Z]\d+$/i);
-}
-
-function recordNum(value) {
-  return value.match(/^(R[O0]D\d{9}|\d{9})$/i);
-}
-
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -138,13 +130,7 @@ module.exports = {
       value: 'record-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: [
-      'required',
-      { type: 'maxlength', arguments: 12 },
-      { type: 'minlength', arguments: 9 },
-      'alphanum',
-      recordNum
-    ],
+    validate: ['required'],
     attributes: [{ prefix: 'ROD' }]
   },
   'enter-case-id': {
@@ -166,13 +152,7 @@ module.exports = {
       value: 'ho-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: [
-      'required',
-      { type: 'maxlength', arguments: 8 },
-      { type: 'minlength', arguments: 8 },
-      'alphanum',
-      hoRefNum
-    ]
+    validate: ['required']
   },
   'enter-payment-reference-number': {
     dependent: {
