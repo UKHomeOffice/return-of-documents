@@ -7,8 +7,7 @@ module.exports = {
   baseUrl: '/',
   confirmStep: '/cancel-request-confirm',
   steps: {
-    '/cancel-request-start': {
-    },
+    '/cancel-request-start': {},
     '/cancel-request-main-applicant': {
       backLink: 'cancel-request-start',
       fields: [
@@ -84,6 +83,7 @@ module.exports = {
       next: '/cancel-request-contact-details'
     },
     '/cancel-request-contact-details': {
+      fields: ['cnc-email', 'cnc-telephone'],
       next: '/cancel-request-confirm'
     },
     '/cancel-request-confirm': {

@@ -1,6 +1,16 @@
 'use strict';
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+function validInternationalPhoneNumber(value) {
+  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
+  const isValidPhoneNumber = validators.regex(
+    phoneNumberWithoutSpace,
+    /^\(?\+?[\d()-]{8,16}$/
+  );
+  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
+}
 
 module.exports = {
   name: {
@@ -131,5 +141,26 @@ module.exports = {
     legend: {
       className: 'govuk-label--m'
     }
+  },
+  'cnc-email': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 6 },
+      { type: 'maxlength', arguments: 256 },
+      'email'
+    ]
+  },
+  'cnc-telephone': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      validInternationalPhoneNumber
+    ],
+    className: ['govuk-input', 'govuk-!-width-one-half']
   }
 };
