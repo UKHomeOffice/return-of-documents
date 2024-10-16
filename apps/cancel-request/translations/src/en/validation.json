@@ -1,47 +1,49 @@
 {
-    "cnc-main-applicant-full-name": {
-        "required": "Enter the main applicant's full name",
-        "maxlength": "Applicant's full name must between be 3 and 250 characters",
-        "minlength": "Applicant's full name must be between 3 and 250 characters",
-        "notUrl": "Your answer must not contain URLs or links"
-    },
-    "cnc-main-applicant-dob": {
-        "required": "Enter the applicant's date of birth",
-        "before": "Main applicant's date of birth must be in the past",
-        "after": "Enter a real date of birth",
-        "date": "Enter a real date of birth"
-    },
-    "cnc-main-applicant-nationality": {
-        "required": "Select the main applicant's country of nationality"
-    },
-    "cnc-who-is-completing": {
-        "required": "Select who completed the original form"
-    },
-    "cnc-application-visa-type": {
-        "required": "Select what type of visa the application was for"
-    },
-    "cnc-who-is-representing": {
-        "required": "Select who you are legally representing"
-    },
-    "cnc-further-leave-to-remain": {
-        "required": "Select which type of further leave you applied for"
-    },
-    "cnc-sponsor-type": {
-        "required": "Select what type of sponsor you are"
-    },
-    "cnc-dependant-or-guardian": {
-        "required": "Select whether you are a dependant or a guardian of a dependant"
-    },
-    "cnc-email":{
-        "required": "Enter an email address for the licence holder",
-        "minlength": "Enter a real email address",
-        "maxlength": "Enter a real email address",
-        "email": "Enter a real email address"
-    },
-    "cnc-telephone":{
-        "required": "Enter a contact telephone number",
-        "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
-        "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
-        "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192"
-    }
+  "cnc-main-applicant-full-name": {
+    "required": "Enter the main applicant's full name",
+    "maxlength": "Applicant's full name must between be 3 and 250 characters",
+    "minlength": "Applicant's full name must be between 3 and 250 characters",
+    "notUrl": "Your answer must not contain URLs or links"
+  },
+  "cnc-main-applicant-dob": {
+    "required": "Enter the applicant's date of birth",
+    "before": "Main applicant's date of birth must be in the past",
+    "after": "Enter a real date of birth",
+    "date": "Enter a real date of birth"
+  },
+  "cnc-main-applicant-nationality": {
+    "required": "Select the main applicant's country of nationality"
+  },
+  "cnc-who-is-completing": {
+    "required": "Select who completed the original form"
+  },
+  "cnc-application-visa-type": {
+    "required": "Select what type of visa the application was for"
+  },
+  "cnc-who-is-representing": {
+    "required": "Select who you are legally representing"
+  },
+  "cnc-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
+  },
+  "cnc-sponsor-type": {
+    "required": "Select what type of sponsor you are"
+  },
+  "cnc-dependant-or-guardian": {
+    "required": "Select whether you are a dependant or a guardian of a dependant"
+  },
+  "cnc-email": {
+    "required": "Enter an email address for the licence holder",
+    "minlength": "Enter a real email address",
+    "maxlength": "Enter a real email address",
+    "email": "Enter a real email address",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  },
+  "cnc-telephone": {
+    "required": "Enter a contact telephone number",
+    "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  }
 }
