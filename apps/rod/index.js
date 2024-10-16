@@ -52,7 +52,7 @@ module.exports = {
       next: '/legal-representation'
     },
     '/legal-representation': {
-
+      fields: ['confirm-sent-letter-of-authority', 'legal-rep-name'],
       next: '/application'
     },
     '/sponsor-type': {
@@ -60,6 +60,7 @@ module.exports = {
       next: '/application'
     },
     '/dependant-or-guardian': {
+      fields: ['dependant-or-guardian'],
       next: '/application'
     },
     '/application': {

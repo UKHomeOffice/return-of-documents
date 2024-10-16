@@ -2,6 +2,12 @@
   "start": {
     "header": "Cancel an application and get your documents back"
   },
+  "legal-representation": {
+    "header": "Legal representation",
+    "p1": "To continue this form, you must have previously",
+    "link": "sent the Home Office a letter of authority",
+    "p2": "signed by your client."
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
@@ -18,6 +24,12 @@
       },
       "sponsor-type": {
         "label": "Sponsor type"
+      },
+      "dependant-or-guardian": {
+        "label": "Sponsor type"
+      },
+      "legal-rep-name": {
+        "label": "Legal firm or representative name"
       },
       "is-cancel-application": {
         "label": "Cancelling application?"
