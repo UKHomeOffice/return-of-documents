@@ -5,11 +5,6 @@
   "report-submitted": {
     "confirmed": "Report submitted"
   },
-  "documents-not-received-confirm": {
-    "header": "Check your answers [Skeleton]",
-    "sections": {},
-    "fields": {}
-  },
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
   },
@@ -19,5 +14,30 @@
     "link-read-more": "Read more about the types of further leave",
     "p2": "to check which one you applied for.",
     "p3": "You will have used an online form called 'FLR' to apply. You will have applied from inside the UK."
+  },
+  "sectionHeader": {
+    "header": "Check your answers"
+  },
+  "confirm": {
+    "fields": {
+      "dnr-full-name": {
+        "label": "Main applicant’s full name"
+      },
+      "dnr-dob": {
+        "label": "Main applicant’s date of birth"
+      },
+      "dnr-nationality": {
+        "label": "Main applicant’s nationality"
+      },
+      "dnr-application-type": {
+        "label": "Application type"
+      },
+      "dnr-visa-type": {
+        "label": "Type of visa"
+      },
+      "dnr-further-leave-to-remain": {
+        "label": "Further leave type"
+      }
+    }
   }
 }

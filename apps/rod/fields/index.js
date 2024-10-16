@@ -10,6 +10,18 @@ module.exports = {
     options: ['applicant', 'who-is-rep', 'sponsor', 'guardian'],
     validate: 'required'
   },
+  'who-is-representing': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: ['main-applicant', 'document-holder'],
+    validate: 'required'
+  },
+  'sponsor-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: ['british-sponsor', 'settled-sponsor', 'eea-sponsor'],
+    validate: 'required'
+  },
   'is-cancel-application': {
     mixin: 'radio-group',
     isPageHeading: true,

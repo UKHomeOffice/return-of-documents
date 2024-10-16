@@ -5,6 +5,7 @@ const dateComponent = require('hof').components.date;
 
 module.exports = {
   'dnr-application-type': {
+    isPageHeading: true,
     mixin: 'radio-group',
     options: ['dnr-visa',
       'dnr-british-citizen',
@@ -13,10 +14,7 @@ module.exports = {
       'dnr-eu-settlement-scheme',
       'dnr-settlement',
       'dnr-limited-leave-replacement-brp'],
-    validate: 'required',
-    legend: {
-      className: 'bold'
-    }
+    validate: 'required'
   },
   'dnr-full-name': {
     validate: [
@@ -51,5 +49,19 @@ module.exports = {
     legend: {
       className: 'govuk-label--m'
     }
+  },
+  'dnr-visa-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: [
+      'dnr-visa-type-british',
+      'dnr-visa-type-talent',
+      'dnr-visa-type-skilled',
+      'dnr-visa-type-study',
+      'dnr-visa-type-temp',
+      'dnr-visa-type-turkish',
+      'dnr-visa-type-different'
+    ],
+    validate: 'required'
   }
 };

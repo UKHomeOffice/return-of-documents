@@ -1,60 +1,98 @@
 {
-    "dnr-application-type": {
-        "legend": "What is the application for?",
-        "options":{
-            "dnr-visa": {
-                "label": "Skeleton"
-            },
-            "dnr-british-citizen": {
-                "label": "Skeleton"
-            },
-            "dnr-further-leave":{
-                "label": "Skeleton"
-            },
-            "dnr-not-time-limit" :{
-                "label": "Skeleton"
-            },
-            "dnr-eu-settlement-scheme":{
-                "label": "Skeleton"
-            },
-            "dnr-settlement" :{
-                "label": "Skeleton"
-            },
-            "dnr-limited-leave-replacement-brp" :{
-                "label": "Skeleton"
-            }
+  "dnr-application-type": {
+    "legend": "What is the application for?",
+    "options":{
+      "dnr-visa":{
+          "label": "A visa",
+          "hint": "Includes British National (Overseas) visas"
+        },
+        "dnr-british-citizen":{
+          "label": "British citizenship",
+          "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
+        },
+        "dnr-further-leave":{
+          "label": "Further leave to remain",
+          "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
+        },
+        "dnr-not-time-limit":{
+          "label": "No time limit or replacement settlement biometric residence permit"
+        },
+        "dnr-eu-settlement-scheme":{
+          "label": "Settled or pre-settled status under the European Union Settlement Scheme"
+        },
+        "dnr-settlement":{
+          "label": "Settlement",
+          "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
+        },
+        "dnr-limited-leave-replacement-brp":{
+          "label": "Transfer of conditions or limited leave replacement biometric residence permit"
         }
+      }
     },
-    "dnr-full-name": {
-      "label": "Full name",
-      "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+  "dnr-full-name": {
+    "label": "Full name",
+    "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+  },
+  "dnr-dob": {
+    "legend": "Date of birth",
+    "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+  },
+  "dnr-nationality": {
+    "label": "Country of nationality",
+    "options": {
+      "none_selected": "Select a country"
     },
-    "dnr-dob": {
-      "legend": "Date of birth",
-      "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
-    },
-    "dnr-nationality": {
-      "label": "Country of nationality",
-      "options": {
-        "none_selected": "Select a country"
+    "hint": "This must match what is on the main applicant’s immigration document"
+  },
+  "dnr-visa-type": {
+    "legend": "What type of visa is the application for?",
+    "options": {
+      "dnr-visa-type-british": {
+        "label": "British national (overseas) visa"
       },
-      "hint": "This must match what is on the main applicant’s immigration document"
-    },
-    "dnr-further-leave-to-remain": {
-        "legend": "Which type of further leave did you apply for?",
-        "options": {
-          "flr-fp": {
-            "label": "FLR (FP)"
-          },
-          "flr-m": {
-            "label": "FLR (M)"
-          },
-          "flr-ir": {
-            "label": "FLR (IR)"
-          },
-          "flr-hro": {
-            "label": "FLR (HRO)"
-          }
-        }
+      "dnr-visa-type-talent": {
+        "label": "Exceptional talent visa",
+        "hint": "Also called tier 1 in the points-based system"
+      },
+      "dnr-visa-type-skilled":{
+        "label": "Skilled worker visa",
+        "hint": "Also called tier 2 in the points-based system"
+      },
+      "dnr-visa-type-study" :{
+        "label": "Study visa",
+        "hint": "Also called tier 4 in the points-based system"
+      },
+      "dnr-visa-type-temp":{
+        "label": "Temporary work visa",
+        "hint": "Also called tier 5 in the points-based system"
+      },
+      "dnr-visa-type-turkish" :{
+        "label": "Turkish national visa",
+        "hint": "Includes Turkish businessperson and Turkish worker visas"
+      },
+      "dnr-visa-type-different" :{
+        "label": "A different type of visa"
+      }
     }
+  },
+  "dnr-further-leave-to-remain": {
+    "legend": "Which type of further leave did you apply for?",
+    "options": {
+      "flr-fp": {
+        "label": "FLR (FP)"
+      },
+      "flr-m": {
+        "label": "FLR (M)"
+      },
+      "flr-ir": {
+        "label": "FLR (IR)"
+      },
+      "flr-hro": {
+        "label": "FLR (HRO)"
+      }
+    }
+  }
 }
+
+
+
