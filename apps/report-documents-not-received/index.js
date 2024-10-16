@@ -41,6 +41,14 @@ module.exports = {
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-reference-number': {
+      fields: [
+        'dnr-reference-number',
+        'dnr-record-number',
+        'dnr-case-id',
+        'dnr-ho-reference-number',
+        'dnr-payment-reference-number',
+        'dnr-courier-reference-number'
+      ],
       next: '/documents-not-received-contact-details'
     },
     '/documents-not-received-contact-details': {

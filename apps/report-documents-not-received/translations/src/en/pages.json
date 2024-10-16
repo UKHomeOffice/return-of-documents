@@ -21,6 +21,9 @@
       },
       "dnr-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "dnr-reference-number": {
+        "label": "Reference number"
       }
     }
   }
