@@ -1,16 +1,15 @@
 const validators = require('hof/controller/validation/validators');
 
-module.exports = (superclass) =>
+module.exports = superclass =>
   class extends superclass {
     validateField(key, req) {
       const validationErrorFunc = (type, args) =>
         new this.ValidationError(key, { type: type, arguments: [args] });
 
-      if (key == 'enter-record-number') {
+      if (key === 'enter-record-number') {
         const recordNum = req.form.values[key];
         if (recordNum) {
           const valueWithoutSpace = recordNum.replace(/\s+/g, '').trim();
-          console.log(valueWithoutSpace.length);
 
           if (!validators.minlength(valueWithoutSpace, 9)) {
             return validationErrorFunc('minlength');
@@ -26,11 +25,10 @@ module.exports = (superclass) =>
         }
       }
 
-      if (key == 'enter-ho-reference-number') {
+      if (key === 'enter-ho-reference-number') {
         const hoRefNum = req.form.values[key];
         if (hoRefNum) {
           const valueWithoutSpace = hoRefNum.replace(/\s+/g, '').trim();
-          console.log(valueWithoutSpace.length);
 
           if (!validators.minlength(valueWithoutSpace, 8)) {
             return validationErrorFunc('minlength');

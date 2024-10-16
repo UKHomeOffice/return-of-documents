@@ -1,64 +1,71 @@
 {
-    "cnc-main-applicant-full-name": {
-        "required": "Enter the main applicant's full name",
-        "maxlength": "Applicant's full name must between be 3 and 250 characters",
-        "minlength": "Applicant's full name must be between 3 and 250 characters",
-        "notUrl": "Your answer must not contain URLs or links"
-    },
-    "cnc-main-applicant-dob": {
-        "required": "Enter the applicant's date of birth",
-        "before": "Main applicant's date of birth must be in the past",
-        "after": "Enter a real date of birth",
-        "date": "Enter a real date of birth"
-    },
-    "cnc-main-applicant-nationality": {
-        "required": "Select the main applicant's country of nationality"
-    },
-    "cnc-who-is-completing": {
-        "required": "Select who completed the original form"
-    },
-    "cnc-application-visa-type": {
-        "required": "Select what type of visa the application was for"
-    },
-    "cnc-who-is-representing": {
-        "required": "Select who you are legally representing"
-    },
-    "cnc-further-leave-to-remain": {
-        "required": "Select which type of further leave you applied for"
-    },
-    "cnc-sponsor-type": {
-        "required": "Select what type of sponsor you are"
-    },
-    "cnc-dependant-or-guardian": {
-        "required": "Select whether you are a dependant or a guardian of a dependant"
-    },
+  "cnc-main-applicant-full-name": {
+    "required": "Enter the main applicant's full name",
+    "maxlength": "Applicant's full name must between be 3 and 250 characters",
+    "minlength": "Applicant's full name must be between 3 and 250 characters",
+    "notUrl": "Your answer must not contain URLs or links"
+  },
+  "cnc-main-applicant-dob": {
+    "required": "Enter the applicant's date of birth",
+    "before": "Main applicant's date of birth must be in the past",
+    "after": "Enter a real date of birth",
+    "date": "Enter a real date of birth"
+  },
+  "cnc-main-applicant-nationality": {
+    "required": "Select the main applicant's country of nationality"
+  },
+  "cnc-who-is-completing": {
+    "required": "Select who completed the original form"
+  },
+  "cnc-application-visa-type": {
+    "required": "Select what type of visa the application was for"
+  },
+  "cnc-who-is-representing": {
+    "required": "Select who you are legally representing"
+  },
+  "cnc-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
+  },
+  "cnc-sponsor-type": {
+    "required": "Select what type of sponsor you are"
+  },
+  "cnc-dependant-or-guardian": {
+    "required": "Select whether you are a dependant or a guardian of a dependant"
+  },
   "cnc-reference-number": {
     "required": "You must provide a reference number. Select one you can provide"
   },
-  "enter-record-number":{
+  "enter-record-number": {
     "required": "Enter a record number",
     "minlength": "Record number must be between 9 and 12 characters",
     "maxlength": "Record number must be between 9 and 12 characters",
-    "recordNum": "Enter a real record number. For example, ROD123456789"
+    "recordNum": "Enter a real record number. For example, ROD123456789",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "recordMaxLength": "Record number must be between 9 and 12 characters"
   },
-  "enter-case-id":{
+  "enter-case-id": {
     "required": "Enter a case ID",
     "minlength": "Case ID must be at least 8 numbers",
     "maxlength": "Case ID cannot be more than 8 numbers",
-    "numeric": "Case ID can only include numbers"
+    "numeric": "Case ID can only include numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
-  "enter-ho-reference-number":{
+  "enter-ho-reference-number": {
     "required": "Enter a Home Office reference number",
     "minlength": "Home Office reference must be at least 8 characters",
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
-    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers"
+    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "hoRefMaxLength": "Home Office reference number cannot be more than 8 numbers"
   },
-  "enter-payment-reference-number":{
+  "enter-payment-reference-number": {
     "required": "Enter a payment reference number",
-    "maxlength": "Payment reference number cannot be more than 100 characters"
+    "maxlength": "Payment reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
-  "enter-courier-reference-number":{
+  "enter-courier-reference-number": {
     "required": "Enter a courier reference number",
-    "maxlength": "Courier reference number cannot be more than 100 characters"
+    "maxlength": "Courier reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   }
 }

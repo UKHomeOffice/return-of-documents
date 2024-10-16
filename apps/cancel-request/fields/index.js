@@ -1,6 +1,29 @@
 'use strict';
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+// May be move this logic to behaviour later
+
+function removeWhiteSpace(value) {
+  return value.replace(/\s+/g, '');
+}
+
+function recordMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 12);
+}
+
+function recordNum(value) {
+  return removeWhiteSpace(value).match(/^(R[O0]D\d{9}|\d{9})$/i);
+}
+
+function hoRefMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 8);
+}
+
+function hoRefNum(value) {
+  return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
+}
 
 module.exports = {
   name: {
@@ -130,7 +153,14 @@ module.exports = {
       value: 'record-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required'],
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 9 },
+      'notUrl',
+      recordMaxLength,
+      recordNum,
+      { type: 'maxlength', arguments: 250 }
+    ],
     attributes: [{ prefix: 'ROD' }]
   },
   'enter-case-id': {
@@ -143,7 +173,8 @@ module.exports = {
       'required',
       { type: 'maxlength', arguments: 8 },
       { type: 'minlength', arguments: 8 },
-      'numeric'
+      'numeric',
+      'notUrl'
     ]
   },
   'enter-ho-reference-number': {
@@ -152,7 +183,14 @@ module.exports = {
       value: 'ho-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required']
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 8 },
+      'notUrl',
+      hoRefMaxLength,
+      hoRefNum,
+      { type: 'maxlength', arguments: 250 }
+    ]
   },
   'enter-payment-reference-number': {
     dependent: {
@@ -160,7 +198,7 @@ module.exports = {
       value: 'payment-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 100 }]
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   },
   'enter-courier-reference-number': {
     dependent: {
@@ -168,7 +206,7 @@ module.exports = {
       value: 'courier-reference-number'
     },
     className: ['govuk-input'],
-    validate: ['required', { type: 'maxlength', arguments: 100 }]
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   },
   'cnc-contact-email': {
     mixin: 'input-text',
