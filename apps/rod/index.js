@@ -62,6 +62,10 @@ module.exports = {
     '/dependant-or-guardian': {
       next: '/application'
     },
+    '/about-application': {
+      fields: ['date-of-application', 'cancel-application' ],
+      next: '/cancelling-application'
+    },
     '/application': {
       fields: ['application-type'],
       forks: [
@@ -106,6 +110,10 @@ module.exports = {
     },
     '/cancelling-application': { // Should hold a logic before access to this page
       next: '/reference-number'
+    },
+    '/about-application': {
+      fields: ['about-application'],
+      next: '/cancelling-application'
     },
 
     '/main-applicant-passport': { // Should hold a logic before access to this page

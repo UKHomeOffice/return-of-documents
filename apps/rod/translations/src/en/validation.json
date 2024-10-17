@@ -7,5 +7,8 @@
     },
     "sponsor-type": {
         "required": "Select what type of sponsor you are"
+    },
+    "about-application": {
+        "required": "woeifjwoife"
     }
 }
