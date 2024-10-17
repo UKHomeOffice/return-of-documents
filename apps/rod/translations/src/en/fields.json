@@ -109,5 +109,18 @@
                 "label": "Skeleton"
             }
         }
+    },
+    "about-application": {
+        "legend": "About the application",
+        "label": "Date the main applicant submitted the application",
+        "hint": "If you do not know the exact date, enter an approximate one",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
     }
 }

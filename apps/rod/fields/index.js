@@ -1,5 +1,7 @@
 'use strict';
 
+const dateComponent = require('hof').components.date;
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -53,5 +55,26 @@ module.exports = {
       'limited-leave-replacement-brp'
     ],
     validate: 'required'
-  }
+  },
+  'date-of-application': dateComponent('date-of-application', {
+    mixin: 'input-date',
+    isPageHeading: true,
+    options: ['yes', 'no'],
+    validate: ['required', 'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days'] }
+    ]
+  }),
+'cancel-application': {
+   mixin: 'radio-group',
+   validate: 'required',
+    options: [
+      {
+        value: 'yes'
+      },
+      {
+        value: 'no'
+      }
+    ]
+}
 };
