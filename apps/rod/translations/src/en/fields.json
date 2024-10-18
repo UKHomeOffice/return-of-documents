@@ -51,6 +51,25 @@
             }
         }
     },
+    "dependant-or-guardian": {
+        "legend": "Are you a dependant or a guardian of a dependant?",
+        "options":{
+            "dependant-over-18": {
+                "label": "A dependant aged 18 or over",
+                "hint": "You are an adult named as a dependant on the application"
+            },
+            "parent-guardian-under-18": {
+                "label": "A parent or guardian of a dependant who is under 18",
+                "hint": "You are acting on behalf of a child named as a dependant on the application"
+            }
+        }
+    },
+    "confirm-sent-letter-of-authority": {
+        "label": "I confirm I have sent the Home Office a signed letter of authority"
+    },
+    "legal-rep-name": {
+        "label": "Name of legal firm or representative"
+    },
     "is-cancel-application": {
         "label": "Any documents that were sent with the application will be returned",
         "options":{
