@@ -128,5 +128,21 @@
                 "label": "Skeleton"
             }
         }
+    },
+    "date-of-application": {
+        "legend": "Date the main applicant submitted the application",
+        "hint": "If you do not know the exact date, enter an approximate one"
+    },
+    "cancel-application": {
+        "legend": "Do you want to cancel the application?",
+        "hint": "Any documents that were sent with the application will be returned",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
     }
 }

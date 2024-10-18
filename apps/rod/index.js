@@ -91,24 +91,9 @@ module.exports = {
     '/further-leave': { // //logic required
       next: '/about-application'
     },
-    '/about-application': { // Should hold a logic before access to this page
-      fields: ['is-cancel-application'],
-      forks: [
-        {
-          target: '/cancelling-application',
-          condition: {
-            field: 'is-cancel-application',
-            value: 'yes'
-          },
-          continueOnEdit: false
-        }
-      ],
-      next: '/main-applicant-passport'
-    },
     '/cancelling-application': { // Should hold a logic before access to this page
       next: '/reference-number'
     },
-
     '/main-applicant-passport': { // Should hold a logic before access to this page
       forks: [
         {
