@@ -58,8 +58,6 @@ module.exports = {
   },
   'date-of-application': dateComponent('date-of-application', {
     mixin: 'input-date',
-    isPageHeading: true,
-    options: ['yes', 'no'],
     validate: ['required', 'date',
       { type: 'after', arguments: ['120', 'years'] },
       { type: 'before', arguments: ['0', 'days'] }
@@ -67,14 +65,8 @@ module.exports = {
   }),
 'cancel-application': {
    mixin: 'radio-group',
-   validate: 'required',
-    options: [
-      {
-        value: 'yes'
-      },
-      {
-        value: 'no'
-      }
-    ]
+   validate : "required",
+   options: ['yes', 'no'],
+   className: 'govuk-radios--inline',
 }
 };

@@ -2,6 +2,9 @@
   "start": {
     "header": "Cancel an application and get your documents back"
   },
+  "about-application": {
+    "header": "About the application"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
