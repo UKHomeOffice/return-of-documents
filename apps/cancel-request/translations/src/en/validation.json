@@ -72,8 +72,7 @@
     "required": "Enter an email address for the licence holder",
     "minlength": "Enter a real email address",
     "maxlength": "Enter a real email address",
-    "email": "Enter a real email address",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    "email": "Enter a real email address"
   },
   "cnc-telephone": {
     "required": "Enter a contact telephone number",
