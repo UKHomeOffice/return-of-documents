@@ -32,6 +32,42 @@
   "cnc-dependant-or-guardian": {
     "required": "Select whether you are a dependant or a guardian of a dependant"
   },
+  "cnc-reference-number": {
+    "required": "You must provide a reference number. Select one you can provide"
+  },
+  "enter-record-number": {
+    "required": "Enter a record number",
+    "minlength": "Record number must be between 9 and 12 characters",
+    "maxlength": "Record number must be between 9 and 12 characters",
+    "recordNum": "Enter a real record number. For example, ROD123456789",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "recordMaxLength": "Record number must be between 9 and 12 characters"
+  },
+  "enter-case-id": {
+    "required": "Enter a case ID",
+    "minlength": "Case ID must be at least 8 numbers",
+    "maxlength": "Case ID cannot be more than 8 numbers",
+    "numeric": "Case ID can only include numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "enter-ho-reference-number": {
+    "required": "Enter a Home Office reference number",
+    "minlength": "Home Office reference must be at least 8 characters",
+    "maxlength": "Home Office reference number cannot be more than 8 numbers",
+    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "hoRefMaxLength": "Home Office reference number cannot be more than 8 numbers"
+  },
+  "enter-payment-reference-number": {
+    "required": "Enter a payment reference number",
+    "maxlength": "Payment reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "enter-courier-reference-number": {
+    "required": "Enter a courier reference number",
+    "maxlength": "Courier reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
   "cnc-email": {
     "required": "Enter an email address for the licence holder",
     "minlength": "Enter a real email address",

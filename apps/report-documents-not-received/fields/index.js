@@ -42,6 +42,14 @@ module.exports = {
     }].concat(countries),
     validate: 'required'
   },
+  'dnr-further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
+    validate: 'required',
+    legend: {
+      className: 'govuk-label--m'
+    }
+  },
   'dnr-visa-type': {
     mixin: 'radio-group',
     isPageHeading: true,
