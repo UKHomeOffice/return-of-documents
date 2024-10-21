@@ -27,6 +27,10 @@ module.exports = {
       field: 'cnc-who-is-representing'
     },
     {
+      step: '/cancel-request-application',
+      field: 'cnc-reason-for-application'
+    },
+    {
       step: '/cancel-request-visa-type',
       field: 'cnc-application-visa-type'
     },
