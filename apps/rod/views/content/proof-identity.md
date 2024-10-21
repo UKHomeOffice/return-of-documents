@@ -1,5 +1,3 @@
-# For proof of identity only
-
 You can only use your passport to prove your identity, You cannot use it for travel.
 
 
