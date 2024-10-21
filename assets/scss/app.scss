@@ -9,7 +9,7 @@ h2 {
 }
 
 ul {
-  @extend .govuk-list--bullet;
+  @extend .govuk-list--bullet, .govuk-list;
 }
 
 a {

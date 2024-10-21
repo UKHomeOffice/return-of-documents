@@ -8,6 +8,9 @@
     "link": "sent the Home Office a letter of authority",
     "p2": "signed by your client."
   },
+  "cannot-travel": {
+    "header": "You cannot use this passport to travel"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
