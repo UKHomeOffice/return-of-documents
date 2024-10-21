@@ -93,7 +93,7 @@
         }
     },
     "is-requesting-passport-to-travel": {
-        "label": "Are you requesting the return of the main applicant's passport for travel",
+        "legend": "Are you requesting the return of the main applicant's passport for travel",
         "options":{
             "yes": {
                 "label": "Yes"
