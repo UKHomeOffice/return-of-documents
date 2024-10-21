@@ -1,6 +1,29 @@
 'use strict';
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+// May be move this logic to behaviour later
+
+function removeWhiteSpace(value) {
+  return value.replace(/\s+/g, '');
+}
+
+function recordMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 12);
+}
+
+function recordNum(value) {
+  return removeWhiteSpace(value).match(/^(R[O0]D\d{9}|\d{9})$/i);
+}
+
+function hoRefMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 8);
+}
+
+function hoRefNum(value) {
+  return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
+}
 
 module.exports = {
   name: {
@@ -93,14 +116,97 @@ module.exports = {
   },
   'cnc-reference-number': {
     mixin: 'radio-group',
+    labelClassName: 'govuk-label--s',
+    isPageHeading: true,
+    validate: ['required'],
     options: [
-      'record-number',
-      'case-id',
-      'ho-ref-number',
-      'payment-ref-number',
-      'courier-ref-number'
+      {
+        value: 'record-number',
+        toggle: 'enter-record-number',
+        child: 'input-text'
+      },
+      {
+        value: 'case-id',
+        toggle: 'enter-case-id',
+        child: 'input-text'
+      },
+      {
+        value: 'ho-reference-number',
+        toggle: 'enter-ho-reference-number',
+        child: 'input-text'
+      },
+      {
+        value: 'payment-reference-number',
+        toggle: 'enter-payment-reference-number',
+        child: 'input-text'
+      },
+      {
+        value: 'courier-reference-number',
+        toggle: 'enter-courier-reference-number',
+        child: 'input-text'
+      }
+    ]
+  },
+  'enter-record-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'record-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 9 },
+      'notUrl',
+      recordMaxLength,
+      recordNum,
+      { type: 'maxlength', arguments: 250 }
     ],
-    validate: 'required'
+    attributes: [{ prefix: 'ROD' }]
+  },
+  'enter-case-id': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'case-id'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 8 },
+      { type: 'minlength', arguments: 8 },
+      'numeric',
+      'notUrl'
+    ]
+  },
+  'enter-ho-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'ho-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 8 },
+      'notUrl',
+      hoRefMaxLength,
+      hoRefNum,
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'enter-payment-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'payment-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'enter-courier-reference-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'courier-reference-number'
+    },
+    className: ['govuk-input'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   },
   'cnc-contact-email': {
     mixin: 'input-text',

@@ -12,9 +12,9 @@ Step 1 : Install Node Version Manager
 
         Check the version   nvm --version
 
-Step 2 : nvm install 18.19.0
+Step 2 : nvm install 20.0.0
 
-Step 3: nvm use 18.19.0
+Step 3: nvm use 20.0.0
 
 Step 4: npm i -g yarn
 
@@ -70,7 +70,7 @@ The `.devcontainer` folder contains the necessary configuration files for the de
 
 ### Prerequisites
    - [Docker](https://www.docker.com)
-   - [VS Code Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extention
+   - [VS Code Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
 
    ### Setup
 
@@ -78,7 +78,7 @@ By following these steps, you should be able to run your application using a dev
 
 1. Make sure you have Docker installed and running on your machine. Docker is needed to create and manage your containers.
 
-2. Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extention in VS Code. This extension allows you to develop inside a containerised environment.
+2. Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code. This extension allows you to develop inside a containerised environment.
 
 3. To configure your dev environment, copy `/.devcontainer/devcontainer.env.sample` to `devcontainer.env` in the same directory and fill in the necessary values. This ensures your development container is set up with the required environment variables.
 

@@ -22,6 +22,19 @@ module.exports = {
     options: ['british-sponsor', 'settled-sponsor', 'eea-sponsor'],
     validate: 'required'
   },
+  'dependant-or-guardian': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: ['dependant-over-18', 'parent-guardian-under-18'],
+    validate: 'required'
+  },
+  'confirm-sent-letter-of-authority': {
+    mixin: 'checkbox',
+    validate: ['required']
+  },
+  'legal-rep-name': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
+  },
   'is-cancel-application': {
     mixin: 'radio-group',
     isPageHeading: true,

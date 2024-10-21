@@ -17,6 +17,9 @@
   "dnr-nationality": {
     "required": "Select the main applicant's country of nationality"
   },
+  "dnr-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
+  },
   "dnr-visa-type": {
     "required": "Select what type of visa the application was for"
   },

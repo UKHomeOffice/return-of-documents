@@ -125,6 +125,47 @@
         "hint": "You are acting on behalf of a child named as a dependant on the application"
       }
     }
+  },
+  "cnc-reference-number": {
+    "legend": "Which reference number can you provide?",
+    "options": {
+      "record-number": {
+        "label": "Record number",
+        "hint": "This is in the confirmation email you received when you submitted. For example, ROD123456789"
+      },
+      "case-id": {
+        "label": "Case ID",
+        "hint": "The main applicant received this number when they applied. For example, 12345678"
+      },
+      "ho-reference-number": {
+        "label": "Home Office reference number",
+        "hint": "This is on official documents, such as letters about your immigration status or biometric residence permit cards. For example, A1234567"
+      },
+      "payment-reference-number": {
+        "label": "Payment reference number",
+        "hint": "This is on the letter the Home Office sent to the main applicant confirming they received an application"
+      },
+      "courier-reference-number": {
+        "label": "Courier reference number",
+        "hint": "This includes Royal Mail reference numbers"
+      }
+    }
+  },
+  "enter-record-number": {
+    "label": "Enter the record number"
+  },
+  "enter-case-id": {
+    "label": "Enter the case ID"
+  },
+  "enter-ho-reference-number": {
+    "label": "Enter the Home Office reference number"
+  },
+  "enter-payment-reference-number": {
+    "label": "Enter the payment reference number"
+  },
+  "enter-courier-reference-number": {
+    "label": "Enter the courier reference number",
+    "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
   }
 }
 
