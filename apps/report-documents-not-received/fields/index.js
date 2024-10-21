@@ -88,7 +88,6 @@ module.exports = {
     mixin: 'input-text',
     validate: [
       'required',
-      'notUrl',
       { type: 'minlength', arguments: 8 },
       { type: 'maxlength', arguments: 16 },
       validInternationalPhoneNumber
