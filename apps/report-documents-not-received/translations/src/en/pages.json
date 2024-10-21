@@ -22,6 +22,9 @@
       "dnr-dob": {
         "label": "Main applicant’s date of birth"
       },
+      "dnr-nationality": {
+        "label": "Main applicant’s nationality"
+      },
       "dnr-email": {
         "label": "Contact email"
       },
