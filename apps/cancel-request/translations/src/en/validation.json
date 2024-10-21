@@ -68,7 +68,7 @@
     "maxlength": "Courier reference number cannot be more than 100 characters",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
-  "cnc-reason-for-application":{
+  "cnc-reason-for-application": {
     "required": "Select what the application was for"
   }
 }

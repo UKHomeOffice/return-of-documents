@@ -178,17 +178,17 @@
         "label": "British citizenship",
         "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
       },
-      "leave-to-remain":{
+      "leave-to-remain": {
         "label": "Further leave to remain",
         "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
       },
-      "ntl-or-brp":{
+      "ntl-or-brp": {
         "label": "No time limit or replacement settlement biometric residence permit"
       },
-      "european-settlement-scheme":{
+      "european-settlement-scheme": {
         "label": "Settled or pre-settled status under the European Union Settlement Scheme"
       },
-      "settlement":{
+      "settlement": {
         "label": "Settlement",
         "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
       },
