@@ -8,6 +8,9 @@
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
   },
+  "documents-not-received-contact-details":{
+    "header": "Contact details"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
@@ -19,8 +22,11 @@
       "dnr-dob": {
         "label": "Main applicant’s date of birth"
       },
-      "dnr-nationality": {
-        "label": "Main applicant’s nationality"
+      "dnr-email": {
+        "label": "Contact email"
+      },
+      "dnr-telephone": {
+        "label": "Contact telephone"
       }
     }
   }

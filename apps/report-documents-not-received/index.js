@@ -44,6 +44,7 @@ module.exports = {
       next: '/documents-not-received-contact-details'
     },
     '/documents-not-received-contact-details': {
+      fields: ['dnr-email', 'dnr-telephone'],
       next: '/documents-not-received-confirm'
     },
     '/documents-not-received-confirm': {

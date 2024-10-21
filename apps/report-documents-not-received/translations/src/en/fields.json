@@ -74,5 +74,13 @@
         "label": "A different type of visa"
       }
     }
+  }, 
+  "dnr-email":{
+    "label": "Email address",
+    "hint": "This is where we will send confirmation of your submitted report"
+  },
+  "dnr-telephone":{
+    "label": "Contact telephone number",
+    "hint": "For international numbers, include the country code"
   }
 }

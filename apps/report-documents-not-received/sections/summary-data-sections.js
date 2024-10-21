@@ -17,6 +17,14 @@ module.exports = {
     {
       step: '/documents-not-received-main-applicant',
       field: 'dnr-nationality'
+    },
+    {
+      step: '/documents-not-received-contact-details',
+      field: 'dnr-email'
+    },
+    {
+      step: '/documents-not-received-contact-details',
+      field: 'dnr-telephone'
     }
   ]
 };
