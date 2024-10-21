@@ -37,11 +37,11 @@
   },
   "enter-record-number": {
     "required": "Enter a record number",
-    "minlength": "Record number must be between 9 and 12 characters",
-    "maxlength": "Record number must be between 9 and 12 characters",
+    "minlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
+    "maxlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
     "recordNum": "Enter a real record number. For example, ROD123456789",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
-    "recordMaxLength": "Record number must be between 9 and 12 characters"
+    "recordMaxLength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789"
   },
   "enter-case-id": {
     "required": "Enter a case ID",
