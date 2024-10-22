@@ -3,7 +3,7 @@
     "required": "Enter the main applicant's full name",
     "maxlength": "Applicant's full name must between be 3 and 250 characters",
     "minlength": "Applicant's full name must be between 3 and 250 characters",
-    "notUrl": "Your answer must not contain URLs or links"
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
   "cnc-main-applicant-dob": {
     "required": "Enter the applicant's date of birth",
