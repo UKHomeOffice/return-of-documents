@@ -8,6 +8,9 @@
     "link": "sent the Home Office a letter of authority",
     "p2": "signed by your client."
   },
+  "about-application": {
+    "header": "About the application"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
@@ -31,7 +34,10 @@
       "legal-rep-name": {
         "label": "Legal firm or representative name"
       },
-      "is-cancel-application": {
+      "application-type": {
+        "label": "Application type"
+      },
+      "cancel-application": {
         "label": "Cancelling application?"
       },
       "is-requesting-passport-to-travel": {
