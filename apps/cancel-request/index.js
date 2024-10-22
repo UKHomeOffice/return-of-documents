@@ -93,6 +93,7 @@ module.exports = {
       next: '/cancel-request-contact-details'
     },
     '/cancel-request-contact-details': {
+      fields: ['cnc-email', 'cnc-telephone'],
       next: '/cancel-request-confirm'
     },
     '/cancel-request-confirm': {

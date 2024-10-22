@@ -196,5 +196,14 @@
         "label": "Transfer of conditions or limited leave replacement biometric residence permit"
       }
     }
+  },
+  "cnc-email":{
+    "label": "Email address",
+    "hint": "This is where the Home Office will contact you about your request to cancel documents being returned"
+  },
+  "cnc-telephone":{
+    "label": "Contact telephone number",
+    "hint": "For international numbers, include the country code"
   }
 }
+
