@@ -3,12 +3,28 @@
 const countries = require('hof').utils.countries();
 const dateComponent = require('hof').components.date;
 
-function hoRefNum(value) {
-  return value.match(/^[A-Z]\d+$/i);
+const validators = require('hof/controller/validation/validators');
+
+// May be move this logic to behaviour later
+
+function removeWhiteSpace(value) {
+  return value.replace(/\s+/g, '');
+}
+
+function recordMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 12);
 }
 
 function recordNum(value) {
-  return value.match(/^(R[O0]D\d{9}|\d{9})$/i);
+  return removeWhiteSpace(value).match(/^(R[O0]D\d{9}|\d{9})$/i);
+}
+
+function hoRefMaxLength(value) {
+  return validators.maxlength(removeWhiteSpace(value), 8);
+}
+
+function hoRefNum(value) {
+  return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
 }
 
 module.exports = {
@@ -105,9 +121,10 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      { type: 'maxlength', arguments: 12 },
+      'notUrl',
+      { type: 'maxlength', arguments: 250 },
       { type: 'minlength', arguments: 9 },
-      'alphanum',
+      recordMaxLength,
       recordNum
     ],
     attributes: [{ prefix: 'ROD' }]
@@ -122,7 +139,8 @@ module.exports = {
       'required',
       { type: 'maxlength', arguments: 8 },
       { type: 'minlength', arguments: 8 },
-      'numeric'
+      'numeric',
+      'notUrl'
     ]
   },
   'dnr-ho-reference-number': {
@@ -133,10 +151,11 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      { type: 'maxlength', arguments: 8 },
+      'notUrl',
+      { type: 'maxlength', arguments: 250 },
       { type: 'minlength', arguments: 8 },
-      'alphanum',
-      hoRefNum
+      hoRefNum,
+      hoRefMaxLength
     ]
   },
   'dnr-payment-reference-number': {
@@ -145,7 +164,7 @@ module.exports = {
       value: 'dnr-payment-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: ['required', { type: 'maxlength', arguments: 100 }]
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   },
   'dnr-courier-reference-number': {
     dependent: {
@@ -153,6 +172,6 @@ module.exports = {
       value: 'dnr-courier-reference-number'
     },
     className: ['govuk-input'],
-    validate: ['required', { type: 'maxlength', arguments: 100 }]
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   }
 };

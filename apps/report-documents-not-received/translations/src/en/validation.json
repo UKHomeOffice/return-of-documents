@@ -25,30 +25,35 @@
   },
   "dnr-record-number":{
     "required": "Enter a record number",
-    "minlength": "Record number must be between 9 and 12 characters",
-    "maxlength": "Record number must be between 9 and 12 characters",
-    "alphanum": "Enter a real record number. For example, ROD123456789",
-    "recordNum": "Enter a real record number. For example, ROD123456789"
+    "minlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
+    "maxlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "recordNum": "Enter a real record number. For example, ROD123456789",
+    "recordMaxLength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789"
   },
   "dnr-case-id":{
     "required": "Enter a case ID",
     "minlength": "Case ID must be at least 8 numbers",
     "maxlength": "Case ID cannot be more than 8 numbers",
-    "numeric": "Case ID can only include numbers"
+    "numeric": "Case ID can only include numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
   "dnr-ho-reference-number":{
     "required": "Enter a Home Office reference number",
     "minlength": "Home Office reference must be at least 8 characters",
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
-    "alphanum": "Home Office reference number must only include letters and numbers",
-    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers"
+    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
+    "hoRefMaxLength": "Home Office reference number cannot be more than 8 numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
   "dnr-payment-reference-number":{
     "required": "Enter a payment reference number",
-    "maxlength": "Payment reference number cannot be more than 100 characters"
+    "maxlength": "Payment reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
   "dnr-courier-reference-number":{
     "required": "Enter a courier reference number",
-    "maxlength": "Courier reference number cannot be more than 100 characters"
+    "maxlength": "Courier reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   }
 }
