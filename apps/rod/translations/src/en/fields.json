@@ -4,7 +4,7 @@
     },
     "who-is-completing": {
         "legend": "Who is completing this form?",
-        "options":{
+        "options": {
             "applicant": {
                 "label": "The main applicant"
             },
@@ -12,11 +12,11 @@
                 "label": "A legal representative",
                 "hint": "This includes legal representatives of main applicants, document holders and sponsors"
             },
-            "sponsor":{
+            "sponsor": {
                 "label": "A sponsor",
                 "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
             },
-            "guardian" :{
+            "guardian": {
                 "label": "A dependant or guardian of a dependant"
             }
         }
@@ -24,7 +24,7 @@
     "who-is-representing": {
         "legend": "Who are you legally representing?",
         "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
-        "options":{
+        "options": {
             "main-applicant": {
                 "label": "The main applicant"
             },
@@ -36,7 +36,7 @@
     "sponsor-type": {
         "legend": "What type of sponsor are you?",
         "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
-        "options":{
+        "options": {
             "british-sponsor": {
                 "label": "A British sponsor",
                 "hint": "You have British citizenship"
@@ -53,7 +53,7 @@
     },
     "dependant-or-guardian": {
         "legend": "Are you a dependant or a guardian of a dependant?",
-        "options":{
+        "options": {
             "dependant-over-18": {
                 "label": "A dependant aged 18 or over",
                 "hint": "You are an adult named as a dependant on the application"
@@ -72,7 +72,7 @@
     },
     "is-cancel-application": {
         "label": "Any documents that were sent with the application will be returned",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -83,7 +83,7 @@
     },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -94,7 +94,7 @@
     },
     "is-requesting-passport-to-travel": {
         "legend": "Are you requesting the return of the main applicant's passport for travel",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -105,26 +105,26 @@
     },
     "application-type": {
         "legend": "What is the application for?",
-        "options":{
+        "options": {
             "visa": {
                 "label": "Skeleton"
             },
             "british-citizen": {
                 "label": "Skeleton"
             },
-            "further-leave":{
+            "further-leave": {
                 "label": "Skeleton"
             },
-            "not-time-limit" :{
+            "not-time-limit": {
                 "label": "Skeleton"
             },
-            "eu-settlement-scheme":{
+            "eu-settlement-scheme": {
                 "label": "Skeleton"
             },
-            "settlement" :{
+            "settlement": {
                 "label": "Skeleton"
             },
-            "limited-leave-replacement-brp" :{
+            "limited-leave-replacement-brp": {
                 "label": "Skeleton"
             }
         }
@@ -136,7 +136,7 @@
     "cancel-application": {
         "legend": "Do you want to cancel the application?",
         "hint": "Any documents that were sent with the application will be returned",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -144,5 +144,10 @@
                 "label": "No"
             }
         }
+    },
+    "about-application": {
+        "legend": "About the application",
+        "label": "Date the main applicant submitted the application",
+        "hint": "If you do not know the exact date, enter an approximate one"
     }
 }

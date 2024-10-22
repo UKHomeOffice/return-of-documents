@@ -1,5 +1,7 @@
 'use strict';
 
+const dateComponent = require('hof').components.date;
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -69,15 +71,21 @@ module.exports = {
   },
   'date-of-application': dateComponent('date-of-application', {
     mixin: 'input-date',
+    isPageHeading: true,
     validate: ['required', 'date',
       { type: 'after', arguments: ['120', 'years'] },
       { type: 'before', arguments: ['0', 'days'] }
     ]
   }),
-'cancel-application': {
-   mixin: 'radio-group',
-   validate : "required",
-   options: ['yes', 'no'],
-   className: 'govuk-radios--inline',
-}
+  'cancel-application': {
+    mixin: 'radio-group',
+    options: ['yes', 'no'],
+    validate: 'required',
+    dependent:
+      {
+        field: 'who-is-completing',
+        value: 'sponsor'
+      },
+    className: 'govuk-radios--inline'
+  }
 };

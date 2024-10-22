@@ -2,6 +2,8 @@
 
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'rod',
@@ -10,6 +12,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      behaviours: [sponsorSelectionHandler],
       fields: ['who-is-completing'],
       backLink: 'start',
       forks: [
@@ -85,6 +88,28 @@ module.exports = {
       ],
       next: '/about-application'
     },
+    '/about-application': {
+      behaviours: [customValidation],
+      continueOnEdit: true,
+      fields: ['date-of-application', 'cancel-application' ],
+      forks: [
+        {
+          target: '/cancelling-application',
+          condition: {
+            field: 'cancel-application',
+            value: 'yes'
+          }
+        },
+        {
+          target: '/reference-number',
+          condition: req => req.sessionModel.get('who-is-completing') === 'sponsor' ||
+           (req.sessionModel.get('cancel-application') === 'no' &&
+            (req.sessionModel.get('application-type') === 'british-citizen' ||
+             req.sessionModel.get('application-type') === 'eu-settlement-scheme'))
+        }
+      ],
+      next: '/main-applicant-passport'
+    },
     '/visa-type': {  // logic required
       next: '/about-application'
     },
@@ -92,6 +117,7 @@ module.exports = {
       next: '/about-application'
     },
     '/cancelling-application': { // Should hold a logic before access to this page
+      continueOnEdit: true,
       next: '/reference-number'
     },
     '/main-applicant-passport': { // Should hold a logic before access to this page
