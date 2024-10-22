@@ -35,9 +35,8 @@ module.exports = {
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
   },
-  'is-cancel-application': {
+  'cancel-application': {
     mixin: 'radio-group',
-    isPageHeading: true,
     options: ['yes', 'no'],
     validate: 'required'
   },
@@ -66,5 +65,27 @@ module.exports = {
       'limited-leave-replacement-brp'
     ],
     validate: 'required'
+  },
+  'visa-type': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    options: [
+      'visa-type-british',
+      'visa-type-talent',
+      'visa-type-skilled',
+      'visa-type-study',
+      'visa-type-temp',
+      'visa-type-turkish',
+      'visa-type-different'
+    ],
+    validate: 'required'
+  },
+  'further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
+    validate: 'required',
+    legend: {
+      className: 'govuk-label--m'
+    }
   }
 };

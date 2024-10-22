@@ -1,5 +1,3 @@
-'use strict';
-
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 
@@ -11,18 +9,11 @@ module.exports = {
     },
     '/who-completing': {
       fields: ['who-is-completing'],
+      continueOnEdit: true,
       backLink: 'start',
       forks: [
         {
-          target: '/application',
-          condition: {
-            field: 'who-is-completing',
-            value: 'main-applicant'
-          }
-        },
-        {
           target: '/who-representing',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'who-is-rep'
@@ -30,7 +21,6 @@ module.exports = {
         },
         {
           target: '/sponsor-type',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'sponsor'
@@ -38,7 +28,6 @@ module.exports = {
         },
         {
           target: '/dependant-or-guardian',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'guardian'
@@ -49,34 +38,37 @@ module.exports = {
     },
     '/who-representing': {
       fields: ['who-is-representing'],
+      continueOnEdit: true,
       next: '/legal-representation'
     },
     '/legal-representation': {
       fields: ['confirm-sent-letter-of-authority', 'legal-rep-name'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/sponsor-type': {
       fields: ['sponsor-type'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/dependant-or-guardian': {
       fields: ['dependant-or-guardian'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/application': {
       fields: ['application-type'],
+      continueOnEdit: true,
       forks: [
         {
           target: '/visa-type',
           condition: {
             field: 'application-type',
             value: 'visa'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/further-leave',
-          continueOnEdit: true,
           condition: {
             field: 'application-type',
             value: 'further-leave'
@@ -85,31 +77,42 @@ module.exports = {
       ],
       next: '/about-application'
     },
-    '/visa-type': {  // logic required
+    '/visa-type': {
+      fields: ['visa-type'],
+      continueOnEdit: true,
       next: '/about-application'
     },
-    '/further-leave': { // //logic required
+    '/further-leave': {
+      fields: ['further-leave-to-remain'],
+      continueOnEdit: true,
       next: '/about-application'
     },
-    '/about-application': { // Should hold a logic before access to this page
-      fields: ['is-cancel-application'],
+    '/about-application': {
+      fields: ['cancel-application'],
+      continueOnEdit: true,
       forks: [
         {
           target: '/cancelling-application',
           condition: {
-            field: 'is-cancel-application',
+            field: 'cancel-application',
             value: 'yes'
-          },
-          continueOnEdit: false
+          }
+        },
+        {
+          target: '/reference-number',
+          condition: req => req.sessionModel.get('who-is-completing') === 'sponsor' ||
+           (req.sessionModel.get('cancel-application') === 'no' &&
+            (req.sessionModel.get('application-type') === 'british-citizen' ||
+             req.sessionModel.get('application-type') === 'eu-settlement-scheme'))
         }
       ],
       next: '/main-applicant-passport'
     },
-    '/cancelling-application': { // Should hold a logic before access to this page
+    '/cancelling-application': {
+      continueOnEdit: true,
       next: '/reference-number'
     },
-
-    '/main-applicant-passport': { // Should hold a logic before access to this page
+    '/main-applicant-passport': {
       forks: [
         {
           target: '/proof-of-identity',

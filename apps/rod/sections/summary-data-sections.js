@@ -27,8 +27,16 @@ module.exports = {
       field: 'application-type'
     },
     {
+      step: '/visa-type',
+      field: 'visa-type'
+    },
+    {
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
+    },
+    {
       step: '/about-application',
-      field: 'is-cancel-application'
+      field: 'cancel-application'
     },
     {
       step: '/main-applicant-passport',
