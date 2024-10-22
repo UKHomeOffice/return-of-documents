@@ -1,0 +1,14 @@
+{{<partials-page}}
+  {{$pageTitle}}
+    {{#t}}pages.about-application{{/t}} &ndash; {{#t}}about-application{{/t}} &ndash; GOV.UK
+  {{/pageTitle}}
+  {{$page-content}}
+  {{#renderField}}date-of-application{{/renderField}}
+  
+  {{^values.isSponsor}}
+    {{#radio-group}}cancel-application{{/radio-group}}
+  {{/values.isSponsor}}
+  
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
