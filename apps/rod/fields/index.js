@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = {
   name: {
@@ -35,11 +34,11 @@ module.exports = {
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
   },
-  'is-cancel-application': {
+  'cancel-application': {
     mixin: 'radio-group',
-    isPageHeading: true,
+    validate: 'required',
     options: ['yes', 'no'],
-    validate: 'required'
+    className: 'govuk-radios--inline'
   },
   'is-passport-return-address': {
     mixin: 'radio-group',

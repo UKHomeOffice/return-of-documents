@@ -28,7 +28,7 @@ module.exports = {
     },
     {
       step: '/about-application',
-      field: 'is-cancel-application'
+      field: 'cancel-application'
     },
     {
       step: '/main-applicant-passport',

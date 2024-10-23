@@ -166,6 +166,14 @@
   "enter-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  },
+  "cnc-email":{
+    "label": "Email address",
+    "hint": "This is where the Home Office will contact you about your request to cancel documents being returned"
+  },
+  "cnc-telephone":{
+    "label": "Contact telephone number",
+    "hint": "For international numbers, include the country code"
   }
 }
 

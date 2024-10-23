@@ -13,6 +13,9 @@
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
   },
+  "documents-not-received-contact-details":{
+    "header": "Contact details"
+  },
   "documents-not-received-further-leave": {
     "header": "Further leave to remain (permission to stay)",
     "p1": "There are different categories of further leave to remain (also called permission to stay), depending on your circumstances.",
@@ -33,6 +36,12 @@
       },
       "dnr-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "dnr-email": {
+        "label": "Contact email"
+      },
+      "dnr-telephone": {
+        "label": "Contact telephone"
       },
       "dnr-application-type": {
         "label": "Application type"

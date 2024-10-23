@@ -1,7 +1,10 @@
 'use strict';
 
 const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
+const dateFormater = new Intl.DateTimeFormat(
+  config.dateLocales,
+  config.dateFormat
+);
 
 module.exports = {
   sectionHeader: [
@@ -33,6 +36,14 @@ module.exports = {
     {
       step: '/cancel-request-further-leave',
       field: 'cnc-further-leave-to-remain'
+    },
+    {
+      step: '/cancel-request-contact-details',
+      field: 'cnc-email'
+    },
+    {
+      step: '/cancel-request-contact-details',
+      field: 'cnc-telephone'
     }
   ]
 };
