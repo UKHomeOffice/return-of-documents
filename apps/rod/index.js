@@ -138,9 +138,7 @@ module.exports = {
       next: '/reference-number'
     },
 
-    '/proof-of-identity': {
-
-    },
+    '/proof-of-identity': {},
 
     '/reference-number': {
 

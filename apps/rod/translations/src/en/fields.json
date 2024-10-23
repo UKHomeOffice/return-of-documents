@@ -73,7 +73,7 @@
     "cancel-application": {
         "legend": "Do you want to cancel the application?",
         "hint": "Any documents that were sent with the application will be returned",
-        "options": {
+        "options":{
             "yes": {
                 "label": "Yes"
             },
@@ -95,7 +95,7 @@
     },
     "is-requesting-passport-to-travel": {
         "legend": "Are you requesting the return of the main applicant's passport for travel",
-        "options": {
+        "options":{
             "yes": {
                 "label": "Yes"
             },
@@ -115,7 +115,7 @@
                 "label": "British citizenship",
                 "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
             },
-            "further-leave": {
+            "further-leave":{
                 "label": "Further leave to remain",
                 "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
             },
@@ -125,7 +125,7 @@
             "eu-settlement-scheme": {
                 "label": "Settled or pre-settled status under the EU Settlement Scheme"
             },
-            "settlement": {
+            "settlement" : {
                 "label": "Settlement",
                 "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
             },

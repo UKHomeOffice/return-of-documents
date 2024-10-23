@@ -8,6 +8,12 @@
     "link": "sent the Home Office a letter of authority",
     "p2": "signed by your client."
   },
+  "proof-of-identity": {
+    "header": "For proof of identity only"
+  },
+  "cannot-travel": {
+    "header": "You cannot use this passport to travel"
+  },
   "about-application": {
     "header": "About the application"
   },
@@ -40,6 +46,9 @@
       },
       "legal-rep-name": {
         "label": "Legal firm or representative name"
+      },
+      "application-type": {
+        "label": "Application type"
       },
       "visa-type": {
         "label": "Visa type"

@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = {
   name: {
@@ -37,8 +36,9 @@ module.exports = {
   },
   'cancel-application': {
     mixin: 'radio-group',
+    validate: 'required',
     options: ['yes', 'no'],
-    validate: 'required'
+    className: 'govuk-radios--inline'
   },
   'is-passport-return-address': {
     mixin: 'radio-group',
