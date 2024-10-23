@@ -21,5 +21,11 @@
     },
     "application-type": {
         "required": "Select what the application was for"
+    },
+    "visa-type": {
+        "required": "Select what type of visa the application was for"
+    },
+    "further-leave-to-remain": {
+        "required": "Select which type of further leave you applied for"
     }
 }
