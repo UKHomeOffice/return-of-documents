@@ -34,10 +34,6 @@ module.exports = {
       field: 'cnc-reason-for-application'
     },
     {
-      step: '/cancel-request-visa-type', // TODO: Confirm if this is required as this is not available on figma design
-      field: 'cnc-application-visa-type'
-    },
-    {
       step: '/cancel-request-further-leave',
       field: 'cnc-further-leave-to-remain'
     },
