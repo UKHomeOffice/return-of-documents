@@ -3,7 +3,6 @@ const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
 
-// May be move this logic to behaviour later
 
 function removeWhiteSpace(value) {
   return value.replace(/\s+/g, '');
