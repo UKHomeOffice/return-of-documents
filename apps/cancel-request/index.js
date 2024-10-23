@@ -60,20 +60,21 @@ module.exports = {
       next: '/cancel-request-application'
     },
     '/cancel-request-application': {
+      fields: ['cnc-reason-for-application'],
+      continueOnEdit: true,
       forks: [
         {
           target: '/cancel-request-visa-type',
           condition: {
             field: 'cnc-reason-for-application',
-            value: 'cnc-visa'
+            value: 'visa'
           }
         },
         {
           target: '/cancel-request-further-leave',
-          continueOnEdit: true,
           condition: {
             field: 'cnc-reason-for-application',
-            value: 'cnc-leave-to-remain'
+            value: 'leave-to-remain'
           }
         }
       ],

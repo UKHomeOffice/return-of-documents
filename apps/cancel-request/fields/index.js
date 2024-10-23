@@ -93,6 +93,7 @@ module.exports = {
   },
   'cnc-reason-for-application': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: [
       'visa',
       'british-citizenship',
