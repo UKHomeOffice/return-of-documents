@@ -25,12 +25,10 @@ module.exports = {
           condition: {
             field: 'cnc-who-is-completing',
             value: 'legal-rep'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/cancel-request-sponsor-type',
-          continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
             value: 'sponsor'
@@ -38,7 +36,6 @@ module.exports = {
         },
         {
           target: '/cancel-request-dependant-or-guardian',
-          continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
             value: 'guardian'
@@ -61,10 +58,10 @@ module.exports = {
     },
     '/cancel-request-application': {
       fields: ['cnc-reason-for-application'],
-      continueOnEdit: true,
       forks: [
         {
           target: '/cancel-request-visa-type',
+          continueOnEdit: true,
           condition: {
             field: 'cnc-reason-for-application',
             value: 'visa'
@@ -72,6 +69,7 @@ module.exports = {
         },
         {
           target: '/cancel-request-further-leave',
+          continueOnEdit: true,
           condition: {
             field: 'cnc-reason-for-application',
             value: 'leave-to-remain'

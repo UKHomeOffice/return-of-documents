@@ -26,20 +26,44 @@ module.exports = {
       field: 'cnc-who-is-completing'
     },
     {
-      step: '/cancel-request-who-representing',
-      field: 'cnc-who-is-representing'
+      step: '/cancel-request-sponsor-type',
+      field: 'cnc-sponsor-type'
     },
     {
       step: '/cancel-request-application',
       field: 'cnc-reason-for-application'
     },
     {
-      step: '/cancel-request-visa-type',
+      step: '/cancel-request-visa-type', // TODO: Confirm if this is required as this is not available on figma design
       field: 'cnc-application-visa-type'
     },
     {
       step: '/cancel-request-further-leave',
       field: 'cnc-further-leave-to-remain'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'cnc-reference-number'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'enter-record-number'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'enter-case-id'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'enter-ho-reference-number'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'enter-payment-reference-number'
+    },
+    {
+      step: '/cancel-request-reference-number',
+      field: 'enter-courier-reference-number'
     },
     {
       step: '/cancel-request-contact-details',

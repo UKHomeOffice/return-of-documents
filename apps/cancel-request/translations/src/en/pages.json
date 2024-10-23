@@ -22,11 +22,41 @@
       "cnc-main-applicant-nationality": {
         "label": "Main applicant’s nationality"
       },
-      "cnc-further-leave-to-remain": {
-        "label": "Further leave type"
+      "cnc-who-is-completing": {
+        "label": "Who completed original form?"
+      },
+      "cnc-sponsor-type": {
+        "label": "Type of sponsor"
       },
       "cnc-reason-for-application": {
         "label": "Application type"
+      },
+      "cnc-further-leave-to-remain": {
+        "label": "Further leave type"
+      },
+      "cnc-reference-number": {
+        "label": "Reference number"
+      },
+      "enter-record-number": {
+        "label": "Record number"
+      },
+      "enter-case-id": {
+        "label": "Case ID"
+      },
+      "enter-ho-reference-number": {
+        "label": "Home Office reference number"
+      },
+      "enter-payment-reference-number": {
+        "label": "Payment reference number"
+      },
+      "enter-courier-reference-number": {
+        "label": "Courier reference number"
+      },
+      "cnc-email": {
+        "label": "Contact email"
+      },
+      "cnc-telephone": {
+        "label": "Contact telephone"
       }
     }
   },
