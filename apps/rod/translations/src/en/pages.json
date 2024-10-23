@@ -14,6 +14,9 @@
   "cannot-travel": {
     "header": "You cannot use this passport to travel"
   },
+  "about-application": {
+    "header": "About the application"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
@@ -37,7 +40,10 @@
       "legal-rep-name": {
         "label": "Legal firm or representative name"
       },
-      "is-cancel-application": {
+      "application-type": {
+        "label": "Application type"
+      },
+      "cancel-application": {
         "label": "Cancelling application?"
       },
       "is-requesting-passport-to-travel": {

@@ -18,5 +18,8 @@
         "required": "Enter the name of the legal firm or representative",
         "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
         "maxlength": "Name or legal firm or representative must be less than 150 characters"
+    },
+    "application-type": {
+        "required": "Select what the application was for"
     }
 }
