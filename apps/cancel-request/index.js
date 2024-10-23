@@ -80,6 +80,14 @@ module.exports = {
       ],
       next: '/cancel-request-reference-number'
     },
+    '/cancel-request-visa-type': {
+      fields: ['cnc-application-visa-type'],
+      next: '/cancel-request-reference-number'
+    },
+    '/cancel-request-further-leave': {
+      fields: ['cnc-further-leave-to-remain'],
+      next: '/cancel-request-reference-number'
+    },
     '/cancel-request-reference-number': {
       fields: [
         'cnc-reference-number',
@@ -102,14 +110,6 @@ module.exports = {
     },
     '/cancellation-received': {
       clearSession: true
-    },
-    '/cancel-request-visa-type': {
-      fields: ['cnc-application-visa-type'],
-      next: '/cancel-request-reference-number'
-    },
-    '/cancel-request-further-leave': {
-      fields: ['cnc-further-leave-to-remain'],
-      next: '/cancel-request-reference-number'
     }
   }
 };
