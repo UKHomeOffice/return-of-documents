@@ -2,7 +2,7 @@
   "name": "rod",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "Return Of Documnents (ROD)",
+  "description": "Return Of Documents (ROD)",
   "engines": {
     "node": "^20.0.0"
   },

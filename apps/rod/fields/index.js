@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = {
   name: {
@@ -22,11 +21,24 @@ module.exports = {
     options: ['british-sponsor', 'settled-sponsor', 'eea-sponsor'],
     validate: 'required'
   },
-  'is-cancel-application': {
+  'dependant-or-guardian': {
     mixin: 'radio-group',
     isPageHeading: true,
-    options: ['yes', 'no'],
+    options: ['dependant-over-18', 'parent-guardian-under-18'],
     validate: 'required'
+  },
+  'confirm-sent-letter-of-authority': {
+    mixin: 'checkbox',
+    validate: ['required']
+  },
+  'legal-rep-name': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
+  },
+  'cancel-application': {
+    mixin: 'radio-group',
+    validate: 'required',
+    options: ['yes', 'no'],
+    className: 'govuk-radios--inline'
   },
   'is-passport-return-address': {
     mixin: 'radio-group',

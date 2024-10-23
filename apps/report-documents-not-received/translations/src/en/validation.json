@@ -6,7 +6,7 @@
     "required": "Enter the main applicant's full name",
     "minlength": "Applicant's full name must be between 3 and 250 characters",
     "maxlength": "Applicant's full name must be between 3 and 250 characters",
-    "notUrl": "Your answer must not contain URLs or links"
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   },
   "dnr-dob": {
     "required": "Enter the applicant's date of birth",
@@ -16,6 +16,9 @@
   },
   "dnr-nationality": {
     "required": "Select the main applicant's country of nationality"
+  },
+  "dnr-further-leave-to-remain": {
+    "required": "Select which type of further leave you applied for"
   },
   "dnr-visa-type": {
     "required": "Select what type of visa the application was for"
@@ -55,5 +58,18 @@
     "required": "Enter a courier reference number",
     "maxlength": "Courier reference number cannot be more than 100 characters",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "dnr-email": {
+    "required": "Enter a contact email address",
+    "minlength": "Email address must be between 6 and 256 characters",
+    "maxlength": "Email address must be between 6 and 256 characters",
+    "email": "Enter a real email address"
+  },
+  "dnr-telephone": {
+    "required": "Enter a contact telephone number",
+    "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   }
 }

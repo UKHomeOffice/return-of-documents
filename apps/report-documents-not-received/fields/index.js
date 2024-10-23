@@ -27,6 +27,15 @@ function hoRefNum(value) {
   return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
 }
 
+function validInternationalPhoneNumber(value) {
+  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
+  const isValidPhoneNumber = validators.regex(
+    phoneNumberWithoutSpace,
+    /^\(?\+?[\d()-]{8,16}$/
+  );
+  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
+}
+
 module.exports = {
   'dnr-application-type': {
     isPageHeading: true,
@@ -65,6 +74,14 @@ module.exports = {
       label: 'fields.dnr-nationality.options.none_selected'
     }].concat(countries),
     validate: 'required'
+  },
+  'dnr-further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
+    validate: 'required',
+    legend: {
+      className: 'govuk-label--m'
+    }
   },
   'dnr-visa-type': {
     mixin: 'radio-group',
@@ -173,5 +190,25 @@ module.exports = {
     },
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'dnr-email': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 6 },
+      { type: 'maxlength', arguments: 256 },
+      'email'
+    ]
+  },
+  'dnr-telephone': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      validInternationalPhoneNumber
+    ],
+    className: ['govuk-input', 'govuk-!-width-one-half']
   }
 };

@@ -15,12 +15,20 @@ module.exports = {
       field: 'sponsor-type'
     },
     {
+      step: '/dependant-or-guardian',
+      field: 'dependant-or-guardian'
+    },
+    {
+      step: '/legal-representation',
+      field: 'legal-rep-name'
+    },
+    {
       step: '/application',
       field: 'application-type'
     },
     {
       step: '/about-application',
-      field: 'is-cancel-application'
+      field: 'cancel-application'
     },
     {
       step: '/main-applicant-passport',

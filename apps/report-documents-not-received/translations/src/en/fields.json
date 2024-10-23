@@ -115,5 +115,30 @@
   "dnr-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  }, 
+  "dnr-email":{
+    "label": "Email address",
+    "hint": "This is where we will send confirmation of your submitted report"
+  },
+  "dnr-telephone":{
+    "label": "Contact telephone number",
+    "hint": "For international numbers, include the country code"
+  },
+  "dnr-further-leave-to-remain": {
+    "legend": "Which type of further leave did you apply for?",
+    "options": {
+      "flr-fp": {
+        "label": "FLR (FP)"
+      },
+      "flr-m": {
+        "label": "FLR (M)"
+      },
+      "flr-ir": {
+        "label": "FLR (IR)"
+      },
+      "flr-hro": {
+        "label": "FLR (HRO)"
+      }
+    }
   }
 }

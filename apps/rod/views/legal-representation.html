@@ -1,0 +1,12 @@
+{{<partials-page}}
+  {{$page-content}}
+    <p class="govuk-body">
+      {{#t}}pages.legal-representation.p1{{/t}}
+      <a href="https://www.update-my-details.homeoffice.gov.uk/overview" class="govuk-link">{{#t}}pages.legal-representation.link{{/t}}</a>
+      {{#t}}pages.legal-representation.p2{{/t}}
+    </p>
+    {{#renderField}}confirm-sent-letter-of-authority{{/renderField}}
+    {{#input-text}}legal-rep-name{{/input-text}}
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
