@@ -11,6 +11,9 @@
   "proof-of-identity": {
     "header": "For proof of identity only"
   },
+  "cannot-travel": {
+    "header": "You cannot use this passport to travel"
+  },
   "about-application": {
     "header": "About the application"
   },
