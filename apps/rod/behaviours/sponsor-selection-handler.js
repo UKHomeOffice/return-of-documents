@@ -5,7 +5,6 @@ module.exports = superclass => class extends superclass {
       const whoCompleting = req.sessionModel.get('who-is-completing');
       const isSponsor = whoCompleting === 'sponsor';
       req.sessionModel.set('isSponsor', isSponsor);
-      req.sessionModel.set('nextRoute', '/application');
     }
     return super.successHandler(req, res, next);
   }
