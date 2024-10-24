@@ -101,7 +101,8 @@ module.exports = {
       next: '/cancellation-received'
     },
     '/cancellation-received': {
-      clearSession: true
+      clearSession: true,
+      backLink: false
     },
     '/cancel-request-visa-type': {
       fields: ['cnc-application-visa-type'],

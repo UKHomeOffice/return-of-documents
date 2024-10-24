@@ -1,12 +1,15 @@
 {{<partials-page}}
-  {{$pageTitle}}
-    {{#t}}pages.cancellation-received.confirmed{{/t}} &ndash; {{#t}}journey.serviceName{{/t}} &ndash; GOV.UK
-  {{/pageTitle}}
   {{$page-content}}
     <div class="govuk-panel alert-complete govuk-panel--confirmation">
       <h1 class="govuk-panel__title">
         {{#t}}pages.cancellation-received.confirmed{{/t}}
       </h1>
     </div>
+    <p>{{#t}}pages.cancellation-received.p1{{/t}}</p>
+
+    <h2 class="govuk-heading-m">{{#t}}pages.cancellation-received.h2{{/t}}</h2>
+
+    <p>{{#t}}pages.cancellation-received.p2{{/t}}</p>
+    <p>{{#t}}pages.cancellation-received.p3{{/t}}</p>
   {{/page-content}}
 {{/partials-page}}
