@@ -3,39 +3,6 @@
 const countries = require('hof').utils.countries();
 const dateComponent = require('hof').components.date;
 
-const validators = require('hof/controller/validation/validators');
-
-// May be move this logic to behaviour later
-
-function removeWhiteSpace(value) {
-  return value.replace(/\s+/g, '');
-}
-
-function recordMaxLength(value) {
-  return validators.maxlength(removeWhiteSpace(value), 12);
-}
-
-function recordNum(value) {
-  return removeWhiteSpace(value).match(/^(R[O0]D\d{9}|\d{9})$/i);
-}
-
-function hoRefMaxLength(value) {
-  return validators.maxlength(removeWhiteSpace(value), 8);
-}
-
-function hoRefNum(value) {
-  return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
-}
-
-function validInternationalPhoneNumber(value) {
-  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
-  const isValidPhoneNumber = validators.regex(
-    phoneNumberWithoutSpace,
-    /^\(?\+?[\d()-]{8,16}$/
-  );
-  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
-}
-
 module.exports = {
   'dnr-application-type': {
     isPageHeading: true,
@@ -138,11 +105,7 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      'notUrl',
-      { type: 'maxlength', arguments: 250 },
-      { type: 'minlength', arguments: 9 },
-      recordMaxLength,
-      recordNum
+      'notUrl'
     ],
     attributes: [{ prefix: 'ROD' }]
   },
@@ -168,11 +131,7 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      'notUrl',
-      { type: 'maxlength', arguments: 250 },
-      { type: 'minlength', arguments: 8 },
-      hoRefNum,
-      hoRefMaxLength
+      'notUrl'
     ]
   },
   'dnr-payment-reference-number': {
@@ -204,10 +163,7 @@ module.exports = {
     mixin: 'input-text',
     validate: [
       'required',
-      'notUrl',
-      { type: 'minlength', arguments: 8 },
-      { type: 'maxlength', arguments: 16 },
-      validInternationalPhoneNumber
+      'notUrl'
     ],
     className: ['govuk-input', 'govuk-!-width-one-half']
   }

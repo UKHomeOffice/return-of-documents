@@ -261,8 +261,6 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      { type: 'minlength', arguments: 8 },
-      { type: 'maxlength', arguments: 16 },
       validInternationalPhoneNumber
     ],
     className: ['govuk-input', 'govuk-!-width-one-half']

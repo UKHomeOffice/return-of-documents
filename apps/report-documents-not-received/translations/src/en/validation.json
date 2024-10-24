@@ -31,8 +31,7 @@
     "minlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
     "maxlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
-    "recordNum": "Enter a real record number. For example, ROD123456789",
-    "recordMaxLength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789"
+    "recordNum": "Enter a real record number. For example, ROD123456789"
   },
   "dnr-case-id":{
     "required": "Enter a case ID",
@@ -46,7 +45,7 @@
     "minlength": "Home Office reference must be at least 8 characters",
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
     "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
-    "hoRefMaxLength": "Home Office reference number cannot be more than 8 numbers",
+    "specialCharacter": "Home Office reference number must only include letters and numbers",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
   },
   "dnr-payment-reference-number":{
@@ -67,8 +66,6 @@
   },
   "dnr-telephone": {
     "required": "Enter a contact telephone number",
-    "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
-    "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
     "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   }

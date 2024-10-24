@@ -6,7 +6,7 @@ module.exports = superclass =>
       const validationErrorFunc = (type, args) =>
         new this.ValidationError(key, { type: type, arguments: [args] });
 
-      if (key === 'dnr-reference-number') {
+      if (key === 'dnr-record-number') {
         const recordNum = req.form.values[key];
         if (recordNum) {
           const valueWithoutSpace = recordNum.replace(/\s+/g, '').trim();
@@ -38,8 +38,23 @@ module.exports = superclass =>
             return validationErrorFunc('maxlength');
           }
 
+          if (valueWithoutSpace.match(/\W|_/g)) {
+            return validationErrorFunc('specialCharacter');
+          }
+
           if (!valueWithoutSpace.match(/^[A-Z]\d+$/i)) {
             return validationErrorFunc('hoRefNum');
+          }
+        }
+      }
+
+      if (key === 'dnr-telephone') {
+        const phoneNumber = req.form.values[key];
+        if (phoneNumber.length > 0) {
+          const phoneNumberWithoutSpace = phoneNumber.replace(/\s+/g, '').trim();
+          const isValidphoneNumber = validators.regex(phoneNumberWithoutSpace, /^\(?\+?[\d()-]{8,16}$/);
+          if (!isValidphoneNumber  || !validators.internationalPhoneNumber(phoneNumber)) {
+            return validationErrorFunc('validInternationalPhoneNumber');
           }
         }
       }

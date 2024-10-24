@@ -26,22 +26,21 @@ module.exports = {
       step: '/documents-not-received-reference-number',
       field: 'dnr-reference-number',
       parse: (value, req) => {
-        if (req.sessionModel.get('dnr-reference-number') === 'dnr-record-number') {
-          return req.sessionModel.get('dnr-record-number')
+        switch (req.sessionModel.get('dnr-reference-number')) {
+          case 'dnr-record-number':
+            return req.sessionModel.get('dnr-record-number');
+          case 'dnr-case-id':
+            return req.sessionModel.get('dnr-case-id');
+          case 'dnr-ho-reference-number':
+            return req.sessionModel.get('dnr-ho-reference-number');
+          case 'dnr-payment-reference-number':
+            return req.sessionModel.get('dnr-payment-reference-number');
+          case 'dnr-courier-reference-number':
+            return req.sessionModel.get('dnr-courier-reference-number');
+          default:
+            return null;
         }
-        if (req.sessionModel.get('dnr-reference-number') === 'dnr-case-id') {
-          return req.sessionModel.get('dnr-case-id')
-        }
-        if (req.sessionModel.get('dnr-reference-number') === 'dnr-ho-reference-number') {
-          return req.sessionModel.get('dnr-ho-reference-number')
-        }
-        if (req.sessionModel.get('dnr-reference-number') === 'dnr-payment-reference-number') {
-          return req.sessionModel.get('dnr-payment-reference-number')
-        }
-        if (req.sessionModel.get('dnr-reference-number') === 'dnr-courier-reference-number') {
-          return req.sessionModel.get('dnr-courier-reference-number')
-        }
-      },
+      }
     },
     {
       step: '/documents-not-received-application',
