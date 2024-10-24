@@ -1,6 +1,8 @@
 'use strict';
 
 const config = require('../../../config');
+const { removeWhiteSpace } = require('../../../utils');
+
 const dateFormater = new Intl.DateTimeFormat(
   config.dateLocales,
   config.dateFormat
@@ -55,7 +57,16 @@ module.exports = {
     },
     {
       step: '/cancel-request-reference-number',
-      field: 'enter-record-number'
+      field: 'enter-record-number',
+      parse: (value, req) => {
+        if (!value) return null;
+        const valueWithoutSpace = removeWhiteSpace(value);
+        const containsRod = valueWithoutSpace.match(/^r[o0]d/i);
+        if (containsRod) {
+          return 'ROD' + valueWithoutSpace.slice(3);
+        }
+        return 'ROD' + valueWithoutSpace;
+      }
     },
     {
       step: '/cancel-request-reference-number',

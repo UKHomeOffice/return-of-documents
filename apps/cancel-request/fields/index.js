@@ -2,11 +2,8 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
+const { removeWhiteSpace } = require('../../../utils');
 
-
-function removeWhiteSpace(value) {
-  return value.replace(/\s+/g, '');
-}
 
 function recordMaxLength(value) {
   return validators.maxlength(removeWhiteSpace(value), 12);
