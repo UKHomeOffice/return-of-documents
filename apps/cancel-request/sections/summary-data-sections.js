@@ -58,7 +58,7 @@ module.exports = {
     {
       step: '/cancel-request-reference-number',
       field: 'enter-record-number',
-      parse: (value, req) => {
+      parse: value => {
         if (!value) return null;
         const valueWithoutSpace = removeWhiteSpace(value);
         const containsRod = valueWithoutSpace.match(/^r[o0]d/i);
