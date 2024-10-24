@@ -23,6 +23,9 @@
   "request-received": {
     "confirmed": "Request received"
   },
+  "cancelling-application": {
+    "header": "Cancelling your application"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
