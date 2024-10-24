@@ -6,17 +6,7 @@ module.exports = superclass => class extends superclass {
       const isSponsor = whoCompleting === 'sponsor';
       req.sessionModel.set('isSponsor', isSponsor);
       req.sessionModel.set('nextRoute', '/application');
-    }
-    if (currentRoute === '/about-application') {
-      const isSponsor = req.sessionModel.get('isSponsor');
-      req.sessionModel.set('showCancelApplicationQuestion', !isSponsor);
-    }
-    if (currentRoute === '/confirm') {
-      const showCancelApplicationQuestion = req.sessionModel.get('showCancelApplicationQuestion');
-      if (!showCancelApplicationQuestion) {
-        req.form.options.cancelApplicationQuestion = null;
-      }
-    }
+    }    
     return super.successHandler(req, res, next);
   }
 };

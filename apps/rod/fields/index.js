@@ -71,7 +71,6 @@ module.exports = {
   },
   'date-of-application': dateComponent('date-of-application', {
     mixin: 'input-date',
-    isPageHeading: true,
     validate: ['required', 'date',
       { type: 'after', arguments: ['120', 'years'] },
       { type: 'before', arguments: ['0', 'days'] }

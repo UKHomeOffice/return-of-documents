@@ -15,6 +15,14 @@ module.exports = {
       field: 'sponsor-type'
     },
     {
+      step: '/about-application',
+      field: 'date-of-application'
+    },
+    {
+      step: '/about-application',
+      field: 'cancel-application'
+    },
+    {
       step: '/dependant-or-guardian',
       field: 'dependant-or-guardian'
     },
