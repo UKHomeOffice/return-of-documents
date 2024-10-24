@@ -26,12 +26,24 @@ module.exports = {
       field: 'cnc-who-is-completing'
     },
     {
+      step: '/cancel-request-who-representing',
+      field: 'cnc-who-is-representing'
+    },
+    {
+      step: '/cancel-request-dependant-or-guardian',
+      field: 'cnc-dependant-or-guardian'
+    },
+    {
       step: '/cancel-request-sponsor-type',
       field: 'cnc-sponsor-type'
     },
     {
       step: '/cancel-request-application',
       field: 'cnc-reason-for-application'
+    },
+    {
+      step: '/cancel-request-visa-type',
+      field: 'cnc-application-visa-type'
     },
     {
       step: '/cancel-request-further-leave',

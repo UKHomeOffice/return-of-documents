@@ -25,6 +25,12 @@
       "cnc-who-is-completing": {
         "label": "Who completed original form?"
       },
+      "cnc-who-is-representing": {
+        "label": "Legally representing"
+      },
+      "cnc-dependant-or-guardian": {
+        "label": "Dependant or guardian?"
+      },
       "cnc-sponsor-type": {
         "label": "Type of sponsor"
       },
@@ -33,6 +39,9 @@
       },
       "cnc-further-leave-to-remain": {
         "label": "Further leave type"
+      },
+      "cnc-application-visa-type": {
+        "label": "Visa type"
       },
       "cnc-reference-number": {
         "label": "Reference number"
