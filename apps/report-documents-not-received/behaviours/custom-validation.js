@@ -6,7 +6,7 @@ module.exports = superclass =>
       const validationErrorFunc = (type, args) =>
         new this.ValidationError(key, { type: type, arguments: [args] });
 
-      if (key === 'dnr-record-number') {
+      if (req.form.values['dnr-reference-number'] === 'dnr-record-number' && key === 'dnr-record-number') {
         const recordNum = req.form.values[key];
         if (recordNum) {
           const valueWithoutSpace = recordNum.replace(/\s+/g, '').trim();
@@ -25,7 +25,7 @@ module.exports = superclass =>
         }
       }
 
-      if (key === 'dnr-ho-reference-number') {
+      if (req.form.values['dnr-reference-number'] === 'dnr-ho-reference-number' && key === 'dnr-ho-reference-number') {
         const hoRefNum = req.form.values[key];
         if (hoRefNum) {
           const valueWithoutSpace = hoRefNum.replace(/\s+/g, '').trim();

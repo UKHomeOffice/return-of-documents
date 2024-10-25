@@ -2,6 +2,7 @@
 
 const config = require('../../../config');
 const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
+const { removeWhiteSpace } = require('../../../utils');
 
 module.exports = {
   sectionHeader: [
@@ -24,23 +25,32 @@ module.exports = {
     },
     {
       step: '/documents-not-received-reference-number',
-      field: 'dnr-reference-number',
-      parse: (value, req) => {
-        switch (req.sessionModel.get('dnr-reference-number')) {
-          case 'dnr-record-number':
-            return req.sessionModel.get('dnr-record-number');
-          case 'dnr-case-id':
-            return req.sessionModel.get('dnr-case-id');
-          case 'dnr-ho-reference-number':
-            return req.sessionModel.get('dnr-ho-reference-number');
-          case 'dnr-payment-reference-number':
-            return req.sessionModel.get('dnr-payment-reference-number');
-          case 'dnr-courier-reference-number':
-            return req.sessionModel.get('dnr-courier-reference-number');
-          default:
-            return null;
+      field: 'dnr-record-number',
+      parse: value => {
+        if (!value) return null;
+        const valueWithoutSpace = removeWhiteSpace(value);
+        const containsRod = valueWithoutSpace.match(/^r[o0]d/i);
+        if (containsRod) {
+          return 'ROD' + valueWithoutSpace.slice(3);
         }
+        return 'ROD' + valueWithoutSpace;
       }
+    },
+    {
+      step: '/documents-not-received-reference-number',
+      field: 'dnr-case-id'
+    },
+    {
+      step: '/documents-not-received-reference-number',
+      field: 'dnr-ho-reference-number'
+    },
+    {
+      step: '/documents-not-received-reference-number',
+      field: 'dnr-payment-reference-number'
+    },
+    {
+      step: '/documents-not-received-reference-number',
+      field: 'dnr-courier-reference-number'
     },
     {
       step: '/documents-not-received-application',
