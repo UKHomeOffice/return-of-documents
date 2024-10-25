@@ -149,7 +149,7 @@ module.exports = {
       next: '/main-applicant'
     },
     '/main-applicant': {
-
+      fields: ['main-applicant-full-name', 'main-applicant-dob', 'main-applicant-nationality'],
       next: '/main-applicant-postcode'
     },
     '/main-applicant-postcode': {

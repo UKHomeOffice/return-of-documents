@@ -1,4 +1,6 @@
 'use strict';
+const config = require('../../../config');
+const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
 module.exports = {
   sectionHeader: [
@@ -37,6 +39,19 @@ module.exports = {
     {
       step: '/reuse-main-applicant-address',
       field: 'is-passport-return-address'
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-full-name'
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-dob',
+      parse: d => d && dateFormater.format(new Date(d))
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-nationality'
     }
   ]
 };
