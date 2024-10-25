@@ -93,7 +93,7 @@ module.exports = {
     '/about-application': {
       behaviours: [customValidation],
       continueOnEdit: true,
-      fields: ['date-of-application', 'cancel-application' ],
+      fields: ['date-of-application', 'cancel-application'],
       forks: [
         {
           target: '/cancelling-application',
