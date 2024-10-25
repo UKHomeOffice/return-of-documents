@@ -52,6 +52,12 @@ module.exports = superclass =>
         const phoneNumber = req.form.values[key];
         if (phoneNumber.length > 0) {
           const phoneNumberWithoutSpace = phoneNumber.replace(/\s+/g, '').trim();
+          if (phoneNumberWithoutSpace.length < 8) {
+            return validationErrorFunc('minlength');
+          }
+          if (phoneNumberWithoutSpace.length > 16) {
+            return validationErrorFunc('maxlength');
+          }
           const isValidphoneNumber = validators.regex(phoneNumberWithoutSpace, /^\(?\+?[\d()-]{8,16}$/);
           if (!isValidphoneNumber  || !validators.internationalPhoneNumber(phoneNumber)) {
             return validationErrorFunc('validInternationalPhoneNumber');
