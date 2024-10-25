@@ -14,18 +14,11 @@ module.exports = {
     '/who-completing': {
       behaviours: [sponsorSelectionHandler],
       fields: ['who-is-completing'],
+      continueOnEdit: true,
       backLink: 'start',
       forks: [
         {
-          target: '/application',
-          condition: {
-            field: 'who-is-completing',
-            value: 'main-applicant'
-          }
-        },
-        {
           target: '/who-representing',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'who-is-rep'
@@ -33,7 +26,6 @@ module.exports = {
         },
         {
           target: '/sponsor-type',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'sponsor'
@@ -41,7 +33,6 @@ module.exports = {
         },
         {
           target: '/dependant-or-guardian',
-          continueOnEdit: true,
           condition: {
             field: 'who-is-completing',
             value: 'guardian'
@@ -52,40 +43,51 @@ module.exports = {
     },
     '/who-representing': {
       fields: ['who-is-representing'],
+      continueOnEdit: true,
       next: '/legal-representation'
     },
     '/legal-representation': {
       fields: ['confirm-sent-letter-of-authority', 'legal-rep-name'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/sponsor-type': {
       fields: ['sponsor-type'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/dependant-or-guardian': {
       fields: ['dependant-or-guardian'],
+      continueOnEdit: true,
       next: '/application'
     },
     '/application': {
       fields: ['application-type'],
+      continueOnEdit: true,
       forks: [
         {
           target: '/visa-type',
           condition: {
             field: 'application-type',
             value: 'visa'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/further-leave',
-          continueOnEdit: true,
           condition: {
             field: 'application-type',
             value: 'further-leave'
           }
         }
       ],
+      next: '/about-application'
+    },
+    '/visa-type': {
+      continueOnEdit: true,
+      next: '/about-application'
+    },
+    '/further-leave': {
+      continueOnEdit: true,
       next: '/about-application'
     },
     '/about-application': {
@@ -110,17 +112,11 @@ module.exports = {
       ],
       next: '/main-applicant-passport'
     },
-    '/visa-type': {  // logic required
-      next: '/about-application'
-    },
-    '/further-leave': { // //logic required
-      next: '/about-application'
-    },
-    '/cancelling-application': { // Should hold a logic before access to this page
+    '/cancelling-application': {
       continueOnEdit: true,
       next: '/reference-number'
     },
-    '/main-applicant-passport': { // Should hold a logic before access to this page
+    '/main-applicant-passport': {
       forks: [
         {
           target: '/proof-of-identity',

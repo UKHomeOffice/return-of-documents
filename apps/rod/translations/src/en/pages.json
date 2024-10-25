@@ -23,6 +23,9 @@
   "request-received": {
     "confirmed": "Request received"
   },
+  "cancelling-application": {
+    "header": "Cancelling your application"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -46,7 +49,10 @@
       "legal-rep-name": {
         "label": "Legal firm or representative name"
       },
-      "is-cancel-application": {
+      "application-type": {
+        "label": "Application type"
+      },
+      "cancel-application": {
         "label": "Cancelling application?"
       },
       "is-requesting-passport-to-travel": {

@@ -1,4 +1,3 @@
-'use strict';
 
 const dateComponent = require('hof').components.date;
 
@@ -36,12 +35,6 @@ module.exports = {
   },
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
-  },
-  'is-cancel-application': {
-    mixin: 'radio-group',
-    isPageHeading: true,
-    options: ['yes', 'no'],
-    validate: 'required'
   },
   'is-passport-return-address': {
     mixin: 'radio-group',

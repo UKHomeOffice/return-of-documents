@@ -70,17 +70,6 @@
     "legal-rep-name": {
         "label": "Name of legal firm or representative"
     },
-    "is-cancel-application": {
-        "label": "Any documents that were sent with the application will be returned",
-        "options": {
-            "yes": {
-                "label": "Yes"
-            },
-            "no": {
-                "label": "No"
-            }
-        }
-    },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
         "options": {
@@ -107,25 +96,29 @@
         "legend": "What is the application for?",
         "options": {
             "visa": {
-                "label": "Skeleton"
+                "label": "A visa",
+                "hint": "Includes British National (Overseas) visas"
             },
             "british-citizen": {
-                "label": "Skeleton"
+                "label": "British citizenship",
+                "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
             },
-            "further-leave": {
-                "label": "Skeleton"
+            "further-leave":{
+                "label": "Further leave to remain",
+                "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
             },
             "not-time-limit": {
-                "label": "Skeleton"
+                "label": "No time limit or replacement settlement biometric residence permit"
             },
             "eu-settlement-scheme": {
-                "label": "Skeleton"
+                "label": "Settled or pre-settled status under the EU Settlement Scheme"
             },
-            "settlement": {
-                "label": "Skeleton"
+            "settlement" : {
+                "label": "Settlement",
+                "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
             },
             "limited-leave-replacement-brp": {
-                "label": "Skeleton"
+                "label": "Transfer of conditions or limited leave replacement biometric residence permit"
             }
         }
     },

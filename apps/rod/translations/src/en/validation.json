@@ -19,6 +19,9 @@
         "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
         "maxlength": "Name or legal firm or representative must be less than 150 characters"
     },
+    "application-type": {
+        "required": "Select what the application was for"
+    },
     "date-of-application": {
         "required": "Enter the date the main applicant submitted the application, for example 27 3 2023",
         "before": "Date the main applicant submitted the application must be in the past",
