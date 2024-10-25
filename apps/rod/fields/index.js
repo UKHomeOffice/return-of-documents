@@ -90,7 +90,7 @@ module.exports = {
     className: ['typeahead'],
     options: [{
       value: '',
-      label: 'fields.main-applicant-full-nationality.options.none_selected'
+      label: 'fields.main-applicant-nationality.options.none_selected'
     }].concat(countries),
     validate: 'required'
   }
