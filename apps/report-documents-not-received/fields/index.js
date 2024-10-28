@@ -105,7 +105,8 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      'notUrl'
+      'notUrl',
+      { type: 'maxlength', arguments: [250] }
     ],
     attributes: [{ prefix: 'ROD' }]
   },
@@ -131,7 +132,8 @@ module.exports = {
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: [
       'required',
-      'notUrl'
+      'notUrl',
+      { type: 'maxlength', arguments: [250] }
     ]
   },
   'dnr-payment-reference-number': {
