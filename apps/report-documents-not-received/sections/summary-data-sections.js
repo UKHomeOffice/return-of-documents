@@ -20,6 +20,18 @@ module.exports = {
       field: 'dnr-nationality'
     },
     {
+      step: '/documents-not-received-application',
+      field: 'dnr-application-type'
+    },
+    {
+      step: '/documents-not-received-visa-type',
+      field: 'dnr-visa-type'
+    },
+    {
+      step: '/documents-not-received-further-leave',
+      field: 'dnr-further-leave-to-remain'
+    },
+    {
       step: '/documents-not-received-reference-number',
       field: 'dnr-reference-number'
     },
@@ -51,18 +63,6 @@ module.exports = {
     {
       step: '/documents-not-received-reference-number',
       field: 'dnr-courier-reference-number'
-    },
-    {
-      step: '/documents-not-received-application',
-      field: 'dnr-application-type'
-    },
-    {
-      step: '/documents-not-received-visa-type',
-      field: 'dnr-visa-type'
-    },
-    {
-      step: '/documents-not-received-further-leave',
-      field: 'dnr-further-leave-to-remain'
     },
     {
       step: '/documents-not-received-contact-details',
