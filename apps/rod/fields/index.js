@@ -1,3 +1,5 @@
+const dateComponent = require('hof').components.date;
+const countries = require('hof').utils.countries();
 
 module.exports = {
   name: {
@@ -64,6 +66,32 @@ module.exports = {
       'settlement',
       'limited-leave-replacement-brp'
     ],
+    validate: 'required'
+  },
+  'main-applicant-full-name': {
+    validate: [
+      'required',
+      { type: 'minlength', arguments: [3] },
+      { type: 'maxlength', arguments: [250] },
+      'notUrl'
+    ]
+  },
+  'main-applicant-dob': dateComponent('main-applicant-dob', {
+    mixin: 'input-date',
+    validate: [
+      'required',
+      'date',
+      { type: 'before', arguments: ['0', 'days'] },
+      { type: 'after', arguments: ['120', 'years'] }
+    ]
+  }),
+  'main-applicant-nationality': {
+    mixin: 'select',
+    className: ['typeahead'],
+    options: [{
+      value: '',
+      label: 'fields.main-applicant-nationality.options.none_selected'
+    }].concat(countries),
     validate: 'required'
   }
 };
