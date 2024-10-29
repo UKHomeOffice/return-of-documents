@@ -15,6 +15,9 @@ const dateFormatter = new Intl.DateTimeFormat(
   config.dateFormat
 );
 
+const USER = 'user';
+const BUSINESS = 'business';
+
 const getLabelForField = (req, field) => {
   return getLabel(field, req.sessionModel.get(field), translation);
 };
@@ -102,17 +105,17 @@ module.exports = class SendEmailConfirmation {
     const personalisation = getUserDetails(req);
 
     const templateId =
-      recipientType === 'user'
+      recipientType === USER
         ? config.govukNotify.userConfirmationTemplateId
         : config.govukNotify.businessConfirmationTemplateId;
 
     const recipientEmailAddress =
-      recipientType === 'user'
+      recipientType === USER
         ? req.sessionModel.get('cnc-email')
         : config.govukNotify.caseworkerEmail;
 
     const userOrBusinessStr = () =>
-      recipientType === 'user' ? 'User' : 'Business';
+      recipientType === USER ? 'User' : 'Business';
 
     try {
       await notifyClient.sendEmail(templateId, recipientEmailAddress, {
@@ -141,8 +144,8 @@ module.exports = class SendEmailConfirmation {
 
   async send(req) {
     try {
-      await this.sendEmailNotification(req, 'user');
-      await this.sendEmailNotification(req, 'business');
+      await this.sendEmailNotification(req, USER);
+      await this.sendEmailNotification(req, BUSINESS);
 
       req.log(
         'info',
