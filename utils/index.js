@@ -10,4 +10,27 @@ const getFormattedRecordNumber = rodNumber => {
   return 'ROD' + valueWithoutSpace;
 };
 
-module.exports = { removeWhiteSpace, getFormattedRecordNumber };
+const getLabel = (fieldKey, fieldValue, translation) => {
+  if (Array.isArray(fieldValue)) {
+    return fieldValue
+      .map(option => translation[fieldKey].options[option].label)
+      .join(', ');
+  }
+  return translation[fieldKey]?.options[fieldValue]?.label;
+};
+
+const getValueOfDefault = (req, field) => {
+  return req.sessionModel.get(field) ?? '';
+};
+
+const getYesOrNoStr = (req, field) => {
+  return req.sessionModel.get(field) ? 'yes' : 'no';
+};
+
+module.exports = {
+  removeWhiteSpace,
+  getFormattedRecordNumber,
+  getLabel,
+  getValueOfDefault,
+  getYesOrNoStr
+};

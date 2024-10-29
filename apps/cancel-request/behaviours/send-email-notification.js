@@ -1,5 +1,10 @@
 const config = require('../../../config');
-const { getFormattedRecordNumber } = require('../../../utils');
+const {
+  getFormattedRecordNumber,
+  getLabel,
+  getValueOfDefault,
+  getYesOrNoStr
+} = require('../../../utils');
 
 const NotifyClient = require('notifications-node-client').NotifyClient;
 const notifyKey = config.govukNotify.notifyApiKey;
@@ -10,45 +15,28 @@ const dateFormatter = new Intl.DateTimeFormat(
   config.dateFormat
 );
 
-const getLabel = (fieldKey, fieldValue) => {
-  if (Array.isArray(fieldValue)) {
-    return fieldValue
-      .map(option => translation[fieldKey].options[option].label)
-      .join(', ');
-  }
-  return translation[fieldKey]?.options[fieldValue]?.label;
+const getLabelForField = (req, field) => {
+  return getLabel(field, req.sessionModel.get(field), translation);
 };
 
 const getWhoCompletedForm = req => {
   const whoCompleted = req.sessionModel.get('cnc-who-is-completing');
 
   if (whoCompleted === 'applicant') {
-    return getLabel(
-      'cnc-who-is-completing',
-      req.sessionModel.get('cnc-who-is-completing')
-    );
+    return getLabelForField(req, 'cnc-who-is-completing');
   }
 
   if (whoCompleted === 'legal-rep') {
-    const legalRep = getLabel(
-      'cnc-who-is-representing',
-      req.sessionModel.get('cnc-who-is-representing')
-    );
+    const legalRep = getLabelForField(req, 'cnc-who-is-representing');
     return legalRep + '’s legal representative';
   }
 
   if (whoCompleted === 'sponsor') {
-    return getLabel(
-      'cnc-sponsor-type',
-      req.sessionModel.get('cnc-sponsor-type')
-    );
+    return getLabelForField(req, 'cnc-sponsor-type');
   }
 
   if (whoCompleted === 'guardian') {
-    return getLabel(
-      'cnc-dependant-or-guardian',
-      req.sessionModel.get('cnc-dependant-or-guardian')
-    );
+    return getLabelForField(req, 'cnc-dependant-or-guardian');
   }
 
   return '';
@@ -58,65 +46,54 @@ const getApplicationCategory = req => {
   const applicationReason = req.sessionModel.get('cnc-reason-for-application');
 
   if (applicationReason === 'visa') {
-    return getLabel(
-      'cnc-application-visa-type',
-      req.sessionModel.get('cnc-application-visa-type')
-    );
+    return getLabelForField(req, 'cnc-application-visa-type');
   }
 
   if (applicationReason === 'leave-to-remain') {
-    return getLabel(
-      'cnc-further-leave-to-remain',
-      req.sessionModel.get('cnc-further-leave-to-remain')
-    );
+    return getLabelForField(req, 'cnc-further-leave-to-remain');
   }
 
-  return getLabel(
-    'cnc-reason-for-application',
-    req.sessionModel.get('cnc-reason-for-application')
-  );
+  return getLabelForField(req, 'cnc-reason-for-application');
 };
 
 const getUserDetails = req => {
   return {
     applicant_full_name: req.sessionModel.get('cnc-main-applicant-full-name'),
     applicant_dob: dateFormatter.format(
-      new Date(req.sessionModel.get('cnc-main-applicant-dob'))
+      new Date(getValueOfDefault(req, 'cnc-main-applicant-dob'))
     ),
-    applicant_nationality: req.sessionModel.get(
+    applicant_nationality: getValueOfDefault(
+      req,
       'cnc-main-applicant-nationality'
     ),
     who_completed_form: getWhoCompletedForm(req),
     application_category: getApplicationCategory(req),
-    has_record_number: req.sessionModel.get('enter-record-number')
-      ? 'yes'
-      : 'no',
+    has_record_number: getYesOrNoStr(req, 'enter-record-number'),
     record_number:
-      getFormattedRecordNumber(req.sessionModel.get('enter-record-number')) ??
+      getFormattedRecordNumber(getValueOfDefault(req, 'enter-record-number')) ??
       '',
-    has_case_id: req.sessionModel.get('enter-case-id') ? 'yes' : 'no',
-    case_id: req.sessionModel.get('enter-case-id') ?? '',
-    has_ho_reference_number: req.sessionModel.get('enter-ho-reference-number')
-      ? 'yes'
-      : 'no',
-    ho_reference_number:
-      req.sessionModel.get('enter-ho-reference-number') ?? '',
-    has_payment_reference_number: req.sessionModel.get(
+    has_case_id: getYesOrNoStr(req, 'enter-case-id'),
+    case_id: getValueOfDefault(req, 'enter-case-id'),
+    has_ho_reference_number: getYesOrNoStr(req, 'enter-ho-reference-number'),
+    ho_reference_number: getValueOfDefault(req, 'enter-ho-reference-number'),
+    has_payment_reference_number: getYesOrNoStr(
+      req,
       'enter-payment-reference-number'
-    )
-      ? 'yes'
-      : 'no',
-    payment_reference_number:
-      req.sessionModel.get('enter-payment-reference-number') ?? '',
-    has_courier_reference_number: req.sessionModel.get(
+    ),
+    payment_reference_number: getValueOfDefault(
+      req,
+      'enter-payment-reference-number'
+    ),
+    has_courier_reference_number: getYesOrNoStr(
+      req,
       'enter-courier-reference-number'
-    )
-      ? 'yes'
-      : 'no',
-    courier_reference_number:
-      req.sessionModel.get('enter-courier-reference-number') ?? '',
-    contact_email: req.sessionModel.get('cnc-email'),
-    contact_telephone: req.sessionModel.get('cnc-telephone')
+    ),
+    courier_reference_number: getValueOfDefault(
+      req,
+      'enter-courier-reference-number'
+    ),
+    contact_email: getValueOfDefault(req, 'cnc-email'),
+    contact_telephone: getValueOfDefault(req, 'cnc-telephone')
   };
 };
 
