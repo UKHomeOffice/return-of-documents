@@ -10,6 +10,4 @@ const getFormattedRecordNumber = rodNumber => {
   return 'ROD' + valueWithoutSpace;
 };
 
-const valueOrDefault = (value, defaultValue) => value ?? defaultValue;
-
 module.exports = { removeWhiteSpace, getFormattedRecordNumber };
