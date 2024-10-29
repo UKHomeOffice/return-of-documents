@@ -130,43 +130,31 @@ const getUserDetails = req => {
 };
 
 module.exports = class SendEmailConfirmation {
-  async sendUserEmailNotification(req) {
-    const personalisation = getUserDetails(req);
-    try {
-      await notifyClient.sendEmail(
-        config.govukNotify.userConfirmationTemplateId,
-        req.sessionModel.get('cnc-email'),
-        {
-          personalisation: Object.assign({}, personalisation)
-        }
-      );
-
-      req.log('info', 'User Confirmation Email sent successfully');
-    } catch (err) {
-      const errorDetails = err.response?.data
-        ? `Cause: ${JSON.stringify(err.response.data)}`
-        : '';
-      const errorCode = err.code ? `${err.code} -` : '';
-      const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
-
-      req.log('error', 'Failed to send User Confirmation Email', errorMessage);
-      throw Error(errorMessage);
-    }
-  }
-
-  async sendCaseworkerEmailNotification(req) {
+  async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
 
-    try {
-      await notifyClient.sendEmail(
-        config.govukNotify.businessConfirmationTemplateId,
-        config.govukNotify.caseworkerEmail,
-        {
-          personalisation: Object.assign({}, personalisation)
-        }
-      );
+    const templateId =
+      recipientType === 'user'
+        ? config.govukNotify.userConfirmationTemplateId
+        : config.govukNotify.businessConfirmationTemplateId;
 
-      req.log('info', 'Business Confirmation Email sent successfully');
+    const recipientEmailAddress =
+      recipientType === 'user'
+        ? req.sessionModel.get('cnc-email')
+        : config.govukNotify.caseworkerEmail;
+
+    const userOrBusinessStr = () =>
+      recipientType === 'user' ? 'User' : 'Business';
+
+    try {
+      await notifyClient.sendEmail(templateId, recipientEmailAddress, {
+        personalisation: Object.assign({}, personalisation)
+      });
+
+      req.log(
+        'info',
+        `${userOrBusinessStr()} Confirmation Email sent successfully`
+      );
     } catch (err) {
       const errorDetails = err.response?.data
         ? `Cause: ${JSON.stringify(err.response.data)}`
@@ -176,7 +164,7 @@ module.exports = class SendEmailConfirmation {
 
       req.log(
         'error',
-        'Failed to send Business Confirmation Email',
+        `Failed to send ${userOrBusinessStr()} Confirmation Email`,
         errorMessage
       );
       throw Error(errorMessage);
@@ -185,8 +173,8 @@ module.exports = class SendEmailConfirmation {
 
   async send(req) {
     try {
-      await this.sendUserEmailNotification(req);
-      await this.sendCaseworkerEmailNotification(req);
+      await this.sendEmailNotification(req, 'user');
+      await this.sendEmailNotification(req, 'business');
 
       req.log(
         'info',
