@@ -11,9 +11,9 @@ module.exports = {
   env: env,
   govukNotify: {
     notifyApiKey: process.env.NOTIFY_KEY,
-    userConfirmationTemplateId: process.env.USER_CONFIRMATION_TEMPLATE_ID,
+    userConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
     businessConfirmationTemplateId:
-      process.env.BUSINESS_CONFIRMATION_TEMPLATE_ID,
+      process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID,
     caseworkerEmail: process.env.CASEWORKER_EMAIL
   },
   survey: {
