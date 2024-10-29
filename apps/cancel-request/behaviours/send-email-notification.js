@@ -1,4 +1,5 @@
 const config = require('../../../config');
+const { getFormattedRecordNumber } = require('../../../utils');
 
 const NotifyClient = require('notifications-node-client').NotifyClient;
 const notifyKey = config.govukNotify.notifyApiKey;
@@ -74,16 +75,6 @@ const getApplicationCategory = req => {
     'cnc-reason-for-application',
     req.sessionModel.get('cnc-reason-for-application')
   );
-};
-
-const getFormattedRecordNumber = rodNumber => {
-  if (!rodNumber) return null;
-  const valueWithoutSpace = rodNumber.replace(/\s+/g, '');
-  const containsRod = valueWithoutSpace.match(/^r[o0]d/i);
-  if (containsRod) {
-    return 'ROD' + valueWithoutSpace.slice(3);
-  }
-  return 'ROD' + valueWithoutSpace;
 };
 
 const getUserDetails = req => {
