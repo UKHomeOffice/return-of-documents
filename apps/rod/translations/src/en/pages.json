@@ -24,11 +24,17 @@
     "p2": "to check which one you applied for.",
     "p3": "You will have used an online form called ‘FLR’ to apply. You will have applied from inside the UK."
   },
+  "main-applicant": {
+    "header": "Main applicant’s details"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
   "request-received": {
     "confirmed": "Request received"
+  },
+  "cancelling-application": {
+    "header": "Cancelling your application"
   },
   "confirm": {
     "fields": {
@@ -61,6 +67,15 @@
       },
       "is-requesting-passport-to-travel": {
         "label": "Main applicant’s passport for travel?"
+      },
+      "main-applicant-full-name": {
+        "label": "Main applicant’s full name"
+      },
+      "main-applicant-dob": {
+        "label": "Main applicant’s date of birth"
+      },
+      "main-applicant-nationality": {
+        "label": "Main applicant’s nationality"
       }
     }
   }

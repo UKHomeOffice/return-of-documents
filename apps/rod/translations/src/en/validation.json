@@ -27,5 +27,20 @@
     },
     "further-leave-to-remain": {
         "required": "Select which type of further leave you applied for"
+    },
+    "main-applicant-full-name": {
+        "required": "Enter the main applicant's full name",
+        "minlength": "Applicant's full name must be between 3 and 250 characters",
+        "maxlength": "Applicant's full name must be between 3 and 250 characters",
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    },
+    "main-applicant-dob": {
+        "required": "Enter the applicant's date of birth",
+        "before": "Main applicant's date of birth must be in the past",
+        "after": "Enter a real date of birth",
+        "date": "Enter a real date of birth"
+    },
+    "main-applicant-nationality": {
+        "required": "Select the main applicant's country of nationality"
     }
 }
