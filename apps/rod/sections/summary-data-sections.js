@@ -65,9 +65,9 @@ module.exports = {
       step: '/your-documents',
       field: 'document-type',
       parse: (value, req) => {
-       return  Array.isArray(value) ? 
-        value.map(option => option === "Other" ? req.sessionModel.get('enter-document-type') : option).join(', ') : 
-        value;
+        return  Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
       }
     },
     {

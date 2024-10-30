@@ -145,9 +145,9 @@ module.exports = {
     mixin: 'input-text',
     validate: [
       'required',
-      'notUrl', 
-      {type: 'minlength', arguments: 1}, 
-      { type: 'maxlength', arguments: 100} 
+      'notUrl',
+      {type: 'minlength', arguments: 1},
+      { type: 'maxlength', arguments: 100}
     ],
     dependent: {
       field: 'document-type',
