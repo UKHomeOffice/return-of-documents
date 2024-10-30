@@ -17,11 +17,17 @@
   "about-application": {
     "header": "About the application"
   },
+  "main-applicant": {
+    "header": "Main applicant’s details"
+  },
   "sectionHeader": {
     "header": "Check your answers"
   },
   "request-received": {
     "confirmed": "Request received"
+  },
+  "cancelling-application": {
+    "header": "Cancelling your application"
   },
   "confirm": {
     "fields": {
@@ -48,6 +54,15 @@
       },
       "is-requesting-passport-to-travel": {
         "label": "Main applicant’s passport for travel?"
+      },
+      "main-applicant-full-name": {
+        "label": "Main applicant’s full name"
+      },
+      "main-applicant-dob": {
+        "label": "Main applicant’s date of birth"
+      },
+      "main-applicant-nationality": {
+        "label": "Main applicant’s nationality"
       }
     }
   }
