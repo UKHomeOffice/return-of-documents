@@ -133,5 +133,20 @@
                 "label": "Transfer of conditions or limited leave replacement biometric residence permit"
             }
         }
+    },
+    "main-applicant-full-name": {
+        "label": "Full name",
+        "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+    },
+    "main-applicant-dob": {
+        "legend": "Date of birth",
+        "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+    },
+    "main-applicant-nationality": {
+        "label": "Country of nationality",
+        "options": {
+            "none_selected": "Select a country"
+        },
+        "hint": "This must match the main applicant’s immigration documents"
     }
 }
