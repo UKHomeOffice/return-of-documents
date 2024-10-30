@@ -115,5 +115,50 @@ module.exports = {
     legend: {
       className: 'govuk-label--m'
     }
+  },
+  'document-type': {
+    mixin: 'checkbox-group',
+    legend: {
+      className: 'govuk-label--s'
+    },
+    options: [
+      {
+        value: 'passport'
+      },
+      {
+        value: 'driving-license'
+      },
+      {
+        value: 'birth-certificate'
+      },
+      {
+        value: 'marriage-certificate'
+      },
+      {
+        value: 'other',
+        toggle: 'enter-document-type',
+        child: 'input-text'
+      }
+    ]
+  },
+  'enter-document-type': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl', 
+      {type: 'minlength', arguments: 1}, 
+      { type: 'maxlength', arguments: 100} 
+    ],
+    dependent: {
+      field: 'document-type',
+      value: 'other'
+    },
+    className: ['govuk-input', 'govuk-!-width-one-half']
+  },
+  'document-description': {
+    mixin: 'textarea',
+    validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
+    attributes: [{ attribute: 'rows', value: 5 }],
+    labelClassName: 'govuk-label--s'
   }
 };

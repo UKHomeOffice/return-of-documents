@@ -60,6 +60,19 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-nationality'
+    },
+    {
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+       return  Array.isArray(value) ? 
+        value.map(option => option === "Other" ? req.sessionModel.get('enter-document-type') : option).join(', ') : 
+        value;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
     }
   ]
 };

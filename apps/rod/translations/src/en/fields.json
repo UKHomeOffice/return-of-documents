@@ -164,8 +164,8 @@
             "label": "A different type of visa"
           }
         }
-      },
-      "further-leave-to-remain": {
+    },
+    "further-leave-to-remain": {
         "legend": "Which type of further leave did you apply for?",
         "options": {
           "flr-fp": {
@@ -181,7 +181,7 @@
             "label": "FLR (HRO)"
           }
         }
-      },
+    },
     "main-applicant-full-name": {
         "label": "Full name",
         "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
@@ -196,5 +196,33 @@
             "none_selected": "Select a country"
         },
         "hint": "This must match the main applicant’s immigration documents"
+    },
+    "document-type": {
+        "legend": "Which documents do you need back? (Optional)",
+        "hint": "Select all the document types you need returned",
+        "options": {
+          "passport": {
+            "label": "Passport"
+          },
+          "driving-license": {
+            "label": "Driving licence"
+          },
+          "birth-certificate": {
+            "label": "Birth certificate"
+          },
+          "marriage-certificate": {
+            "label": "Marriage certificate"
+          },
+          "other": {
+            "label": "Other"
+          }
+        }
+    },
+    "enter-document-type": {
+         "label": "Enter the document type"
+    },
+    "document-description": {
+         "label": "Describe each of your documents (optional)",
+         "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
     }
 }
