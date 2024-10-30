@@ -9,7 +9,11 @@
     "header": "Check your answers"
   },
   "cancellation-received": {
-    "confirmed": "Cancellation request received"
+    "confirmed": "Cancellation request received",
+    "p1": "We have sent email confirmation to {{values.cnc-email}}.",
+    "h2": "What happens next",
+    "p2": "The Home Office will contact you by telephone or email to tell you if your request has been cancelled.",
+    "p3": "Your request to return documents has not been cancelled until they contact you."
   },
   "confirm": {
     "fields": {
