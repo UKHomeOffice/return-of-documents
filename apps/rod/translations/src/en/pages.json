@@ -36,6 +36,9 @@
   "cancelling-application": {
     "header": "Cancelling your application"
   },
+  "contact-details": {
+    "header": "Contact details"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
