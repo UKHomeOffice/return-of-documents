@@ -109,14 +109,6 @@ module.exports = {
     '/cancellation-received': {
       clearSession: true,
       backLink: false
-    },
-    '/cancel-request-visa-type': {
-      fields: ['cnc-application-visa-type'],
-      next: '/cancel-request-reference-number'
-    },
-    '/cancel-request-further-leave': {
-      fields: ['cnc-further-leave-to-remain'],
-      next: '/cancel-request-reference-number'
     }
   }
 };
