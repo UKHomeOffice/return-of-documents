@@ -1,5 +1,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+function extraNotes(value) {
+  return validators.maxlength(value, 2000);
+}
 
 module.exports = {
   name: {
@@ -88,10 +93,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -115,5 +122,10 @@ module.exports = {
     legend: {
       className: 'govuk-label--m'
     }
+  },
+  notes: {
+    mixin: 'textarea',
+    validate: [extraNotes],
+    attributes: [{ attribute: 'rows', value: 5 }]
   }
 };

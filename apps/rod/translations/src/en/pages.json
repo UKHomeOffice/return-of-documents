@@ -36,6 +36,9 @@
   "cancelling-application": {
     "header": "Cancelling your application"
   },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -76,6 +79,9 @@
       },
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   }

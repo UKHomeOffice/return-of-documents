@@ -1,6 +1,9 @@
 'use strict';
 const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
+const dateFormater = new Intl.DateTimeFormat(
+  config.dateLocales,
+  config.dateFormat
+);
 
 module.exports = {
   sectionHeader: [
@@ -60,6 +63,10 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-nationality'
+    },
+    {
+      step: '/extra-notes',
+      field: 'notes'
     }
   ]
 };
