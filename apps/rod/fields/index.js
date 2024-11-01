@@ -88,10 +88,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -116,75 +118,75 @@ module.exports = {
       className: 'govuk-label--m'
     }
   },
-    'reference-number': {
-      mixin: 'checkbox-group',
-      labelClassName: 'govuk-label--s',
-      isPageHeading: true,
-      validate: ['required'],
-      options: [
-        {
-          value: 'case-id',
-          toggle: 'enter-case-id',
-          child: 'input-text'
-        },
-        {
-          value: 'ho-reference-number',
-          toggle: 'enter-ho-reference-number',
-          child: 'input-text'
-        },
-        {
-          value: 'payment-reference-number',
-          toggle: 'enter-payment-reference-number',
-          child: 'input-text'
-        },
-        {
-          value: 'courier-reference-number',
-          toggle: 'enter-courier-reference-number',
-          child: 'input-text'
-        }
-      ]
-    },
-    'enter-case-id': {
-      dependent: {
-        field: 'reference-number',
-        value: 'case-id'
+  'reference-number': {
+    mixin: 'checkbox-group',
+    labelClassName: 'govuk-label--s',
+    isPageHeading: true,
+    validate: ['required'],
+    options: [
+      {
+        value: 'case-id',
+        toggle: 'enter-case-id',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: [
-        'required',
-        { type: 'maxlength', arguments: 8 },
-        { type: 'minlength', arguments: 8 },
-        'numeric',
-        'notUrl'
-      ]
-    },
-    'enter-ho-reference-number': {
-      dependent: {
-        field: 'reference-number',
-        value: 'ho-reference-number'
+      {
+        value: 'ho-reference-number',
+        toggle: 'enter-ho-reference-number',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: [
-        'required',
-        { type: 'minlength', arguments: 8 },
-        'notUrl',
-        { type: 'maxlength', arguments: 250 }
-      ]
-    },
-    'enter-payment-reference-number': {
-      dependent: {
-        field: 'reference-number',
-        value: 'payment-reference-number'
+      {
+        value: 'payment-reference-number',
+        toggle: 'enter-payment-reference-number',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+      {
+        value: 'courier-reference-number',
+        toggle: 'enter-courier-reference-number',
+        child: 'input-text'
+      }
+    ]
+  },
+  'enter-case-id': {
+    dependent: {
+      field: 'reference-number',
+      value: 'case-id'
     },
-    'enter-courier-reference-number': {
-      dependent: {
-        field: 'reference-number',
-        value: 'courier-reference-number'
-      },
-      className: ['govuk-input'],
-      validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
-    }
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 8 },
+      { type: 'minlength', arguments: 8 },
+      'numeric',
+      'notUrl'
+    ]
+  },
+  'enter-ho-reference-number': {
+    dependent: {
+      field: 'reference-number',
+      value: 'ho-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 8 },
+      'notUrl',
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'enter-payment-reference-number': {
+    dependent: {
+      field: 'reference-number',
+      value: 'payment-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'enter-courier-reference-number': {
+    dependent: {
+      field: 'reference-number',
+      value: 'courier-reference-number'
+    },
+    className: ['govuk-input'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  }
 };
