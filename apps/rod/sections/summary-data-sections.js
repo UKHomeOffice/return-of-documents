@@ -52,6 +52,26 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-nationality'
+    },
+    {
+      step: '/reference-number',
+      field: 'enter-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'enter-case-id'
+    },
+    {
+      step: '/reference-number',
+      field: 'enter-ho-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'enter-payment-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'enter-courier-reference-number'
     }
   ]
 };

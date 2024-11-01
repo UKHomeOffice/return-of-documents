@@ -2,6 +2,7 @@
 
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const customValidation = require('./behaviours/custom-validations');
 
 module.exports = {
   name: 'rod',
@@ -138,11 +139,8 @@ module.exports = {
       next: '/reference-number'
     },
 
-    '/proof-of-identity': {},
+    '/proof-of-identity': {
 
-    '/reference-number': {
-
-      next: '/your-documents'
     },
     '/your-documents': {
 
@@ -201,6 +199,17 @@ module.exports = {
     '/extra-notes': {
 
       next: '/confirm'
+    },
+    '/reference-number': {
+      behaviours: [customValidation],
+      fields: [
+        'reference-number',
+        'enter-case-id',
+        'enter-ho-reference-number',
+        'enter-payment-reference-number',
+        'enter-courier-reference-number'
+      ],
+      next: 'contact-details'
     },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],

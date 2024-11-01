@@ -63,6 +63,21 @@
       },
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "reference-number": {
+        "label": "Reference number"
+      },
+      "enter-case-id": {
+        "label": "Case ID"
+      },
+      "enter-ho-reference-number": {
+        "label": "Home Office reference number"
+      },
+      "enter-payment-reference-number": {
+        "label": "Payment reference number"
+      },
+      "enter-courier-reference-number": {
+        "label": "Courier reference number"
       }
     }
   }
