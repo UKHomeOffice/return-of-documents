@@ -1,5 +1,3 @@
-'use strict';
-
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 const customValidation = require('./behaviours/custom-validations');
@@ -81,10 +79,12 @@ module.exports = {
       next: '/about-application'
     },
     '/visa-type': {
+      fields: ['visa-type'],
       continueOnEdit: true,
       next: '/about-application'
     },
     '/further-leave': {
+      fields: ['further-leave-to-remain'],
       continueOnEdit: true,
       next: '/about-application'
     },

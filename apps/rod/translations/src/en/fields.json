@@ -4,7 +4,7 @@
     },
     "who-is-completing": {
         "legend": "Who is completing this form?",
-        "options":{
+        "options": {
             "applicant": {
                 "label": "The main applicant"
             },
@@ -24,7 +24,7 @@
     "who-is-representing": {
         "legend": "Who are you legally representing?",
         "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
-        "options":{
+        "options": {
             "main-applicant": {
                 "label": "The main applicant"
             },
@@ -36,7 +36,7 @@
     "sponsor-type": {
         "legend": "What type of sponsor are you?",
         "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
-        "options":{
+        "options": {
             "british-sponsor": {
                 "label": "A British sponsor",
                 "hint": "You have British citizenship"
@@ -53,7 +53,7 @@
     },
     "dependant-or-guardian": {
         "legend": "Are you a dependant or a guardian of a dependant?",
-        "options":{
+        "options": {
             "dependant-over-18": {
                 "label": "A dependant aged 18 or over",
                 "hint": "You are an adult named as a dependant on the application"
@@ -84,7 +84,7 @@
     },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -106,7 +106,7 @@
     },
     "application-type": {
         "legend": "What is the application for?",
-        "options":{
+        "options": {
             "visa": {
                 "label": "A visa",
                 "hint": "Includes British National (Overseas) visas"
@@ -134,6 +134,54 @@
             }
         }
     },
+    "visa-type": {
+        "legend": "What type of visa is the application for?",
+        "options": {
+          "visa-type-british": {
+            "label": "British national (overseas) visa"
+          },
+          "visa-type-talent": {
+            "label": "Exceptional talent visa",
+            "hint": "Also called tier 1 in the points-based system"
+          },
+          "visa-type-skilled":{
+            "label": "Skilled worker visa",
+            "hint": "Also called tier 2 in the points-based system"
+          },
+          "visa-type-study" : {
+            "label": "Study visa",
+            "hint": "Also called tier 4 in the points-based system"
+          },
+          "visa-type-temp": {
+            "label": "Temporary work visa",
+            "hint": "Also called tier 5 in the points-based system"
+          },
+          "visa-type-turkish": {
+            "label": "Turkish national visa",
+            "hint": "Includes Turkish businessperson and Turkish worker visas"
+          },
+          "visa-type-different": {
+            "label": "A different type of visa"
+          }
+        }
+      },
+      "further-leave-to-remain": {
+        "legend": "Which type of further leave did you apply for?",
+        "options": {
+          "flr-fp": {
+            "label": "FLR (FP)"
+          },
+          "flr-m": {
+            "label": "FLR (M)"
+          },
+          "flr-ir": {
+            "label": "FLR (IR)"
+          },
+          "flr-hro": {
+            "label": "FLR (HRO)"
+          }
+        }
+      },
     "main-applicant-full-name": {
         "label": "Full name",
         "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
