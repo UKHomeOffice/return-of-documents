@@ -78,6 +78,9 @@ const getUserDetails = req => {
 };
 
 module.exports = class SendEmailConfirmation {
+  constructor(userDetail) {
+    this.userDetail = userDetail;
+  }
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
 
@@ -138,6 +141,7 @@ module.exports = class SendEmailConfirmation {
 
 // one behaviour to handle sending email on DNR/CNC journey
 // check the journey 
+// getUserDetails function
 // class EmailProps {
 //   constructor() {
 //     this.personalisation = {};
@@ -145,3 +149,5 @@ module.exports = class SendEmailConfirmation {
 //       this.emailReplyToId = replyToId;
 //     }
 //   }
+
+// who_completed_form: getWhoCompletedForm(req) is in CNC but not DNR
