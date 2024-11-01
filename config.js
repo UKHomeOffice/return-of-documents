@@ -2,6 +2,7 @@
 const env = process.env.NODE_ENV || 'production';
 
 module.exports = {
+  rootDirectory: __dirname,
   dateLocales: 'en-GB',
   dateFormat: {
     day: '2-digit',

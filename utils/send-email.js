@@ -1,10 +1,10 @@
-const config = require('../../../config');
+const config = require('../config');
 const {
   getFormattedRecordNumber,
   getLabel,
   getValueOfDefault,
   getYesOrNoStr
-} = require('../../../utils');
+} = require('../utils');
 
 const NotifyClient = require('notifications-node-client').NotifyClient;
 const notifyKey = config.govukNotify.notifyApiKey;
@@ -18,71 +18,71 @@ const dateFormatter = new Intl.DateTimeFormat(
 const USER = 'user';
 const BUSINESS = 'business';
 
-const getLabelForField = (req, field) => {
-  return getLabel(field, req.sessionModel.get(field), translation);
-};
-
-
-const getApplicationCategory = req => {
-  const applicationReason = req.sessionModel.get('dnr-application-type');
-
-  if (applicationReason === 'dnr-visa') {
-    return getLabelForField(req, 'dnr-visa-type');
+module.exports = class SendEmailUtil {
+  constructor(journeyFolderName) {
+    this.translation = 
+      require(`${config.rootDirectory}/apps/${journeyFolderName}/translations/src/en/fields.json`);
   }
-
-  if (applicationReason === 'dnr-further-leave') {
-    return getLabelForField(req, 'dnr-further-leave-to-remain');
-  }
-
-  return getLabelForField(req, 'dnr-application-type');
-};
-
-const getUserDetails = req => {
-  return {
-    applicant_full_name: req.sessionModel.get('dnr-full-name'),
-    applicant_dob: dateFormatter.format(
-      new Date(getValueOfDefault(req, 'dnr-dob'))
-    ),
-    applicant_nationality: getValueOfDefault(
-      req,
-      'dnr-nationality'
-    ),
-    application_category: getApplicationCategory(req),
-    has_record_number: getYesOrNoStr(req, 'dnr-record-number'),
-    record_number:
-      getFormattedRecordNumber(getValueOfDefault(req, 'dnr-record-number')) ??
-      '',
-    has_case_id: getYesOrNoStr(req, 'dnr-case-id'),
-    case_id: getValueOfDefault(req, 'dnr-case-id'),
-    has_ho_reference_number: getYesOrNoStr(req, 'dnr-ho-reference-number'),
-    ho_reference_number: getValueOfDefault(req, 'dnr-ho-reference-number'),
-    has_payment_reference_number: getYesOrNoStr(
-      req,
-      'dnr-payment-reference-number'
-    ),
-    payment_reference_number: getValueOfDefault(
-      req,
-      'dnr-payment-reference-number'
-    ),
-    has_courier_reference_number: getYesOrNoStr(
-      req,
-      'dnr-courier-reference-number'
-    ),
-    courier_reference_number: getValueOfDefault(
-      req,
-      'dnr-courier-reference-number'
-    ),
-    contact_email: getValueOfDefault(req, 'dnr-email'),
-    contact_telephone: getValueOfDefault(req, 'dnr-telephone')
+  getLabelForField = (req, field) => {
+    return getLabel(field, req.sessionModel.get(field), translation);
   };
-};
-
-module.exports = class SendEmailConfirmation {
-  constructor(userDetail) {
-    this.userDetail = userDetail;
-  }
+  
+  
+  getApplicationCategory = req => {
+    const applicationReason = req.sessionModel.get('dnr-application-type');
+  
+    if (applicationReason === 'dnr-visa') {
+      return this.getLabelForField(req, 'dnr-visa-type');
+    }
+  
+    if (applicationReason === 'dnr-further-leave') {
+      return this.getLabelForField(req, 'dnr-further-leave-to-remain');
+    }
+  
+    return this.getLabelForField(req, 'dnr-application-type');
+  };
+  
+  getUserDetails = req => {
+    return {
+      applicant_full_name: req.sessionModel.get('dnr-full-name'),
+      applicant_dob: dateFormatter.format(
+        new Date(getValueOfDefault(req, 'dnr-dob'))
+      ),
+      applicant_nationality: getValueOfDefault(
+        req,
+        'dnr-nationality'
+      ),
+      application_category: this.getApplicationCategory(req),
+      has_record_number: getYesOrNoStr(req, 'dnr-record-number'),
+      record_number:
+        getFormattedRecordNumber(getValueOfDefault(req, 'dnr-record-number')) ??
+        '',
+      has_case_id: getYesOrNoStr(req, 'dnr-case-id'),
+      case_id: getValueOfDefault(req, 'dnr-case-id'),
+      has_ho_reference_number: getYesOrNoStr(req, 'dnr-ho-reference-number'),
+      ho_reference_number: getValueOfDefault(req, 'dnr-ho-reference-number'),
+      has_payment_reference_number: getYesOrNoStr(
+        req,
+        'dnr-payment-reference-number'
+      ),
+      payment_reference_number: getValueOfDefault(
+        req,
+        'dnr-payment-reference-number'
+      ),
+      has_courier_reference_number: getYesOrNoStr(
+        req,
+        'dnr-courier-reference-number'
+      ),
+      courier_reference_number: getValueOfDefault(
+        req,
+        'dnr-courier-reference-number'
+      ),
+      contact_email: getValueOfDefault(req, 'dnr-email'),
+      contact_telephone: getValueOfDefault(req, 'dnr-telephone')
+    };
+  };
   async sendEmailNotification(req, recipientType) {
-    const personalisation = getUserDetails(req);
+    const personalisation = this.getUserDetails(req);
 
     const templateId =
       recipientType === USER
