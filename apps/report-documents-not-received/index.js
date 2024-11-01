@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const sendNotification = require('./behaviours/submit-notify');
 
 module.exports = {
   name: 'report-documents-not-received',
@@ -49,7 +50,7 @@ module.exports = {
       next: '/documents-not-received-confirm'
     },
     '/documents-not-received-confirm': {
-      behaviours: [SummaryPageBehaviour],
+      behaviours: [SummaryPageBehaviour, sendNotification],
       sections: require('./sections/summary-data-sections'),
       next: '/report-submitted'
     },

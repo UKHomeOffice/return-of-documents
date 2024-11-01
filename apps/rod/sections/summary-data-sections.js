@@ -29,6 +29,14 @@ module.exports = {
       field: 'application-type'
     },
     {
+      step: '/visa-type',
+      field: 'visa-type'
+    },
+    {
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
+    },
+    {
       step: '/about-application',
       field: 'cancel-application'
     },

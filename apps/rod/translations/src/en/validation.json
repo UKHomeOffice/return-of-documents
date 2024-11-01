@@ -22,6 +22,12 @@
     "application-type": {
         "required": "Select what the application was for"
     },
+    "visa-type": {
+        "required": "Select what type of visa the application was for"
+    },
+    "further-leave-to-remain": {
+        "required": "Select which type of further leave you applied for"
+    },
     "main-applicant-full-name": {
         "required": "Enter the main applicant's full name",
         "minlength": "Applicant's full name must be between 3 and 250 characters",
