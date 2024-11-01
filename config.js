@@ -10,6 +10,11 @@ module.exports = {
   },
   env: env,
   govukNotify: {
+    notifyApiKey: process.env.NOTIFY_KEY,
+    DNRuserConfirmationTemplateId: process.env.DNR_USER_CONFIRMATION_TEMPLATE_ID,
+    DNRbusinessConfirmationTemplateId:
+      process.env.DNR_BUSINESS_CONFIRMATION_TEMPLATE_ID,
+    caseworkerEmail: process.env.CASEWORKER_EMAIL
   },
   survey: {
     urls: {
