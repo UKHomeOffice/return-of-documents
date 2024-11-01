@@ -166,9 +166,9 @@ module.exports = {
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
   },
-    notes: {
-      mixin: 'textarea',
-      validate: [extraNotes],
-      attributes: [{ attribute: 'rows', value: 5 }]
-    }
+  notes: {
+    mixin: 'textarea',
+    validate: [extraNotes],
+    attributes: [{ attribute: 'rows', value: 5 }]
+  }
 };
