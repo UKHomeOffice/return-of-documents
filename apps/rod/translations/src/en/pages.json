@@ -36,6 +36,9 @@
   "cancelling-application": {
     "header": "Cancelling your application"
   },
+  "your-documents": {
+    "header": "Your documents"
+  },
   "extra-notes": {
     "header": "Notes about your request (optional)"
   },
@@ -79,6 +82,12 @@
       },
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "document-type": {
+        "label": "Documents for return"
+      },
+      "document-description": {
+        "label": "Document description"
       },
       "notes": {
         "label": "Notes"

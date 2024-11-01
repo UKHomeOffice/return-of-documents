@@ -1,202 +1,230 @@
 {
-  "name": {
-    "label": "Return Of Documents"
-  },
-  "who-is-completing": {
-    "legend": "Who is completing this form?",
-    "options": {
-      "applicant": {
-        "label": "The main applicant"
-      },
-      "who-is-rep": {
-        "label": "A legal representative",
-        "hint": "This includes legal representatives of main applicants, document holders and sponsors"
-      },
-      "sponsor": {
-        "label": "A sponsor",
-        "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
-      },
-      "guardian": {
-        "label": "A dependant or guardian of a dependant"
-      }
-    }
-  },
-  "who-is-representing": {
-    "legend": "Who are you legally representing?",
-    "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
-    "options": {
-      "main-applicant": {
-        "label": "The main applicant"
-      },
-      "document-holder": {
-        "label": "A document holder"
-      }
-    }
-  },
-  "sponsor-type": {
-    "legend": "What type of sponsor are you?",
-    "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
-    "options": {
-      "british-sponsor": {
-        "label": "A British sponsor",
-        "hint": "You have British citizenship"
-      },
-      "settled-sponsor": {
-        "label": "A settled sponsor",
-        "hint": "You have settlement (also called indefinite leave to remain)"
-      },
-      "eea-sponsor": {
-        "label": "An EEA citizen sponsor",
-        "hint": "You are a citizen of an EU country, Switzerland, Norway, Iceland or Lichtenstein"
-      }
-    }
-  },
-  "dependant-or-guardian": {
-    "legend": "Are you a dependant or a guardian of a dependant?",
-    "options": {
-      "dependant-over-18": {
-        "label": "A dependant aged 18 or over",
-        "hint": "You are an adult named as a dependant on the application"
-      },
-      "parent-guardian-under-18": {
-        "label": "A parent or guardian of a dependant who is under 18",
-        "hint": "You are acting on behalf of a child named as a dependant on the application"
-      }
-    }
-  },
-  "confirm-sent-letter-of-authority": {
-    "label": "I confirm I have sent the Home Office a signed letter of authority"
-  },
-  "legal-rep-name": {
-    "label": "Name of legal firm or representative"
-  },
-  "cancel-application": {
-    "legend": "Do you want to cancel the application?",
-    "hint": "Any documents that were sent with the application will be returned",
-    "options": {
-      "yes": {
-        "label": "Yes"
-      },
-      "no": {
-        "label": "No"
-      }
-    }
-  },
-  "is-passport-return-address": {
-    "label": "Should the documents be returned to this address",
-    "options": {
-      "yes": {
-        "label": "Yes"
-      },
-      "no": {
-        "label": "No"
-      }
-    }
-  },
-  "is-requesting-passport-to-travel": {
-    "legend": "Are you requesting the return of the main applicant's passport for travel",
-    "options": {
-      "yes": {
-        "label": "Yes"
-      },
-      "no": {
-        "label": "No"
-      }
-    }
-  },
-  "application-type": {
-    "legend": "What is the application for?",
-    "options": {
-      "visa": {
-        "label": "A visa",
-        "hint": "Includes British National (Overseas) visas"
-      },
-      "british-citizen": {
-        "label": "British citizenship",
-        "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
-      },
-      "further-leave": {
-        "label": "Further leave to remain",
-        "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
-      },
-      "not-time-limit": {
-        "label": "No time limit or replacement settlement biometric residence permit"
-      },
-      "eu-settlement-scheme": {
-        "label": "Settled or pre-settled status under the EU Settlement Scheme"
-      },
-      "settlement": {
-        "label": "Settlement",
-        "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
-      },
-      "limited-leave-replacement-brp": {
-        "label": "Transfer of conditions or limited leave replacement biometric residence permit"
-      }
-    }
-  },
-  "visa-type": {
-    "legend": "What type of visa is the application for?",
-    "options": {
-      "visa-type-british": {
-        "label": "British national (overseas) visa"
-      },
-      "visa-type-talent": {
-        "label": "Exceptional talent visa",
-        "hint": "Also called tier 1 in the points-based system"
-      },
-      "visa-type-skilled": {
-        "label": "Skilled worker visa",
-        "hint": "Also called tier 2 in the points-based system"
-      },
-      "visa-type-study": {
-        "label": "Study visa",
-        "hint": "Also called tier 4 in the points-based system"
-      },
-      "visa-type-temp": {
-        "label": "Temporary work visa",
-        "hint": "Also called tier 5 in the points-based system"
-      },
-      "visa-type-turkish": {
-        "label": "Turkish national visa",
-        "hint": "Includes Turkish businessperson and Turkish worker visas"
-      },
-      "visa-type-different": {
-        "label": "A different type of visa"
-      }
-    }
-  },
-  "further-leave-to-remain": {
-    "legend": "Which type of further leave did you apply for?",
-    "options": {
-      "flr-fp": {
-        "label": "FLR (FP)"
-      },
-      "flr-m": {
-        "label": "FLR (M)"
-      },
-      "flr-ir": {
-        "label": "FLR (IR)"
-      },
-      "flr-hro": {
-        "label": "FLR (HRO)"
-      }
-    }
-  },
-  "main-applicant-full-name": {
-    "label": "Full name",
-    "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
-  },
-  "main-applicant-dob": {
-    "legend": "Date of birth",
-    "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
-  },
-  "main-applicant-nationality": {
-    "label": "Country of nationality",
-    "options": {
-      "none_selected": "Select a country"
+    "name": {
+        "label": "Return Of Documents"
     },
-    "hint": "This must match the main applicant’s immigration documents"
-  },
+    "who-is-completing": {
+        "legend": "Who is completing this form?",
+        "options": {
+            "applicant": {
+                "label": "The main applicant"
+            },
+            "who-is-rep": {
+                "label": "A legal representative",
+                "hint": "This includes legal representatives of main applicants, document holders and sponsors"
+            },
+            "sponsor":{
+                "label": "A sponsor",
+                "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
+            },
+            "guardian" :{
+                "label": "A dependant or guardian of a dependant"
+            }
+        }
+    },
+    "who-is-representing": {
+        "legend": "Who are you legally representing?",
+        "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
+        "options": {
+            "main-applicant": {
+                "label": "The main applicant"
+            },
+            "document-holder": {
+                "label": "A document holder"
+            }
+        }
+    },
+    "sponsor-type": {
+        "legend": "What type of sponsor are you?",
+        "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
+        "options": {
+            "british-sponsor": {
+                "label": "A British sponsor",
+                "hint": "You have British citizenship"
+            },
+            "settled-sponsor": {
+                "label": "A settled sponsor",
+                "hint": "You have settlement (also called indefinite leave to remain)"
+            },
+            "eea-sponsor": {
+                "label": "An EEA citizen sponsor",
+                "hint": "You are a citizen of an EU country, Switzerland, Norway, Iceland or Lichtenstein"
+            }
+        }
+    },
+    "dependant-or-guardian": {
+        "legend": "Are you a dependant or a guardian of a dependant?",
+        "options": {
+            "dependant-over-18": {
+                "label": "A dependant aged 18 or over",
+                "hint": "You are an adult named as a dependant on the application"
+            },
+            "parent-guardian-under-18": {
+                "label": "A parent or guardian of a dependant who is under 18",
+                "hint": "You are acting on behalf of a child named as a dependant on the application"
+            }
+        }
+    },
+    "confirm-sent-letter-of-authority": {
+        "label": "I confirm I have sent the Home Office a signed letter of authority"
+    },
+    "legal-rep-name": {
+        "label": "Name of legal firm or representative"
+    },
+    "cancel-application": {
+        "legend": "Do you want to cancel the application?",
+        "hint": "Any documents that were sent with the application will be returned",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "is-passport-return-address": {
+        "label": "Should the documents be returned to this address",
+        "options": {
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "is-requesting-passport-to-travel": {
+        "legend": "Are you requesting the return of the main applicant's passport for travel",
+        "options":{
+            "yes": {
+                "label": "Yes"
+            },
+            "no": {
+                "label": "No"
+            }
+        }
+    },
+    "application-type": {
+        "legend": "What is the application for?",
+        "options": {
+            "visa": {
+                "label": "A visa",
+                "hint": "Includes British National (Overseas) visas"
+            },
+            "british-citizen": {
+                "label": "British citizenship",
+                "hint": "Includes status letters, right of abode, confirmation of non-acquisition, the Windrush Scheme and applications to give up citizenship"
+            },
+            "further-leave":{
+                "label": "Further leave to remain",
+                "hint": "Includes FLR (M), FLR (FP), FLR (O), and FLR (HRO) applications"
+            },
+            "not-time-limit": {
+                "label": "No time limit or replacement settlement biometric residence permit"
+            },
+            "eu-settlement-scheme": {
+                "label": "Settled or pre-settled status under the EU Settlement Scheme"
+            },
+            "settlement" : {
+                "label": "Settlement",
+                "hint": "Also called ‘indefinite leave to remain’ or ‘indefinite permission to stay’"
+            },
+            "limited-leave-replacement-brp": {
+                "label": "Transfer of conditions or limited leave replacement biometric residence permit"
+            }
+        }
+    },
+    "visa-type": {
+        "legend": "What type of visa is the application for?",
+        "options": {
+          "visa-type-british": {
+            "label": "British national (overseas) visa"
+          },
+          "visa-type-talent": {
+            "label": "Exceptional talent visa",
+            "hint": "Also called tier 1 in the points-based system"
+          },
+          "visa-type-skilled":{
+            "label": "Skilled worker visa",
+            "hint": "Also called tier 2 in the points-based system"
+          },
+          "visa-type-study" : {
+            "label": "Study visa",
+            "hint": "Also called tier 4 in the points-based system"
+          },
+          "visa-type-temp": {
+            "label": "Temporary work visa",
+            "hint": "Also called tier 5 in the points-based system"
+          },
+          "visa-type-turkish": {
+            "label": "Turkish national visa",
+            "hint": "Includes Turkish businessperson and Turkish worker visas"
+          },
+          "visa-type-different": {
+            "label": "A different type of visa"
+          }
+        }
+    },
+    "further-leave-to-remain": {
+        "legend": "Which type of further leave did you apply for?",
+        "options": {
+          "flr-fp": {
+            "label": "FLR (FP)"
+          },
+          "flr-m": {
+            "label": "FLR (M)"
+          },
+          "flr-ir": {
+            "label": "FLR (IR)"
+          },
+          "flr-hro": {
+            "label": "FLR (HRO)"
+          }
+        }
+    },
+    "main-applicant-full-name": {
+        "label": "Full name",
+        "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+    },
+    "main-applicant-dob": {
+        "legend": "Date of birth",
+        "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+    },
+    "main-applicant-nationality": {
+        "label": "Country of nationality",
+        "options": {
+            "none_selected": "Select a country"
+        },
+        "hint": "This must match the main applicant’s immigration documents"
+    },
+    "document-type": {
+        "legend": "Which documents do you need back? (Optional)",
+        "hint": "Select all the document types you need returned",
+        "options": {
+          "passport": {
+            "label": "Passport"
+          },
+          "driving-license": {
+            "label": "Driving licence"
+          },
+          "birth-certificate": {
+            "label": "Birth certificate"
+          },
+          "marriage-certificate": {
+            "label": "Marriage certificate"
+          },
+          "other": {
+            "label": "Other"
+          }
+        }
+    },
+    "enter-document-type": {
+         "label": "Enter the document type"
+    },
+    "document-description": {
+         "label": "Describe each of your documents (optional)",
+         "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
+    },
   "notes": {
     "label": "Enter any relevant details about your request, for example if you need your documents urgently"
   }

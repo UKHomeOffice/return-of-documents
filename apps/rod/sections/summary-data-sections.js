@@ -1,9 +1,6 @@
 'use strict';
 const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(
-  config.dateLocales,
-  config.dateFormat
-);
+const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
 module.exports = {
   sectionHeader: [
@@ -63,6 +60,19 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-nationality'
+    },
+    {
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+        return  Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
     },
     {
       step: '/extra-notes',
