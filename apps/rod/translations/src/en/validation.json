@@ -42,5 +42,14 @@
     },
     "main-applicant-nationality": {
         "required": "Select the main applicant's country of nationality"
+    },
+    "enter-document-type": {
+        "required": "Enter the other type of document you need us to return",
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Other document type must be less than 100 characters"
+    },
+    "document-description": {
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Document descriptions cannot be more than than 5,000 characters"
     }
 }
