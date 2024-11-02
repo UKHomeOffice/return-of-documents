@@ -3,7 +3,6 @@ const countries = require('hof').utils.countries();
 
 const validators = require('hof/controller/validation/validators');
 
-
 // TODO: Move this into behavior when the custom validation file is added as part
 // of other ticket
 function validInternationalPhoneNumber(value) {
@@ -102,10 +101,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -160,8 +161,8 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      {type: 'minlength', arguments: 1},
-      { type: 'maxlength', arguments: 100}
+      { type: 'minlength', arguments: 1 },
+      { type: 'maxlength', arguments: 100 }
     ],
     dependent: {
       field: 'document-type',
@@ -175,23 +176,23 @@ module.exports = {
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
   },
-    'contact-email': {
-      mixin: 'input-text',
-      validate: [
-        'required',
-        { type: 'minlength', arguments: 6 },
-        { type: 'maxlength', arguments: 256 },
-        'email'
-      ]
-    },
-    'contact-telephone': {
-      mixin: 'input-text',
-      validate: [
-        'required',
-        'notUrl',
-        { type: 'minlength', arguments: 8 },
-        { type: 'maxlength', arguments: 16 },
-        validInternationalPhoneNumber
-      ]
-    }
+  'contact-email': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 6 },
+      { type: 'maxlength', arguments: 256 },
+      'email'
+    ]
+  },
+  'contact-telephone': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      validInternationalPhoneNumber
+    ]
+  }
 };
