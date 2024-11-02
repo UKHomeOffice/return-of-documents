@@ -145,7 +145,10 @@ module.exports = {
       next: '/your-documents'
     },
     '/your-documents': {
-
+      fields: ['document-type',
+        'enter-document-type',
+        'document-description'
+      ],
       next: '/main-applicant'
     },
     '/main-applicant': {

@@ -218,8 +218,14 @@ pre.looped-records {
   margin-top: 80px;
 }
 
-.govuk-radios__item .govuk-hint {
-  margin-top: 5px;
+#document-description-hint {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.govuk-radios__item .govuk-hint,
+.govuk-fieldset__legend + .govuk-hint {
+  margin-top: 5px; 
   padding-left: 0px;
   margin-bottom: 0px;
 }
@@ -237,3 +243,4 @@ pre.looped-records {
 .ref-number {
   color: #fff;
 }
+

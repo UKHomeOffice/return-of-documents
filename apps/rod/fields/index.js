@@ -102,12 +102,10 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [
-      {
-        value: '',
-        label: 'fields.main-applicant-nationality.options.none_selected'
-      }
-    ].concat(countries),
+    options: [{
+      value: '',
+      label: 'fields.main-applicant-nationality.options.none_selected'
+    }].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -132,23 +130,68 @@ module.exports = {
       className: 'govuk-label--m'
     }
   },
-  'contact-email': {
-    mixin: 'input-text',
-    validate: [
-      'required',
-      { type: 'minlength', arguments: 6 },
-      { type: 'maxlength', arguments: 256 },
-      'email'
+  'document-type': {
+    mixin: 'checkbox-group',
+    legend: {
+      className: 'govuk-label--s'
+    },
+    options: [
+      {
+        value: 'passport'
+      },
+      {
+        value: 'driving-license'
+      },
+      {
+        value: 'birth-certificate'
+      },
+      {
+        value: 'marriage-certificate'
+      },
+      {
+        value: 'other',
+        toggle: 'enter-document-type',
+        child: 'input-text'
+      }
     ]
   },
-  'contact-telephone': {
+  'enter-document-type': {
     mixin: 'input-text',
     validate: [
       'required',
       'notUrl',
-      { type: 'minlength', arguments: 8 },
-      { type: 'maxlength', arguments: 16 },
-      validInternationalPhoneNumber
-    ]
-  }
+      {type: 'minlength', arguments: 1},
+      { type: 'maxlength', arguments: 100}
+    ],
+    dependent: {
+      field: 'document-type',
+      value: 'other'
+    },
+    className: ['govuk-input', 'govuk-!-width-one-half']
+  },
+  'document-description': {
+    mixin: 'textarea',
+    validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
+    attributes: [{ attribute: 'rows', value: 5 }],
+    labelClassName: 'govuk-label--s'
+  },
+    'contact-email': {
+      mixin: 'input-text',
+      validate: [
+        'required',
+        { type: 'minlength', arguments: 6 },
+        { type: 'maxlength', arguments: 256 },
+        'email'
+      ]
+    },
+    'contact-telephone': {
+      mixin: 'input-text',
+      validate: [
+        'required',
+        'notUrl',
+        { type: 'minlength', arguments: 8 },
+        { type: 'maxlength', arguments: 16 },
+        validInternationalPhoneNumber
+      ]
+    }
 };
