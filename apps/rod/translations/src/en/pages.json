@@ -39,6 +39,9 @@
   "your-documents": {
     "header": "Your documents"
   },
+  "enter-delivery-address": {
+    "header": "Enter the delivery address"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {

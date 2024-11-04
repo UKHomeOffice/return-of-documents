@@ -1,6 +1,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 
+
+function postCode(value) {
+  return value.match(/^[a-zA-Z0-9\s]*$/);
+}
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -88,10 +92,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -146,8 +152,8 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      {type: 'minlength', arguments: 1},
-      { type: 'maxlength', arguments: 100}
+      { type: 'minlength', arguments: 1 },
+      { type: 'maxlength', arguments: 100 }
     ],
     dependent: {
       field: 'document-type',
@@ -160,5 +166,19 @@ module.exports = {
     validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
+  },
+  'delivery-address-line-1': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-line-2': {
+    validate: ['notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-town-or-city': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-postcode': {
+    validate: ['required', 'notUrl', postCode, 'postcode'],
+    formatter: ['ukPostcode'],
+    className: ['govuk-input', 'govuk-input--width-10']
   }
 };

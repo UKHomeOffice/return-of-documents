@@ -191,10 +191,19 @@ module.exports = {
     },
     '/delivery-postcode': {
 
-      next: '/select-delivery-address'
+      next: '/enter-delivery-address'
     },
     '/select-delivery-address': {
 
+      next: '/contact-details'
+    },
+    '/enter-delivery-address': {
+      fields: [
+        'delivery-address-line-1',
+        'delivery-address-line-2',
+        'delivery-address-town-or-city',
+        'delivery-address-postcode'
+      ],
       next: '/contact-details'
     },
     '/contact-details': {
