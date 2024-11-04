@@ -88,6 +88,9 @@
       },
       "document-description": {
         "label": "Document description"
+      },
+      "delivery-address-details":{
+        "label": "Delivery address:"
       }
     }
   }
