@@ -83,8 +83,8 @@ module.exports = class SendEmailConfirmation {
 
     const templateId =
       recipientType === USER
-        ? config.govukNotify.DNRuserConfirmationTemplateId
-        : config.govukNotify.DNRbusinessConfirmationTemplateId;
+        ? config.govukNotify.dnrUserConfirmationTemplateId
+        : config.govukNotify.dnrBusinessConfirmationTemplateId;
 
     const recipientEmailAddress =
       recipientType === USER
