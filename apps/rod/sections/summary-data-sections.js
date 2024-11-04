@@ -81,16 +81,17 @@ module.exports = {
       step: '/enter-delivery-address',
       field: 'delivery-address-details',
       parse: (value, req) => {
-        const fullAddress = [
+        const deliveryAddress = [
           req.sessionModel.get('delivery-address-line-1'),
           req.sessionModel.get('delivery-address-town-or-city'),
           req.sessionModel.get('delivery-address-postcode')
         ];
         const addressLine2 = req.sessionModel.get('delivery-address-line-2');
         if (addressLine2) {
-          fullAddress.splice(1, 0, addressLine2);
+          deliveryAddress.splice(1, 0, addressLine2);
         }
-        return fullAddress.join(', \n');
+        req.sessionModel.set('deliveryAddress', deliveryAddress.join(', '));
+        return deliveryAddress.join(', \n');
       }
     }
   ]
