@@ -53,7 +53,7 @@
         "maxlength": "Document descriptions cannot be more than than 5,000 characters"
     },
   "contact-email": {
-    "required": "Enter an email address for the licence holder",
+    "required": "Enter a contact email address",
     "minlength": "Enter a real email address",
     "maxlength": "Enter a real email address",
     "email": "Enter a real email address"
