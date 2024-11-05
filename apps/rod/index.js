@@ -1,5 +1,6 @@
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const whoIsCompleting = require('./behaviours/who-is-completing');
 
 module.exports = {
   name: 'rod',
@@ -8,6 +9,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      behaviours: [whoIsCompleting],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -211,6 +213,7 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
+      fields: ['declaration-check'],
       next: '/request-received'
     },
     '/request-received': {

@@ -160,5 +160,9 @@ module.exports = {
     validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
+  },
+  'declaration-check': {
+    mixin: 'checkbox',
+    validate: ['required']
   }
 };

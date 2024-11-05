@@ -51,5 +51,8 @@
     "document-description": {
         "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
         "maxlength": "Document descriptions cannot be more than than 5,000 characters"
+    },
+    "declaration-check": {
+        "required": "You must agree to this declaration before submitting"
     }
 }
