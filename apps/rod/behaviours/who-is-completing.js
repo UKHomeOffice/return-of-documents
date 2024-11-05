@@ -9,4 +9,4 @@ module.exports = superclass => class extends superclass {
     req.sessionModel.set('isSponsorOrDependant', isSponsorOrDependant);
     return super.saveValues(req, res, next);
   }
-}
+};
