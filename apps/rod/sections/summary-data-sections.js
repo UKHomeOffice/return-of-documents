@@ -1,6 +1,4 @@
 'use strict';
-const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
 const config = require('../../../config');
 const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);

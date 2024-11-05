@@ -1,4 +1,3 @@
-
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 
@@ -83,10 +82,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -103,24 +104,25 @@ module.exports = {
     ],
     validate: 'required'
   },
-    'date-of-application': dateComponent('date-of-application', {
-      mixin: 'input-date',
-      validate: ['required', 'date',
-        { type: 'after', arguments: ['120', 'years'] },
-        { type: 'before', arguments: ['0', 'days'] }
-      ]
-    }),
-    'cancel-application': {
-      mixin: 'radio-group',
-      options: ['yes', 'no'],
-      validate: 'required',
-      dependent:
-        {
-          field: 'who-is-completing',
-          value: 'sponsor'
-        },
-      className: 'govuk-radios--inline'
+  'date-of-application': dateComponent('date-of-application', {
+    mixin: 'input-date',
+    validate: [
+      'required',
+      'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days'] }
+    ]
+  }),
+  'cancel-application': {
+    mixin: 'radio-group',
+    options: ['yes', 'no'],
+    validate: 'required',
+    dependent: {
+      field: 'who-is-completing',
+      value: 'sponsor'
     },
+    className: 'govuk-radios--inline'
+  },
   'further-leave-to-remain': {
     mixin: 'radio-group',
     options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
@@ -159,8 +161,8 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      {type: 'minlength', arguments: 1},
-      { type: 'maxlength', arguments: 100}
+      { type: 'minlength', arguments: 1 },
+      { type: 'maxlength', arguments: 100 }
     ],
     dependent: {
       field: 'document-type',
