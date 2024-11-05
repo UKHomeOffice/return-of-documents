@@ -73,6 +73,14 @@ module.exports = {
     {
       step: '/your-documents',
       field: 'document-description'
+    },
+    {
+      step: '/contact-details',
+      field: 'contact-email'
+    },
+    {
+      step: '/contact-details',
+      field: 'contact-telephone'
     }
   ]
 };

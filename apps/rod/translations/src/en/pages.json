@@ -88,6 +88,12 @@
       },
       "document-description": {
         "label": "Document description"
+      },
+      "contact-email":{
+        "label": "Contact email"
+      },
+      "contact-telephone":{
+        "label": "Contact telephone"
       }
     }
   }
