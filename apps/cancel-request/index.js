@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const sendNotification = require('./behaviours/submit-notify');
 
 module.exports = {
   name: 'cancel-request',
@@ -102,7 +103,7 @@ module.exports = {
       next: '/cancel-request-confirm'
     },
     '/cancel-request-confirm': {
-      behaviours: [SummaryPageBehaviour],
+      behaviours: [SummaryPageBehaviour, sendNotification],
       sections: require('./sections/summary-data-sections'),
       next: '/cancellation-received'
     },
