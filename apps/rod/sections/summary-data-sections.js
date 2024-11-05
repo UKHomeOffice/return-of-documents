@@ -1,4 +1,5 @@
 'use strict';
+
 const config = require('../../../config');
 const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
@@ -15,6 +16,15 @@ module.exports = {
     {
       step: '/sponsor-type',
       field: 'sponsor-type'
+    },
+    {
+      step: '/about-application',
+      field: 'date-of-application',
+      parse: d => d && dateFormater.format(new Date(d))
+    },
+    {
+      step: '/about-application',
+      field: 'cancel-application'
     },
     {
       step: '/dependant-or-guardian',

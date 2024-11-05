@@ -1,5 +1,7 @@
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'rod',
@@ -8,6 +10,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      behaviours: [sponsorSelectionHandler],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -88,8 +91,9 @@ module.exports = {
       next: '/about-application'
     },
     '/about-application': {
-      fields: ['cancel-application'],
+      behaviours: [customValidation],
       continueOnEdit: true,
+      fields: ['date-of-application', 'cancel-application'],
       forks: [
         {
           target: '/cancelling-application',
