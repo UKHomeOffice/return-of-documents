@@ -40,12 +40,6 @@ module.exports = {
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
   },
-  'cancel-application': {
-    mixin: 'radio-group',
-    validate: 'required',
-    options: ['yes', 'no'],
-    className: 'govuk-radios--inline'
-  },
   'is-passport-return-address': {
     mixin: 'radio-group',
     isPageHeading: true,
@@ -113,6 +107,25 @@ module.exports = {
       'visa-type-different'
     ],
     validate: 'required'
+  },
+  'date-of-application': dateComponent('date-of-application', {
+    mixin: 'input-date',
+    validate: [
+      'required',
+      'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days'] }
+    ]
+  }),
+  'cancel-application': {
+    mixin: 'radio-group',
+    options: ['yes', 'no'],
+    validate: 'required',
+    dependent: {
+      field: 'who-is-completing',
+      value: 'sponsor'
+    },
+    className: 'govuk-radios--inline'
   },
   'further-leave-to-remain': {
     mixin: 'radio-group',

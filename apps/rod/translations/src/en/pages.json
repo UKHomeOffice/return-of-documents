@@ -53,6 +53,12 @@
       "sponsor-type": {
         "label": "Sponsor type"
       },
+      "date-of-application": {
+        "label": "Date of submission"
+      },
+      "cancel-application": {
+        "label": "Cancelling application?"
+      },
       "dependant-or-guardian": {
         "label": "Sponsor type"
       },
