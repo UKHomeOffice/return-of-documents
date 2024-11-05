@@ -52,8 +52,17 @@
         "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
         "maxlength": "Document descriptions cannot be more than than 5,000 characters"
     },
-    "notes": {
-      "extraNotes": "Request notes cannot be more than 2,000 characters",
-      "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
-    }
+  "date-of-application": {
+    "required": "Enter the date the main applicant submitted the application, for example 27 3 2023",
+    "before": "Date the main applicant submitted the application must be in the past",
+    "after": "Date that the main applicant submitted the application must be within the last 120 years",
+    "date": "Enter a real date"
+  },
+  "cancel-application": {
+    "required": "Select if you want to cancel the application"
+    },
+  "notes": {
+    "extraNotes": "Request notes cannot be more than 2,000 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  }
 }

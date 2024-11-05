@@ -41,12 +41,6 @@ module.exports = {
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
   },
-  'cancel-application': {
-    mixin: 'radio-group',
-    validate: 'required',
-    options: ['yes', 'no'],
-    className: 'govuk-radios--inline'
-  },
   'is-passport-return-address': {
     mixin: 'radio-group',
     isPageHeading: true,
@@ -93,10 +87,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -112,6 +108,25 @@ module.exports = {
       'visa-type-different'
     ],
     validate: 'required'
+  },
+  'date-of-application': dateComponent('date-of-application', {
+    mixin: 'input-date',
+    validate: [
+      'required',
+      'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days'] }
+    ]
+  }),
+  'cancel-application': {
+    mixin: 'radio-group',
+    options: ['yes', 'no'],
+    validate: 'required',
+    dependent: {
+      field: 'who-is-completing',
+      value: 'sponsor'
+    },
+    className: 'govuk-radios--inline'
   },
   'further-leave-to-remain': {
     mixin: 'radio-group',
@@ -151,8 +166,8 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      {type: 'minlength', arguments: 1},
-      { type: 'maxlength', arguments: 100}
+      { type: 'minlength', arguments: 1 },
+      { type: 'maxlength', arguments: 100 }
     ],
     dependent: {
       field: 'document-type',
