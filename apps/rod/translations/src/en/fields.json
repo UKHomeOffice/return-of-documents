@@ -12,11 +12,11 @@
                 "label": "A legal representative",
                 "hint": "This includes legal representatives of main applicants, document holders and sponsors"
             },
-            "sponsor":{
+            "sponsor": {
                 "label": "A sponsor",
                 "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
             },
-            "guardian" :{
+            "guardian": {
                 "label": "A dependant or guardian of a dependant"
             }
         }
@@ -70,18 +70,6 @@
     "legal-rep-name": {
         "label": "Name of legal firm or representative"
     },
-    "cancel-application": {
-        "legend": "Do you want to cancel the application?",
-        "hint": "Any documents that were sent with the application will be returned",
-        "options":{
-            "yes": {
-                "label": "Yes"
-            },
-            "no": {
-                "label": "No"
-            }
-        }
-    },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
         "options": {
@@ -95,7 +83,7 @@
     },
     "is-requesting-passport-to-travel": {
         "legend": "Are you requesting the return of the main applicant's passport for travel",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -165,6 +153,27 @@
           }
         }
     },
+  "date-of-application": {
+    "legend": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
+  "cancel-application": {
+    "legend": "Do you want to cancel the application?",
+    "hint": "Any documents that were sent with the application will be returned",
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
+    }
+  },
+  "about-application": {
+    "legend": "About the application",
+    "label": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
     "further-leave-to-remain": {
         "legend": "Which type of further leave did you apply for?",
         "options": {
