@@ -1,5 +1,6 @@
 
 const dateComponent = require('hof').components.date;
+const countries = require('hof').utils.countries();
 
 module.exports = {
   name: {
@@ -62,22 +63,115 @@ module.exports = {
     ],
     validate: 'required'
   },
-  'date-of-application': dateComponent('date-of-application', {
+  'main-applicant-full-name': {
+    validate: [
+      'required',
+      { type: 'minlength', arguments: [3] },
+      { type: 'maxlength', arguments: [250] },
+      'notUrl'
+    ]
+  },
+  'main-applicant-dob': dateComponent('main-applicant-dob', {
     mixin: 'input-date',
-    validate: ['required', 'date',
-      { type: 'after', arguments: ['120', 'years'] },
-      { type: 'before', arguments: ['0', 'days'] }
+    validate: [
+      'required',
+      'date',
+      { type: 'before', arguments: ['0', 'days'] },
+      { type: 'after', arguments: ['120', 'years'] }
     ]
   }),
-  'cancel-application': {
+  'main-applicant-nationality': {
+    mixin: 'select',
+    className: ['typeahead'],
+    options: [{
+      value: '',
+      label: 'fields.main-applicant-nationality.options.none_selected'
+    }].concat(countries),
+    validate: 'required'
+  },
+  'visa-type': {
     mixin: 'radio-group',
-    options: ['yes', 'no'],
+    isPageHeading: true,
+    options: [
+      'visa-type-british',
+      'visa-type-talent',
+      'visa-type-skilled',
+      'visa-type-study',
+      'visa-type-temp',
+      'visa-type-turkish',
+      'visa-type-different'
+    ],
+    validate: 'required'
+  },
+    'date-of-application': dateComponent('date-of-application', {
+      mixin: 'input-date',
+      validate: ['required', 'date',
+        { type: 'after', arguments: ['120', 'years'] },
+        { type: 'before', arguments: ['0', 'days'] }
+      ]
+    }),
+    'cancel-application': {
+      mixin: 'radio-group',
+      options: ['yes', 'no'],
+      validate: 'required',
+      dependent:
+        {
+          field: 'who-is-completing',
+          value: 'sponsor'
+        },
+      className: 'govuk-radios--inline'
+    },
+  'further-leave-to-remain': {
+    mixin: 'radio-group',
+    options: ['flr-fp', 'flr-m', 'flr-ir', 'flr-hro'],
     validate: 'required',
-    dependent:
+    legend: {
+      className: 'govuk-label--m'
+    }
+  },
+  'document-type': {
+    mixin: 'checkbox-group',
+    legend: {
+      className: 'govuk-label--s'
+    },
+    options: [
       {
-        field: 'who-is-completing',
-        value: 'sponsor'
+        value: 'passport'
       },
-    className: 'govuk-radios--inline'
+      {
+        value: 'driving-license'
+      },
+      {
+        value: 'birth-certificate'
+      },
+      {
+        value: 'marriage-certificate'
+      },
+      {
+        value: 'other',
+        toggle: 'enter-document-type',
+        child: 'input-text'
+      }
+    ]
+  },
+  'enter-document-type': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      {type: 'minlength', arguments: 1},
+      { type: 'maxlength', arguments: 100}
+    ],
+    dependent: {
+      field: 'document-type',
+      value: 'other'
+    },
+    className: ['govuk-input', 'govuk-!-width-one-half']
+  },
+  'document-description': {
+    mixin: 'textarea',
+    validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
+    attributes: [{ attribute: 'rows', value: 5 }],
+    labelClassName: 'govuk-label--s'
   }
 };

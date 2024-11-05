@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const sendNotification = require('./behaviours/submit-notify');
 
 module.exports = {
   name: 'cancel-request',
@@ -25,12 +26,10 @@ module.exports = {
           condition: {
             field: 'cnc-who-is-completing',
             value: 'legal-rep'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/cancel-request-sponsor-type',
-          continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
             value: 'sponsor'
@@ -38,7 +37,6 @@ module.exports = {
         },
         {
           target: '/cancel-request-dependant-or-guardian',
-          continueOnEdit: true,
           condition: {
             field: 'cnc-who-is-completing',
             value: 'guardian'
@@ -61,10 +59,10 @@ module.exports = {
     },
     '/cancel-request-application': {
       fields: ['cnc-reason-for-application'],
-      continueOnEdit: true,
       forks: [
         {
           target: '/cancel-request-visa-type',
+          continueOnEdit: true,
           condition: {
             field: 'cnc-reason-for-application',
             value: 'visa'
@@ -72,12 +70,21 @@ module.exports = {
         },
         {
           target: '/cancel-request-further-leave',
+          continueOnEdit: true,
           condition: {
             field: 'cnc-reason-for-application',
             value: 'leave-to-remain'
           }
         }
       ],
+      next: '/cancel-request-reference-number'
+    },
+    '/cancel-request-visa-type': {
+      fields: ['cnc-application-visa-type'],
+      next: '/cancel-request-reference-number'
+    },
+    '/cancel-request-further-leave': {
+      fields: ['cnc-further-leave-to-remain'],
       next: '/cancel-request-reference-number'
     },
     '/cancel-request-reference-number': {
@@ -96,20 +103,13 @@ module.exports = {
       next: '/cancel-request-confirm'
     },
     '/cancel-request-confirm': {
-      behaviours: [SummaryPageBehaviour],
+      behaviours: [SummaryPageBehaviour, sendNotification],
       sections: require('./sections/summary-data-sections'),
       next: '/cancellation-received'
     },
     '/cancellation-received': {
-      clearSession: true
-    },
-    '/cancel-request-visa-type': {
-      fields: ['cnc-application-visa-type'],
-      next: '/cancel-request-reference-number'
-    },
-    '/cancel-request-further-leave': {
-      fields: ['cnc-further-leave-to-remain'],
-      next: '/cancel-request-reference-number'
+      clearSession: true,
+      backLink: false
     }
   }
 };

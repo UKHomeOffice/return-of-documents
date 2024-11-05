@@ -22,13 +22,43 @@
     "application-type": {
         "required": "Select what the application was for"
     },
-    "date-of-application": {
-        "required": "Enter the date the main applicant submitted the application, for example 27 3 2023",
-        "before": "Date the main applicant submitted the application must be in the past",
-        "after": "Date that the main applicant submitted the application must be within the last 120 years",
-        "date": "Enter a real date"
+    "visa-type": {
+        "required": "Select what type of visa the application was for"
     },
-    "cancel-application": {
-        "required": "Select if you want to cancel the application"
-    }
+    "further-leave-to-remain": {
+        "required": "Select which type of further leave you applied for"
+    },
+    "main-applicant-full-name": {
+        "required": "Enter the main applicant's full name",
+        "minlength": "Applicant's full name must be between 3 and 250 characters",
+        "maxlength": "Applicant's full name must be between 3 and 250 characters",
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    },
+    "main-applicant-dob": {
+        "required": "Enter the applicant's date of birth",
+        "before": "Main applicant's date of birth must be in the past",
+        "after": "Enter a real date of birth",
+        "date": "Enter a real date of birth"
+    },
+    "main-applicant-nationality": {
+        "required": "Select the main applicant's country of nationality"
+    },
+    "enter-document-type": {
+        "required": "Enter the other type of document you need us to return",
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Other document type must be less than 100 characters"
+    },
+    "document-description": {
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Document descriptions cannot be more than than 5,000 characters"
+    },
+  "date-of-application": {
+    "required": "Enter the date the main applicant submitted the application, for example 27 3 2023",
+    "before": "Date the main applicant submitted the application must be in the past",
+    "after": "Date that the main applicant submitted the application must be within the last 120 years",
+    "date": "Enter a real date"
+  },
+  "cancel-application": {
+    "required": "Select if you want to cancel the application"
+  }
 }

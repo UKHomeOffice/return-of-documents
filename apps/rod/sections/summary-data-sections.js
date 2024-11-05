@@ -1,4 +1,6 @@
 'use strict';
+const config = require('../../../config');
+const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
 const config = require('../../../config');
 const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
@@ -39,6 +41,14 @@ module.exports = {
       field: 'application-type'
     },
     {
+      step: '/visa-type',
+      field: 'visa-type'
+    },
+    {
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
+    },
+    {
       step: '/about-application',
       field: 'cancel-application'
     },
@@ -49,6 +59,32 @@ module.exports = {
     {
       step: '/reuse-main-applicant-address',
       field: 'is-passport-return-address'
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-full-name'
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-dob',
+      parse: d => d && dateFormater.format(new Date(d))
+    },
+    {
+      step: '/main-applicant',
+      field: 'main-applicant-nationality'
+    },
+    {
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+        return  Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
     }
   ]
 };
