@@ -39,6 +39,9 @@
   "your-documents": {
     "header": "Your documents"
   },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -49,6 +52,12 @@
       },
       "sponsor-type": {
         "label": "Sponsor type"
+      },
+      "date-of-application": {
+        "label": "Date of submission"
+      },
+      "cancel-application": {
+        "label": "Cancelling application?"
       },
       "dependant-or-guardian": {
         "label": "Sponsor type"
@@ -85,6 +94,9 @@
       },
       "document-description": {
         "label": "Document description"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   },

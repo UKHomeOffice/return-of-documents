@@ -1,5 +1,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+function extraNotes(value) {
+  return validators.maxlength(value, 2000);
+}
 
 module.exports = {
   name: {
@@ -35,12 +40,6 @@ module.exports = {
   },
   'legal-rep-name': {
     validate: ['required', 'notUrl', { type: 'maxlength', arguments: 150 }]
-  },
-  'cancel-application': {
-    mixin: 'radio-group',
-    validate: 'required',
-    options: ['yes', 'no'],
-    className: 'govuk-radios--inline'
   },
   'is-passport-return-address': {
     mixin: 'radio-group',
@@ -88,10 +87,12 @@ module.exports = {
   'main-applicant-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.main-applicant-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.main-applicant-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'visa-type': {
@@ -107,6 +108,25 @@ module.exports = {
       'visa-type-different'
     ],
     validate: 'required'
+  },
+  'date-of-application': dateComponent('date-of-application', {
+    mixin: 'input-date',
+    validate: [
+      'required',
+      'date',
+      { type: 'after', arguments: ['120', 'years'] },
+      { type: 'before', arguments: ['0', 'days'] }
+    ]
+  }),
+  'cancel-application': {
+    mixin: 'radio-group',
+    options: ['yes', 'no'],
+    validate: 'required',
+    dependent: {
+      field: 'who-is-completing',
+      value: 'sponsor'
+    },
+    className: 'govuk-radios--inline'
   },
   'further-leave-to-remain': {
     mixin: 'radio-group',
@@ -146,8 +166,8 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      {type: 'minlength', arguments: 1},
-      { type: 'maxlength', arguments: 100}
+      { type: 'minlength', arguments: 1 },
+      { type: 'maxlength', arguments: 100 }
     ],
     dependent: {
       field: 'document-type',
@@ -164,5 +184,10 @@ module.exports = {
   'declaration-check': {
     mixin: 'checkbox',
     validate: ['required']
+  },
+  notes: {
+    mixin: 'textarea',
+    validate: [extraNotes, 'notUrl'],
+    attributes: [{ attribute: 'rows', value: 5 }]
   }
 };
