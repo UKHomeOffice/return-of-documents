@@ -199,9 +199,9 @@ module.exports = {
     formatter: ['ukPostcode'],
     className: ['govuk-input', 'govuk-input--width-10']
   },
-    notes: {
-      mixin: 'textarea',
-      validate: [extraNotes, 'notUrl'],
-      attributes: [{ attribute: 'rows', value: 5 }]
-    }
+  notes: {
+    mixin: 'textarea',
+    validate: [extraNotes, 'notUrl'],
+    attributes: [{ attribute: 'rows', value: 5 }]
+  }
 };
