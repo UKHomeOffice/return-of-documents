@@ -83,6 +83,10 @@ module.exports = {
     {
       step: '/your-documents',
       field: 'document-description'
+    },
+    {
+      step: '/extra-notes',
+      field: 'notes'
     }
   ]
 };

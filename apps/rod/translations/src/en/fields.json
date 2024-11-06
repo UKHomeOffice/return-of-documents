@@ -233,5 +233,8 @@
     "document-description": {
          "label": "Describe each of your documents (optional)",
          "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
-    }
+    },
+  "notes": {
+    "label": "Enter any relevant details about your request, for example if you need your documents urgently"
+  }
 }

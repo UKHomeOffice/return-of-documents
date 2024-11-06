@@ -39,6 +39,9 @@
   "your-documents": {
     "header": "Your documents"
   },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -91,6 +94,9 @@
       },
       "document-description": {
         "label": "Document description"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   }

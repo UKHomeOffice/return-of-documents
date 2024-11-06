@@ -60,5 +60,9 @@
   },
   "cancel-application": {
     "required": "Select if you want to cancel the application"
+    },
+  "notes": {
+    "extraNotes": "Request notes cannot be more than 2,000 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   }
 }

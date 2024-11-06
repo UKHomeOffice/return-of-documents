@@ -1,5 +1,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
+
+function extraNotes(value) {
+  return validators.maxlength(value, 2000);
+}
 
 module.exports = {
   name: {
@@ -175,5 +180,10 @@ module.exports = {
     validate: ['notUrl', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
+  },
+  notes: {
+    mixin: 'textarea',
+    validate: [extraNotes, 'notUrl'],
+    attributes: [{ attribute: 'rows', value: 5 }]
   }
 };
