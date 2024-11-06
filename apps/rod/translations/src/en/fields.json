@@ -245,7 +245,7 @@
   "notes": {
     "label": "Enter any relevant details about your request, for example if you need your documents urgently"
     },
-  "reference-number": {
+  "rod-reference-number": {
     "legend": "Which reference number can you provide?",
     "options": {
       "case-id": {
@@ -266,16 +266,16 @@
       }
     }
   },
-  "enter-case-id": {
+  "rod-case-id": {
     "label": "Enter the case ID"
   },
-  "enter-ho-reference-number": {
+  "rod-ho-reference-number": {
     "label": "Enter the Home Office reference number"
   },
-  "enter-payment-reference-number": {
+  "rod-payment-reference-number": {
     "label": "Enter the payment reference number"
   },
-  "enter-courier-reference-number": {
+  "rod-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
   }

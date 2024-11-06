@@ -5,7 +5,8 @@ module.exports = superclass =>
     validateField(key, req) {
       const validationErrorFunc = (type, args) =>
         new this.ValidationError(key, { type: type, arguments: [args] });
-      if (req.form.values['reference-number'].includes('ho-reference-number') && key === 'enter-ho-reference-number') {
+        // eslint-disable-next-line max-len
+      if (req.form.values['rod-reference-number'].includes('ho-reference-number') && key === 'rod-ho-reference-number') {
         const hoRefNum = req.form.values[key];
         if (hoRefNum) {
           const valueWithoutSpace = hoRefNum.replace(/\s+/g, '').trim();

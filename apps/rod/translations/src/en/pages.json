@@ -107,19 +107,19 @@
       "notes": {
         "label": "Notes"
       },
-      "reference-number": {
+      "rod-reference-number": {
         "label": "Reference number"
       },
-      "enter-case-id": {
+      "rod-case-id": {
         "label": "Case ID"
       },
-      "enter-ho-reference-number": {
+      "rod-ho-reference-number": {
         "label": "Home Office reference number"
       },
-      "enter-payment-reference-number": {
+      "rod-payment-reference-number": {
         "label": "Payment reference number"
       },
-      "enter-courier-reference-number": {
+      "rod-courier-reference-number": {
         "label": "Courier reference number"
       }
     }

@@ -217,7 +217,7 @@ module.exports = {
     validate: [extraNotes, 'notUrl'],
     attributes: [{ attribute: 'rows', value: 5 }]
   },
-  'reference-number': {
+  'rod-reference-number': {
     mixin: 'checkbox-group',
     labelClassName: 'govuk-label--s',
     isPageHeading: true,
@@ -225,29 +225,29 @@ module.exports = {
     options: [
       {
         value: 'case-id',
-        toggle: 'enter-case-id',
+        toggle: 'rod-case-id',
         child: 'input-text'
       },
       {
         value: 'ho-reference-number',
-        toggle: 'enter-ho-reference-number',
+        toggle: 'rod-ho-reference-number',
         child: 'input-text'
       },
       {
         value: 'payment-reference-number',
-        toggle: 'enter-payment-reference-number',
+        toggle: 'rod-payment-reference-number',
         child: 'input-text'
       },
       {
         value: 'courier-reference-number',
-        toggle: 'enter-courier-reference-number',
+        toggle: 'rod-courier-reference-number',
         child: 'input-text'
       }
     ]
   },
-  'enter-case-id': {
+  'rod-case-id': {
     dependent: {
-      field: 'reference-number',
+      field: 'rod-reference-number',
       value: 'case-id'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
@@ -259,9 +259,9 @@ module.exports = {
       'notUrl'
     ]
   },
-  'enter-ho-reference-number': {
+  'rod-ho-reference-number': {
     dependent: {
-      field: 'reference-number',
+      field: 'rod-reference-number',
       value: 'ho-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
@@ -272,17 +272,17 @@ module.exports = {
       { type: 'maxlength', arguments: 250 }
     ]
   },
-  'enter-payment-reference-number': {
+  'rod-payment-reference-number': {
     dependent: {
-      field: 'reference-number',
+      field: 'rod-reference-number',
       value: 'payment-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
   },
-  'enter-courier-reference-number': {
+  'rod-courier-reference-number': {
     dependent: {
-      field: 'reference-number',
+      field: 'rod-reference-number',
       value: 'courier-reference-number'
     },
     className: ['govuk-input'],

@@ -98,23 +98,26 @@ module.exports = {
     },
     {
       step: '/reference-number',
-      field: 'enter-reference-number'
+      field: 'rod-reference-number',
+      parse: value => {
+        return Array.isArray(value) ? value.map(option => option).join('\n') : value;
+      }
     },
     {
       step: '/reference-number',
-      field: 'enter-case-id'
+      field: 'rod-case-id'
     },
     {
       step: '/reference-number',
-      field: 'enter-ho-reference-number'
+      field: 'rod-ho-reference-number'
     },
     {
       step: '/reference-number',
-      field: 'enter-payment-reference-number'
+      field: 'rod-payment-reference-number'
     },
     {
       step: '/reference-number',
-      field: 'enter-courier-reference-number'
+      field: 'rod-courier-reference-number'
     }
   ]
 };

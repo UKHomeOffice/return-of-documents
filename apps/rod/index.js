@@ -191,11 +191,9 @@ module.exports = {
       next: '/contact-details'
     },
     '/delivery-postcode': {
-
       next: '/select-delivery-address'
     },
     '/select-delivery-address': {
-
       next: '/contact-details'
     },
     '/contact-details': {
@@ -209,13 +207,13 @@ module.exports = {
     '/reference-number': {
       behaviours: [customValidation],
       fields: [
-        'reference-number',
-        'enter-case-id',
-        'enter-ho-reference-number',
-        'enter-payment-reference-number',
-        'enter-courier-reference-number'
+        'rod-reference-number',
+        'rod-case-id',
+        'rod-ho-reference-number',
+        'rod-payment-reference-number',
+        'rod-courier-reference-number'
       ],
-      next: 'contact-details'
+      next: '/contact-details'
     },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
