@@ -82,7 +82,7 @@
         }
     },
     "is-requesting-passport-to-travel": {
-        "legend": "Are you requesting the return of the main applicant's passport for travel",
+        "legend": "Are you requesting the return of the main applicant's passport for travel?",
         "options": {
             "yes": {
                 "label": "Yes"
@@ -246,7 +246,15 @@
     "delivery-address-postcode":{
         "label": "Postcode"
     },
-    "notes": {
-      "label": "Enter any relevant details about your request, for example if you need your documents urgently"
-    }
+  "contact-email": {
+    "label": "Email address",
+    "hint": "This is where we will send confirmation of your cancellation or request to return documents"
+  },
+  "contact-telephone": {
+    "label": "Telephone number",
+    "hint": "For international numbers, include the country code"
+  },
+  "notes": {
+    "label": "Enter any relevant details about your request, for example if you need your documents urgently"
+  }
 }

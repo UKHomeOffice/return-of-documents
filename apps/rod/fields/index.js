@@ -1,6 +1,18 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+
 const validators = require('hof/controller/validation/validators');
+
+// TODO: Move this into behavior when the custom validation file is added as part
+// of other ticket
+function validInternationalPhoneNumber(value) {
+  const phoneNumberWithoutSpace = value.replace(/\s+/g, '');
+  const isValidPhoneNumber = validators.regex(
+    phoneNumberWithoutSpace,
+    /^\(?\+?[\d()-]{8,16}$/
+  );
+  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
+}
 
 function extraNotes(value) {
   return validators.maxlength(value, 2000);
@@ -185,20 +197,39 @@ module.exports = {
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
   },
-  'delivery-address-line-1': {
-    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+  'contact-email': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 6 },
+      { type: 'maxlength', arguments: 256 },
+      'email'
+    ]
   },
-  'delivery-address-line-2': {
-    validate: ['notUrl', { type: 'maxlength', arguments: 250 }]
+  'contact-telephone': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      validInternationalPhoneNumber
+    ]
   },
-  'delivery-address-town-or-city': {
-    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
-  },
-  'delivery-address-postcode': {
-    validate: ['required', 'notUrl', postCode, 'postcode'],
-    formatter: ['ukPostcode'],
-    className: ['govuk-input', 'govuk-input--width-10']
-  },
+    'delivery-address-line-1': {
+      validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+    },
+    'delivery-address-line-2': {
+      validate: ['notUrl', { type: 'maxlength', arguments: 250 }]
+    },
+    'delivery-address-town-or-city': {
+      validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+    },
+    'delivery-address-postcode': {
+      validate: ['required', 'notUrl', postCode, 'postcode'],
+      formatter: ['ukPostcode'],
+      className: ['govuk-input', 'govuk-input--width-10']
+    },
   notes: {
     mixin: 'textarea',
     validate: [extraNotes, 'notUrl'],

@@ -42,6 +42,9 @@
   "enter-delivery-address": {
     "header": "Enter the delivery address"
   },
+  "contact-details": {
+    "header": "Contact details"
+  },
   "extra-notes": {
     "header": "Notes about your request (optional)"
   },
@@ -97,6 +100,12 @@
       },
       "document-description": {
         "label": "Document description"
+      },
+      "contact-email":{
+        "label": "Contact email"
+      },
+      "contact-telephone":{
+        "label": "Contact telephone"
       },
       "delivery-address-details":{
         "label": "Delivery address:"
