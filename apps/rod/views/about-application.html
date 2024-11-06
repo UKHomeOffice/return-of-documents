@@ -1,0 +1,11 @@
+{{<partials-page}}
+  {{$page-content}}
+  {{#renderField}}date-of-application{{/renderField}}
+  
+  {{^values.isSponsor}}
+    {{#radio-group}}cancel-application{{/radio-group}}
+  {{/values.isSponsor}}
+  
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}

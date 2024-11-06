@@ -43,32 +43,70 @@
     "main-applicant-nationality": {
         "required": "Select the main applicant's country of nationality"
     },
-    "reference-number": {
-        "required": "You must provide a reference number. Select one you can provide"
-      },
-      "enter-case-id": {
-        "required": "Enter a case ID",
-        "minlength": "Case ID must be at least 8 numbers",
-        "maxlength": "Case ID cannot be more than 8 numbers",
-        "numeric": "Case ID can only include numbers",
-        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
-      },
-      "enter-ho-reference-number":{
-        "required": "Enter a Home Office reference number",
-        "minlength": "Home Office reference must be at least 8 characters",
-        "maxlength": "Home Office reference number cannot be more than 8 numbers",
-        "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
-        "specialCharacter": "Home Office reference number must only include letters and numbers",
-        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
-      },
-      "enter-payment-reference-number": {
-        "required": "Enter a payment reference number",
-        "maxlength": "Payment reference number cannot be more than 100 characters",
-        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
-      },
-      "enter-courier-reference-number": {
-        "required": "Enter a courier reference number",
-        "maxlength": "Courier reference number cannot be more than 100 characters",
-        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
-      }
+    "enter-document-type": {
+        "required": "Enter the other type of document you need us to return",
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Other document type must be less than 100 characters"
+    },
+    "document-description": {
+        "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+        "maxlength": "Document descriptions cannot be more than than 5,000 characters"
+    },
+  "date-of-application": {
+    "required": "Enter the date the main applicant submitted the application, for example 27 3 2023",
+    "before": "Date the main applicant submitted the application must be in the past",
+    "after": "Date that the main applicant submitted the application must be within the last 120 years",
+    "date": "Enter a real date"
+  },
+  "cancel-application": {
+    "required": "Select if you want to cancel the application"
+    },
+  "contact-email": {
+    "required": "Enter a contact email address",
+    "minlength": "Enter a real email address",
+    "maxlength": "Enter a real email address",
+    "email": "Enter a real email address"
+  },
+  "contact-telephone": {
+    "required": "Enter a contact telephone number",
+    "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  },
+  "is-requesting-passport-to-travel": {
+    "required": "Select if you need the main applicant's passport for travel"
+  },
+  "notes": {
+    "extraNotes": "Request notes cannot be more than 2,000 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    },
+  "reference-number": {
+    "required": "You must provide a reference number. Select one you can provide"
+  },
+  "enter-case-id": {
+    "required": "Enter a case ID",
+    "minlength": "Case ID must be at least 8 numbers",
+    "maxlength": "Case ID cannot be more than 8 numbers",
+    "numeric": "Case ID can only include numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "enter-ho-reference-number":{
+    "required": "Enter a Home Office reference number",
+    "minlength": "Home Office reference must be at least 8 characters",
+    "maxlength": "Home Office reference number cannot be more than 8 numbers",
+    "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
+    "specialCharacter": "Home Office reference number must only include letters and numbers",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "enter-payment-reference-number": {
+    "required": "Enter a payment reference number",
+    "maxlength": "Payment reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  },
+  "enter-courier-reference-number": {
+    "required": "Enter a courier reference number",
+    "maxlength": "Courier reference number cannot be more than 100 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+  }
 }

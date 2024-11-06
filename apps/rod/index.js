@@ -1,6 +1,7 @@
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
-const customValidation = require('./behaviours/custom-validations');
+const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'rod',
@@ -9,6 +10,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      behaviours: [sponsorSelectionHandler],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -89,8 +91,9 @@ module.exports = {
       next: '/about-application'
     },
     '/about-application': {
-      fields: ['cancel-application'],
+      behaviours: [customValidation],
       continueOnEdit: true,
+      fields: ['date-of-application', 'cancel-application'],
       forks: [
         {
           target: '/cancelling-application',
@@ -143,7 +146,10 @@ module.exports = {
 
     },
     '/your-documents': {
-
+      fields: ['document-type',
+        'enter-document-type',
+        'document-description'
+      ],
       next: '/main-applicant'
     },
     '/main-applicant': {
@@ -193,11 +199,11 @@ module.exports = {
       next: '/contact-details'
     },
     '/contact-details': {
-
+      fields: ['contact-email', 'contact-telephone'],
       next: '/extra-notes'
     },
     '/extra-notes': {
-
+      fields: ['notes'],
       next: '/confirm'
     },
     '/reference-number': {

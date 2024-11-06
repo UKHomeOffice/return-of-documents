@@ -12,11 +12,11 @@
                 "label": "A legal representative",
                 "hint": "This includes legal representatives of main applicants, document holders and sponsors"
             },
-            "sponsor":{
+            "sponsor": {
                 "label": "A sponsor",
                 "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
             },
-            "guardian" :{
+            "guardian": {
                 "label": "A dependant or guardian of a dependant"
             }
         }
@@ -70,18 +70,6 @@
     "legal-rep-name": {
         "label": "Name of legal firm or representative"
     },
-    "cancel-application": {
-        "legend": "Do you want to cancel the application?",
-        "hint": "Any documents that were sent with the application will be returned",
-        "options":{
-            "yes": {
-                "label": "Yes"
-            },
-            "no": {
-                "label": "No"
-            }
-        }
-    },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
         "options": {
@@ -94,8 +82,8 @@
         }
     },
     "is-requesting-passport-to-travel": {
-        "legend": "Are you requesting the return of the main applicant's passport for travel",
-        "options":{
+        "legend": "Are you requesting the return of the main applicant's passport for travel?",
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -164,8 +152,29 @@
             "label": "A different type of visa"
           }
         }
+    },
+  "date-of-application": {
+    "legend": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
+  "cancel-application": {
+    "legend": "Do you want to cancel the application?",
+    "hint": "Any documents that were sent with the application will be returned",
+    "options": {
+      "yes": {
+        "label": "Yes"
       },
-      "further-leave-to-remain": {
+      "no": {
+        "label": "No"
+      }
+    }
+  },
+  "about-application": {
+    "legend": "About the application",
+    "label": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
+    "further-leave-to-remain": {
         "legend": "Which type of further leave did you apply for?",
         "options": {
           "flr-fp": {
@@ -181,7 +190,7 @@
             "label": "FLR (HRO)"
           }
         }
-      },
+    },
     "main-applicant-full-name": {
         "label": "Full name",
         "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
@@ -197,38 +206,77 @@
         },
         "hint": "This must match the main applicant’s immigration documents"
     },
-    "reference-number": {
-        "legend": "Which reference number can you provide?",
+    "document-type": {
+        "legend": "Which documents do you need back? (Optional)",
+        "hint": "Select all the document types you need returned",
         "options": {
-          "case-id": {
-            "label": "Case ID",
-            "hint": "The main applicant received this number when they applied. For example, 12345678"
+          "passport": {
+            "label": "Passport"
           },
-          "ho-reference-number": {
-            "label": "Home Office reference number",
-            "hint": "This is on official documents, such as letters about your immigration status or biometric residence permit cards. For example, A1234567"
+          "driving-license": {
+            "label": "Driving licence"
           },
-          "payment-reference-number": {
-            "label": "Payment reference number",
-            "hint": "This is on the letter the Home Office sent to the main applicant confirming they received an application"
+          "birth-certificate": {
+            "label": "Birth certificate"
           },
-          "courier-reference-number": {
-            "label": "Courier reference number",
-            "hint": "This includes Royal Mail reference numbers"
+          "marriage-certificate": {
+            "label": "Marriage certificate"
+          },
+          "other": {
+            "label": "Other"
           }
         }
+    },
+    "enter-document-type": {
+         "label": "Enter the document type"
+    },
+    "document-description": {
+         "label": "Describe each of your documents (optional)",
+         "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
+    },
+  "contact-email": {
+    "label": "Email address",
+    "hint": "This is where we will send confirmation of your cancellation or request to return documents"
+  },
+  "contact-telephone": {
+    "label": "Telephone number",
+    "hint": "For international numbers, include the country code"
+  },
+  "notes": {
+    "label": "Enter any relevant details about your request, for example if you need your documents urgently"
+    },
+  "reference-number": {
+    "legend": "Which reference number can you provide?",
+    "options": {
+      "case-id": {
+        "label": "Case ID",
+        "hint": "The main applicant received this number when they applied. For example, 12345678"
       },
-      "enter-case-id": {
-        "label": "Enter the case ID"
+      "ho-reference-number": {
+        "label": "Home Office reference number",
+        "hint": "This is on official documents, such as letters about your immigration status or biometric residence permit cards. For example, A1234567"
       },
-      "enter-ho-reference-number": {
-        "label": "Enter the Home Office reference number"
+      "payment-reference-number": {
+        "label": "Payment reference number",
+        "hint": "This is on the letter the Home Office sent to the main applicant confirming they received an application"
       },
-      "enter-payment-reference-number": {
-        "label": "Enter the payment reference number"
-      },
-      "enter-courier-reference-number": {
-        "label": "Enter the courier reference number",
-        "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+      "courier-reference-number": {
+        "label": "Courier reference number",
+        "hint": "This includes Royal Mail reference numbers"
       }
+    }
+  },
+  "enter-case-id": {
+    "label": "Enter the case ID"
+  },
+  "enter-ho-reference-number": {
+    "label": "Enter the Home Office reference number"
+  },
+  "enter-payment-reference-number": {
+    "label": "Enter the payment reference number"
+  },
+  "enter-courier-reference-number": {
+    "label": "Enter the courier reference number",
+    "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  }
 }
