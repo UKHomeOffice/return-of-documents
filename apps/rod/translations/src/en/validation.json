@@ -76,5 +76,9 @@
   },
   "is-requesting-passport-to-travel": {
     "required": "Select if you need the main applicant's passport for travel"
+  },
+  "notes": {
+    "extraNotes": "Request notes cannot be more than 2,000 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   }
 }

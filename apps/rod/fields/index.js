@@ -14,6 +14,10 @@ function validInternationalPhoneNumber(value) {
   return isValidPhoneNumber && validators.internationalPhoneNumber(value);
 }
 
+function extraNotes(value) {
+  return validators.maxlength(value, 2000);
+}
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -207,5 +211,10 @@ module.exports = {
       { type: 'maxlength', arguments: 16 },
       validInternationalPhoneNumber
     ]
-  }
+  },
+  notes: {
+      mixin: 'textarea',
+      validate: [extraNotes, 'notUrl'],
+      attributes: [{ attribute: 'rows', value: 5 }]
+    }
 };

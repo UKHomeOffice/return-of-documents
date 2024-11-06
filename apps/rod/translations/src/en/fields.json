@@ -241,5 +241,8 @@
   "contact-telephone": {
     "label": "Telephone number",
     "hint": "For international numbers, include the country code"
+  },
+  "notes": {
+    "label": "Enter any relevant details about your request, for example if you need your documents urgently"
   }
 }

@@ -91,6 +91,10 @@ module.exports = {
     {
       step: '/contact-details',
       field: 'contact-telephone'
+    },
+    {
+      step: '/extra-notes',
+      field: 'notes'
     }
   ]
 };

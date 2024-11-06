@@ -42,6 +42,9 @@
   "contact-details": {
     "header": "Contact details"
   },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -100,6 +103,9 @@
       },
       "contact-telephone":{
         "label": "Contact telephone"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   }
