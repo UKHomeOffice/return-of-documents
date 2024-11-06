@@ -103,6 +103,10 @@ module.exports = {
         req.sessionModel.set('deliveryAddress', deliveryAddress.join(', '));
         return deliveryAddress.join(', \n');
       }
+    },
+    {
+      step: '/extra-notes',
+      field: 'notes'
     }
   ]
 };

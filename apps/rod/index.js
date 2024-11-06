@@ -215,7 +215,7 @@ module.exports = {
       next: '/extra-notes'
     },
     '/extra-notes': {
-
+      fields: ['notes'],
       next: '/confirm'
     },
     '/confirm': {

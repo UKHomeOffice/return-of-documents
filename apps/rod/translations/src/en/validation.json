@@ -80,5 +80,9 @@
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
     "postCode": "Postcode must only include letters a-z, numbers and spaces",
     "postcode": "Enter a real UK postcode"
+  },
+  "notes": {
+    "extraNotes": "Request notes cannot be more than 2,000 characters",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
   }
 }

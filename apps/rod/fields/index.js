@@ -1,10 +1,15 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
+const validators = require('hof/controller/validation/validators');
 
+function extraNotes(value) {
+  return validators.maxlength(value, 2000);
+}
 
 function postCode(value) {
   return value.match(/^[a-zA-Z0-9\s]*$/);
 }
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -193,5 +198,10 @@ module.exports = {
     validate: ['required', 'notUrl', postCode, 'postcode'],
     formatter: ['ukPostcode'],
     className: ['govuk-input', 'govuk-input--width-10']
-  }
+  },
+    notes: {
+      mixin: 'textarea',
+      validate: [extraNotes, 'notUrl'],
+      attributes: [{ attribute: 'rows', value: 5 }]
+    }
 };

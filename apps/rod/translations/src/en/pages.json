@@ -42,6 +42,9 @@
   "enter-delivery-address": {
     "header": "Enter the delivery address"
   },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -97,6 +100,9 @@
       },
       "delivery-address-details":{
         "label": "Delivery address:"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   }
