@@ -147,9 +147,6 @@
           "visa-type-turkish": {
             "label": "Turkish national visa",
             "hint": "Includes Turkish businessperson and Turkish worker visas"
-          },
-          "visa-type-different": {
-            "label": "A different type of visa"
           }
         }
     },
