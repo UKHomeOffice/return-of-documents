@@ -213,8 +213,8 @@ module.exports = {
     ]
   },
   notes: {
-      mixin: 'textarea',
-      validate: [extraNotes, 'notUrl'],
-      attributes: [{ attribute: 'rows', value: 5 }]
-    }
+    mixin: 'textarea',
+    validate: [extraNotes, 'notUrl'],
+    attributes: [{ attribute: 'rows', value: 5 }]
+  }
 };
