@@ -218,16 +218,22 @@ pre.looped-records {
   margin-top: 80px;
 }
 
-.govuk-radios__item .govuk-hint {
-  margin-top: 0rem;
+#document-description-hint {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.govuk-radios__item .govuk-hint,
+.govuk-fieldset__legend + .govuk-hint {
+  margin-top: 5px; 
   padding-left: 0px;
   margin-bottom: 0px;
 }
 
 .alert-complete {
-  background-color: #00703c;
-  border-color: #00703c;
-  padding: 15px !important;
+  background-color: #00703C;
+  border-color: #00703C;
+  padding: 30px !important;
 }
 
 .ref-number-heading {
@@ -237,3 +243,4 @@ pre.looped-records {
 .ref-number {
   color: #fff;
 }
+

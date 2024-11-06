@@ -4,7 +4,7 @@
     },
     "who-is-completing": {
         "legend": "Who is completing this form?",
-        "options":{
+        "options": {
             "applicant": {
                 "label": "The main applicant"
             },
@@ -12,11 +12,11 @@
                 "label": "A legal representative",
                 "hint": "This includes legal representatives of main applicants, document holders and sponsors"
             },
-            "sponsor":{
+            "sponsor": {
                 "label": "A sponsor",
                 "hint": "Sponsor means that the application is based on the main applicant’s relationship with you"
             },
-            "guardian" :{
+            "guardian": {
                 "label": "A dependant or guardian of a dependant"
             }
         }
@@ -24,7 +24,7 @@
     "who-is-representing": {
         "legend": "Who are you legally representing?",
         "hint": "You must have sent a signed letter of authority to the Home Office to act on this person’s behalf",
-        "options":{
+        "options": {
             "main-applicant": {
                 "label": "The main applicant"
             },
@@ -36,7 +36,7 @@
     "sponsor-type": {
         "legend": "What type of sponsor are you?",
         "hint": "Sponsor means that the application is based on the main applicant’s relationship with you",
-        "options":{
+        "options": {
             "british-sponsor": {
                 "label": "A British sponsor",
                 "hint": "You have British citizenship"
@@ -53,7 +53,7 @@
     },
     "dependant-or-guardian": {
         "legend": "Are you a dependant or a guardian of a dependant?",
-        "options":{
+        "options": {
             "dependant-over-18": {
                 "label": "A dependant aged 18 or over",
                 "hint": "You are an adult named as a dependant on the application"
@@ -70,21 +70,9 @@
     "legal-rep-name": {
         "label": "Name of legal firm or representative"
     },
-    "cancel-application": {
-        "legend": "Do you want to cancel the application?",
-        "hint": "Any documents that were sent with the application will be returned",
-        "options":{
-            "yes": {
-                "label": "Yes"
-            },
-            "no": {
-                "label": "No"
-            }
-        }
-    },
     "is-passport-return-address": {
         "label": "Should the documents be returned to this address",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -95,7 +83,7 @@
     },
     "is-requesting-passport-to-travel": {
         "legend": "Are you requesting the return of the main applicant's passport for travel",
-        "options":{
+        "options": {
             "yes": {
                 "label": "Yes"
             },
@@ -106,7 +94,7 @@
     },
     "application-type": {
         "legend": "What is the application for?",
-        "options":{
+        "options": {
             "visa": {
                 "label": "A visa",
                 "hint": "Includes British National (Overseas) visas"
@@ -133,5 +121,120 @@
                 "label": "Transfer of conditions or limited leave replacement biometric residence permit"
             }
         }
+    },
+    "visa-type": {
+        "legend": "What type of visa is the application for?",
+        "options": {
+          "visa-type-british": {
+            "label": "British national (overseas) visa"
+          },
+          "visa-type-talent": {
+            "label": "Exceptional talent visa",
+            "hint": "Also called tier 1 in the points-based system"
+          },
+          "visa-type-skilled":{
+            "label": "Skilled worker visa",
+            "hint": "Also called tier 2 in the points-based system"
+          },
+          "visa-type-study" : {
+            "label": "Study visa",
+            "hint": "Also called tier 4 in the points-based system"
+          },
+          "visa-type-temp": {
+            "label": "Temporary work visa",
+            "hint": "Also called tier 5 in the points-based system"
+          },
+          "visa-type-turkish": {
+            "label": "Turkish national visa",
+            "hint": "Includes Turkish businessperson and Turkish worker visas"
+          },
+          "visa-type-different": {
+            "label": "A different type of visa"
+          }
+        }
+    },
+  "date-of-application": {
+    "legend": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
+  "cancel-application": {
+    "legend": "Do you want to cancel the application?",
+    "hint": "Any documents that were sent with the application will be returned",
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
     }
+  },
+  "about-application": {
+    "legend": "About the application",
+    "label": "Date the main applicant submitted the application",
+    "hint": "If you do not know the exact date, enter an approximate one"
+  },
+    "further-leave-to-remain": {
+        "legend": "Which type of further leave did you apply for?",
+        "options": {
+          "flr-fp": {
+            "label": "FLR (FP)"
+          },
+          "flr-m": {
+            "label": "FLR (M)"
+          },
+          "flr-ir": {
+            "label": "FLR (IR)"
+          },
+          "flr-hro": {
+            "label": "FLR (HRO)"
+          }
+        }
+    },
+    "main-applicant-full-name": {
+        "label": "Full name",
+        "hint": "Enter the main applicant’s name exactly as it appears on their immigration document"
+    },
+    "main-applicant-dob": {
+        "legend": "Date of birth",
+        "hint": "Enter the date of birth as it appears in the main applicant’s immigration documents, for example 24 7 2000"
+    },
+    "main-applicant-nationality": {
+        "label": "Country of nationality",
+        "options": {
+            "none_selected": "Select a country"
+        },
+        "hint": "This must match the main applicant’s immigration documents"
+    },
+    "document-type": {
+        "legend": "Which documents do you need back? (Optional)",
+        "hint": "Select all the document types you need returned",
+        "options": {
+          "passport": {
+            "label": "Passport"
+          },
+          "driving-license": {
+            "label": "Driving licence"
+          },
+          "birth-certificate": {
+            "label": "Birth certificate"
+          },
+          "marriage-certificate": {
+            "label": "Marriage certificate"
+          },
+          "other": {
+            "label": "Other"
+          }
+        }
+    },
+    "enter-document-type": {
+         "label": "Enter the document type"
+    },
+    "document-description": {
+         "label": "Describe each of your documents (optional)",
+         "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
+    },
+  "notes": {
+    "label": "Enter any relevant details about your request, for example if you need your documents urgently"
+  }
 }

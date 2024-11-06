@@ -1,7 +1,7 @@
-'use strict';
-
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'rod',
@@ -10,6 +10,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
+      behaviours: [sponsorSelectionHandler],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -80,16 +81,19 @@ module.exports = {
       next: '/about-application'
     },
     '/visa-type': {
+      fields: ['visa-type'],
       continueOnEdit: true,
       next: '/about-application'
     },
     '/further-leave': {
+      fields: ['further-leave-to-remain'],
       continueOnEdit: true,
       next: '/about-application'
     },
     '/about-application': {
-      fields: ['cancel-application'],
+      behaviours: [customValidation],
       continueOnEdit: true,
+      fields: ['date-of-application', 'cancel-application'],
       forks: [
         {
           target: '/cancelling-application',
@@ -145,11 +149,14 @@ module.exports = {
       next: '/your-documents'
     },
     '/your-documents': {
-
+      fields: ['document-type',
+        'enter-document-type',
+        'document-description'
+      ],
       next: '/main-applicant'
     },
     '/main-applicant': {
-
+      fields: ['main-applicant-full-name', 'main-applicant-dob', 'main-applicant-nationality'],
       next: '/main-applicant-postcode'
     },
     '/main-applicant-postcode': {
@@ -199,7 +206,7 @@ module.exports = {
       next: '/extra-notes'
     },
     '/extra-notes': {
-
+      fields: ['notes'],
       next: '/confirm'
     },
     '/confirm': {

@@ -9,7 +9,11 @@
     "header": "Check your answers"
   },
   "cancellation-received": {
-    "confirmed": "Cancellation request received"
+    "confirmed": "Cancellation request received",
+    "p1": "We have sent email confirmation to {{values.cnc-email}}.",
+    "h2": "What happens next",
+    "p2": "The Home Office will contact you by telephone or email to tell you if your request has been cancelled.",
+    "p3": "Your request to return documents has not been cancelled until they contact you."
   },
   "confirm": {
     "fields": {
@@ -22,19 +26,61 @@
       "cnc-main-applicant-nationality": {
         "label": "Main applicant’s nationality"
       },
+      "cnc-who-is-completing": {
+        "label": "Who completed original form?"
+      },
+      "cnc-who-is-representing": {
+        "label": "Legally representing"
+      },
+      "cnc-dependant-or-guardian": {
+        "label": "Dependant or guardian?"
+      },
+      "cnc-sponsor-type": {
+        "label": "Type of sponsor"
+      },
+      "cnc-reason-for-application": {
+        "label": "Application type"
+      },
       "cnc-further-leave-to-remain": {
         "label": "Further leave type"
+      },
+      "cnc-application-visa-type": {
+        "label": "Visa type"
+      },
+      "cnc-reference-number": {
+        "label": "Reference number"
+      },
+      "enter-record-number": {
+        "label": "Record number"
+      },
+      "enter-case-id": {
+        "label": "Case ID"
+      },
+      "enter-ho-reference-number": {
+        "label": "Home Office reference number"
+      },
+      "enter-payment-reference-number": {
+        "label": "Payment reference number"
+      },
+      "enter-courier-reference-number": {
+        "label": "Courier reference number"
+      },
+      "cnc-email": {
+        "label": "Contact email"
+      },
+      "cnc-telephone": {
+        "label": "Contact telephone"
       }
     }
   },
-  "cancel-request-further-leave":{
+  "cancel-request-further-leave": {
     "header": "Further leave to remain (permission to stay)",
     "p1": "There are different categories of further leave to remain (also called permission to stay), depending on your circumstances.",
     "link-read-more": "Read more about the types of further leave",
     "p2": "to check which one you applied for.",
     "p3": "You will have used an online form called 'FLR' to apply. You will have applied from inside the UK."
   },
-  "cancel-request-contact-details":{
+  "cancel-request-contact-details": {
     "header": "Contact details"
   }
 }

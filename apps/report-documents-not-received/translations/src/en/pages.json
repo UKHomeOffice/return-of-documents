@@ -3,7 +3,12 @@
     "header": "Report that you have not received your documents"
   },
   "report-submitted": {
-    "confirmed": "Report submitted"
+    "confirmed": "Report submitted",
+    "p1": "We have sent email confirmation to {{values.dnr-email}}.",
+    "p2": "If you need your documents for travel, do not book tickets until you have them back.",
+    "h2": "What happens next",
+    "p3": "The Home Office may contact you by email or telephone if they need more information.",
+    "p4": "They will not reply if it has been less than 10 working days (Monday to Friday) since you asked for your documents back."
   },
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"

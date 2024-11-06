@@ -2,12 +2,8 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
+const { removeWhiteSpace } = require('../../../utils');
 
-// May be move this logic to behaviour later
-
-function removeWhiteSpace(value) {
-  return value.replace(/\s+/g, '');
-}
 
 function recordMaxLength(value) {
   return validators.maxlength(removeWhiteSpace(value), 12);
@@ -93,6 +89,7 @@ module.exports = {
   },
   'cnc-reason-for-application': {
     mixin: 'radio-group',
+    isPageHeading: true,
     options: [
       'visa',
       'british-citizenship',
@@ -102,25 +99,6 @@ module.exports = {
       'settlement',
       'toc-or-brp'
     ],
-    validate: 'required'
-  },
-  'cnc-visa-type': {
-    mixin: 'radio-group',
-    options: [
-      'british-overseas-national',
-      'exceptional-talent',
-      'skilled-worker',
-      'study',
-      'temporary-work',
-      'turkish-national',
-      'different-type'
-    ],
-
-    validate: 'required'
-  },
-  'cnc-further-leave': {
-    mixin: 'radio-group',
-    options: ['fp', 'm', 'ir', 'hro'],
     validate: 'required'
   },
   'cnc-reference-number': {
@@ -216,14 +194,6 @@ module.exports = {
     },
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
-  },
-  'cnc-contact-email': {
-    mixin: 'input-text',
-    validate: 'required'
-  },
-  'cnc-contact-telephone-number': {
-    mixin: 'input-text',
-    validate: 'required'
   },
   'cnc-application-visa-type': {
     mixin: 'radio-group',
