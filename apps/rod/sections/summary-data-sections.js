@@ -91,6 +91,9 @@ module.exports = {
       step: '/enter-delivery-address',
       field: 'delivery-address-details',
       parse: (value, req) => {
+        if (!req.sessionModel.get('delivery-address-line-1')) {
+          return null;
+        }
         const deliveryAddress = [
           req.sessionModel.get('delivery-address-line-1'),
           req.sessionModel.get('delivery-address-town-or-city'),
