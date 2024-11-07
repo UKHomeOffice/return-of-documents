@@ -2,6 +2,7 @@ const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
+const sendNotification = require('./behaviours/submit-notify');
 
 module.exports = {
   name: 'rod',
@@ -215,10 +216,12 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
+      behaviours: [sendNotification],
       next: '/request-received'
+      
     },
     '/request-received': {
-      clearSession: true
+      
     }
   }
 };
