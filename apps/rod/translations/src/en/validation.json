@@ -72,7 +72,7 @@
     "extraNotes": "Request notes cannot be more than 2,000 characters",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
     },
-    "rod-document-type": {
+    "document-type": {
         "required": "Enter the other type of document you need us to return",
         "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
         "maxlength": "Other document type must be less than 100 characters"
