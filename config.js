@@ -14,7 +14,12 @@ module.exports = {
     dnrUserConfirmationTemplateId: process.env.DNR_USER_CONFIRMATION_TEMPLATE_ID,
     dnrBusinessConfirmationTemplateId:
       process.env.DNR_BUSINESS_CONFIRMATION_TEMPLATE_ID,
-    caseworkerEmail: process.env.CASEWORKER_EMAIL
+    dnrCaseworkerEmail: process.env.CASEWORKER_EMAIL,
+    dnrCaseworkerEmail1: process.env.CASEWORKER_EMAIL_1,
+    dnrCaseworkerEmail2: process.env.CASEWORKER_EMAIL_2,
+    dnrCaseworkerEmail3: process.env.CASEWORKER_EMAIL_3,
+    dnrCaseworkerEmail4: process.env.CASEWORKER_EMAIL_4,
+    dnrCaseworkerEmail5: process.env.CASEWORKER_EMAIL_5
   },
   survey: {
     urls: {

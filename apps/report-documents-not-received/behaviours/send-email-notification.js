@@ -23,6 +23,7 @@ const getLabelForField = (req, field) => {
 };
 
 
+
 const getApplicationCategory = req => {
   const applicationReason = req.sessionModel.get('dnr-application-type');
 
@@ -81,6 +82,46 @@ module.exports = class SendEmailConfirmation {
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
 
+    const whichBusinessMailbox = () => {
+      if (req.sessionModel.get('steps').includes('/documents-not-received-further-leave')) {
+        console.log("mail box 4 ")
+        return config.govukNotify.dnrCaseworkerEmail4;
+      }
+
+      if (req.sessionModel.get('dnr-visa-type') !== 'dnr-visa-type-british' 
+         && req.sessionModel.get('dnr-visa-type') !== 'dnr-visa-type-different' 
+        && req.sessionModel.get('steps').includes('/documents-not-received-visa-type')) {
+          console.log("mail box 2  visa type is not british overseas or not different")
+          return config.govukNotify.dnrCaseworkerEmail2;
+        }
+
+      if (req.sessionModel.get('dnr-application-type') === 'dnr-not-time-limit' ||
+          req.sessionModel.get('dnr-application-type') === 'dnr-settlement') {
+          console.log("mail box 1 - dnr settlement or no time limit ")
+          return config.govukNotify.dnrCaseworkerEmail1;
+      }
+  
+      if (req.sessionModel.get('dnr-application-type') === 'dnr-british-citizen') {
+        console.log("mail box 3  - dnr british citizen")
+        return config.govukNotify.dnrCaseworkerEmail3; 
+      }
+  
+      if (req.sessionModel.get('dnr-application-type') === 'dnr-eu-settlement-scheme') {
+        console.log("mail box 5 - dnr eu settlement scheme")
+        return config.govukNotify.dnrCaseworkerEmail5; 
+      }
+  
+      if (req.sessionModel.get('dnr-application-type') === 'dnr-limited-leave-replacement-brp') {
+        console.log("mail box 2 - limited leave/transer ")
+        return config.govukNotify.dnrCaseworkerEmail2; 
+      }
+
+      if (req.sessionModel.get('dnr-visa-type') === 'dnr-visa-type-british') {
+        console.log("mail box 1 - british national overseas ")
+        return config.govukNotify.dnrCaseworkerEmail1; 
+      }
+    }
+        
     const templateId =
       recipientType === USER
         ? config.govukNotify.dnrUserConfirmationTemplateId
@@ -89,7 +130,7 @@ module.exports = class SendEmailConfirmation {
     const recipientEmailAddress =
       recipientType === USER
         ? req.sessionModel.get('dnr-email')
-        : config.govukNotify.caseworkerEmail;
+        : whichBusinessMailbox();
 
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';

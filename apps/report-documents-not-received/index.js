@@ -56,7 +56,7 @@ module.exports = {
     },
     '/report-submitted': {
       backLink: false,
-      clearSession: true
+      // clearSession: true
     }
   }
 };
