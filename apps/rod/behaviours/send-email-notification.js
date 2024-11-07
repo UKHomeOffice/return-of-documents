@@ -23,14 +23,15 @@ const getLabelForField = (req, field) => {
 };
 
 const getWhoCompletedForm = req => {
-  const whoCompleted = req.sessionModel.get('cnc-who-is-completing');
+  const whoCompleted = req.sessionModel.get('who-is-completing');
+  console.log(whoCompleted);
 
   if (whoCompleted === 'applicant') {
-    return getLabelForField(req, 'cnc-who-is-completing');
+    return getLabelForField(req, 'who-is-completing');
   }
 
-  if (whoCompleted === 'legal-rep') {
-    const legalRep = getLabelForField(req, 'cnc-who-is-representing');
+  if (whoCompleted === 'legal-rep-name') {
+    const legalRep = getLabelForField(req, 'legal-rep-name');
     return legalRep + '’s legal representative';
   }
 
@@ -61,48 +62,15 @@ const getApplicationCategory = req => {
 
 const getUserDetails = req => {
   return {
-    applicant_full_name: req.sessionModel.get('cnc-main-applicant-full-name'),
-    applicant_dob: dateFormatter.format(
-      new Date(getValueOfDefault(req, 'cnc-main-applicant-dob'))
-    ),
-    applicant_nationality: getValueOfDefault(
-      req,
-      'cnc-main-applicant-nationality'
-    ),
-    who_completed_form: getWhoCompletedForm(req),
-    application_category: getApplicationCategory(req),
-    has_record_number: getYesOrNoStr(req, 'enter-record-number'),
-    record_number:
-      getFormattedRecordNumber(getValueOfDefault(req, 'enter-record-number')) ??
-      '',
-    has_case_id: getYesOrNoStr(req, 'enter-case-id'),
-    case_id: getValueOfDefault(req, 'enter-case-id'),
-    has_ho_reference_number: getYesOrNoStr(req, 'enter-ho-reference-number'),
-    ho_reference_number: getValueOfDefault(req, 'enter-ho-reference-number'),
-    has_payment_reference_number: getYesOrNoStr(
-      req,
-      'enter-payment-reference-number'
-    ),
-    payment_reference_number: getValueOfDefault(
-      req,
-      'enter-payment-reference-number'
-    ),
-    has_courier_reference_number: getYesOrNoStr(
-      req,
-      'enter-courier-reference-number'
-    ),
-    courier_reference_number: getValueOfDefault(
-      req,
-      'enter-courier-reference-number'
-    ),
-    contact_email: getValueOfDefault(req, 'cnc-email'),
-    contact_telephone: getValueOfDefault(req, 'cnc-telephone')
+    person_completing: getWhoCompletedForm(req)
   };
 };
+
 
 module.exports = class SendEmailConfirmation {
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
+
 
     // FIXME: use updated template id and emails
     const templateId =
@@ -118,29 +86,29 @@ module.exports = class SendEmailConfirmation {
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';
 
-    try {
-      await notifyClient.sendEmail('TODO', recipientEmailAddress, {
-        personalisation: Object.assign({}, personalisation)
-      });
+    // try {
+    //   await notifyClient.sendEmail('TODO', recipientEmailAddress, {
+    //     personalisation: Object.assign({}, personalisation)
+    //   });
 
-      req.log(
-        'info',
-        `${userOrBusinessStr()} Confirmation Email sent successfully`
-      );
-    } catch (err) {
-      const errorDetails = err.response?.data
-        ? `Cause: ${JSON.stringify(err.response.data)}`
-        : '';
-      const errorCode = err.code ? `${err.code} -` : '';
-      const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
+    //   req.log(
+    //     'info',
+    //     `${userOrBusinessStr()} Confirmation Email sent successfully`
+    //   );
+    // } catch (err) {
+    //   const errorDetails = err.response?.data
+    //     ? `Cause: ${JSON.stringify(err.response.data)}`
+    //     : '';
+    //   const errorCode = err.code ? `${err.code} -` : '';
+    //   const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
 
-      req.log(
-        'error',
-        `Failed to send ${userOrBusinessStr()} Confirmation Email`,
-        errorMessage
-      );
-      throw Error(errorMessage);
-    }
+    //   req.log(
+    //     'error',
+    //     `Failed to send ${userOrBusinessStr()} Confirmation Email`,
+    //     errorMessage
+    //   );
+    //   throw Error(errorMessage);
+    // }
   }
 
   async send(req) {
