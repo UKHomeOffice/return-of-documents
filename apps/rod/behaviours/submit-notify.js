@@ -8,7 +8,6 @@ module.exports = superclass =>
         const randomDigits = crs.default({ length: 9, type: 'numeric' });
         const uniqueRefNumber = `ROD${randomDigits}`;
         req.sessionModel.set('uniqueRefNumber', uniqueRefNumber);
-        
       } catch (error) {
         req.log(
           'error',

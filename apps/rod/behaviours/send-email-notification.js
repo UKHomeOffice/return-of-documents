@@ -18,7 +18,7 @@ const USER = 'user';
 const BUSINESS = 'business';
 
 const getLabelForField = (req, field) => {
-  return getLabel(field, req.sessionModel.get(field), translation);
+  return getLabel(field, req.sessionModel.get(field), translation) ?? '';
 };
 
 const getWhoCompletedForm = req => {
@@ -66,8 +66,13 @@ const getUserDetails = req => {
     application_submitted_date: dateFormatter.format(
       new Date(getValueOfDefault(req, 'date-of-application'))
     ),
-    cancel_application: getValueOfDefault(req, 'cancel-application'),
-    applicant_passport: getValueOfDefault(
+    has_cancel_application: getYesOrNoStr(req, 'cancel-application'),
+    cancel_application: getLabelForField(req, 'cancel-application'),
+    has_applicant_passport: getYesOrNoStr(
+      req,
+      'is-requesting-passport-to-travel'
+    ),
+    applicant_passport: getLabelForField(
       req,
       'is-requesting-passport-to-travel'
     ),
@@ -87,10 +92,13 @@ const getUserDetails = req => {
       new Date(getValueOfDefault(req, 'main-applicant-dob'))
     ),
     applicant_nationality: getValueOfDefault(req, 'main-applicant-nationality'),
+    has_applicant_address: '',
     applicant_address: '',
+    has_delivery_address: getYesOrNoStr(req, 'deliveryAddress'),
     delivery_address: getValueOfDefault(req, 'deliveryAddress'),
     contact_email: getValueOfDefault(req, 'contact-email'),
     contact_telephone: getValueOfDefault(req, 'contact-telephone'),
+    has_notes: getYesOrNoStr(req, 'notes'),
     notes: getValueOfDefault(req, 'notes')
   };
 };
