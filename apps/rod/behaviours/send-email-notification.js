@@ -60,6 +60,7 @@ const getApplicationCategory = req => {
 
 const getUserDetails = req => {
   return {
+    record_number: req.sessionModel.get('uniqueRefNumber'),
     person_completing: getWhoCompletedForm(req),
     application_category: getApplicationCategory(req),
     application_submitted_date: dateFormatter.format(
@@ -79,7 +80,7 @@ const getUserDetails = req => {
     payment_reference_number: '',
     has_courier_reference_number: '',
     courier_reference_number: '',
-    your_documents: getValueOfDefault(req,'yourDocuments'),
+    your_documents: getValueOfDefault(req, 'yourDocuments'),
     document_description: getValueOfDefault(req, 'document-description'),
     applicant_full_name: getValueOfDefault(req, 'main-applicant-full-name'),
     applicant_dob: dateFormatter.format(
@@ -89,62 +90,109 @@ const getUserDetails = req => {
     applicant_address: '',
     delivery_address: getValueOfDefault(req, 'deliveryAddress'),
     contact_email: getValueOfDefault(req, 'contact-email'),
-    contact_telephone: getValueOfDefault(req, 'contact-telephone')
+    contact_telephone: getValueOfDefault(req, 'contact-telephone'),
+    notes: getValueOfDefault(req, 'notes')
   };
 };
 
-function getBusinessEmail(req) {
+const visaTypeEmailMap = [
+  {
+    visaType: 'visa-type-british',
+    email: ''
+  },
+  {
+    visaType: 'visa-type-talent',
+    email: ''
+  },
+  {
+    visaType: 'visa-type-skilled',
+    email: ''
+  },
+  {
+    visaType: 'visa-type-study',
+    email: ''
+  },
+  {
+    visaType: 'visa-type-temp',
+    email: ''
+  },
+  {
+    visaType: 'visa-type-turkish',
+    email: ''
+  }
+];
 
+const flrTypeEmailMap = [
+  {
+    flrType: 'flr-fp',
+    email: ''
+  },
+  {
+    flrType: 'flr-m',
+    email: ''
+  },
+  {
+    flrType: 'flr-ir',
+    email: ''
+  },
+  {
+    flrType: 'flr-hro',
+    email: ''
+  }
+];
+
+const otherApplicationTypeEmailMap = [
+  {
+    appType: 'not-time-limit',
+    email: ''
+  },
+  {
+    appType: 'eu-settlement-scheme',
+    email: ''
+  },
+  {
+    appType: 'settlement',
+    email: ''
+  },
+  {
+    appType: 'limited-leave-replacement-brp',
+    email: ''
+  }
+];
+
+function getBusinessEmail(req) {
   const applicationType = req.sessionModel.get('application-type');
 
   if (applicationType === 'visa') {
     const selectedVisaType = req.sessionModel.get('visa-type');
-    switch (selectedVisaType) {
-      case 'visa-type-british':
-        return;
-      case 'visa-type-talent':
-        return;
-      case 'visa-type-skilled':
-        return;
-      case 'visa-type-study':
-        return;
-      case 'visa-type-temp':
-        return;
-      case 'visa-type-turkish':
-        return;
+    const visaEmail = visaTypeEmailMap.find(
+      item => item.visaType === selectedVisaType
+    );
+    if (visaEmail?.email) {
+      return visaEmail?.email;
     }
   }
   if (applicationType === 'british-citizen') {
-    // return british visa email
-    return ''
+    return '';
   }
 
   if (applicationType === 'further-leave') {
     const flrType = req.sessionModel.get('further-leave-to-remain');
-    switch (flrType) {
-      case 'flr-fp':
-        return;
-      case 'flr-m':
-        return;
-      case 'flr-ir':
-        return;
-      case 'flr-hro':
-        return;
+
+    const flyEmail = flrTypeEmailMap.find(item => item.flrType === flrType);
+    if (flyEmail?.email) {
+      return flyEmail.email;
     }
   }
 
-  if (applicationType === 'not-time-limit') {
-    return ''
+  const otherEmailType = otherApplicationTypeEmailMap.find(
+    item => item.appType === applicationType
+  );
+
+  if (otherEmailType?.email) {
+    return otherEmailType.email;
   }
-  if (applicationType === 'eu-settlement-scheme') {
-    return ''
-  }
-  if (applicationType === 'settlement') {
-    return ''
-  }
-  if (applicationType === 'limited-leave-replacement-brp') {
-    return ''
-  }
+
   throw new Error('Could not find the business email address');
 }
 module.exports = class SendEmailConfirmation {
@@ -152,11 +200,11 @@ module.exports = class SendEmailConfirmation {
     const personalisation = getUserDetails(req);
     console.log(personalisation);
 
-    // FIXME: use updated template id and emails
+    // FIXME: use updated emails
     const templateId =
       recipientType === USER
-        ? config.govukNotify.userConfirmationTemplateId
-        : config.govukNotify.businessConfirmationTemplateId;
+        ? config.govukNotify.rodUserConfirmationTemplateId
+        : config.govukNotify.rodBusinessConfirmationTemplateId;
 
     const recipientEmailAddress =
       recipientType === USER
@@ -166,29 +214,29 @@ module.exports = class SendEmailConfirmation {
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';
 
-    // try {
-    //   await notifyClient.sendEmail('TODO', recipientEmailAddress, {
-    //     personalisation: Object.assign({}, personalisation)
-    //   });
+    try {
+      await notifyClient.sendEmail(templateId, recipientEmailAddress, {
+        personalisation: Object.assign({}, personalisation)
+      });
 
-    //   req.log(
-    //     'info',
-    //     `${userOrBusinessStr()} Confirmation Email sent successfully`
-    //   );
-    // } catch (err) {
-    //   const errorDetails = err.response?.data
-    //     ? `Cause: ${JSON.stringify(err.response.data)}`
-    //     : '';
-    //   const errorCode = err.code ? `${err.code} -` : '';
-    //   const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
+      req.log(
+        'info',
+        `${userOrBusinessStr()} Confirmation Email sent successfully`
+      );
+    } catch (err) {
+      const errorDetails = err.response?.data
+        ? `Cause: ${JSON.stringify(err.response.data)}`
+        : '';
+      const errorCode = err.code ? `${err.code} -` : '';
+      const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
 
-    //   req.log(
-    //     'error',
-    //     `Failed to send ${userOrBusinessStr()} Confirmation Email`,
-    //     errorMessage
-    //   );
-    //   throw Error(errorMessage);
-    // }
+      req.log(
+        'error',
+        `Failed to send ${userOrBusinessStr()} Confirmation Email`,
+        errorMessage
+      );
+      throw Error(errorMessage);
+    }
   }
 
   async send(req) {

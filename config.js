@@ -14,7 +14,9 @@ module.exports = {
     userConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
     businessConfirmationTemplateId:
       process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID,
-    caseworkerEmail: process.env.CASEWORKER_EMAIL
+    caseworkerEmail: process.env.CASEWORKER_EMAIL,
+    rodUserConfirmationTemplateId: process.env.ROD_USER_CONFIRMATION_TEMPLATE_ID,
+    rodBusinessConfirmationTemplateId: process.env.ROD_BUSINESS_CONFIRMATION_TEMPLATE_ID
   },
   survey: {
     urls: {
