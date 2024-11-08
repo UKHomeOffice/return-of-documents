@@ -31,7 +31,21 @@
     "header": "Check your answers"
   },
   "request-received": {
-    "confirmed": "Request received"
+    "confirmed": "Request received",
+    "your-record-num": "Your record number",
+    "para1": "We have sent email confirmation to {{values.contact-email}}.",
+    "para2": "If you need your documents for travel, do not book tickets until you have them back.",
+    "header1": "What happens next",
+    "para3": "The Home Office may contact you if they need more information.",
+    "para4": "They will review your request and decide whether they can cancel your application or send your documents back to you.",
+    "info": "If you have asked for your documents back, it normally takes 10 working days to return them",
+    "header2": "If you have cancelled your application",
+    "para5": "If you have cancelled your application, you might be able to",
+    "link1": "get a refund",
+    "para6": "This depends on when you cancelled your application.",
+    "header3": "If you need to cancel this request",
+    "para7": "There is an online service if you need to",
+    "link2": "cancel this request"
   },
   "cancelling-application": {
     "header": "Cancelling your application"
