@@ -22,8 +22,6 @@ const getLabelForField = (req, field) => {
   return getLabel(field, req.sessionModel.get(field), translation);
 };
 
-
-
 const getApplicationCategory = req => {
   const applicationReason = req.sessionModel.get('dnr-application-type');
 
@@ -79,56 +77,57 @@ const getUserDetails = req => {
 };
 
 
-const valueForMailbox = (req) => {
-  const steps = req.sessionModel.get('steps')
-  const dnrVisaTypeValue = req.sessionModel.get('dnr-visa-type')
-  const dnrApplicationTypeValue = req.sessionModel.get('dnr-application-type')
+const valueForMailbox = req => {
+  const steps = req.sessionModel.get('steps');
+  const dnrVisaTypeValue = req.sessionModel.get('dnr-visa-type');
+  const dnrApplicationTypeValue = req.sessionModel.get('dnr-application-type');
 
   return {
     steps,
     dnrVisaTypeValue,
     dnrApplicationTypeValue
-  }
-}
+  };
+};
 
-const whichBusinessMailbox = (req) => {
-  const values = valueForMailbox(req)
+const whichBusinessMailbox = req => {
+  const values = valueForMailbox(req);
 
   if (values.steps.includes('/documents-not-received-further-leave')) {
     return config.govukNotify.dnrCaseworkerEmailFamily;
   }
 
   if (values.dnrVisaTypeValue !== 'dnr-visa-type-british' &&
-      values.steps.includes('/documents-not-received-visa-type')) {
-        return config.govukNotify.dnrCaseworkerEmailWorkRoutes;
-      }
+    values.steps.includes('/documents-not-received-visa-type')) {
+    return config.govukNotify.dnrCaseworkerEmailWorkRoutes;
+  }
 
   if (values.dnrApplicationTypeValue === 'dnr-not-time-limit' ||
-      values.dnrApplicationTypeValue === 'dnr-settlement'){
-      return config.govukNotify.dnrCaseworkerEmailMQT;
+    values.dnrApplicationTypeValue === 'dnr-settlement') {
+    return config.govukNotify.dnrCaseworkerEmailMQT;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-british-citizen') {
-    return config.govukNotify.dnrCaseworkerEmailRequest; 
+    return config.govukNotify.dnrCaseworkerEmailRequest;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-eu-settlement-scheme') {
-    return config.govukNotify.dnrCaseworkerEmailEU; 
+    return config.govukNotify.dnrCaseworkerEmailEU;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-limited-leave-replacement-brp') {
-    return config.govukNotify.dnrCaseworkerEmailWorkRoutes; 
+    return config.govukNotify.dnrCaseworkerEmailWorkRoutes;
   }
 
   if (values.dnrVisaTypeValue === 'dnr-visa-type-british') {
-    return config.govukNotify.dnrCaseworkerEmailMQT; 
+    return config.govukNotify.dnrCaseworkerEmailMQT;
   }
-}
+  return null;
+};
 
 module.exports = class SendEmailConfirmation {
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
-        
+
     const templateId =
       recipientType === USER
         ? config.govukNotify.dnrUserConfirmationTemplateId
