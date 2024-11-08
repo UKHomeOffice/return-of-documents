@@ -18,7 +18,11 @@ module.exports = {
     dnrCaseworkerEmailWorkRoutes: process.env.DNR_CASEWORKER_EMAIL_WORK_ROUTES,
     dnrCaseworkerEmailRequest: process.env.DNR_CASEWORKER_EMAIL_REQUEST,
     dnrCaseworkerEmailFamily: process.env.DNR_CASEWORKER_EMAIL_FAMILY,
-    dnrCaseworkerEmailEU: process.env.DNR_CASEWORKER_EMAIL_EU
+    dnrCaseworkerEmailEU: process.env.DNR_CASEWORKER_EMAIL_EU,
+    userConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
+    businessConfirmationTemplateId:
+      process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID,
+    caseworkerEmail: process.env.CASEWORKER_EMAIL
   },
   survey: {
     urls: {

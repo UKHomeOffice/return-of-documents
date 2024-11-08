@@ -1,4 +1,5 @@
 'use strict';
+
 const config = require('../../../config');
 const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
 
@@ -15,6 +16,15 @@ module.exports = {
     {
       step: '/sponsor-type',
       field: 'sponsor-type'
+    },
+    {
+      step: '/about-application',
+      field: 'date-of-application',
+      parse: d => d && dateFormater.format(new Date(d))
+    },
+    {
+      step: '/about-application',
+      field: 'cancel-application'
     },
     {
       step: '/dependant-or-guardian',
@@ -60,6 +70,31 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-nationality'
+    },
+    {
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+        return  Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
+    },
+    {
+      step: '/contact-details',
+      field: 'contact-email'
+    },
+    {
+      step: '/contact-details',
+      field: 'contact-telephone'
+    },
+    {
+      step: '/extra-notes',
+      field: 'notes'
     }
   ]
 };

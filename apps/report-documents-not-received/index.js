@@ -2,6 +2,7 @@
 
 const SummaryPageBehaviour = require('hof').components.summary;
 const sendNotification = require('./behaviours/submit-notify');
+const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
   name: 'report-documents-not-received',
@@ -43,9 +44,19 @@ module.exports = {
       next: '/documents-not-received-reference-number'
     },
     '/documents-not-received-reference-number': {
+      behaviours: [customValidation],
+      fields: [
+        'dnr-reference-number',
+        'dnr-record-number',
+        'dnr-case-id',
+        'dnr-ho-reference-number',
+        'dnr-payment-reference-number',
+        'dnr-courier-reference-number'
+      ],
       next: '/documents-not-received-contact-details'
     },
     '/documents-not-received-contact-details': {
+      behaviours: [customValidation],
       fields: ['dnr-email', 'dnr-telephone'],
       next: '/documents-not-received-confirm'
     },

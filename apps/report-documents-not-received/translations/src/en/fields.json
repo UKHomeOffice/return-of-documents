@@ -71,6 +71,47 @@
         "hint": "Includes Turkish businessperson and Turkish worker visas"
       }
     }
+  },
+  "dnr-reference-number": {
+    "legend": "Which reference number can you provide?",
+    "options": {
+      "dnr-record-number": {
+        "label": "Record number",
+        "hint": "This is in the confirmation email you received when you submitted. For example, ROD123456789"
+      },
+      "dnr-case-id": {
+        "label": "Case ID",
+        "hint": "The main applicant received this number when they applied. For example, 12345678"
+      },
+      "dnr-ho-reference-number": {
+        "label": "Home Office reference number",
+        "hint": "This is on official documents, such as letters about your immigration status or biometric residence permit cards. For example, A1234567"
+      },
+      "dnr-payment-reference-number": {
+        "label": "Payment reference number",
+        "hint": "This is on the letter the Home Office sent to the main applicant confirming they received an application"
+      },
+      "dnr-courier-reference-number": {
+        "label": "Courier reference number",
+        "hint": "This includes Royal Mail reference numbers"
+      }
+    }
+  },
+  "dnr-record-number": {
+    "label": "Enter the record number"
+  },
+  "dnr-case-id": {
+    "label": "Enter the case ID"
+  },
+  "dnr-ho-reference-number": {
+    "label": "Enter the Home Office reference number"
+  },
+  "dnr-payment-reference-number": {
+    "label": "Enter the payment reference number"
+  },
+  "dnr-courier-reference-number": {
+    "label": "Enter the courier reference number",
+    "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
   }, 
   "dnr-email":{
     "label": "Email address",

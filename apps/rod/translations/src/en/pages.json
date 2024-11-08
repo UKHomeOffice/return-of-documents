@@ -36,6 +36,15 @@
   "cancelling-application": {
     "header": "Cancelling your application"
   },
+  "your-documents": {
+    "header": "Your documents"
+  },
+  "contact-details": {
+    "header": "Contact details"
+  },
+  "extra-notes": {
+    "header": "Notes about your request (optional)"
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -46,6 +55,12 @@
       },
       "sponsor-type": {
         "label": "Sponsor type"
+      },
+      "date-of-application": {
+        "label": "Date of submission"
+      },
+      "cancel-application": {
+        "label": "Cancelling application?"
       },
       "dependant-or-guardian": {
         "label": "Sponsor type"
@@ -76,6 +91,21 @@
       },
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
+      },
+      "document-type": {
+        "label": "Documents for return"
+      },
+      "document-description": {
+        "label": "Document description"
+      },
+      "contact-email":{
+        "label": "Contact email"
+      },
+      "contact-telephone":{
+        "label": "Contact telephone"
+      },
+      "notes": {
+        "label": "Notes"
       }
     }
   }
