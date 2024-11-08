@@ -3,12 +3,32 @@
     {{#t}}pages.request-received.confirmed{{/t}} &ndash; {{#t}}journey.serviceName{{/t}} &ndash; GOV.UK
   {{/pageTitle}}
   {{$page-content}}
-    <div class="govuk-panel alert-complete govuk-panel--confirmation">
-      <h1 class="govuk-panel__title">
-        {{#t}}pages.request-received.confirmed{{/t}}
-      </h1>
-        <h2 class="govuk-!-font-weight-regular govuk-!-margin-bottom-0 ref-number-heading">Your record number</h2>
-        <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-0 ref-number"><strong>{{values.uniqueRefNumber}}</strong></h2>
-    </div>
-  {{/page-content}}
+  <div class="govuk-panel alert-complete govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    {{#t}}pages.request-received.confirmed{{/t}}
+  </h1>
+  <h2 class="govuk-!-font-weight-regular govuk-!-margin-bottom-0 ref-number-heading">Your record number</h2>
+  <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-0 ref-number"><strong>{{values.uniqueRefNumber}}</strong></h2>
+</div>
+<p>We have sent email confirmation to name@example.com.</p>
+
+<p>If you need your documents for travel, do not book tickets until you have them back.</p>
+
+<h2>What happens next</h2>
+
+<p>The Home Office may contact you if they need more information.</p>
+
+<p>They will review your request and decide whether they can cancel your application or send your documents back to you.</p>
+
+<div class="govuk-inset-text">If you have asked for your documents back, it normally takes 10 working days to return them</div>
+
+<h2>If you have cancelled your application</h2>
+
+<p>If you have cancelled your application, you might be able to get a refund. This depends on when you cancelled your application.</p>
+
+<h2>If you need to cancel this request</h2>
+
+<p>There is an online service if you need to cancel this request.</p>
+
+{{/page-content}} 
 {{/partials-page}}
