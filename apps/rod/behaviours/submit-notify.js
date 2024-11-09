@@ -6,16 +6,16 @@ module.exports = superclass =>
       try {
         const crs = await import('crypto-random-string');
         const randomDigits = crs.default({ length: 9, type: 'numeric' });
-        const uniqueRefNumber = `ROD${randomDigits}`;
-        req.sessionModel.set('uniqueRefNumber', uniqueRefNumber);
+        const uniqueRodReference = `ROD${randomDigits}`;
+        req.sessionModel.set('uniqueRodReference', uniqueRodReference);
       } catch (error) {
         req.log(
           'error',
-          'Failed to generate unique reference number for ROD',
+          'Failed to generate ROD reference number',
           error
         );
         return next(
-          Error(`Failed to generate unique reference number: ${error}`)
+          Error(`Failed to generate ROD reference number: ${error}`)
         );
       }
 

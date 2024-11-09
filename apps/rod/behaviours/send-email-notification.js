@@ -60,7 +60,7 @@ const getApplicationCategory = req => {
 
 const getUserDetails = req => {
   return {
-    record_number: req.sessionModel.get('uniqueRefNumber'),
+    record_number: req.sessionModel.get('uniqueRodReference'),
     person_completing: getWhoCompletedForm(req),
     application_category: getApplicationCategory(req),
     application_submitted_date: dateFormatter.format(
