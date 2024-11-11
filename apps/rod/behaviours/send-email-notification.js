@@ -218,9 +218,7 @@ function getBusinessEmail(req) {
 module.exports = class SendEmailConfirmation {
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
-    console.log(personalisation);
 
-    // FIXME: use updated emails
     const templateId =
       recipientType === USER
         ? config.govukNotify.rodUserConfirmationTemplateId
@@ -234,29 +232,29 @@ module.exports = class SendEmailConfirmation {
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';
 
-    // try {
-    //   await notifyClient.sendEmail(templateId, recipientEmailAddress, {
-    //     personalisation: Object.assign({}, personalisation)
-    //   });
+    try {
+      await notifyClient.sendEmail(templateId, recipientEmailAddress, {
+        personalisation: Object.assign({}, personalisation)
+      });
 
-    //   req.log(
-    //     'info',
-    //     `${userOrBusinessStr()} Confirmation Email sent successfully`
-    //   );
-    // } catch (err) {
-    //   const errorDetails = err.response?.data
-    //     ? `Cause: ${JSON.stringify(err.response.data)}`
-    //     : '';
-    //   const errorCode = err.code ? `${err.code} -` : '';
-    //   const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
+      req.log(
+        'info',
+        `${userOrBusinessStr()} Confirmation Email sent successfully`
+      );
+    } catch (err) {
+      const errorDetails = err.response?.data
+        ? `Cause: ${JSON.stringify(err.response.data)}`
+        : '';
+      const errorCode = err.code ? `${err.code} -` : '';
+      const errorMessage = `${errorCode} ${err.message}; ${errorDetails}`;
 
-    //   req.log(
-    //     'error',
-    //     `Failed to send ${userOrBusinessStr()} Confirmation Email`,
-    //     errorMessage
-    //   );
-    //   throw Error(errorMessage);
-    // }
+      req.log(
+        'error',
+        `Failed to send ${userOrBusinessStr()} Confirmation Email`,
+        errorMessage
+      );
+      throw Error(errorMessage);
+    }
   }
 
   async send(req) {
