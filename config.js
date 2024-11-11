@@ -11,12 +11,15 @@ module.exports = {
   env: env,
   govukNotify: {
     notifyApiKey: process.env.NOTIFY_KEY,
-    userConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
-    businessConfirmationTemplateId:
-      process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID,
-    caseworkerEmail: process.env.CASEWORKER_EMAIL,
-    rodUserConfirmationTemplateId: process.env.ROD_USER_CONFIRMATION_TEMPLATE_ID,
-    rodBusinessConfirmationTemplateId: process.env.ROD_BUSINESS_CONFIRMATION_TEMPLATE_ID
+    dnrUserConfirmationTemplateId: process.env.DNR_USER_CONFIRMATION_TEMPLATE_ID,
+    dnrBusinessConfirmationTemplateId: process.env.DNR_BUSINESS_CONFIRMATION_TEMPLATE_ID,
+    caseworkerMqtEmail: process.env.CASEWORKER_MQT_EMAIL,
+    caseworkerWorkRoutesEmail: process.env.CASEWORKER_WORK_ROUTES_EMAIL,
+    caseworkerRequestEmail: process.env.CASEWORKER_REQUEST_EMAIL,
+    caseworkerFamilyEmail: process.env.CASEWORKER_FAMILY_EMAIL,
+    caseworkerEuEmail: process.env.CASEWORKER_EU_EMAIL,
+    cncUserConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
+    cncBusinessConfirmationTemplateId: process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID
   },
   survey: {
     urls: {

@@ -176,7 +176,7 @@ const otherApplicationTypeEmailMap = [
   },
   {
     appType: 'limited-leave-replacement-brp',
-    email: config.govukNotify.caseworkerRequestEmail
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   }
 ];
 
