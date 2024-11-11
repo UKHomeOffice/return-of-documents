@@ -93,33 +93,33 @@ const whichBusinessMailbox = req => {
   const values = valueForMailbox(req);
 
   if (values.steps.includes('/documents-not-received-further-leave')) {
-    return config.govukNotify.CaseworkerFamilyEmail;
+    return config.govukNotify.caseworkerFamilyEmail;
   }
 
   if (values.dnrVisaTypeValue !== 'dnr-visa-type-british' &&
     values.steps.includes('/documents-not-received-visa-type')) {
-    return config.govukNotify.CaseworkerWorkRoutesEmail;
+    return config.govukNotify.caseworkerWorkRoutesEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-not-time-limit' ||
     values.dnrApplicationTypeValue === 'dnr-settlement') {
-    return config.govukNotify.CaseworkerMqtEmail;
+    return config.govukNotify.caseworkerMqtEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-british-citizen') {
-    return config.govukNotify.CaseworkerRequestEmail;
+    return config.govukNotify.caseworkerRequestEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-eu-settlement-scheme') {
-    return config.govukNotify.CaseworkerEuEmail;
+    return config.govukNotify.caseworkerEuEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-limited-leave-replacement-brp') {
-    return config.govukNotify.CaseworkerWorkRoutesEmail;
+    return config.govukNotify.caseworkerWorkRoutesEmail;
   }
 
   if (values.dnrVisaTypeValue === 'dnr-visa-type-british') {
-    return config.govukNotify.CaseworkerMqtEmail;
+    return config.govukNotify.caseworkerMqtEmail;
   }
   return null;
 };
