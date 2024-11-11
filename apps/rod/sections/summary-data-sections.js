@@ -1,7 +1,10 @@
 'use strict';
 
 const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(config.dateLocales, config.dateFormat);
+const dateFormater = new Intl.DateTimeFormat(
+  config.dateLocales,
+  config.dateFormat
+);
 
 module.exports = {
   sectionHeader: [
@@ -83,6 +86,26 @@ module.exports = {
     {
       step: '/your-documents',
       field: 'document-description'
+    },
+    {
+      step: '/enter-delivery-address',
+      field: 'delivery-address-details',
+      parse: (value, req) => {
+        if (!req.sessionModel.get('delivery-address-line-1')) {
+          return null;
+        }
+        const deliveryAddress = [
+          req.sessionModel.get('delivery-address-line-1'),
+          req.sessionModel.get('delivery-address-town-or-city'),
+          req.sessionModel.get('delivery-address-postcode')
+        ];
+        const addressLine2 = req.sessionModel.get('delivery-address-line-2');
+        if (addressLine2) {
+          deliveryAddress.splice(1, 0, addressLine2);
+        }
+        req.sessionModel.set('deliveryAddress', deliveryAddress.join(', '));
+        return deliveryAddress.join(', \n');
+      }
     },
     {
       step: '/contact-details',
