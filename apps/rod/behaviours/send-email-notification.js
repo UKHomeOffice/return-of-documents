@@ -79,12 +79,24 @@ const getUserDetails = req => {
     reference_number: getYesOrNoStr(req, 'rodReferenceNumbers'),
     has_case_id: getYesOrNoStr(req, 'rod-case-id'),
     case_id: getValueOfDefault(req, 'rod-case-id'),
-    has_ho_reference_number:  getYesOrNoStr(req, 'rod-ho-reference-number'),
+    has_ho_reference_number: getYesOrNoStr(req, 'rod-ho-reference-number'),
     ho_reference_number: getValueOfDefault(req, 'rod-ho-reference-number'),
-    has_payment_reference_number: getYesOrNoStr(req, 'rod-payment-reference-number'),
-    payment_reference_number: getValueOfDefault(req, 'rod-payment-reference-number'),
-    has_courier_reference_number: getYesOrNoStr(req, 'rod-courier-reference-number'),
-    courier_reference_number: getValueOfDefault(req, 'rod-courier-reference-number'),
+    has_payment_reference_number: getYesOrNoStr(
+      req,
+      'rod-payment-reference-number'
+    ),
+    payment_reference_number: getValueOfDefault(
+      req,
+      'rod-payment-reference-number'
+    ),
+    has_courier_reference_number: getYesOrNoStr(
+      req,
+      'rod-courier-reference-number'
+    ),
+    courier_reference_number: getValueOfDefault(
+      req,
+      'rod-courier-reference-number'
+    ),
     has_your_documents: getYesOrNoStr(req, 'yourDocuments'),
     your_documents: getValueOfDefault(req, 'yourDocuments'),
     has_document_description: getYesOrNoStr(req, 'document-description'),
@@ -106,65 +118,65 @@ const getUserDetails = req => {
 const visaTypeEmailMap = [
   {
     visaType: 'visa-type-british',
-    email: ''
+    email: config.govukNotify.caseworkerMqtEmail
   },
   {
     visaType: 'visa-type-talent',
-    email: ''
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   },
   {
     visaType: 'visa-type-skilled',
-    email: ''
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   },
   {
     visaType: 'visa-type-study',
-    email: ''
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   },
   {
     visaType: 'visa-type-temp',
-    email: ''
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   },
   {
     visaType: 'visa-type-turkish',
-    email: ''
+    email: config.govukNotify.caseworkerWorkRoutesEmail
   }
 ];
 
 const flrTypeEmailMap = [
   {
     flrType: 'flr-fp',
-    email: ''
+    email: config.govukNotify.caseworkerFamilyEmail
   },
   {
     flrType: 'flr-m',
-    email: ''
+    email: config.govukNotify.caseworkerFamilyEmail
   },
   {
     flrType: 'flr-ir',
-    email: ''
+    email: config.govukNotify.caseworkerFamilyEmail
   },
   {
     flrType: 'flr-hro',
-    email: ''
+    email: config.govukNotify.caseworkerFamilyEmail
   }
 ];
 
 const otherApplicationTypeEmailMap = [
   {
     appType: 'not-time-limit',
-    email: ''
+    email: config.govukNotify.caseworkerMqtEmail
   },
   {
     appType: 'eu-settlement-scheme',
-    email: ''
+    email: config.govukNotify.caseworkerEuEmail
   },
   {
     appType: 'settlement',
-    email: ''
+    email: config.govukNotify.caseworkerMqtEmail
   },
   {
     appType: 'limited-leave-replacement-brp',
-    email: ''
+    email: config.govukNotify.caseworkerRequestEmail
   }
 ];
 
@@ -181,7 +193,7 @@ function getBusinessEmail(req) {
     }
   }
   if (applicationType === 'british-citizen') {
-    return '';
+    return config.govukNotify.caseworkerRequestEmail;
   }
 
   if (applicationType === 'further-leave') {
