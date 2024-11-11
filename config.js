@@ -19,7 +19,9 @@ module.exports = {
     caseworkerFamilyEmail: process.env.CASEWORKER_FAMILY_EMAIL,
     caseworkerEuEmail: process.env.CASEWORKER_EU_EMAIL,
     cncUserConfirmationTemplateId: process.env.CNC_USER_CONFIRMATION_TEMPLATE_ID,
-    cncBusinessConfirmationTemplateId: process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID
+    cncBusinessConfirmationTemplateId: process.env.CNC_BUSINESS_CONFIRMATION_TEMPLATE_ID,
+    rodUserConfirmationTemplateId: process.env.ROD_USER_CONFIRMATION_TEMPLATE_ID,
+    rodBusinessConfirmationTemplateId: process.env.ROD_BUSINESS_CONFIRMATION_TEMPLATE_ID
   },
   survey: {
     urls: {
