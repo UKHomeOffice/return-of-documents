@@ -218,10 +218,7 @@ module.exports = {
     '/declaration': {
       behaviours: [sendNotification],
       next: '/request-received'
-      
     },
-    '/request-received': {
-      
-    }
+    '/request-received': {}
   }
 };
