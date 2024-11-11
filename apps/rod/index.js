@@ -203,7 +203,7 @@ module.exports = {
       next: '/contact-details'
     },
     '/contact-details': {
-
+      fields: ['contact-email', 'contact-telephone'],
       next: '/extra-notes'
     },
     '/extra-notes': {

@@ -64,6 +64,22 @@
   "cancel-application": {
     "required": "Select if you want to cancel the application"
     },
+  "contact-email": {
+    "required": "Enter a contact email address",
+    "minlength": "Enter a real email address",
+    "maxlength": "Enter a real email address",
+    "email": "Enter a real email address"
+  },
+  "contact-telephone": {
+    "required": "Enter a contact telephone number",
+    "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  },
+  "is-requesting-passport-to-travel": {
+    "required": "Select if you need the main applicant's passport for travel"
+  },
   "notes": {
     "extraNotes": "Request notes cannot be more than 2,000 characters",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"

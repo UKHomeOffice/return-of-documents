@@ -85,6 +85,14 @@ module.exports = {
       field: 'document-description'
     },
     {
+      step: '/contact-details',
+      field: 'contact-email'
+    },
+    {
+      step: '/contact-details',
+      field: 'contact-telephone'
+    },
+    {
       step: '/extra-notes',
       field: 'notes'
     }
