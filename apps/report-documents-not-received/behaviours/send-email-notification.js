@@ -103,7 +103,7 @@ const whichBusinessMailbox = req => {
 
   if (values.dnrApplicationTypeValue === 'dnr-not-time-limit' ||
     values.dnrApplicationTypeValue === 'dnr-settlement') {
-    return config.govukNotify.CaseworkerMQTEmail;
+    return config.govukNotify.CaseworkerMqtEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-british-citizen') {
@@ -111,7 +111,7 @@ const whichBusinessMailbox = req => {
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-eu-settlement-scheme') {
-    return config.govukNotify.CaseworkerEUEmail;
+    return config.govukNotify.CaseworkerEuEmail;
   }
 
   if (values.dnrApplicationTypeValue === 'dnr-limited-leave-replacement-brp') {
@@ -119,7 +119,7 @@ const whichBusinessMailbox = req => {
   }
 
   if (values.dnrVisaTypeValue === 'dnr-visa-type-british') {
-    return config.govukNotify.CaseworkerMQTEmail;
+    return config.govukNotify.CaseworkerMqtEmail;
   }
   return null;
 };
