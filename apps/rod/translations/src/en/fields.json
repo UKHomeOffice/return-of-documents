@@ -234,6 +234,18 @@
          "label": "Describe each of your documents (optional)",
          "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
     },
+    "delivery-address-line-1":{
+        "label": "Address line 1"
+    },
+    "delivery-address-line-2":{
+        "label": "Address line 2 (optional)"
+    },
+    "delivery-address-town-or-city":{
+        "label": "Town or city"
+    },
+    "delivery-address-postcode":{
+        "label": "Postcode"
+    },
   "contact-email": {
     "label": "Email address",
     "hint": "This is where we will send confirmation of your cancellation or request to return documents"

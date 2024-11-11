@@ -18,6 +18,10 @@ function extraNotes(value) {
   return validators.maxlength(value, 2000);
 }
 
+function postCode(value) {
+  return value.match(/^[a-zA-Z0-9\s]*$/);
+}
+
 module.exports = {
   name: {
     mixin: 'input-text'
@@ -211,6 +215,20 @@ module.exports = {
       { type: 'maxlength', arguments: 16 },
       validInternationalPhoneNumber
     ]
+  },
+  'delivery-address-line-1': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-line-2': {
+    validate: ['notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-town-or-city': {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
+  },
+  'delivery-address-postcode': {
+    validate: ['required', 'notUrl', postCode, 'postcode'],
+    formatter: ['ukPostcode'],
+    className: ['govuk-input', 'govuk-input--width-10']
   },
   notes: {
     mixin: 'textarea',

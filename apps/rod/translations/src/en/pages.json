@@ -39,6 +39,9 @@
   "your-documents": {
     "header": "Your documents"
   },
+  "enter-delivery-address": {
+    "header": "Enter the delivery address"
+  },
   "contact-details": {
     "header": "Contact details"
   },
@@ -100,6 +103,9 @@
       },
       "contact-telephone":{
         "label": "Contact telephone"
+      },
+      "delivery-address-details":{
+        "label": "Delivery address"
       },
       "notes": {
         "label": "Notes"
