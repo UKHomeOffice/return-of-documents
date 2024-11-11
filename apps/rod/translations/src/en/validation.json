@@ -64,6 +64,26 @@
   "cancel-application": {
     "required": "Select if you want to cancel the application"
     },
+  "delivery-address-line-1": {
+    "required": "Enter address line 1, typically the building and street",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+    "maxlength": "Address line 1 must be between 1 and 250 characters"
+  },
+  "delivery-address-line-2": {
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+    "maxlength": "Address line 2 must be between 1 and 250 characters"
+  },
+  "delivery-address-town-or-city": {
+    "required": "Enter a town or city",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+    "maxlength": "Town or city must be between 1 and 250 characters"
+  },
+  "delivery-address-postcode": {
+    "required": "Enter a postcode",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+    "postCode": "Postcode must only include letters a-z, numbers and spaces",
+    "postcode": "Enter a real UK postcode"
+  },
   "contact-email": {
     "required": "Enter a contact email address",
     "minlength": "Enter a real email address",
