@@ -226,9 +226,12 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
-      fields: ['declaration-check', sendNotification],
+      behaviours: [sendNotification],
+      fields: ['declaration-check'],
       next: '/request-received'
     },
-    '/request-received': {}
+    '/request-received': {
+      clearSession: true
+    }
   }
 };
