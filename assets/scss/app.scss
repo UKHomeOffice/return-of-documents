@@ -223,11 +223,14 @@ pre.looped-records {
   margin-bottom: 10px;
 }
 
-.govuk-radios__item .govuk-hint,
-.govuk-fieldset__legend + .govuk-hint {
+.govuk-radios__item .govuk-hint {
   margin-top: 5px; 
   padding-left: 0px;
   margin-bottom: 0px;
+}
+
+.govuk-fieldset__legend + .govuk-hint {
+  margin-top: 5px;
 }
 
 .alert-complete {
@@ -244,3 +247,16 @@ pre.looped-records {
   color: #fff;
 }
 
+.wrap-table-cell, .confirm-row {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.spinner-loader {
+  border: 5px solid #DEE0E2;
+  border-radius: 50%;
+  border-top-color: #005EA5;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
