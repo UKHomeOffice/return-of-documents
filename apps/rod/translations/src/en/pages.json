@@ -48,6 +48,11 @@
   "extra-notes": {
     "header": "Notes about your request (optional)"
   },
+  "enter-main-applicant-address": {
+    "header": "Enter the main applicant’s address",
+    "intro": "This must match the applicant’s address in Home Office records. The address must be a UK address."
+    
+  },
   "confirm": {
     "fields": {
       "who-is-completing": {
@@ -61,9 +66,6 @@
       },
       "date-of-application": {
         "label": "Date of submission"
-      },
-      "cancel-application": {
-        "label": "Cancelling application?"
       },
       "dependant-or-guardian": {
         "label": "Sponsor type"

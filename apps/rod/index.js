@@ -158,7 +158,7 @@ module.exports = {
     },
     '/main-applicant': {
       fields: ['main-applicant-full-name', 'main-applicant-dob', 'main-applicant-nationality'],
-      next: '/main-applicant-postcode'
+      next: '/enter-main-applicant-address'
     },
     '/main-applicant-postcode': {
 
@@ -169,7 +169,7 @@ module.exports = {
       next: '/reuse-main-applicant-address'
     },
     '/enter-main-applicant-address': {
-
+      fields: ['main-applicant-address-1', 'main-applicant-address-2', 'main-applicant-town-or-city', 'main-applicant-postcode'],
       next: '/reuse-main-applicant-address'
     },
     '/reuse-main-applicant-address': {

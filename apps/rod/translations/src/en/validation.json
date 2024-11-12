@@ -103,5 +103,19 @@
   "notes": {
     "extraNotes": "Request notes cannot be more than 2,000 characters",
     "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+  },
+  "main-applicant-address-1": {
+    "required": "Enter address line 1, typically the building and street",
+    "maxLength": "Address line 1 must be between 1 and 250 characters" 
+  },
+  "main-applicant-address-2": {
+    "maxLength": "Address line 2 must be between 1 and 250 characters"
+  },
+  "main-applicant-town-or-city": {
+    "required": "Enter a town or city"
+  },
+  "main-applicant-postcode": {
+    "required": "Enter a postcode",
+    "postcode": "Enter a real UK postcode"
   }
 }
