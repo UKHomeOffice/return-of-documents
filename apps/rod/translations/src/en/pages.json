@@ -39,6 +39,9 @@
   "your-documents": {
     "header": "Your documents"
   },
+  "enter-delivery-address": {
+    "header": "Enter the delivery address"
+  },
   "contact-details": {
     "header": "Contact details"
   },
@@ -104,9 +107,17 @@
       "contact-telephone":{
         "label": "Contact telephone"
       },
+      "delivery-address-details":{
+        "label": "Delivery address"
+      },
       "notes": {
         "label": "Notes"
       }
     }
+  },
+  "declaration": {
+    "header": "Declaration",
+    "intro": "I understand that:",
+    "intro-2": "if I cancel an application, the fee may not be refunded"
   }
 }

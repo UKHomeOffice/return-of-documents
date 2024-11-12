@@ -1,5 +1,6 @@
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const whoIsCompleting = require('./behaviours/who-is-completing');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
 
@@ -10,7 +11,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
-      behaviours: [sponsorSelectionHandler],
+      behaviours: [whoIsCompleting, sponsorSelectionHandler],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -195,10 +196,19 @@ module.exports = {
     },
     '/delivery-postcode': {
 
-      next: '/select-delivery-address'
+      next: '/enter-delivery-address'
     },
     '/select-delivery-address': {
 
+      next: '/contact-details'
+    },
+    '/enter-delivery-address': {
+      fields: [
+        'delivery-address-line-1',
+        'delivery-address-line-2',
+        'delivery-address-town-or-city',
+        'delivery-address-postcode'
+      ],
       next: '/contact-details'
     },
     '/contact-details': {
@@ -215,6 +225,7 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
+      fields: ['declaration-check'],
       next: '/request-received'
     },
     '/request-received': {
