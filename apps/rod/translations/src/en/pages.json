@@ -97,6 +97,9 @@
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
       },
+      "main-applicant-address": {
+        "label": "Main applicant’s address"
+      },
       "document-type": {
         "label": "Documents for return"
       },

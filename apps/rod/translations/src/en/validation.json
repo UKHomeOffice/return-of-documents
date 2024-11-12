@@ -116,6 +116,8 @@
   },
   "main-applicant-postcode": {
     "required": "Enter a postcode",
+    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer",
+    "postCode": "Postcode must only include letters a-z, numbers and spaces",
     "postcode": "Enter a real UK postcode"
   }
 }

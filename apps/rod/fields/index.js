@@ -263,11 +263,8 @@ module.exports = {
   },
   'main-applicant-postcode': {
     mixin: 'input-text',
-    className: ['govuk-input--width-10', 'govuk-input'],
-    validate: [
-      'postcode',
-      'required',
-      'notUrl'
-    ]
+    validate: ['required', 'notUrl', postCode, 'postcode'],
+    formatter: ['ukPostcode'],
+    className: ['govuk-input--width-10', 'govuk-input']
   }
 };
