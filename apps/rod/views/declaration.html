@@ -1,0 +1,19 @@
+{{<partials-page}}
+  {{$page-content}}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>{{#t}}pages.declaration.intro-2{{/t}}</li>
+  </ul>
+      {{#values.isSponsorOrDependant}}
+        {{#markdown}}is-sponsor-declaration{{/markdown}}
+      {{/values.isSponsorOrDependant}}
+      {{#values.isLegalRep}}
+        {{#markdown}}is-legal-rep-declaration{{/markdown}}
+      {{/values.isLegalRep}}
+      {{#values.isMainApp}}
+        {{#markdown}}is-main-app-declaration{{/markdown}}
+      {{/values.isMainApp}}
+    {{#renderField}}declaration-check{{/renderField}}
+    <div id="loader-container" class=""></div>
+    <div id="report-submit">{{#input-submit}}submit-request{{/input-submit}}</div>
+  {{/page-content}}
+{{/partials-page}}

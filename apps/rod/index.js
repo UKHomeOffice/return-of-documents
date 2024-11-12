@@ -1,5 +1,6 @@
 const SummaryPageBehaviour = require('hof').components.summary;
 const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
+const whoIsCompleting = require('./behaviours/who-is-completing');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
 const sendNotification = require('./behaviours/submit-notify');
@@ -11,7 +12,7 @@ module.exports = {
       behaviours: [enableRelatedServicesMenu]
     },
     '/who-completing': {
-      behaviours: [sponsorSelectionHandler],
+      behaviours: [whoIsCompleting, sponsorSelectionHandler],
       fields: ['who-is-completing'],
       continueOnEdit: true,
       backLink: 'start',
@@ -225,7 +226,7 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
-      behaviours: [sendNotification],
+      fields: ['declaration-check', sendNotification],
       next: '/request-received'
     },
     '/request-received': {}
