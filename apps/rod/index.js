@@ -169,7 +169,8 @@ module.exports = {
       next: '/reuse-main-applicant-address'
     },
     '/enter-main-applicant-address': {
-      fields: ['main-applicant-address-1', 'main-applicant-address-2', 'main-applicant-town-or-city', 'main-applicant-postcode'],
+      fields: ['main-applicant-address-1', 'main-applicant-address-2',
+        'main-applicant-town-or-city', 'main-applicant-postcode'],
       next: '/reuse-main-applicant-address'
     },
     '/reuse-main-applicant-address': {

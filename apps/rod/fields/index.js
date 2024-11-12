@@ -243,14 +243,14 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      { type: 'maxlength', arguments: 250 },
+      { type: 'maxlength', arguments: 250 }
     ]
   },
   'main-applicant-address-2': {
     mixin: 'input-text',
     validate: [
       'notUrl',
-      { type: 'maxlength', arguments: 250 },
+      { type: 'maxlength', arguments: 250 }
     ]
   },
   'main-applicant-town-or-city': {
@@ -258,7 +258,7 @@ module.exports = {
     validate: [
       'required',
       'notUrl',
-      { type: 'maxlength', arguments: 250 },
+      { type: 'maxlength', arguments: 250 }
     ]
   },
   'main-applicant-postcode': {
@@ -267,8 +267,7 @@ module.exports = {
     validate: [
       'postcode',
       'required',
-      'notUrl',
-      { type: 'maxlength', arguments: 250 },
+      'notUrl'
     ]
-  },
+  }
 };
