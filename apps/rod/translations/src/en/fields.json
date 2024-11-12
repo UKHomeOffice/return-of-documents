@@ -234,6 +234,7 @@
          "label": "Describe each of your documents (optional)",
          "hint": "Include the document type, as well as the owner’s name, nationality and date of birth. For example, passport, John Smith, British, 01/01/2009"
     },
+
     "delivery-address-line-1":{
         "label": "Address line 1"
     },
@@ -290,5 +291,8 @@
   "rod-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  },
+  "declaration-check": {
+    "label": "I understand and agree to this declaration"
   }
 }

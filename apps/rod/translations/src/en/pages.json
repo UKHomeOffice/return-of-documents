@@ -126,5 +126,10 @@
         "label": "Courier reference number"
       }
     }
+  },
+  "declaration": {
+    "header": "Declaration",
+    "intro": "I understand that:",
+    "intro-2": "if I cancel an application, the fee may not be refunded"
   }
 }
