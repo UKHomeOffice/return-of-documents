@@ -197,6 +197,10 @@ module.exports = {
     attributes: [{ attribute: 'rows', value: 5 }],
     labelClassName: 'govuk-label--s'
   },
+  'declaration-check': {
+    mixin: 'checkbox',
+    validate: ['required']
+  },
   'contact-email': {
     mixin: 'input-text',
     validate: [
