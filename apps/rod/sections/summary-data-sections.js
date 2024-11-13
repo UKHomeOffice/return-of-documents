@@ -75,6 +75,23 @@ module.exports = {
       field: 'main-applicant-nationality'
     },
     {
+      step: '/enter-main-applicant-address',
+      field: 'main-applicant-address-details',
+      parse: (value, req) => {
+        const applicantAddress = [
+          req.sessionModel.get('main-applicant-address-1'),
+          req.sessionModel.get('main-applicant-town-or-city'),
+          req.sessionModel.get('main-applicant-postcode')
+        ];
+        const addressLine2 = req.sessionModel.get('main-applicant-address-2');
+        if (addressLine2) {
+          applicantAddress.splice(1, 0, addressLine2);
+        }
+        req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
+        return applicantAddress.join(', \n');
+      }
+    },
+    {
       step: '/your-documents',
       field: 'document-type',
       parse: (value, req) => {
@@ -91,7 +108,9 @@ module.exports = {
       step: '/enter-delivery-address',
       field: 'delivery-address-details',
       parse: (value, req) => {
-        if (!req.sessionModel.get('delivery-address-line-1')) {
+        if (
+          !req.sessionModel.get('steps').includes('/enter-delivery-address')
+        ) {
           return null;
         }
         const deliveryAddress = [
@@ -105,6 +124,19 @@ module.exports = {
         }
         req.sessionModel.set('deliveryAddress', deliveryAddress.join(', '));
         return deliveryAddress.join(', \n');
+      }
+    },
+    {
+      step: '/enter-main-applicant-address',
+      field: 'delivery-address-details',
+      parse: (value, req) => {
+        if (req.sessionModel.get('steps').includes('/enter-delivery-address')) {
+          return null;
+        }
+
+        const mainApplicantAddress = req.sessionModel.get('applicantAddress');
+        req.sessionModel.set('deliveryAddress', mainApplicantAddress);
+        return mainApplicantAddress?.split(', ')?.join(', \n') ?? null;
       }
     },
     {

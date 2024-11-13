@@ -294,5 +294,17 @@
   },
   "declaration-check": {
     "label": "I understand and agree to this declaration"
+  },
+  "main-applicant-address-1": {
+    "label": "Address line 1"
+  },
+  "main-applicant-address-2": {
+    "label": "Address line 2 (optional)"
+  },
+  "main-applicant-town-or-city": {
+    "label": "Town or city"
+  },
+  "main-applicant-postcode": {
+    "label": "Postcode"
   }
 }
