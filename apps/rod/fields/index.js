@@ -1,6 +1,5 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
-
 const validators = require('hof/controller/validation/validators');
 
 // TODO: Move this into behavior when the custom validation file is added as part
@@ -238,5 +237,34 @@ module.exports = {
     mixin: 'textarea',
     validate: [extraNotes, 'notUrl'],
     attributes: [{ attribute: 'rows', value: 5 }]
+  },
+  'main-applicant-address-1': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'main-applicant-address-2': {
+    mixin: 'input-text',
+    validate: [
+      'notUrl',
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'main-applicant-town-or-city': {
+    mixin: 'input-text',
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'main-applicant-postcode': {
+    mixin: 'input-text',
+    validate: ['required', 'notUrl', postCode, 'postcode'],
+    formatter: ['ukPostcode'],
+    className: ['govuk-input--width-10', 'govuk-input']
   }
 };

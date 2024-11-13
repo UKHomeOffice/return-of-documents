@@ -14,7 +14,6 @@ module.exports = {
     '/who-completing': {
       behaviours: [whoIsCompleting, sponsorSelectionHandler],
       fields: ['who-is-completing'],
-      continueOnEdit: true,
       backLink: 'start',
       forks: [
         {
@@ -43,30 +42,26 @@ module.exports = {
     },
     '/who-representing': {
       fields: ['who-is-representing'],
-      continueOnEdit: true,
       next: '/legal-representation'
     },
     '/legal-representation': {
       fields: ['confirm-sent-letter-of-authority', 'legal-rep-name'],
-      continueOnEdit: true,
       next: '/application'
     },
     '/sponsor-type': {
       fields: ['sponsor-type'],
-      continueOnEdit: true,
       next: '/application'
     },
     '/dependant-or-guardian': {
       fields: ['dependant-or-guardian'],
-      continueOnEdit: true,
       next: '/application'
     },
     '/application': {
       fields: ['application-type'],
-      continueOnEdit: true,
       forks: [
         {
           target: '/visa-type',
+          continueOnEdit: true,
           condition: {
             field: 'application-type',
             value: 'visa'
@@ -74,6 +69,7 @@ module.exports = {
         },
         {
           target: '/further-leave',
+          continueOnEdit: true,
           condition: {
             field: 'application-type',
             value: 'further-leave'
@@ -84,17 +80,14 @@ module.exports = {
     },
     '/visa-type': {
       fields: ['visa-type'],
-      continueOnEdit: true,
       next: '/about-application'
     },
     '/further-leave': {
       fields: ['further-leave-to-remain'],
-      continueOnEdit: true,
       next: '/about-application'
     },
     '/about-application': {
       behaviours: [customValidation],
-      continueOnEdit: true,
       fields: ['date-of-application', 'cancel-application'],
       forks: [
         {
@@ -106,16 +99,17 @@ module.exports = {
         },
         {
           target: '/reference-number',
-          condition: req => req.sessionModel.get('who-is-completing') === 'sponsor' ||
-           (req.sessionModel.get('cancel-application') === 'no' &&
-            (req.sessionModel.get('application-type') === 'british-citizen' ||
-             req.sessionModel.get('application-type') === 'eu-settlement-scheme'))
+          condition: req =>
+            req.sessionModel.get('who-is-completing') === 'sponsor' ||
+            (req.sessionModel.get('cancel-application') === 'no' &&
+              (req.sessionModel.get('application-type') === 'british-citizen' ||
+                req.sessionModel.get('application-type') ===
+                  'eu-settlement-scheme'))
         }
       ],
       next: '/main-applicant-passport'
     },
     '/cancelling-application': {
-      continueOnEdit: true,
       next: '/reference-number'
     },
     '/main-applicant-passport': {
@@ -125,16 +119,14 @@ module.exports = {
           condition: {
             field: 'is-requesting-passport-to-travel',
             value: 'yes'
-          },
-          continueOnEdit: false
+          }
         },
         {
           target: '/cannot-travel',
           condition: {
             field: 'is-requesting-passport-to-travel',
             value: 'no'
-          },
-          continueOnEdit: false
+          }
         }
       ],
       fields: ['is-requesting-passport-to-travel'],
@@ -147,30 +139,28 @@ module.exports = {
     '/proof-of-identity': {},
 
     '/reference-number': {
-
       next: '/your-documents'
     },
     '/your-documents': {
-      fields: ['document-type',
-        'enter-document-type',
-        'document-description'
-      ],
+      fields: ['document-type', 'enter-document-type', 'document-description'],
       next: '/main-applicant'
     },
     '/main-applicant': {
-      fields: ['main-applicant-full-name', 'main-applicant-dob', 'main-applicant-nationality'],
-      next: '/main-applicant-postcode'
-    },
-    '/main-applicant-postcode': {
-
-      next: '/main-applicant-address-results'
-    },
-    '/main-applicant-address-results': {
-
-      next: '/reuse-main-applicant-address'
+      fields: [
+        'main-applicant-full-name',
+        'main-applicant-dob',
+        'main-applicant-nationality'
+      ],
+      next: '/enter-main-applicant-address'
     },
     '/enter-main-applicant-address': {
-
+      continueOnEdit: true,
+      fields: [
+        'main-applicant-address-1',
+        'main-applicant-address-2',
+        'main-applicant-town-or-city',
+        'main-applicant-postcode'
+      ],
       next: '/reuse-main-applicant-address'
     },
     '/reuse-main-applicant-address': {
@@ -180,27 +170,20 @@ module.exports = {
           condition: {
             field: 'is-passport-return-address',
             value: 'yes'
-          },
-          continueOnEdit: false
+          }
         },
         {
-          target: '/delivery-postcode',
+          target: '/enter-delivery-address',
           condition: {
             field: 'is-passport-return-address',
             value: 'no'
-          },
-          continueOnEdit: false
+          }
         }
       ],
       fields: ['is-passport-return-address'],
       next: '/contact-details'
     },
-    '/delivery-postcode': {
-
-      next: '/enter-delivery-address'
-    },
     '/select-delivery-address': {
-
       next: '/contact-details'
     },
     '/enter-delivery-address': {
