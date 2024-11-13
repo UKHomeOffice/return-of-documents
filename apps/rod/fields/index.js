@@ -240,26 +240,15 @@ module.exports = {
   },
   'main-applicant-address-1': {
     mixin: 'input-text',
-    validate: [
-      'required',
-      'notUrl',
-      { type: 'maxlength', arguments: 250 }
-    ]
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
   },
   'main-applicant-address-2': {
     mixin: 'input-text',
-    validate: [
-      'notUrl',
-      { type: 'maxlength', arguments: 250 }
-    ]
+    validate: ['notUrl', { type: 'maxlength', arguments: 250 }]
   },
   'main-applicant-town-or-city': {
     mixin: 'input-text',
-    validate: [
-      'required',
-      'notUrl',
-      { type: 'maxlength', arguments: 250 }
-    ]
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 250 }]
   },
   'main-applicant-postcode': {
     mixin: 'input-text',
@@ -267,75 +256,75 @@ module.exports = {
     formatter: ['ukPostcode'],
     className: ['govuk-input--width-10', 'govuk-input']
   },
-    'rod-reference-number': {
-      mixin: 'checkbox-group',
-      labelClassName: 'govuk-label--s',
-      isPageHeading: true,
-      validate: ['required'],
-      options: [
-        {
-          value: 'case-id',
-          toggle: 'rod-case-id',
-          child: 'input-text'
-        },
-        {
-          value: 'ho-reference-number',
-          toggle: 'rod-ho-reference-number',
-          child: 'input-text'
-        },
-        {
-          value: 'payment-reference-number',
-          toggle: 'rod-payment-reference-number',
-          child: 'input-text'
-        },
-        {
-          value: 'courier-reference-number',
-          toggle: 'rod-courier-reference-number',
-          child: 'input-text'
-        }
-      ]
-    },
-    'rod-case-id': {
-      dependent: {
-        field: 'rod-reference-number',
-        value: 'case-id'
+  'rod-reference-number': {
+    mixin: 'checkbox-group',
+    labelClassName: 'govuk-label--s',
+    isPageHeading: true,
+    validate: ['required'],
+    options: [
+      {
+        value: 'case-id',
+        toggle: 'rod-case-id',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: [
-        'required',
-        { type: 'maxlength', arguments: 8 },
-        { type: 'minlength', arguments: 8 },
-        'numeric',
-        'notUrl'
-      ]
-    },
-    'rod-ho-reference-number': {
-      dependent: {
-        field: 'rod-reference-number',
-        value: 'ho-reference-number'
+      {
+        value: 'ho-reference-number',
+        toggle: 'rod-ho-reference-number',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: [
-        'required',
-        { type: 'minlength', arguments: 8 },
-        'notUrl',
-        { type: 'maxlength', arguments: 250 }
-      ]
-    },
-    'rod-payment-reference-number': {
-      dependent: {
-        field: 'rod-reference-number',
-        value: 'payment-reference-number'
+      {
+        value: 'payment-reference-number',
+        toggle: 'rod-payment-reference-number',
+        child: 'input-text'
       },
-      className: ['govuk-input', 'govuk-!-width-two-thirds'],
-      validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+      {
+        value: 'courier-reference-number',
+        toggle: 'rod-courier-reference-number',
+        child: 'input-text'
+      }
+    ]
+  },
+  'rod-case-id': {
+    dependent: {
+      field: 'rod-reference-number',
+      value: 'case-id'
     },
-    'rod-courier-reference-number': {
-      dependent: {
-        field: 'rod-reference-number',
-        value: 'courier-reference-number'
-      },
-      className: ['govuk-input'],
-      validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
-    }
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'maxlength', arguments: 8 },
+      { type: 'minlength', arguments: 8 },
+      'numeric',
+      'notUrl'
+    ]
+  },
+  'rod-ho-reference-number': {
+    dependent: {
+      field: 'rod-reference-number',
+      value: 'ho-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: [
+      'required',
+      { type: 'minlength', arguments: 8 },
+      'notUrl',
+      { type: 'maxlength', arguments: 250 }
+    ]
+  },
+  'rod-payment-reference-number': {
+    dependent: {
+      field: 'rod-reference-number',
+      value: 'payment-reference-number'
+    },
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'rod-courier-reference-number': {
+    dependent: {
+      field: 'rod-reference-number',
+      value: 'courier-reference-number'
+    },
+    className: ['govuk-input'],
+    validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  }
 };
