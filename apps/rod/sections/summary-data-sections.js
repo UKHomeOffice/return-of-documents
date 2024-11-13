@@ -78,17 +78,15 @@ module.exports = {
       step: '/enter-main-applicant-address',
       field: 'main-applicant-address-details',
       parse: (value, req) => {
-        if (!req.sessionModel.get('main-applicant-address-1')) {
-          return null;
-        }
         const applicantAddress = [
           req.sessionModel.get('main-applicant-address-1'),
           req.sessionModel.get('main-applicant-address-2'),
           req.sessionModel.get('main-applicant-town-or-city'),
           req.sessionModel.get('main-applicant-postcode')
         ];
-        req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
-        return applicantAddress.join(', \n');
+        const filteredAddress = applicantAddress.filter(Boolean);
+        req.sessionModel.set('applicantAddress', filteredAddress.join(', '));
+        return filteredAddress.join(', \n');
       }
     },
     {
