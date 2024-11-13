@@ -80,13 +80,15 @@ module.exports = {
       parse: (value, req) => {
         const applicantAddress = [
           req.sessionModel.get('main-applicant-address-1'),
-          req.sessionModel.get('main-applicant-address-2'),
           req.sessionModel.get('main-applicant-town-or-city'),
           req.sessionModel.get('main-applicant-postcode')
         ];
-        const filteredAddress = applicantAddress.filter(Boolean);
-        req.sessionModel.set('applicantAddress', filteredAddress.join(', '));
-        return filteredAddress.join(', \n');
+        const addressLine2 = req.sessionModel.get('main-applicant-address-2');
+        if (addressLine2) {
+          applicantAddress.splice(1, 0, addressLine2);
+        }
+        req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
+        return applicantAddress.join(', \n');
       }
     },
     {
