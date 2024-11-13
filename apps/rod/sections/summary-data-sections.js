@@ -75,21 +75,18 @@ module.exports = {
       field: 'main-applicant-nationality'
     },
     {
-      step: '/main-applicant-address',
-      field: 'main-applicant-address',
+      step: '/enter-main-applicant-address',
+      field: 'main-applicant-address-details',
       parse: (value, req) => {
         if (!req.sessionModel.get('main-applicant-address-1')) {
           return null;
         }
         const applicantAddress = [
           req.sessionModel.get('main-applicant-address-1'),
+          req.sessionModel.get('main-applicant-address-2'),
           req.sessionModel.get('main-applicant-town-or-city'),
           req.sessionModel.get('main-applicant-postcode')
         ];
-        const addressLine2 = req.sessionModel.get('main-applicant-address-2');
-        if (addressLine2) {
-          applicantAddress.splice(1, 0, addressLine2);
-        }
         req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
         return applicantAddress.join(', \n');
       }

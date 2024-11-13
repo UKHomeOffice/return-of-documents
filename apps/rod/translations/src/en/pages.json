@@ -97,7 +97,7 @@
       "main-applicant-nationality": {
         "label": "Main applicant’s nationality"
       },
-      "main-applicant-address": {
+      "main-applicant-address-details": {
         "label": "Main applicant’s address"
       },
       "document-type": {
