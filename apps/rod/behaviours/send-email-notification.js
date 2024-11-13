@@ -76,7 +76,7 @@ const getUserDetails = req => {
       req,
       'is-requesting-passport-to-travel'
     ),
-    reference_number: getValueOfDefault(req, 'rodReferenceNumbers'),
+    reference_number: getValueOfDefault(req, 'selectedRefNumbers'),
     has_case_id: getYesOrNoStr(req, 'rod-case-id'),
     case_id: getValueOfDefault(req, 'rod-case-id'),
     has_ho_reference_number: getYesOrNoStr(req, 'rod-ho-reference-number'),
