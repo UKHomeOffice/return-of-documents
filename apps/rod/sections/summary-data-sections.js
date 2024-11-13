@@ -108,7 +108,9 @@ module.exports = {
       step: '/enter-delivery-address',
       field: 'delivery-address-details',
       parse: (value, req) => {
-        if (!req.sessionModel.get('delivery-address-line-1')) {
+        if (
+          !req.sessionModel.get('steps').includes('/enter-delivery-address')
+        ) {
           return null;
         }
         const deliveryAddress = [
@@ -122,6 +124,19 @@ module.exports = {
         }
         req.sessionModel.set('deliveryAddress', deliveryAddress.join(', '));
         return deliveryAddress.join(', \n');
+      }
+    },
+    {
+      step: '/enter-main-applicant-address',
+      field: 'delivery-address-details',
+      parse: (value, req) => {
+        if (req.sessionModel.get('steps').includes('/enter-delivery-address')) {
+          return null;
+        }
+
+        const mainApplicantAddress = req.sessionModel.get('applicantAddress');
+        req.sessionModel.set('deliveryAddress', mainApplicantAddress);
+        return mainApplicantAddress?.split(', ')?.join(', \n') ?? null;
       }
     },
     {
