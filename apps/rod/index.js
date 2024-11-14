@@ -214,7 +214,8 @@ module.exports = {
       next: '/request-received'
     },
     '/request-received': {
-      clearSession: true
+      clearSession: true,
+      backLink: false
     }
   }
 };
