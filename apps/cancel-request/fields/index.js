@@ -204,8 +204,7 @@ module.exports = {
       'skilled-worker',
       'study',
       'temporary-worker',
-      'turkish-national',
-      'different-type'
+      'turkish-national'
     ],
     validate: 'required'
   },

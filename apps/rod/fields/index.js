@@ -119,8 +119,7 @@ module.exports = {
       'visa-type-skilled',
       'visa-type-study',
       'visa-type-temp',
-      'visa-type-turkish',
-      'visa-type-different'
+      'visa-type-turkish'
     ],
     validate: 'required'
   },

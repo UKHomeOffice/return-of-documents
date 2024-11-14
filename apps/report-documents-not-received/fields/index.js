@@ -59,8 +59,7 @@ module.exports = {
       'dnr-visa-type-skilled',
       'dnr-visa-type-study',
       'dnr-visa-type-temp',
-      'dnr-visa-type-turkish',
-      'dnr-visa-type-different'
+      'dnr-visa-type-turkish'
     ],
     validate: 'required'
   },
