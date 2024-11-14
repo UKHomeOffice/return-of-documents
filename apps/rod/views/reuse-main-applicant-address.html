@@ -1,0 +1,21 @@
+{{<partials-page}}
+  {{$page-content}}
+  {{#markdown}}delivery-address-for-documents{{/markdown}} 
+
+  <div class="govuk-details__text">
+  <div class="govuk-summary-list__row summary-list-box" >
+        <div>{{values.main-applicant-address-1}}</div>
+        <div>{{values.main-applicant-address-2}}</div>
+        <div>{{values.main-applicant-town-or-city}}</div>
+        <div>{{values.main-applicant-postcode}}</div>
+    </div>
+  </div>
+  <br>
+    {{#fields}}
+    {{#renderField}}{{/renderField}}
+    {{/fields}}
+  <div class="govuk-button-container">
+    {{#input-submit}}continue{{/input-submit}}
+  </div>
+  {{/page-content}}
+{{/partials-page}}

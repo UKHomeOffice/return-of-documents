@@ -60,7 +60,11 @@ module.exports = {
     mixin: 'radio-group',
     isPageHeading: true,
     options: ['yes', 'no'],
-    validate: 'required'
+    validate: 'required',
+    className: ['govuk-radios', 'govuk-radios--inline'],
+    legend: {
+      className: 'govuk-fieldset__legend govuk-fieldset__legend--s'
+    }
   },
   'is-requesting-passport-to-travel': {
     mixin: 'radio-group',
