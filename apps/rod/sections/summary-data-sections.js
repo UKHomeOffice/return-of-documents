@@ -17,6 +17,18 @@ module.exports = {
       field: 'who-is-representing'
     },
     {
+      step: '/legal-representation',
+      field: 'legal-rep-name'
+    },
+    {
+      step: '/application',
+      field: 'application-type'
+    },
+    {
+      step: '/visa-type',
+      field: 'visa-type'
+    },
+    {
       step: '/sponsor-type',
       field: 'sponsor-type'
     },
@@ -34,32 +46,27 @@ module.exports = {
       field: 'dependant-or-guardian'
     },
     {
-      step: '/legal-representation',
-      field: 'legal-rep-name'
-    },
-    {
-      step: '/application',
-      field: 'application-type'
-    },
-    {
-      step: '/visa-type',
-      field: 'visa-type'
-    },
-    {
       step: '/further-leave',
       field: 'further-leave-to-remain'
-    },
-    {
-      step: '/about-application',
-      field: 'cancel-application'
     },
     {
       step: '/main-applicant-passport',
       field: 'is-requesting-passport-to-travel'
     },
     {
-      step: '/reuse-main-applicant-address',
-      field: 'is-passport-return-address'
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+        const yourDocuments = Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
+        req.sessionModel.set('yourDocuments', yourDocuments);
+        return yourDocuments;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
     },
     {
       step: '/main-applicant',
@@ -90,21 +97,6 @@ module.exports = {
         req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
         return applicantAddress.join(', \n');
       }
-    },
-    {
-      step: '/your-documents',
-      field: 'document-type',
-      parse: (value, req) => {
-        const yourDocuments = Array.isArray(value) ?
-          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
-          value;
-        req.sessionModel.set('yourDocuments', yourDocuments);
-        return yourDocuments;
-      }
-    },
-    {
-      step: '/your-documents',
-      field: 'document-description'
     },
     {
       step: '/enter-delivery-address',
