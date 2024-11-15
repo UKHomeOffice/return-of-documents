@@ -1,6 +1,7 @@
 'use strict';
 
 const SummaryPageBehaviour = require('hof').components.summary;
+const sendNotification = require('./behaviours/submit-notify');
 const customValidation = require('./behaviours/custom-validation');
 
 module.exports = {
@@ -60,7 +61,7 @@ module.exports = {
       next: '/documents-not-received-confirm'
     },
     '/documents-not-received-confirm': {
-      behaviours: [SummaryPageBehaviour],
+      behaviours: [SummaryPageBehaviour, sendNotification],
       sections: require('./sections/summary-data-sections'),
       next: '/report-submitted'
     },
