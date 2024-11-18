@@ -3,12 +3,22 @@ const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 const whoIsCompleting = require('./behaviours/who-is-completing');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
+const makePayment = require('./behaviours/make-payment');
+const paymentCompleted = require('./behaviours/payment-completed');
 
 module.exports = {
   name: 'rod',
   steps: {
     '/start': {
       behaviours: [enableRelatedServicesMenu]
+    },
+    '/make-payment': {
+      behaviours: [makePayment],
+      next: '/who-completing'
+    },
+    '/payment-completed': {
+      behaviours: [paymentCompleted],
+      next: '/declaration'
     },
     '/who-completing': {
       behaviours: [whoIsCompleting, sponsorSelectionHandler],
