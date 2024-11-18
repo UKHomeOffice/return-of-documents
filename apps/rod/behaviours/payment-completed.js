@@ -11,8 +11,7 @@ module.exports = superclass =>
           `https://publicapi.payments.service.gov.uk/v1/payments/${paymentId}`,
           {
             headers: {
-              Authorization:
-                'Bearer api_test_t26g0s45s1vkmf0h5sqhpic8v3dj7lttt4kt47f8257fvqgchnbln2cvji'
+              Authorization: 'Bearer ' + process.env.GOV_UK_PAY_API_KEY
             }
           }
         );
@@ -21,7 +20,7 @@ module.exports = superclass =>
       try {
         const resp = await checkPayment();
         const data = await resp.json();
-        console.log(data)
+        console.log(data);
       } catch {
         return next(Error(`Error fetching payment status`));
       }

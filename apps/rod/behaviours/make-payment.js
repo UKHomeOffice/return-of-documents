@@ -9,8 +9,7 @@ module.exports = superclass =>
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              Authorization:
-                'Bearer api_test_t26g0s45s1vkmf0h5sqhpic8v3dj7lttt4kt47f8257fvqgchnbln2cvji'
+              Authorization: 'Bearer ' + process.env.GOV_UK_PAY_API_KEY
             },
             body: JSON.stringify({
               amount: 2000,
@@ -34,7 +33,7 @@ module.exports = superclass =>
       try {
         const resp = await initiatePayment();
         const data = await resp.json();
-        console.log(data)
+        console.log(data);
         req.sessionModel.set('payment-id', data.payment_id);
         return res.redirect(data._links.next_url.href);
       } catch (error) {
