@@ -148,8 +148,14 @@ module.exports = {
     {
       step: '/reference-number',
       field: 'rod-reference-number',
-      parse: value => {
-        return Array.isArray(value) ? value.map(option => option).join('\n') : value;
+      parse: (value, req) => {
+        const selectedRefNumbers = Array.isArray(value)
+          ? value.map(option => option).join(', ')
+          : value;
+        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
+        return Array.isArray(value)
+          ? value.map(option => option).join('\n')
+          : value;
       }
     },
     {
