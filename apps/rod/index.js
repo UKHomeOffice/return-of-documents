@@ -136,10 +136,8 @@ module.exports = {
       next: '/reference-number'
     },
 
-    '/proof-of-identity': {},
+    '/proof-of-identity': {
 
-    '/reference-number': {
-      next: '/your-documents'
     },
     '/your-documents': {
       fields: ['document-type', 'enter-document-type', 'document-description'],
@@ -202,6 +200,17 @@ module.exports = {
     '/extra-notes': {
       fields: ['notes'],
       next: '/confirm'
+    },
+    '/reference-number': {
+      behaviours: [customValidation],
+      fields: [
+        'rod-reference-number',
+        'rod-case-id',
+        'rod-ho-reference-number',
+        'rod-payment-reference-number',
+        'rod-courier-reference-number'
+      ],
+      next: '/your-documents'
     },
     '/confirm': {
       behaviours: [SummaryPageBehaviour],
