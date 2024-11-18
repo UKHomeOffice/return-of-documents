@@ -119,6 +119,21 @@
       },
       "notes": {
         "label": "Notes"
+      },
+      "rod-reference-number": {
+        "label": "Reference number"
+      },
+      "rod-case-id": {
+        "label": "Case ID"
+      },
+      "rod-ho-reference-number": {
+        "label": "Home Office reference number"
+      },
+      "rod-payment-reference-number": {
+        "label": "Payment reference number"
+      },
+      "rod-courier-reference-number": {
+        "label": "Courier reference number"
       }
     }
   },
