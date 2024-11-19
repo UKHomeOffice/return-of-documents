@@ -65,7 +65,9 @@
   "enter-main-applicant-address": {
     "header": "Enter the main applicant’s address",
     "intro": "This must match the applicant’s address in Home Office records. The address must be a UK address."
-    
+  },
+  "reuse-main-applicant-address": {
+    "header": "Delivery address for the documents"
   },
   "confirm": {
     "fields": {
