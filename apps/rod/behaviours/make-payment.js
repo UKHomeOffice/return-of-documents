@@ -1,4 +1,5 @@
 /* eslint-disable */
+const uuid = require('uuid').v4;
 module.exports = superclass =>
   class extends superclass {
     async saveValues(req, res, next) {
@@ -15,7 +16,7 @@ module.exports = superclass =>
               amount: 2000,
               reference: '12345',
               description: 'Test license fee',
-              return_url: 'http://localhost:8080/payment-completed',
+              return_url: 'http://localhost:8080/payment-completed?id=' + uuid(),
               delayed_capture: false,
               metadata: {
                 ledger_code: 'AB100',
