@@ -123,6 +123,9 @@
     "postCode": "Postcode must only include letters a-z, numbers and spaces",
     "postcode": "Enter a real UK postcode"
   },
+  "is-passport-return-address": {
+    "required": "Select whether to return documents to the main applicant's address"
+  },
   "rod-reference-number": {
     "required": "You must provide a reference number. Select one you can provide"
   },

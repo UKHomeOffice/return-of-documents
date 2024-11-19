@@ -67,11 +67,12 @@
     "confirm-sent-letter-of-authority": {
         "label": "I confirm I have sent the Home Office a signed letter of authority"
     },
+    
     "legal-rep-name": {
         "label": "Name of legal firm or representative"
     },
     "is-passport-return-address": {
-        "label": "Should the documents be returned to this address",
+        "legend": "Should the documents be returned to this address",
         "options": {
             "yes": {
                 "label": "Yes"
