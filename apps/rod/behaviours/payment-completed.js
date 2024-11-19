@@ -11,7 +11,8 @@ module.exports = superclass =>
           `https://publicapi.payments.service.gov.uk/v1/payments/${paymentId}`,
           {
             headers: {
-              Authorization: 'Bearer ' + process.env.GOV_UK_PAY_API_KEY
+              Authorization:
+                'Bearer api_test_ma5c52atmcgvpva2oideg4kkdjqrghp9hvbsv12smi2qtebg5cpos3l65f'
             }
           }
         );

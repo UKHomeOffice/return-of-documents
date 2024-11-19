@@ -10,13 +10,16 @@ module.exports = superclass =>
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + process.env.GOV_UK_PAY_API_KEY
+              Authorization:
+                'Bearer api_test_ma5c52atmcgvpva2oideg4kkdjqrghp9hvbsv12smi2qtebg5cpos3l65f'
             },
             body: JSON.stringify({
               amount: 2000,
               reference: '12345',
               description: 'Test license fee',
-              return_url: 'http://localhost:8080/payment-completed?id=' + uuid(),
+              return_url:
+                'https://rod-epp-2-poc-worldpay-integration.internal.branch.sas-notprod.homeoffice.gov.uk?id=' +
+                uuid(),
               delayed_capture: false,
               metadata: {
                 ledger_code: 'AB100',
