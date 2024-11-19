@@ -136,9 +136,7 @@ module.exports = {
       next: '/reference-number'
     },
 
-    '/proof-of-identity': {
-
-    },
+    '/proof-of-identity': {},
     '/your-documents': {
       fields: ['document-type', 'enter-document-type', 'document-description'],
       next: '/main-applicant'
