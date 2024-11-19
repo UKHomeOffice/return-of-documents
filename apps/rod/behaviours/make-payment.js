@@ -18,7 +18,7 @@ module.exports = superclass =>
               reference: '12345',
               description: 'Test license fee',
               return_url:
-                'https://rod-epp-2-poc-worldpay-integration.internal.branch.sas-notprod.homeoffice.gov.uk?id=' +
+                'https://rod-epp-2-poc-worldpay-integration.internal.branch.sas-notprod.homeoffice.gov.uk/payment-completed?id=' +
                 uuid(),
               delayed_capture: false,
               metadata: {
