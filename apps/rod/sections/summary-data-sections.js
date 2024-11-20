@@ -21,23 +21,6 @@ module.exports = {
       field: 'sponsor-type'
     },
     {
-      step: '/about-application',
-      field: 'date-of-application',
-      parse: d => d && dateFormater.format(new Date(d))
-    },
-    {
-      step: '/about-application',
-      field: 'cancel-application'
-    },
-    {
-      step: '/dependant-or-guardian',
-      field: 'dependant-or-guardian'
-    },
-    {
-      step: '/legal-representation',
-      field: 'legal-rep-name'
-    },
-    {
       step: '/application',
       field: 'application-type'
     },
@@ -46,9 +29,11 @@ module.exports = {
       field: 'visa-type'
     },
     {
-      step: '/further-leave',
-      field: 'further-leave-to-remain'
+      step: '/about-application',
+      field: 'date-of-application',
+      parse: d => d && dateFormater.format(new Date(d))
     },
+
     {
       step: '/about-application',
       field: 'cancel-application'
@@ -58,8 +43,36 @@ module.exports = {
       field: 'is-requesting-passport-to-travel'
     },
     {
-      step: '/reuse-main-applicant-address',
-      field: 'is-passport-return-address'
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-reference-number',
+      parse: value => {
+        return Array.isArray(value) ? value.map(option => option).join('\n') : value;
+      }
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-case-id'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-ho-reference-number'
+    },
+    {
+      step: '/your-documents',
+      field: 'document-type',
+      parse: (value, req) => {
+        return  Array.isArray(value) ?
+          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
+          value;
+      }
+    },
+    {
+      step: '/your-documents',
+      field: 'document-description'
     },
     {
       step: '/main-applicant',
@@ -90,19 +103,6 @@ module.exports = {
         req.sessionModel.set('applicantAddress', applicantAddress.join(', '));
         return applicantAddress.join(', \n');
       }
-    },
-    {
-      step: '/your-documents',
-      field: 'document-type',
-      parse: (value, req) => {
-        return  Array.isArray(value) ?
-          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
-          value;
-      }
-    },
-    {
-      step: '/your-documents',
-      field: 'document-description'
     },
     {
       step: '/enter-delivery-address',
@@ -150,29 +150,6 @@ module.exports = {
     {
       step: '/extra-notes',
       field: 'notes'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-reference-number',
-      parse: value => {
-        return Array.isArray(value) ? value.map(option => option).join('\n') : value;
-      }
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-case-id'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-ho-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-payment-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-courier-reference-number'
     }
   ]
 };
