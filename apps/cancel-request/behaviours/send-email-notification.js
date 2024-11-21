@@ -100,19 +100,72 @@ const getUserDetails = req => {
   };
 };
 
+const valueForMailbox = req => {
+  const steps = req.sessionModel.get('steps');
+  const cncVisaTypeValue = req.sessionModel.get('cnc-application-visa-type');
+  const cncApplicationTypeValue = req.sessionModel.get(
+    'cnc-reason-for-application'
+  );
+
+  return {
+    steps,
+    cncVisaTypeValue,
+    cncApplicationTypeValue
+  };
+};
+
+const whichBusinessMailbox = req => {
+  const values = valueForMailbox(req);
+
+  if (values.steps.includes('/cancel-request-further-leave')) {
+    return config.govukNotify.caseworkerFamilyEmail;
+  }
+
+  if (
+    values.cncVisaTypeValue !== 'british-national' &&
+    values.steps.includes('/cancel-request-visa-type')
+  ) {
+    return config.govukNotify.caseworkerWorkRoutesEmail;
+  }
+
+  if (
+    values.cncApplicationTypeValue === 'ntl-or-brp' ||
+    values.cncApplicationTypeValue === 'settlement'
+  ) {
+    return config.govukNotify.caseworkerMqtEmail;
+  }
+
+  if (values.cncApplicationTypeValue === 'british-citizenship') {
+    return config.govukNotify.caseworkerRequestEmail;
+  }
+
+  if (values.cncApplicationTypeValue === 'european-settlement-scheme') {
+    return config.govukNotify.caseworkerEuEmail;
+  }
+
+  if (values.cncApplicationTypeValue === 'toc-or-brp') {
+    return config.govukNotify.caseworkerWorkRoutesEmail;
+  }
+
+  if (values.cncVisaTypeValue === 'british-national') {
+    return config.govukNotify.caseworkerMqtEmail;
+  }
+  return null;
+};
+
 module.exports = class SendEmailConfirmation {
   async sendEmailNotification(req, recipientType) {
     const personalisation = getUserDetails(req);
 
     const templateId =
       recipientType === USER
-        ? config.govukNotify.userConfirmationTemplateId
-        : config.govukNotify.businessConfirmationTemplateId;
+        ? config.govukNotify.cncUserConfirmationTemplateId
+        : config.govukNotify.cncBusinessConfirmationTemplateId;
 
     const recipientEmailAddress =
       recipientType === USER
         ? req.sessionModel.get('cnc-email')
-        : config.govukNotify.caseworkerEmail;
+        : whichBusinessMailbox(req);
 
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';

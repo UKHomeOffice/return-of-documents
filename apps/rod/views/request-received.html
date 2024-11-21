@@ -3,12 +3,32 @@
     {{#t}}pages.request-received.confirmed{{/t}} &ndash; {{#t}}journey.serviceName{{/t}} &ndash; GOV.UK
   {{/pageTitle}}
   {{$page-content}}
-    <div class="govuk-panel alert-complete govuk-panel--confirmation">
-      <h1 class="govuk-panel__title">
-        {{#t}}pages.request-received.confirmed{{/t}}
-      </h1>
-        <h2 class="govuk-!-font-weight-regular govuk-!-margin-bottom-0 ref-number-heading">Your record number</h2>
-        <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-0 ref-number"><strong>ROD123456789</strong></h2>
-    </div>
-  {{/page-content}}
+  <div class="govuk-panel alert-complete govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    {{#t}}pages.request-received.confirmed{{/t}}
+  </h1>
+  <h2 class="govuk-!-font-weight-regular govuk-!-margin-bottom-0 ref-number-heading">{{#t}}pages.request-received.your-record-num{{/t}}</h2>
+  <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-0 ref-number"><strong>{{values.uniqueRodReference}}</strong></h2>
+</div>
+<p>{{#t}}pages.request-received.para1{{/t}}</p>
+
+<p>{{#t}}pages.request-received.para2{{/t}}</p>
+
+<h2>{{#t}}pages.request-received.header1{{/t}}</h2>
+
+<p>{{#t}}pages.request-received.para3{{/t}}</p>
+
+<p>{{#t}}pages.request-received.para4{{/t}}</p>
+
+<div class="govuk-inset-text">{{#t}}pages.request-received.info{{/t}}</div>
+
+<h2>{{#t}}pages.request-received.header2{{/t}}</h2>
+
+<p>{{#t}}pages.request-received.para5{{/t}} <a href="https://www.gov.uk/cancel-visa/get-refund">{{#t}}pages.request-received.link1{{/t}}</a>. {{#t}}pages.request-received.para6{{/t}}</p>
+
+<h2>{{#t}}pages.request-received.header3{{/t}}</h2>
+
+<p>{{#t}}pages.request-received.para7{{/t}} <a href="https://cancel-application-and-return-documents.homeoffice.gov.uk/cancel-request">{{#t}}pages.request-received.link2{{/t}}</a>.</p>
+
+{{/page-content}} 
 {{/partials-page}}

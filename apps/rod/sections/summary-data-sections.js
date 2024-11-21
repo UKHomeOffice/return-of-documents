@@ -17,6 +17,18 @@ module.exports = {
       field: 'who-is-representing'
     },
     {
+      step: '/legal-representation',
+      field: 'legal-rep-name'
+    },
+    {
+      step: '/application',
+      field: 'application-type'
+    },
+    {
+      step: '/visa-type',
+      field: 'visa-type'
+    },
+    {
       step: '/sponsor-type',
       field: 'sponsor-type'
     },
@@ -34,10 +46,6 @@ module.exports = {
       parse: d => d && dateFormater.format(new Date(d))
     },
 
-    {
-      step: '/about-application',
-      field: 'cancel-application'
-    },
     {
       step: '/main-applicant-passport',
       field: 'is-requesting-passport-to-travel'
@@ -62,12 +70,13 @@ module.exports = {
       field: 'rod-ho-reference-number'
     },
     {
-      step: '/your-documents',
       field: 'document-type',
       parse: (value, req) => {
-        return  Array.isArray(value) ?
+        const yourDocuments = Array.isArray(value) ?
           value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
           value;
+        req.sessionModel.set('yourDocuments', yourDocuments);
+        return yourDocuments;
       }
     },
     {
@@ -150,6 +159,35 @@ module.exports = {
     {
       step: '/extra-notes',
       field: 'notes'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-reference-number',
+      parse: (value, req) => {
+        const selectedRefNumbers = Array.isArray(value)
+          ? value.map(option => option).join(', ')
+          : value;
+        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
+        return Array.isArray(value)
+          ? value.map(option => option).join('\n')
+          : value;
+      }
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-case-id'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-ho-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-payment-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-courier-reference-number'
     }
   ]
 };
