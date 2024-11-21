@@ -1,17 +1,7 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
-
-// TODO: Move this into behavior when the custom validation file is added as part
-// of other ticket
-function validInternationalPhoneNumber(value) {
-  const phoneNumberWithoutSpace = value.replace(/\s+/g, '');
-  const isValidPhoneNumber = validators.regex(
-    phoneNumberWithoutSpace,
-    /^\(?\+?[\d()-]{8,16}$/
-  );
-  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
-}
+const { validInternationalPhoneNumber } = require('../../../utils');
 
 function extraNotes(value) {
   return validators.maxlength(value, 2000);

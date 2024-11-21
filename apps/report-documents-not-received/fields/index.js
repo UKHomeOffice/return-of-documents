@@ -2,18 +2,21 @@
 
 const countries = require('hof').utils.countries();
 const dateComponent = require('hof').components.date;
+const { validInternationalPhoneNumber } = require('../../../utils');
 
 module.exports = {
   'dnr-application-type': {
     isPageHeading: true,
     mixin: 'radio-group',
-    options: ['dnr-visa',
+    options: [
+      'dnr-visa',
       'dnr-british-citizen',
       'dnr-further-leave',
       'dnr-not-time-limit',
       'dnr-eu-settlement-scheme',
       'dnr-settlement',
-      'dnr-limited-leave-replacement-brp'],
+      'dnr-limited-leave-replacement-brp'
+    ],
     validate: 'required'
   },
   'dnr-full-name': {
@@ -36,10 +39,12 @@ module.exports = {
   'dnr-nationality': {
     mixin: 'select',
     className: ['typeahead'],
-    options: [{
-      value: '',
-      label: 'fields.dnr-nationality.options.none_selected'
-    }].concat(countries),
+    options: [
+      {
+        value: '',
+        label: 'fields.dnr-nationality.options.none_selected'
+      }
+    ].concat(countries),
     validate: 'required'
   },
   'dnr-further-leave-to-remain': {
@@ -102,11 +107,7 @@ module.exports = {
       value: 'dnr-record-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: [
-      'required',
-      'notUrl',
-      { type: 'maxlength', arguments: [250] }
-    ],
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: [250] }],
     attributes: [{ prefix: 'ROD' }]
   },
   'dnr-case-id': {
@@ -129,11 +130,7 @@ module.exports = {
       value: 'dnr-ho-reference-number'
     },
     className: ['govuk-input', 'govuk-!-width-two-thirds'],
-    validate: [
-      'required',
-      'notUrl',
-      { type: 'maxlength', arguments: [250] }
-    ]
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: [250] }]
   },
   'dnr-payment-reference-number': {
     dependent: {
@@ -164,7 +161,10 @@ module.exports = {
     mixin: 'input-text',
     validate: [
       'required',
-      'notUrl'
+      'notUrl',
+      { type: 'minlength', arguments: 8 },
+      { type: 'maxlength', arguments: 16 },
+      validInternationalPhoneNumber
     ],
     className: ['govuk-input', 'govuk-!-width-one-half']
   }
