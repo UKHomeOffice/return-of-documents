@@ -3,6 +3,7 @@ const enableRelatedServicesMenu = require('./behaviours/related-services-menu');
 const whoIsCompleting = require('./behaviours/who-is-completing');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
+const sendNotification = require('./behaviours/submit-notify');
 
 module.exports = {
   name: 'rod',
@@ -135,9 +136,7 @@ module.exports = {
       next: '/reference-number'
     },
 
-    '/proof-of-identity': {
-
-    },
+    '/proof-of-identity': {},
     '/your-documents': {
       fields: ['document-type', 'enter-document-type', 'document-description'],
       next: '/main-applicant'
@@ -217,11 +216,13 @@ module.exports = {
       next: '/declaration'
     },
     '/declaration': {
+      behaviours: [sendNotification],
       fields: ['declaration-check'],
       next: '/request-received'
     },
     '/request-received': {
-      clearSession: true
+      clearSession: true,
+      backLink: false
     }
   }
 };
