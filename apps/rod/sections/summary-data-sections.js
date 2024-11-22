@@ -33,14 +33,6 @@ module.exports = {
       field: 'sponsor-type'
     },
     {
-      step: '/application',
-      field: 'application-type'
-    },
-    {
-      step: '/visa-type',
-      field: 'visa-type'
-    },
-    {
       step: '/further-leave',
       field: 'further-leave-to-remain'
     },
@@ -49,22 +41,26 @@ module.exports = {
       field: 'date-of-application',
       parse: d => d && dateFormater.format(new Date(d))
     },
-
+    {
+      step: '/about-application',
+      field: 'cancel-application'
+    },
     {
       step: '/main-applicant-passport',
       field: 'is-requesting-passport-to-travel'
     },
-
     {
       step: '/reference-number',
       field: 'rod-reference-number',
-      parse: value => {
-        return Array.isArray(value) ? value.map(option => option).join('\n') : value;
+      parse: (value, req) => {
+        const selectedRefNumbers = Array.isArray(value)
+          ? value.map(option => option).join(', ')
+          : value;
+        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
+        return Array.isArray(value)
+          ? value.map(option => option).join('\n')
+          : value;
       }
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-courier-reference-number'
     },
     {
       step: '/reference-number',
@@ -73,6 +69,14 @@ module.exports = {
     {
       step: '/reference-number',
       field: 'rod-ho-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-payment-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-courier-reference-number'
     },
     {
       field: 'document-type',
@@ -164,35 +168,6 @@ module.exports = {
     {
       step: '/extra-notes',
       field: 'notes'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-reference-number',
-      parse: (value, req) => {
-        const selectedRefNumbers = Array.isArray(value)
-          ? value.map(option => option).join(', ')
-          : value;
-        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
-        return Array.isArray(value)
-          ? value.map(option => option).join('\n')
-          : value;
-      }
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-case-id'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-ho-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-payment-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-courier-reference-number'
     }
   ]
 };
