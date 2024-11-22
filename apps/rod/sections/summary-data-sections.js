@@ -41,6 +41,10 @@ module.exports = {
       field: 'visa-type'
     },
     {
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
+    },
+    {
       step: '/about-application',
       field: 'date-of-application',
       parse: d => d && dateFormater.format(new Date(d))
@@ -50,16 +54,17 @@ module.exports = {
       step: '/main-applicant-passport',
       field: 'is-requesting-passport-to-travel'
     },
-    {
-      step: '/further-leave',
-      field: 'further-leave-to-remain'
-    },
+
     {
       step: '/reference-number',
       field: 'rod-reference-number',
       parse: value => {
         return Array.isArray(value) ? value.map(option => option).join('\n') : value;
       }
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-courier-reference-number'
     },
     {
       step: '/reference-number',
