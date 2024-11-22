@@ -3,7 +3,7 @@ const validators = require('hof/controller/validation/validators');
 const removeWhiteSpace = value => value?.replace(/\s+/g, '');
 
 const validInternationalPhoneNumber = value => {
-  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
+  const phoneNumberWithoutSpace = removeWhiteSpace(value);
   const isValidPhoneNumber = validators.regex(
     phoneNumberWithoutSpace,
     /^\(?\+?[\d()-]{8,16}$/
