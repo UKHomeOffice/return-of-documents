@@ -13,6 +13,14 @@ module.exports = {
       field: 'who-is-completing'
     },
     {
+      step: '/dependant-or-guardian',
+      field: 'dependant-or-guardian'
+    },
+    {
+      step: '/sponsor-type',
+      field: 'sponsor-type'
+    },
+    {
       step: '/who-representing',
       field: 'who-is-representing'
     },
@@ -27,10 +35,6 @@ module.exports = {
     {
       step: '/visa-type',
       field: 'visa-type'
-    },
-    {
-      step: '/sponsor-type',
-      field: 'sponsor-type'
     },
     {
       step: '/further-leave',
