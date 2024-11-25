@@ -35,11 +35,18 @@ module.exports = {
     {
       step: '/about-application',
       field: 'date-of-application',
-      parse: d => d && dateFormater.format(new Date(d))
+      parse: (d, req) => {
+        const isSponsor = req.sessionModel.get('who-is-completing') === 'sponsor';
+        return !isSponsor && d ? dateFormater.format(new Date(d)) : null;
+      }
     },
     {
       step: '/about-application',
-      field: 'cancel-application'
+      field: 'cancel-application',
+      parse: (value, req) => {
+        const isSponsor = req.sessionModel.get('who-is-completing') === 'sponsor';
+        return !isSponsor ? value : null;
+      }
     },
     {
       step: '/dependant-or-guardian',
