@@ -1,4 +1,15 @@
+const validators = require('hof/controller/validation/validators');
+
 const removeWhiteSpace = value => value?.replace(/\s+/g, '');
+
+const validInternationalPhoneNumber = value => {
+  const phoneNumberWithoutSpace = removeWhiteSpace(value);
+  const isValidPhoneNumber = validators.regex(
+    phoneNumberWithoutSpace,
+    /^\(?\+?[\d()-]{8,16}$/
+  );
+  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
+};
 
 const getFormattedRecordNumber = rodNumber => {
   if (!rodNumber) return null;
@@ -29,6 +40,7 @@ const getYesOrNoStr = (req, field) => {
 
 module.exports = {
   removeWhiteSpace,
+  validInternationalPhoneNumber,
   getFormattedRecordNumber,
   getLabel,
   getValueOfDefault,
