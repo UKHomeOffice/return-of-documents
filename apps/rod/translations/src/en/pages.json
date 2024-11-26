@@ -84,7 +84,7 @@
         "label": "Date of submission"
       },
       "dependant-or-guardian": {
-        "label": "Sponsor type"
+        "label": "Dependant or guardian?"
       },
       "legal-rep-name": {
         "label": "Legal firm or representative name"
