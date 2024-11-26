@@ -18,7 +18,7 @@ If you need your documents back to travel, you must withdraw your application.
 
 If you are not withdrawing your application, you can only get your documents back to prove your identity.
 
-The Home Office only return documents to addresses linked with the application in their records. You may need to <a href="https://www.update-my-details.homeoffice.gov.uk/overview"> tell them if you have changed address.</a>
+The Home Office only return documents to addresses linked with the application in their records. You may need to <a href="https://www.update-my-details.homeoffice.gov.uk/overview"> tell them if you have changed address</a>.
 
 The Home Office can refuse to return your documents if:
 
