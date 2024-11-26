@@ -1,7 +1,7 @@
 'use strict';
 
 const config = require('../../../config');
-const dateFormater = new Intl.DateTimeFormat(
+const dateFormatter = new Intl.DateTimeFormat(
   config.dateLocales,
   config.dateFormat
 );
@@ -43,22 +43,22 @@ module.exports = {
     {
       step: '/about-application',
       field: 'date-of-application',
-      parse: (d, req) => {
-        const isSponsor = req.sessionModel.get('who-is-completing') === 'sponsor';
-        return !isSponsor && d ? dateFormater.format(new Date(d)) : null;
-      }
+      parse: d => d && dateFormatter.format(new Date(d))
     },
     {
       step: '/about-application',
       field: 'cancel-application',
       parse: (value, req) => {
-        const isSponsor = req.sessionModel.get('who-is-completing') === 'sponsor';
-        return !isSponsor ? value : null;
+        if (req.sessionModel.get('isSponsor')) {
+          return null;
+        }
+        return value ? value : 'No';
       }
     },
     {
       step: '/main-applicant-passport',
-      field: 'is-requesting-passport-to-travel'
+      field: 'is-requesting-passport-to-travel',
+      parse: (value, req) => req.sessionModel.get('isSponsor') ? null : value
     },
     {
       step: '/reference-number',
@@ -110,7 +110,7 @@ module.exports = {
     {
       step: '/main-applicant',
       field: 'main-applicant-dob',
-      parse: d => d && dateFormater.format(new Date(d))
+      parse: d => d && dateFormatter.format(new Date(d))
     },
     {
       step: '/main-applicant',

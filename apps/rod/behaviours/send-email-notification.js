@@ -58,6 +58,15 @@ const getApplicationCategory = req => {
   return getLabelForField(req, 'application-type');
 };
 
+const hasCancelApplication = req => {
+  if (req.sessionModel.get('isSponsor')) {
+    return 'no';
+  }
+
+  const cancelApplication = req.sessionModel.get('cancel-application');
+  return cancelApplication ? 'yes' : 'no';
+};
+
 const getUserDetails = req => {
   return {
     record_number: req.sessionModel.get('uniqueRodReference'),
@@ -66,12 +75,13 @@ const getUserDetails = req => {
     application_submitted_date: dateFormatter.format(
       new Date(getValueOfDefault(req, 'date-of-application'))
     ),
-    has_cancel_application: getYesOrNoStr(req, 'cancel-application'),
-    cancel_application: getLabelForField(req, 'cancel-application'),
-    has_applicant_passport: getYesOrNoStr(
-      req,
-      'is-requesting-passport-to-travel'
-    ),
+    has_cancel_application: hasCancelApplication(req),
+    cancel_application: getLabelForField(req, 'cancel-application') || 'No',
+    has_applicant_passport:
+      !req.sessionModel.get('isSponsor') &&
+      req.sessionModel.get('is-requesting-passport-to-travel')
+        ? 'yes'
+        : 'no',
     applicant_passport: getLabelForField(
       req,
       'is-requesting-passport-to-travel'
