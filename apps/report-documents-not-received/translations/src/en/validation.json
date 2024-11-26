@@ -6,7 +6,7 @@
     "required": "Enter the main applicant's full name",
     "minlength": "Applicant's full name must be between 3 and 250 characters",
     "maxlength": "Applicant's full name must be between 3 and 250 characters",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    "notUrl": "Answer must not contain a URL"
   },
   "dnr-dob": {
     "required": "Enter the applicant's date of birth",
@@ -30,7 +30,7 @@
     "required": "Enter a record number",
     "minlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
     "maxlength": "Record number must be between 9 and 12 characters. For example, ROD123456789 or 123456789",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer.",
+    "notUrl": "Answer must not contain a URL",
     "recordNum": "Enter a real record number. For example, ROD123456789"
   },
   "dnr-case-id":{
@@ -38,7 +38,7 @@
     "minlength": "Case ID must be at least 8 numbers",
     "maxlength": "Case ID cannot be more than 8 numbers",
     "numeric": "Case ID can only include numbers",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+    "notUrl": "Answer must not contain a URL"
   },
   "dnr-ho-reference-number":{
     "required": "Enter a Home Office reference number",
@@ -46,17 +46,17 @@
     "maxlength": "Home Office reference number cannot be more than 8 numbers",
     "hoRefNum": "Home Office reference number must start with a letter, followed by 7 numbers",
     "specialCharacter": "Home Office reference number must only include letters and numbers",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+    "notUrl": "Answer must not contain a URL"
   },
   "dnr-payment-reference-number":{
     "required": "Enter a payment reference number",
     "maxlength": "Payment reference number cannot be more than 100 characters",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+    "notUrl": "Answer must not contain a URL"
   },
   "dnr-courier-reference-number":{
     "required": "Enter a courier reference number",
     "maxlength": "Courier reference number cannot be more than 100 characters",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer."
+    "notUrl": "Answer must not contain a URL"
   },
   "dnr-email": {
     "required": "Enter a contact email address",
@@ -69,6 +69,6 @@
     "minlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
     "maxlength": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
     "validInternationalPhoneNumber": "Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
-    "notUrl": "Answer must not contain a URL. Remove any links, URLs or special characters like /@:%_+~#=\\ from your answer"
+    "notUrl": "Answer must not contain a URL"
   }
 }

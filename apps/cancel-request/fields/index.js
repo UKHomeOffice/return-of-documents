@@ -2,8 +2,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
-const { removeWhiteSpace } = require('../../../utils');
-
+const {
+  removeWhiteSpace,
+  validInternationalPhoneNumber
+} = require('../../../utils');
 
 function recordMaxLength(value) {
   return validators.maxlength(removeWhiteSpace(value), 12);
@@ -19,15 +21,6 @@ function hoRefMaxLength(value) {
 
 function hoRefNum(value) {
   return removeWhiteSpace(value).match(/^[A-Z]\d{7}$/i);
-}
-
-function validInternationalPhoneNumber(value) {
-  const phoneNumberWithoutSpace = value.replace(/\s+/g, '').trim();
-  const isValidPhoneNumber = validators.regex(
-    phoneNumberWithoutSpace,
-    /^\(?\+?[\d()-]{8,16}$/
-  );
-  return isValidPhoneNumber && validators.internationalPhoneNumber(value);
 }
 
 module.exports = {

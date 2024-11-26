@@ -13,6 +13,14 @@ module.exports = {
       field: 'who-is-completing'
     },
     {
+      step: '/dependant-or-guardian',
+      field: 'dependant-or-guardian'
+    },
+    {
+      step: '/sponsor-type',
+      field: 'sponsor-type'
+    },
+    {
       step: '/who-representing',
       field: 'who-is-representing'
     },
@@ -29,8 +37,8 @@ module.exports = {
       field: 'visa-type'
     },
     {
-      step: '/sponsor-type',
-      field: 'sponsor-type'
+      step: '/further-leave',
+      field: 'further-leave-to-remain'
     },
     {
       step: '/about-application',
@@ -49,19 +57,39 @@ module.exports = {
       }
     },
     {
-      step: '/dependant-or-guardian',
-      field: 'dependant-or-guardian'
-    },
-    {
-      step: '/further-leave',
-      field: 'further-leave-to-remain'
-    },
-    {
       step: '/main-applicant-passport',
       field: 'is-requesting-passport-to-travel'
     },
     {
-      step: '/your-documents',
+      step: '/reference-number',
+      field: 'rod-reference-number',
+      parse: (value, req) => {
+        const selectedRefNumbers = Array.isArray(value)
+          ? value.map(option => option).join(', ')
+          : value;
+        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
+        return Array.isArray(value)
+          ? value.map(option => option).join('\n')
+          : value;
+      }
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-case-id'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-ho-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-payment-reference-number'
+    },
+    {
+      step: '/reference-number',
+      field: 'rod-courier-reference-number'
+    },
+    {
       field: 'document-type',
       parse: (value, req) => {
         const yourDocuments = Array.isArray(value) ?
@@ -151,35 +179,6 @@ module.exports = {
     {
       step: '/extra-notes',
       field: 'notes'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-reference-number',
-      parse: (value, req) => {
-        const selectedRefNumbers = Array.isArray(value)
-          ? value.map(option => option).join(', ')
-          : value;
-        req.sessionModel.set('selectedRefNumbers', selectedRefNumbers);
-        return Array.isArray(value)
-          ? value.map(option => option).join('\n')
-          : value;
-      }
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-case-id'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-ho-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-payment-reference-number'
-    },
-    {
-      step: '/reference-number',
-      field: 'rod-courier-reference-number'
     }
   ]
 };

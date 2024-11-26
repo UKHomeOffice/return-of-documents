@@ -8,8 +8,7 @@ module.exports = {
   name: 'report-documents-not-received',
   confirmStep: '/documents-not-received-confirm',
   steps: {
-    '/documents-not-received-start': {
-    },
+    '/documents-not-received-start': {},
     '/documents-not-received-main-applicant': {
       backLink: 'documents-not-received-start',
       fields: ['dnr-full-name', 'dnr-dob', 'dnr-nationality'],
@@ -56,7 +55,6 @@ module.exports = {
       next: '/documents-not-received-contact-details'
     },
     '/documents-not-received-contact-details': {
-      behaviours: [customValidation],
       fields: ['dnr-email', 'dnr-telephone'],
       next: '/documents-not-received-confirm'
     },
