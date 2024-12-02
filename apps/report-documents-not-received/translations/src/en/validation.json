@@ -62,7 +62,7 @@
     "required": "Enter a unique application number",
     "minlength": "Unique application number must be more than 15 numbers",
     "maxlength": "Unique application number must be less than 23 numbers",
-    "notUrl": "Your answer must not contain URLs or links",
+    "notUrl": "Answer must not contain a URL",
     "regex": "Enter a valid UAN. For example, 1111-2222-3333-4444",
     "isValidUANRef": "Enter a valid UAN. For example, 1111-2222-3333-4444"
   },
