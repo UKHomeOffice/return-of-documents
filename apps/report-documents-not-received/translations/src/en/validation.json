@@ -58,6 +58,14 @@
     "maxlength": "Courier reference number cannot be more than 100 characters",
     "notUrl": "Answer must not contain a URL"
   },
+  "dnr-unique-application-number": {
+    "required": "Enter a unique application number",
+    "minlength": "Unique application number must be more than 15 numbers",
+    "maxlength": "Unique application number must be less than 23 numbers",
+    "notUrl": "Your answer must not contain URLs or links",
+    "regex": "Enter a valid UAN. For example, 1111-2222-3333-4444",
+    "isValidUANRef": "Enter a valid UAN. For example, 1111-2222-3333-4444"
+  },
   "dnr-email": {
     "required": "Enter a contact email address",
     "minlength": "Email address must be between 6 and 256 characters",
