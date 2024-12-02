@@ -274,6 +274,10 @@
       "courier-reference-number": {
         "label": "Courier reference number",
         "hint": "This includes Royal Mail reference numbers"
+      },
+      "unique-application-number": {
+        "label": "Unique Application Number (UAN)",
+        "hint": "This is on letters and emails from the Home Office"
       }
     }
   },
@@ -289,6 +293,10 @@
   "rod-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  },
+  "rod-unique-application-number": {
+    "label": "Enter the UAN",
+    "hint": "For example, 1111-2222-3333-4444"
   },
   "declaration-check": {
     "label": "I understand and agree to this declaration"
