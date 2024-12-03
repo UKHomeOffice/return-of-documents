@@ -202,11 +202,11 @@ module.exports = {
     className: ['govuk-input'],
     validate: [
       'required',
+      'notUrl',
       { type: 'minlength', arguments: 16 },
       { type: 'maxlength', arguments: 22 },
       { type: 'regex', arguments: /^(([\d\-\/]+)?)$/ },
-      isValidUANRef,
-      'notUrl'
+      isValidUANRef
     ]
   },
   'cnc-application-visa-type': {
