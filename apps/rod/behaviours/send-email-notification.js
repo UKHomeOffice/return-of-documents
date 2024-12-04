@@ -242,9 +242,12 @@ module.exports = class SendEmailConfirmation {
     const userOrBusinessStr = () =>
       recipientType === USER ? 'User' : 'Business';
 
+    const emailReplyToId = config.govukNotify.replyToEmailID;
+
     try {
       await notifyClient.sendEmail(templateId, recipientEmailAddress, {
-        personalisation: Object.assign({}, personalisation)
+        personalisation: Object.assign({}, personalisation),
+        emailReplyToId
       });
 
       req.log(
