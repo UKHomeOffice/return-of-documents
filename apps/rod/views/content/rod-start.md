@@ -4,7 +4,7 @@ You will need:
 
 - details of the documents (holder’s name, nationality and date of birth)
 
-- a reference number from the application (payment reference, courier number, case ID or Home Office reference number)
+- a reference number from the application (payment reference, courier number, case ID, unique application number or Home Office reference number)
 
 - the date the application was submitted
 

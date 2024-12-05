@@ -11,5 +11,7 @@ You will also need one of these reference numbers:
 
 - a courier reference number, like a Royal Mail tracking number
 
+- a unique application number
+
 If you do not do anything for 20 minutes, your answers will not be saved. Your answers are only saved when you submit the form.
 
