@@ -95,6 +95,14 @@ const getUserDetails = req => {
       req,
       'enter-courier-reference-number'
     ),
+    has_unique_application_number: getYesOrNoStr(
+      req,
+      'enter-unique-application-number'
+    ),
+    unique_application_number: getValueOfDefault(
+      req,
+      'enter-unique-application-number'
+    ),
     contact_email: getValueOfDefault(req, 'cnc-email'),
     contact_telephone: getValueOfDefault(req, 'cnc-telephone')
   };

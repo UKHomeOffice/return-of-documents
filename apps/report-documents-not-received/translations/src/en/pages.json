@@ -13,7 +13,7 @@
   "documents-not-received-main-applicant": {
     "header": "Main applicant’s details"
   },
-  "documents-not-received-contact-details":{
+  "documents-not-received-contact-details": {
     "header": "Contact details"
   },
   "documents-not-received-further-leave": {
@@ -69,6 +69,9 @@
       },
       "dnr-courier-reference-number": {
         "label": "Courier reference number"
+      },
+      "dnr-unique-application-number": {
+        "label": "Unique application number"
       }
     }
   }

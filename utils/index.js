@@ -38,11 +38,18 @@ const getYesOrNoStr = (req, field) => {
   return req.sessionModel.get(field) ? 'yes' : 'no';
 };
 
+const isValidUANRef = value => {
+  return value.match(
+    /^((\d{4}[\-]?\d{4}[\-]?\d{4}[\-]?\d{4}(?:[\/]?\d{2})?)?)$/
+  );
+};
+
 module.exports = {
   removeWhiteSpace,
   validInternationalPhoneNumber,
   getFormattedRecordNumber,
   getLabel,
   getValueOfDefault,
-  getYesOrNoStr
+  getYesOrNoStr,
+  isValidUANRef
 };

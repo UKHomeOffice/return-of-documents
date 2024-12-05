@@ -206,7 +206,8 @@ module.exports = {
         'rod-case-id',
         'rod-ho-reference-number',
         'rod-payment-reference-number',
-        'rod-courier-reference-number'
+        'rod-courier-reference-number',
+        'rod-unique-application-number'
       ],
       next: '/your-documents'
     },

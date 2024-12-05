@@ -65,6 +65,9 @@
       "enter-courier-reference-number": {
         "label": "Courier reference number"
       },
+      "enter-unique-application-number": {
+        "label": "Unique application number"
+      },
       "cnc-email": {
         "label": "Contact email"
       },

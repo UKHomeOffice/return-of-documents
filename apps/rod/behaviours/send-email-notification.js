@@ -107,6 +107,14 @@ const getUserDetails = req => {
       req,
       'rod-courier-reference-number'
     ),
+    has_unique_application_number: getYesOrNoStr(
+      req,
+      'rod-unique-application-number'
+    ),
+    unique_application_number: getValueOfDefault(
+      req,
+      'rod-unique-application-number'
+    ),
     has_your_documents: getYesOrNoStr(req, 'yourDocuments'),
     your_documents: getValueOfDefault(req, 'yourDocuments'),
     has_document_description: getYesOrNoStr(req, 'document-description'),

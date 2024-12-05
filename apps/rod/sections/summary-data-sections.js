@@ -90,6 +90,10 @@ module.exports = {
       field: 'rod-courier-reference-number'
     },
     {
+      step: '/reference-number',
+      field: 'rod-unique-application-number'
+    },
+    {
       field: 'document-type',
       parse: (value, req) => {
         const yourDocuments = Array.isArray(value) ?
