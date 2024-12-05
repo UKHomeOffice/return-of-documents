@@ -148,6 +148,9 @@
       },
       "rod-courier-reference-number": {
         "label": "Courier reference number"
+      },
+      "rod-unique-application-number": {
+        "label": "Unique application number"
       }
     }
   },

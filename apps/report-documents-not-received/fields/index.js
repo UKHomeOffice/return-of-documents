@@ -2,7 +2,10 @@
 
 const countries = require('hof').utils.countries();
 const dateComponent = require('hof').components.date;
-const { validInternationalPhoneNumber } = require('../../../utils');
+const {
+  validInternationalPhoneNumber,
+  isValidUANRef
+} = require('../../../utils');
 
 module.exports = {
   'dnr-application-type': {
@@ -98,6 +101,11 @@ module.exports = {
         value: 'dnr-courier-reference-number',
         toggle: 'dnr-courier-reference-number',
         child: 'input-text'
+      },
+      {
+        value: 'dnr-unique-application-number',
+        toggle: 'dnr-unique-application-number',
+        child: 'input-text'
       }
     ]
   },
@@ -147,6 +155,21 @@ module.exports = {
     },
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'dnr-unique-application-number': {
+    dependent: {
+      field: 'dnr-reference-number',
+      value: 'dnr-unique-application-number'
+    },
+    className: ['govuk-input'],
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 16 },
+      { type: 'maxlength', arguments: 22 },
+      { type: 'regex', arguments: /^(([\d\-\/]+)?)$/ },
+      isValidUANRef
+    ]
   },
   'dnr-email': {
     mixin: 'input-text',

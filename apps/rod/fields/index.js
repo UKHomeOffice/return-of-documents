@@ -1,7 +1,10 @@
 const dateComponent = require('hof').components.date;
 const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
-const { validInternationalPhoneNumber } = require('../../../utils');
+const {
+  validInternationalPhoneNumber,
+  isValidUANRef
+} = require('../../../utils');
 
 function extraNotes(value) {
   return validators.maxlength(value, 2000);
@@ -274,6 +277,11 @@ module.exports = {
         value: 'courier-reference-number',
         toggle: 'rod-courier-reference-number',
         child: 'input-text'
+      },
+      {
+        value: 'unique-application-number',
+        toggle: 'rod-unique-application-number',
+        child: 'input-text'
       }
     ]
   },
@@ -319,5 +327,20 @@ module.exports = {
     },
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'rod-unique-application-number': {
+    dependent: {
+      field: 'rod-reference-number',
+      value: 'unique-application-number'
+    },
+    className: ['govuk-input'],
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 16 },
+      { type: 'maxlength', arguments: 22 },
+      { type: 'regex', arguments: /^(([\d\-\/]+)?)$/ },
+      isValidUANRef
+    ]
   }
 };

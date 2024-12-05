@@ -65,6 +65,10 @@ module.exports = {
       field: 'dnr-courier-reference-number'
     },
     {
+      step: '/documents-not-received-reference-number',
+      field: 'dnr-unique-application-number'
+    },
+    {
       step: '/documents-not-received-contact-details',
       field: 'dnr-email'
     },

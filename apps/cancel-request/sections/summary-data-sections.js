@@ -85,6 +85,10 @@ module.exports = {
       field: 'enter-courier-reference-number'
     },
     {
+      step: '/cancel-request-reference-number',
+      field: 'enter-unique-application-number'
+    },
+    {
       step: '/cancel-request-contact-details',
       field: 'cnc-email'
     },

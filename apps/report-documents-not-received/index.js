@@ -50,7 +50,8 @@ module.exports = {
         'dnr-case-id',
         'dnr-ho-reference-number',
         'dnr-payment-reference-number',
-        'dnr-courier-reference-number'
+        'dnr-courier-reference-number',
+        'dnr-unique-application-number'
       ],
       next: '/documents-not-received-contact-details'
     },

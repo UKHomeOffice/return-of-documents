@@ -145,6 +145,10 @@
       "courier-reference-number": {
         "label": "Courier reference number",
         "hint": "This includes Royal Mail reference numbers"
+      },
+      "unique-application-number": {
+        "label": "Unique Application Number (UAN)",
+        "hint": "This is on letters and emails from the Home Office"
       }
     }
   },
@@ -163,6 +167,10 @@
   "enter-courier-reference-number": {
     "label": "Enter the courier reference number",
     "hint": "Royal Mail reference numbers are between 9 and 27 characters long"
+  },
+  "enter-unique-application-number": {
+    "label": "Enter the UAN",
+    "hint": "For example, 1111-2222-3333-4444"
   },
   "cnc-reason-for-application": {
     "legend": "What is the application for?",

@@ -94,7 +94,8 @@ module.exports = {
         'enter-case-id',
         'enter-ho-reference-number',
         'enter-payment-reference-number',
-        'enter-courier-reference-number'
+        'enter-courier-reference-number',
+        'enter-unique-application-number'
       ],
       next: '/cancel-request-contact-details'
     },

@@ -4,7 +4,8 @@ const countries = require('hof').utils.countries();
 const validators = require('hof/controller/validation/validators');
 const {
   removeWhiteSpace,
-  validInternationalPhoneNumber
+  validInternationalPhoneNumber,
+  isValidUANRef
 } = require('../../../utils');
 
 function recordMaxLength(value) {
@@ -124,6 +125,11 @@ module.exports = {
         value: 'courier-reference-number',
         toggle: 'enter-courier-reference-number',
         child: 'input-text'
+      },
+      {
+        value: 'unique-application-number',
+        toggle: 'enter-unique-application-number',
+        child: 'input-text'
       }
     ]
   },
@@ -187,6 +193,21 @@ module.exports = {
     },
     className: ['govuk-input'],
     validate: ['required', { type: 'maxlength', arguments: 100 }, 'notUrl']
+  },
+  'enter-unique-application-number': {
+    dependent: {
+      field: 'cnc-reference-number',
+      value: 'unique-application-number'
+    },
+    className: ['govuk-input'],
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: 16 },
+      { type: 'maxlength', arguments: 22 },
+      { type: 'regex', arguments: /^(([\d\-\/]+)?)$/ },
+      isValidUANRef
+    ]
   },
   'cnc-application-visa-type': {
     mixin: 'radio-group',

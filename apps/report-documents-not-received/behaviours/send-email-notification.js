@@ -71,6 +71,14 @@ const getUserDetails = req => {
       req,
       'dnr-courier-reference-number'
     ),
+    has_unique_application_number: getYesOrNoStr(
+      req,
+      'dnr-unique-application-number'
+    ),
+    unique_application_number: getValueOfDefault(
+      req,
+      'dnr-unique-application-number'
+    ),
     contact_email: getValueOfDefault(req, 'dnr-email'),
     contact_telephone: getValueOfDefault(req, 'dnr-telephone')
   };

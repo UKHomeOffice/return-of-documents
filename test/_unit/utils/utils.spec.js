@@ -80,4 +80,17 @@ describe('ROD utils tests', () => {
     req.sessionModel.set('ut_value', 'test_value');
     expect(utils.getYesOrNoStr(req, 'ut_value')).to.equal('yes');
   });
+
+  it('.isValidUANRef - should return null for invalid UAN formats', () => {
+    expect(utils.isValidUANRef('XXX123456789')).to.equal(null);
+    expect(utils.isValidUANRef('1234567890')).to.equal(null);
+    expect(utils.isValidUANRef('2222333344445555666677778888')).to.equal(null);
+    expect(utils.isValidUANRef('1111 2222 3333 4444')).to.equal(null);
+  });
+
+  it('.isValidUANRef - should return true for valid UAN formats', () => {
+    expect(utils.isValidUANRef('1111-2222-3333-4444')).to.not.equal(null);
+    expect(utils.isValidUANRef('1111222233334444')).to.not.equal(null);
+    expect(utils.isValidUANRef('1234-1234-1234-1234/00')).to.not.equal(null);
+  });
 });
