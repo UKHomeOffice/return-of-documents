@@ -26,6 +26,9 @@
   "sectionHeader": {
     "header": "Check your answers"
   },
+  "accessibility": {
+    "header": "Accessibility statement for Cancel an application and get your documents back"
+  },
   "confirm": {
     "fields": {
       "dnr-full-name": {
