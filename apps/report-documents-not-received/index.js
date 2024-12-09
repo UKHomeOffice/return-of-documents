@@ -67,6 +67,7 @@ module.exports = {
     '/report-submitted': {
       backLink: false,
       clearSession: true
-    }
+    },
+  '/accessibility': {}
   }
 };
