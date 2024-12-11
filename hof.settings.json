@@ -13,5 +13,5 @@
   "session": {
     "name": "rod.hof.sid"
   },
-  "getAccessibility": true
+  "getAccessibility": false
 }
