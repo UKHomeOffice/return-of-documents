@@ -101,11 +101,11 @@ module.exports = {
           return 'Not provided';
         }
         const yourDocuments = Array.isArray(value)
-          ? value.map(option => 
-              option === 'Other' 
-                ? req.sessionModel.get('enter-document-type') || 'Other (not specified)'
-                : option
-            ).join(', ')
+          ? value.map(option =>
+            option === 'Other'
+              ? req.sessionModel.get('enter-document-type') || 'Other (not specified)'
+              : option
+          ).join(', ')
           : value;
         req.sessionModel.set('yourDocuments', yourDocuments);
         return yourDocuments;
