@@ -96,17 +96,16 @@ module.exports = {
     {
       field: 'document-type',
       parse: (value, req) => {
-        if (!value || (Array.isArray(value) && value.length === 0)) {
-          req.sessionModel.set('yourDocuments', 'Not provided');
-          return 'Not provided';
-        }
-        const yourDocuments = Array.isArray(value)
+        let yourDocuments = Array.isArray(value)
           ? value.map(option =>
             option === 'Other'
               ? req.sessionModel.get('enter-document-type') || 'Other (not specified)'
               : option
           ).join(', ')
           : value;
+        if (!yourDocuments) {
+          yourDocuments = 'Not provided';
+        }
         req.sessionModel.set('yourDocuments', yourDocuments);
         return yourDocuments;
       }
