@@ -105,7 +105,10 @@ module.exports = {
     },
     {
       step: '/your-documents',
-      field: 'document-description'
+      field: 'document-description',
+      parse: value => {
+        return value && value.trim() ? value : 'Not provided';
+      }
     },
     {
       step: '/main-applicant',
@@ -182,7 +185,10 @@ module.exports = {
     },
     {
       step: '/extra-notes',
-      field: 'notes'
+      field: 'notes',
+      parse: value => {
+        return value && value.trim() ? value : 'Not provided';
+      }
     }
   ]
 };
