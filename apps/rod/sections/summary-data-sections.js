@@ -99,7 +99,7 @@ module.exports = {
         let yourDocuments = Array.isArray(value)
           ? value.map(option =>
             option === 'Other'
-              ? req.sessionModel.get('enter-document-type') || 'Other (not specified)'
+              ? req.sessionModel.get('enter-document-type')
               : option
           ).join(', ')
           : value;
