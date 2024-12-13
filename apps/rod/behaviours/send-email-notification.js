@@ -117,8 +117,8 @@ const getUserDetails = req => {
     ),
     has_your_documents: 'yes',
     your_documents: getValueOfDefault(req, 'yourDocuments') || 'Not provided',
-    has_document_description: getYesOrNoStr(req, 'document-description'),
-    document_description: getValueOfDefault(req, 'document-description'),
+    has_document_description: 'yes',
+    document_description: getValueOfDefault(req, 'document-description') || 'Not provided',
     applicant_full_name: getValueOfDefault(req, 'main-applicant-full-name'),
     applicant_dob: dateFormatter.format(
       new Date(getValueOfDefault(req, 'main-applicant-dob'))
