@@ -6,6 +6,8 @@ const dateFormatter = new Intl.DateTimeFormat(
   config.dateFormat
 );
 
+const STR_NOT_PROVIDED = 'Not provided';
+
 module.exports = {
   sectionHeader: [
     {
@@ -96,17 +98,21 @@ module.exports = {
     {
       field: 'document-type',
       parse: (value, req) => {
-        let yourDocuments = Array.isArray(value)
-          ? value.map(option =>
-            option === 'Other'
-              ? req.sessionModel.get('enter-document-type')
-              : option
-          ).join(', ')
-          : value;
+        const otherDocTypeValue = req.sessionModel.get('enter-document-type');
+
+        let yourDocuments = value === 'Other' ? otherDocTypeValue : value;
+
+        if (Array.isArray(value)) {
+          yourDocuments = value
+            .map(option => (option === 'Other' ? otherDocTypeValue : option))
+            .join(', ');
+        }
+
         if (!yourDocuments) {
-          yourDocuments = 'Not provided';
+          yourDocuments = STR_NOT_PROVIDED;
         }
         req.sessionModel.set('yourDocuments', yourDocuments);
+
         return yourDocuments;
       }
     },
@@ -114,7 +120,7 @@ module.exports = {
       step: '/your-documents',
       field: 'document-description',
       parse: value => {
-        return value && value.trim() ? value : 'Not provided';
+        return value && value.trim() ? value : STR_NOT_PROVIDED;
       }
     },
     {
@@ -194,7 +200,7 @@ module.exports = {
       step: '/extra-notes',
       field: 'notes',
       parse: value => {
-        return value && value.trim() ? value : 'Not provided';
+        return value && value.trim() ? value : STR_NOT_PROVIDED;
       }
     }
   ]
