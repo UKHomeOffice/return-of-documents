@@ -115,10 +115,10 @@ const getUserDetails = req => {
       req,
       'rod-unique-application-number'
     ),
-    has_your_documents: getYesOrNoStr(req, 'yourDocuments'),
-    your_documents: getValueOfDefault(req, 'yourDocuments'),
-    has_document_description: getYesOrNoStr(req, 'document-description'),
-    document_description: getValueOfDefault(req, 'document-description'),
+    has_your_documents: 'yes',
+    your_documents: getValueOfDefault(req, 'yourDocuments') || 'Not provided',
+    has_document_description: 'yes',
+    document_description: getValueOfDefault(req, 'document-description') || 'Not provided',
     applicant_full_name: getValueOfDefault(req, 'main-applicant-full-name'),
     applicant_dob: dateFormatter.format(
       new Date(getValueOfDefault(req, 'main-applicant-dob'))
@@ -128,8 +128,8 @@ const getUserDetails = req => {
     delivery_address: getValueOfDefault(req, 'deliveryAddress'),
     contact_email: getValueOfDefault(req, 'contact-email'),
     contact_telephone: getValueOfDefault(req, 'contact-telephone'),
-    has_notes: getYesOrNoStr(req, 'notes'),
-    notes: getValueOfDefault(req, 'notes')
+    has_notes: 'yes',
+    notes: getValueOfDefault(req, 'notes') || 'Not provided'
   };
 };
 

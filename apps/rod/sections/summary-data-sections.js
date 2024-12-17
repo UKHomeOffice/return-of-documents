@@ -96,16 +96,26 @@ module.exports = {
     {
       field: 'document-type',
       parse: (value, req) => {
-        const yourDocuments = Array.isArray(value) ?
-          value.map(option => option === 'Other' ? req.sessionModel.get('enter-document-type') : option).join(', ') :
-          value;
+        let yourDocuments = Array.isArray(value)
+          ? value.map(option =>
+            option === 'Other'
+              ? req.sessionModel.get('enter-document-type')
+              : option
+          ).join(', ')
+          : value;
+        if (!yourDocuments) {
+          yourDocuments = 'Not provided';
+        }
         req.sessionModel.set('yourDocuments', yourDocuments);
         return yourDocuments;
       }
     },
     {
       step: '/your-documents',
-      field: 'document-description'
+      field: 'document-description',
+      parse: value => {
+        return value && value.trim() ? value : 'Not provided';
+      }
     },
     {
       step: '/main-applicant',
@@ -182,7 +192,10 @@ module.exports = {
     },
     {
       step: '/extra-notes',
-      field: 'notes'
+      field: 'notes',
+      parse: value => {
+        return value && value.trim() ? value : 'Not provided';
+      }
     }
   ]
 };
