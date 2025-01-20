@@ -89,3 +89,4 @@ By following these steps, you should be able to run your application using a dev
 8. To start the application, open a terminal within VS Code by going to `View -> Terminal` or by pressing `Ctrl+backtick` (`Cmd+backtick` on macOS). In the terminal, navigate to the project directory if you're not already there.
 
 9. Run the necessary commands to install dependencies `yarn` and `yarn start:dev` to start your application.
+
