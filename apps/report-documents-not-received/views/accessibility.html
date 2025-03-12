@@ -1,8 +1,15 @@
-{{<partials-page}}
-{{$pageTitle}}{{#t}}accessibility.page-title{{/t}}{{/pageTitle}}
-  {{$page-content}}
+{{<layout}}
 
-    
+  {{$propositionHeader}}
+      {{> partials-navigation}}
+  {{/propositionHeader}}
+  {{$header}}
+    {{header}}
+  {{/header}}
+
+  {{$pageTitle}}{{#t}}accessibility.page-title{{/t}}{{/pageTitle}}
+
+  {{$content}}
     <p class="govuk-body">{{#t}}accessibility.intro{{/t}}</p>
     <ul class="govuk-list govuk-list--bullet">
         <li>{{#t}}accessibility.intro-p2-li1{{/t}}</li>
@@ -41,5 +48,5 @@
     <p class="govuk-body">{{#t}}accessibility.preparation-p1{{/t}}</p>
     <p class="govuk-body">{{#t}}accessibility.preparation-p2{{/t}}</p>
     <p class="govuk-body">{{#t}}accessibility.preparation-p3{{/t}}</p>
-    {{/page-content}}
-    {{/partials-page}}
+    {{/content}}
+    {{/layout}}

@@ -68,6 +68,8 @@ module.exports = {
       backLink: false,
       clearSession: true
     },
-    '/accessibility': {}
+    '/accessibility': {},
+    '/exit': {},
+    '/session-timeout': {}
   }
 };
