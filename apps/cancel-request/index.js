@@ -111,6 +111,8 @@ module.exports = {
     '/cancellation-received': {
       clearSession: true,
       backLink: false
-    }
+    },
+    '/exit': {},
+    '/session-timeout': {}
   }
 };

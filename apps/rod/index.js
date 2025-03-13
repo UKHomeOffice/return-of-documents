@@ -224,6 +224,8 @@ module.exports = {
     '/request-received': {
       clearSession: true,
       backLink: false
-    }
+    },
+    '/exit': {},
+    '/session-timeout': {}
   }
 };
