@@ -26,7 +26,7 @@ module.exports = {
   },
   survey: {
     urls: {
-      root: 'https://www.hof-feedback.homeoffice.gov.uk'
+      root: process.env.FEEDBACK_URL
     }
   },
   redis: {
