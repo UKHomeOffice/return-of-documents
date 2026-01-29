@@ -10,4 +10,4 @@ You will need:
 
 - the main applicant’s details
 
-If you do not do anything for 20 minutes, your answers will not be saved. Your answers are only saved when you submit the form.
+If you do not do anything for 30 minutes, your answers will not be saved. Your answers are only saved when you submit the form.
