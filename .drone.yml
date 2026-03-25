@@ -16,6 +16,11 @@ environment:
   NON_PROD_AVAILABILITY: Sun-Sat 06:00-24:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
   NOTIFY_STUB: stub
+  REDIS_PERSISTENCE_ENABLED: "true"
+  REDIS_PERSISTENCE_ACCESS_MODES: ReadWriteOnce
+  REDIS_PERSISTENCE_STORAGE_CLASS: gp2-encrypted-eu-west-2b
+  REDIS_PERSISTENCE_EXISTING_CLAIM: ""
+  REDIS_PERSISTENCE_ANNOTATIONS_FILE: ""
 
 trigger:
   branch:
@@ -39,10 +44,12 @@ unit_tests: &unit_tests
     - yarn run test:unit
 
 sonar_scanner: &sonar_scanner
-  pull: if-not-exists
-  image: quay.io/ukhomeofficedigital/sonar-scanner-nodejs:latest
+  pull: always
+  image: quay.io/ukhomeofficedigital/sonar-scanner:latest
   commands:
     - sonar-scanner -Dproject.settings=./sonar-project.properties
+
+    
 
 steps:
   - name: clone_repos
