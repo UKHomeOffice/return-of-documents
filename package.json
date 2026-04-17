@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "Return Of Documents (ROD)",
   "engines": {
-    "node": "^20.0.0"
+    "node": ">=20.19.0 <21.0.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -13,8 +13,7 @@
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "build": "hof-build",
     "postinstall": "hof-build",
-    "test:unit": "nyc _mocha \"test/_unit/**/*.spec.js\"",
-    "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test"
+    "test:unit": "nyc _mocha \"test/_unit/**/*.spec.js\""
   },
   "dependencies": {
     "accessible-autocomplete": "^3.0.1",
