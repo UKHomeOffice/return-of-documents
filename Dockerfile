@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --chown=999:998 . /app
 
 RUN yarn cache clean && \
-    yarn install --frozen-lockfile --production --ignore-optional && \
+    RUN yarn install --frozen-lockfile --production --ignore-scripts && \
     yarn run postinstall
 
 HEALTHCHECK --interval=5m --timeout=3s \
