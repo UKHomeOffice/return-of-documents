@@ -34,13 +34,11 @@ export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower
 
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   $kd -f kube/configmaps -f kube/certs
-  $kd -f $redis_storage_files
   $kd -f $redis_runtime_files -f kube/app
 elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
   $kd -f kube/configmaps/configmap.yml -f kube/app/service.yml
   $kd -f kube/app/networkpolicy-internal.yml -f kube/app/ingress-internal.yml
   $kd -f kube/app/networkpolicy-external.yml -f kube/app/ingress-external.yml
-  $kd -f $redis_storage_files
   $kd -f $redis_runtime_files -f kube/app/deployment.yml
 elif [[ ${KUBE_NAMESPACE} == ${STG_ENV} ]]; then
   $kd -f kube/configmaps/configmap.yml
