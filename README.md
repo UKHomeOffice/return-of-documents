@@ -12,9 +12,9 @@ Step 1 : Install Node Version Manager
 
         Check the version   nvm --version
 
-Step 2 : nvm install 20.20.2
+Step 2 : nvm install 24.19.0
 
-Step 3: nvm use 20.20.2
+Step 3: nvm use 24.19.0
 
 Step 4: npm i -g yarn
 
