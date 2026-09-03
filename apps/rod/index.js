@@ -4,6 +4,13 @@ const whoIsCompleting = require('./behaviours/who-is-completing');
 const sponsorSelectionHandler = require('./behaviours/sponsor-selection-handler');
 const customValidation = require('./behaviours/custom-validation');
 const sendNotification = require('./behaviours/submit-notify');
+const { disallowIndexing } = require('../../config');
+
+const pages = {};
+
+if (disallowIndexing) {
+  pages['/robots.txt'] = 'static/robots';
+}
 
 module.exports = {
   name: 'rod',
@@ -225,5 +232,6 @@ module.exports = {
       clearSession: true,
       backLink: false
     }
-  }
+  },
+  pages: pages
 };
