@@ -79,6 +79,8 @@ spec:
                   key: notify-key
             - name: USE_MOCKS
               value: "false"
+            - name: DISALLOW_INDEXING
+              value: "true"
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
