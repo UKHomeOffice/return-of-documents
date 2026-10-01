@@ -5,8 +5,7 @@ Feature: ROD - Return of documents
   Background:
     Given Test data has been created for "ROD" scenarios
 
-
-  Scenario Outline: MainForm-Rod- E2E
+  Scenario Outline: Return of documents - main form
     Given I selected the data for scenario "<Scenario ID>" - "<Description>"
     When  I visit the get your documents back page
     And  I fill out my answers for main form
@@ -18,8 +17,7 @@ Feature: ROD - Return of documents
       | 3           | A dependant or a guardian of a dependant |
       | 4           | A legal representative                   |
 
-
-  Scenario Outline: MainForm-No BritishCitizenship Or EUSS- Rod- E2E
+  Scenario Outline: Return of documents - proof of identity only
     Given I selected the data for scenario "<Scenario ID>" - "<Description>"
     When  I visit the get your documents back page
     And  I fill out my answers for main form except application for BritishCitizenship or EUSS and not requesting return of passport for travel
@@ -29,12 +27,11 @@ Feature: ROD - Return of documents
       | 5           | Non BritishCitizenship and EUSS visa type applicant- Legal Rep     |
       | 6           | Non BritishCitizenship and EUSS visa type applicant- MainApplicant |
 
-
-  Scenario Outline: Documents not received-Rod- E2E
+  Scenario Outline: Report documents not received
     Given I selected the data for scenario "<Scenario ID>" - "<Description>"
     When  I visit report that you have not received your documents page
     And  I fill out my answers for documents not received form and submit application
-    Then I should see application submitted for documents not received 
+    Then I should see application submitted for documents not received
     Examples:
       | Scenario ID | Description                                                                         |
       | 7           | DNR- British citizenship                                                            |
@@ -43,9 +40,7 @@ Feature: ROD - Return of documents
       | 10          | DNR- Settled or pre-settled status under the European Union Settlement Scheme       |
       | 11          | DNR -Transfer of conditions or limited leave replacement biometric residence permit |
 
-
-
-  Scenario Outline: Cancel your request-Rod- E2E
+  Scenario Outline: Cancel your request
     Given I selected the data for scenario "<Scenario ID>" - "<Description>"
     When  I visit cancel your request page
     And  I fill out my answers for cancel your request form and submit application
@@ -58,9 +53,7 @@ Feature: ROD - Return of documents
       | 15          | CR- A dependant or guardian of a dependant |
       | 16          | CR- A sponsor- UAN                         |
 
-
-
-  Scenario: Validations Test: Cancel your request - Main Applicant details page
+  Scenario: Cancel your request - main applicant details validation
     Given   I visit cancel your request page
     When    I fill in main applicant's details with below details and validate
       | Full name              | FN       |
