@@ -2,7 +2,7 @@
 @RodRegressionCI
 Feature: ROD - Return of documents
 
-  Scenario Outline: <Description>
+  Scenario Outline: E2E test for return of documents pertaining to "<Description>"
     Given I visit the get your documents back page
     When I fill out my answers for main form pertaining to "<Description>"
     Then application should be successfully submitted
@@ -14,9 +14,9 @@ Feature: ROD - Return of documents
       | A legal representative                   |
 
 
-  Scenario Outline: <Description>
+  Scenario Outline: verify that the form behaves correctly for British Citizenship or EUSS for not requesting return of passport for travel pertaining to "<Description>"
     Given I visit the get your documents back page
-    When I fill out my answers for main form except application for BritishCitizenship or EUSS and not requesting return of passport for travel pertaining to "<Description>"
+    When I fill out my answers for main form except application for British Citizenship or EUSS and not requesting return of passport for travel pertaining to "<Description>"
     Then I should see page proof of validation only
     Examples:
       | Description                                                        |
@@ -24,7 +24,7 @@ Feature: ROD - Return of documents
       | Non BritishCitizenship and EUSS visa type applicant- MainApplicant |
 
 
-  Scenario Outline: <Description>
+  Scenario Outline: Verify that the form behaves correctly for reporting documents not received pertaining to "<Description>"
     Given I visit report that you have not received your documents page
     When I fill out my answers for documents not received form and submit application pertaining to "<Description>"
     Then I should see application submitted for documents not received
@@ -37,7 +37,7 @@ Feature: ROD - Return of documents
       | DNR -Transfer of conditions or limited leave replacement biometric residence permit |
 
 
-  Scenario Outline: <Description>
+  Scenario Outline: E2E test for documents not received form pertaining to "<Description>"
     Given I visit cancel your request page
     When I fill out my answers for cancel your request form and submit application pertaining to "<Description>"
     Then I should see application submitted for cancel your request

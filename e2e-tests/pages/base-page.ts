@@ -29,24 +29,19 @@ export class basePage {
         this.errorSummaryList = page.locator("[class='govuk-list govuk-error-summary__list']");
     }
 
-    // Assertion page title
     async assertPageTitle(page: Page, title: string) {
         await expect(page).toHaveTitle(title);
     }
 
-
-    // Generic click
     async click(locator: Locator) {
         await locator.click();
     }
 
-    // Generic type
     async type(locator: Locator, text: string) {
         await locator.fill(text);
         await this.page.keyboard.press('Tab');
     }
 
-    // Accessible-autocomplete: type, pick the first suggestion if it matches, otherwise tab out.
     async typeAutocomplete(locator: Locator, text: string) {
         await locator.fill('');
         await locator.pressSequentially(text);
@@ -79,7 +74,6 @@ export class basePage {
         await this.page.goto('/');
     }
 
-    // Clears cookies and reloads when the banner is not shown, then accepts and hides it.
     async acceptCookies() {
         if (!(await this.acceptCookieButton.isVisible())) {
             await this.page.context().clearCookies();
@@ -95,21 +89,15 @@ export class basePage {
         }
 
         const checkboxOption: Locator = page.getByRole('checkbox', { name: optionText });
-
         await checkboxOption.check();
     }
 
-    // Exact label match first so "Settlement" does not resolve to "...EU Settlement Scheme".
     async selectRadioOptionWithText(optionText: string) {
         if (!optionText || optionText.trim() === '') {
             throw new Error('Radio option text value cannot be null or blank.');
         }
 
         const exactOption: Locator = this.page.getByLabel(optionText, { exact: true });
-        if (await exactOption.count() > 0) {
-            await exactOption.check();
-            return;
-        }
         await this.page.getByLabel(optionText).first().check();
     }
 
@@ -158,8 +146,8 @@ export class basePage {
             "more than one year in the future": () => addDays(addYears(now, 1), 1),
             "more than 100 years in the future": () => addDays(addYears(now, 100), 1),
             "more than one year in the past": () => addDays(addYears(now, -1), -1),
-            "within the last 3 years": () => addDays(addYears(now, -3), 1),
-            "more than 3 years ago": () => addYears(now, -3),
+            "less the last 3 years": () => addDays(addYears(now, -3), 1),
+            "more than 3 years ago": () => addDays(addYears(now, -3), -1),
             "less than 16 years ago": () => addDays(addYears(now, -16), 1),
             "less than 18 years ago": () => addDays(addYears(now, -18), 1),
             "19 years ago": () => addYears(now, -19),
@@ -190,14 +178,6 @@ export class basePage {
         const [dayVal, monthVal, yearVal] = dateParts;
 
         await this.enterDate(dayVal, monthVal, yearVal);
-    }
-
-    async linkTextIsDisplayed(page: Page, linkText: string): Promise<boolean> {
-        return await page.getByRole('link', { name: linkText }).isVisible();
-    }
-
-    async getUrlForLinkText(page: Page, linkText: string): Promise<string | null> {
-        return await page.getByRole('link', { name: linkText }).getAttribute('href');
     }
 
     async getThereIsAProblemTextErrorText(): Promise<string | null> {

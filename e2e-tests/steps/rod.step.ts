@@ -99,7 +99,7 @@ Then('application should be successfully submitted', async ({ page, pages }) => 
 });
 
 
-When('I fill out my answers for main form except application for BritishCitizenship or EUSS and not requesting return of passport for travel pertaining to {string}', async ({ pages }, description: string) => {
+When('I fill out my answers for main form except application for British Citizenship or EUSS and not requesting return of passport for travel pertaining to {string}', async ({ pages }, description: string) => {
     switch (description) {
         case 'Non BritishCitizenship and EUSS visa type applicant- Legal Rep':
             await pages.whoIsCompletingMainFormPage.completeWhoIsCompletingPage(c.A_LEGAL_REPRESENTATIVE);
