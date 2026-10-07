@@ -43,22 +43,15 @@ export class basePage {
     }
 
     async typeAutocomplete(locator: Locator, text: string) {
+        const elementId = await locator.getAttribute('id');
+        if (!elementId) {
+            throw new Error('Unable to determine the ID of the autocomplete field.');
+        }
+
         await locator.fill('');
         await locator.pressSequentially(text);
-        const elementId = await locator.getAttribute('id');
-        if (elementId) {
-            const firstSuggestion = this.page.locator(`[id="${elementId}__option--0"]`);
-            try {
-                await firstSuggestion.waitFor({ state: 'visible', timeout: 2000 });
-                const suggestionText = (await firstSuggestion.textContent())?.trim().toLowerCase();
-                if (suggestionText === text.trim().toLowerCase()) {
-                    await firstSuggestion.click();
-                    return;
-                }
-            } catch {
-                // No suggestion shown; keep the typed value.
-            }
-        }
+        const firstSuggestion = this.page.locator(`[id="${elementId}__option--0"]`);
+        await firstSuggestion.click();
         await locator.press('Tab');
     }
 
