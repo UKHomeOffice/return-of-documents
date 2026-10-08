@@ -139,7 +139,7 @@ export class basePage {
             "more than 1 year in the future": () => addDays(addYears(now, 1), 1),
             "more than 100 years in the future": () => addDays(addYears(now, 100), 1),
             "more than 1 year in the past": () => addDays(addYears(now, -1), -1),
-            "less the last 3 years": () => addDays(addYears(now, -3), 1),
+            "less than 3 years": () => addDays(addYears(now, -3), 1),
             "more than 3 years ago": () => addDays(addYears(now, -3), -1),
             "less than 16 years ago": () => addDays(addYears(now, -16), 1),
             "less than 18 years ago": () => addDays(addYears(now, -18), 1),
