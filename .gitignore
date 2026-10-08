@@ -20,3 +20,6 @@ test/_accessibility/tmp/*
 *.xlsx
 data/*
 .devcontainer/*.env
+.features-gen
+playwright-report
+test-results

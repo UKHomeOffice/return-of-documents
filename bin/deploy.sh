@@ -56,5 +56,9 @@ fi
 sleep $READY_FOR_TEST_DELAY
 
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
-  echo "Branch url - rod-$DRONE_SOURCE_BRANCH.internal.branch.sas-notprod.homeoffice.gov.uk"
+  BRANCH_HOST="rod-$DRONE_SOURCE_BRANCH.internal.branch.sas-notprod.homeoffice.gov.uk"
+  echo "Branch url - $BRANCH_HOST"
+  if [[ -d /root/.dockersock ]]; then
+    echo "$BRANCH_HOST" > /root/.dockersock/branch_url.txt
+  fi
 fi
