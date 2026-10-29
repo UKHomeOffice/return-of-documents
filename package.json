@@ -23,7 +23,7 @@
   "dependencies": {
     "accessible-autocomplete": "^3.0.1",
     "axios": "^1.19.0",
-    "bl": "^6.1.6",
+    "bl": "^7.0.13",
     "busboy": "^1.6.0",
     "crypto-random-string": "^6.0.0",
     "hof": "^24.7.0",
