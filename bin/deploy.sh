@@ -21,7 +21,7 @@ export REDIS_PERSISTENCE_SIZE=${REDIS_PERSISTENCE_SIZE:-1Gi}
 
 if [[ $1 == 'tear_down' ]]; then
   export KUBE_NAMESPACE=$BRANCH_ENV
-  export DRONE_SOURCE_BRANCH=$(cat /root/.dockersock/branch_name.txt)
+  export DRONE_SOURCE_BRANCH=$(cat /root/.dockersock/branch_name.txt | tr '[:upper:]' '[:lower:]' | tr '/.' '-')
 
   $kd --delete -f kube/configmaps/configmap.yml
   $kd --delete -f kube/redis -f kube/app
@@ -30,7 +30,7 @@ if [[ $1 == 'tear_down' ]]; then
 fi
 
 export KUBE_NAMESPACE=$1
-export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower:]' | tr '/' '-')
+export DRONE_SOURCE_BRANCH=$(printf '%s' "$DRONE_SOURCE_BRANCH" | tr '[:upper:]' '[:lower:]' | tr '/.' '-')
 
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   $kd -f kube/configmaps -f kube/certs
